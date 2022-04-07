@@ -14,7 +14,8 @@
                     Un lugar donde los usuarios pueden compartir y descubrir fotos de gatos
                 </p>
 
-                <a :href="'/auth/login/facebook'">
+                <a :href="mainStore.backendUrl + '/auth/login/facebook'">
+
                     <button
                         style="margin-top: 30px;"
                         class="fb-connect">Iniciar sesión con Facebook</button>
@@ -41,9 +42,15 @@
     </div>
 </template>
 <script>
+import { useMainStore } from "@/stores/mainStore"
 
 export default {
-
+    setup () {
+        const mainStore = useMainStore()
+        return {
+            mainStore
+        }
+    },
 }
 </script>
 <style scoped>

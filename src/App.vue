@@ -1,7 +1,44 @@
 <template>
     <router-view />
 </template>
+<script>
+import { useMainStore } from "./stores/mainStore"
 
+export default {
+    setup () {
+        const mainStore = useMainStore()
+        return {
+            mainStore
+        }
+    },
+    mounted () {
+        this.mainStore.login()
+    }
+}
+</script>
+<style lang="sass">
+// Required
+@import "@/../node_modules/bootstrap/scss/_functions.scss"
+
+// Default variable overrides
+$primary: #fd7e14
+$min-contrast-ratio: 2.5
+
+$btn-border-radius: 20px
+$light: #ffffff
+//$btn-border-radius-sm: 100px
+//$btn-border-radius-lg: 100px
+
+@import "@/../node_modules/bootstrap/scss/_variables.scss"
+// Required
+@import "@/../node_modules/bootstrap/scss/mixins"
+@import "@/../node_modules/bootstrap/scss/bootstrap"
+
+body
+    background-color: $gray-200
+    line-height: unset
+
+</style>
 <style>
 body{
     margin: 0px;
