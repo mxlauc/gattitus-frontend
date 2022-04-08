@@ -4,6 +4,7 @@ import "./registerServiceWorker"
 import router from "./router"
 import { createPinia } from "pinia"
 import VWave from "v-wave"
+import mixin from "./mixin"
 
 import { createI18n } from "vue-i18n"
 
@@ -15,4 +16,4 @@ const i18n = createI18n({
     messages
 })
 
-createApp(App).use(VWave).use(createPinia()).use(i18n).use(router).mount("#app")
+createApp(App).mixin(mixin).use(VWave).use(createPinia()).use(i18n).use(router).mount("#app")

@@ -18,7 +18,7 @@
                     <span
                         class="d-block text-black-50 fs-6"
                         role="button">
-                        <small>{{ $t('date', post.created_at) }}</small>
+                        <small>{{ timeAgo(post.created_at) }}</small>
                     </span>
                 </div>
                 <div class="col-auto">

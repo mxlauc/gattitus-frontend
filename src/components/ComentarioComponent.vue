@@ -75,7 +75,7 @@
                     <span
                         class="ms-3"
                         v-if="userLogged || contador" />
-                    <span>{{ $t('date', comentario.created_at) }}</span>
+                    <span>{{ timeAgo(comentario.created_at) }}</span>
                 </div>
             </div>
             <div
