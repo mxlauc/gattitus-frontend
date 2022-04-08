@@ -6,6 +6,7 @@
                     <image-preloader
                         option="url_xl"
                         :image="user?.image"
+                        :aspect="1"
                         class="shadow-sm"
                         style="width: 160px; border-radius: 20%;" />
                 </div>

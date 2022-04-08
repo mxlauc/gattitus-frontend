@@ -22,6 +22,7 @@ export default {
 
 // Default variable overrides
 $primary: #fd7e14
+$body-color: #444
 $min-contrast-ratio: 2.5
 
 $btn-border-radius: 20px

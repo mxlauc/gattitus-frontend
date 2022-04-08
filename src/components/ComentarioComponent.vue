@@ -5,6 +5,7 @@
                 <a :href="comentario.user.url">
                     <image-preloader
                         :image="comentario.user.image"
+                        :aspect="1"
                         class="imagen-usuario shadow" />
                 </a>
             </div>

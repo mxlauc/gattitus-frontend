@@ -30,6 +30,7 @@
             <div class="col col-auto">
                 <image-preloader
                     :image="userLogged?.image"
+                    :aspect="1"
                     class="imagenUsuario shadow" />
             </div>
             <div class="col ms-2">
