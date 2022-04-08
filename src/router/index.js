@@ -33,6 +33,16 @@ const routes = [
                 component: () => import(/* webpackChunkName: "user" */ "../components/user/UserShowComponent.vue"),
             },
             {
+                path: "admin",
+                component: () => import(/* webpackChunkName: "admin" */ "../components/admin/DashboardComponent.vue"),
+                children: [
+                    {
+                        path: "users",
+                        component: () => import(/* webpackChunkName: "admin.users" */ "../components/admin/UsersList.vue"),
+                    }
+                ]
+            },
+            {
                 path: "/:catchAll(.*)",
                 component: () => import(/* webpackChunkName: "not-found" */ "../components/errors/NotFound.vue"),
                 name: "NotFound",
