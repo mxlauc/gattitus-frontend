@@ -12,6 +12,56 @@
         <div
             class="col-12 col-md-4 sticky-top"
             style="max-width: 400px; max-width: 100%; align-self: flex-start; top: 80px;">
+            <h4>
+                <strong>Ideas para publicar</strong>
+            </h4>
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                        Gato dormido
+                    </h5>
+                    <p class="card-text">
+                        Muestranos a tu gato durmiendo... (ver&nbsp;más)
+                    </p>
+                    <image-preloader
+                        :image="'/img/samples/s4.jpg'"
+                        :aspect="2"
+                        class="rounded-5 w-100 shadow-sm" />
+                    <a
+                        href="#"
+                        class="btn btn-primary mt-2">Ver publicaciones</a>
+                </div>
+            </div>
+
+            <hr
+                class="mx-3"
+                style="border-top: 2px dashed; background-color: transparent;">
+
+            <h4>
+                <strong>Aún no sigues a estos gatos</strong>
+            </h4>
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                        Gato dormido
+                    </h5>
+                    <p class="card-text">
+                        Muestranos a tu gato durmiendo... (ver&nbsp;más)
+                    </p>
+                    <image-preloader
+                        :image="'/img/samples/s4.jpg'"
+                        :aspect="2"
+                        class="rounded-5 w-100 shadow-sm" />
+                    <a
+                        href="#"
+                        class="btn btn-primary mt-2">Ver publicaciones</a>
+                </div>
+            </div>
+
+            <hr
+                class="mx-3"
+                style="border-top: 2px dashed; background-color: transparent;">
+
             <div class="card shadow-sm mb-3">
                 <div class="card-body">
                     <h5 class="card-title">
@@ -59,11 +109,13 @@
 </template>
 <script>
 import SimplePostComponent from "../PostComponent.vue"
+import ImagePreloader from "@/components/ImagePreloader.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
     components: {
         SimplePostComponent,
+        ImagePreloader,
     },
     setup () {
         const mainStore = useMainStore()
