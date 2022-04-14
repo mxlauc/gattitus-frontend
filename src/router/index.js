@@ -56,6 +56,14 @@ const routes = [
                 ]
             },
             {
+                path: "/offline",
+                component: () => import(/* webpackChunkName: "not-found" */ "../components/errors/OffLine.vue"),
+                name: "Offline",
+                meta: {
+                    title: "No hay internet"
+                }
+            },
+            {
                 path: "/:catchAll(.*)",
                 component: () => import(/* webpackChunkName: "not-found" */ "../components/errors/NotFound.vue"),
                 name: "NotFound",
