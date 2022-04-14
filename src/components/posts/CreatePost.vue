@@ -82,7 +82,15 @@
 </template>
 <script>
 import axios from "axios"
+import { useMainStore } from "@/stores/mainStore"
+
 export default {
+    setup () {
+        const mainStore = useMainStore()
+        return {
+            mainStore
+        }
+    },
     data () {
         return {
             imagenPreview: null,
@@ -107,7 +115,7 @@ export default {
             const formData = new FormData(this.$refs.formCrear)
             formData.append("image_id", this.imageId)
             axios
-                .post("/api/posts", formData)
+                .post(`${this.mainStore.backendUrl}/api/posts`, formData)
                 .then((response) => {
                     console.log(response.data)
                     this.$refs.formCrear.reset()
@@ -126,7 +134,7 @@ export default {
             formData.append("file", e.target.files[0])
 
             axios
-                .post("/api/images", formData, {
+                .post(`${this.mainStore.backendUrl}/api/images`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     },

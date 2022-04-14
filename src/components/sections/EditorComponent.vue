@@ -6,7 +6,15 @@
     </div>
 </template>
 <script>
+import { useMainStore } from "@/stores/mainStore"
+
 export default {
+    setup () {
+        const mainStore = useMainStore()
+        return {
+            mainStore
+        }
+    },
     mounted () {
         /* const editor = new EditorJS({
             data: {
@@ -38,7 +46,7 @@ export default {
                                 return new Promise((resolve, reject) => {
                                     const formData = new FormData()
                                     formData.append("file", file)
-                                    axios.post("/api/images", formData, {
+                                    axios.post(`${this.mainStore.backendUrl}/api/images`, formData, {
                                         headers: {
                                             "Content-Type": "multipart/form-data"
                                         }

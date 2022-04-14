@@ -109,9 +109,15 @@
 <script>
 import { Modal } from "bootstrap"
 import axios from "axios"
+import { useMainStore } from "@/stores/mainStore"
 
 export default {
-
+    setup () {
+        const mainStore = useMainStore()
+        return {
+            mainStore
+        }
+    },
     data () {
         return {
             imagenPreview: null,
@@ -136,7 +142,7 @@ export default {
 
             const formData = new FormData(this.$refs.formCrear)
             formData.append("image_id", this.imageId)
-            axios.post("/api/cats", formData)
+            axios.post(`${this.mainStore.backendUrl}/api/cats`, formData)
                 .then((response) => {
                     console.log(response.data)
                     this.$refs.formCrear.reset()
@@ -163,7 +169,7 @@ export default {
             const formData = new FormData()
             formData.append("file", e.target.files[0])
 
-            axios.post("/api/images", formData, {
+            axios.post(`${this.mainStore.backendUrl}/api/images`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
