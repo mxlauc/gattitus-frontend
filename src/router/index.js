@@ -39,7 +39,20 @@ const routes = [
                     {
                         path: "users",
                         component: () => import(/* webpackChunkName: "admin.users" */ "../components/admin/UsersList.vue"),
-                    }
+                    },
+                    {
+                        path: "reports/types",
+                        component: () => import(/* webpackChunkName: "admin.users" */ "@/components/admin/reports/ReportTypesList.vue"),
+                    },
+                    {
+                        path: "reports/posts",
+                        component: () => import(/* webpackChunkName: "admin.users" */ "@/components/admin/reports/ReportedPostsList.vue"),
+                    },
+
+                    {
+                        path: "reports/types/create",
+                        component: () => import(/* webpackChunkName: "admin.users" */ "@/components/admin/reports/CreateReportType.vue"),
+                    },
                 ]
             },
             {

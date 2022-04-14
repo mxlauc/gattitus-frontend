@@ -3,6 +3,13 @@
     <router-link to="/admin/users">
         Usuarios
     </router-link>
+    <router-link to="/admin/reports/types">
+        Tipos de reporte
+    </router-link>
+    <router-link to="/admin/reports/posts">
+        Publicaciones reportadas
+    </router-link>
+
     <br>
     <router-view />
 </template>
