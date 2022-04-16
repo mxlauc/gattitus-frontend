@@ -34,10 +34,12 @@
                 </router-link>
             </div>
             <div class="col d-none d-lg-block ms-3">
-                <h5 class="fq-bold mb-0 f-fredoka">
-                    {{ saludo }}
-                </h5>
-                <span>{{ $t('todayThereIsNewPosts') }}</span>
+                <template v-if="userLogged">
+                    <h5 class="fq-bold mb-0 f-fredoka">
+                        {{ saludo }}
+                    </h5>
+                    <span>{{ $t('todayThereIsNewPosts') }}</span>
+                </template>
             </div>
             <div class="col-auto ms-auto">
                 <div v-if="userLogged">
