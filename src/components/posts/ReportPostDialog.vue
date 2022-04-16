@@ -7,6 +7,7 @@
                     @submit.prevent="sendReport"
                     ref="form">
                     <label
+                        class="d-block"
                         v-for="report in reportsPaginate?.data"
                         :key="report.id">
                         <input
@@ -17,11 +18,19 @@
                     </label>
 
                     <textarea
+                        class="form-control my-3"
                         name="details"
                         id=""
                         cols="30"
-                        rows="10"
+                        rows="4"
                         placeholder="Detalles" />
+                    <p class="text-center">
+                        <small>
+                            Reportar esta publicación para que
+                            <br>
+                            el administrador de Gattitus la revise
+                        </small>
+                    </p>
                     <div class="row">
                         <div class="col">
                             <button
