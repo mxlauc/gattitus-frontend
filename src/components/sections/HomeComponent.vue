@@ -24,7 +24,7 @@
                         Muestranos a tu gato durmiendo... (ver&nbsp;más)
                     </p>
                     <image-preloader
-                        :image="'/img/samples/s4.jpg'"
+                        :image="'/img/samples/s1.jpg'"
                         :aspect="2"
                         class="rounded-5 w-100 shadow-sm" />
                     <a
@@ -49,7 +49,7 @@
                         Muestranos a tu gato durmiendo... (ver&nbsp;más)
                     </p>
                     <image-preloader
-                        :image="'/img/samples/s4.jpg'"
+                        :image="'/img/samples/s1.jpg'"
                         :aspect="2"
                         class="rounded-5 w-100 shadow-sm" />
                     <a
