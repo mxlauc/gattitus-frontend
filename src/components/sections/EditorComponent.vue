@@ -6,6 +6,12 @@
     </div>
 </template>
 <script>
+import EditorJS from "@editorjs/editorjs"
+import Header from "@editorjs/header"
+import ImageTool from "@editorjs/image"
+import List from "@editorjs/list"
+
+import axios from "axios"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
@@ -15,8 +21,14 @@ export default {
             mainStore
         }
     },
+    data () {
+        return {
+            editor: null
+        }
+    },
     mounted () {
-        /* const editor = new EditorJS({
+        const methodUploader = this.uploadByFile
+        this.editor = new EditorJS({
             data: {
                 time: 1629663049769,
                 blocks: [{
@@ -42,29 +54,7 @@ export default {
                     config: {
                         buttonContent: "Escoge una image",
                         uploader: {
-                            uploadByFile (file) {
-                                return new Promise((resolve, reject) => {
-                                    const formData = new FormData()
-                                    formData.append("file", file)
-                                    axios.post(`${this.mainStore.backendUrl}/api/images`, formData, {
-                                        headers: {
-                                            "Content-Type": "multipart/form-data"
-                                        }
-                                    })
-                                        .then(response => {
-                                            resolve({
-                                                success: 1,
-                                                file: {
-                                                    url: response.data.url
-                                                }
-                                            })
-                                        })
-                                        .catch(error => {
-                                            console.log(error)
-                                            reject()
-                                        })
-                                })
-                            }
+                            uploadByFile: methodUploader
                         }
                     }
                 },
@@ -123,16 +113,41 @@ export default {
                     },
                 }
             },
-        }) */
+        })
+    },
+    methods: {
+        uploadByFile (file) {
+            return new Promise((resolve, reject) => {
+                const formData = new FormData()
+                formData.append("file", file)
+                axios.post(`${this.mainStore.backendUrl}/api/images`, formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    }
+                })
+                    .then(response => {
+                        resolve({
+                            success: 1,
+                            file: {
+                                url: response.data.url
+                            }
+                        })
+                    })
+                    .catch(error => {
+                        console.log(error)
+                        reject(error)
+                    })
+            })
+        }
     }
 }
 </script>
-<style scoped>
+<style>
         #editorjs {
             min-height: 70vh;
         }
 
-        #editorjs h2 {
+        #editorjs h1,#editorjs h2,#editorjs h3,#editorjs h4,#editorjs h5,#editorjs h6 {
             color: #f90;
             font-weight: bold;
         }

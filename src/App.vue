@@ -41,6 +41,7 @@ body
 
 </style>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&family=Roboto&family=Rubik&family=Varela+Round&display=swap');
 body{
     margin: 0px;
 }
