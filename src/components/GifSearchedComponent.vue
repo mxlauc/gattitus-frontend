@@ -8,16 +8,17 @@
     </div>
 </template>
 <script>
-// import Masonry from 'masonry-layout';
+import Masonry from "masonry-layout"
 export default {
     props: ["imgUrl"],
     inject: ["postId"],
     mounted () {
-        /* new ResizeObserver(()=> {
-            var msnry = new Masonry("#masonry-gifs-row" + this.postId, {
-                percentPosition: true,
-            });
-        }).observe(this.$refs.img); */
+        const msnry = new Masonry("#masonry-gifs-row" + this.postId, {
+            percentPosition: true,
+        })
+        new ResizeObserver(() => {
+            msnry.reloadItems()
+        }).observe(this.$refs.img)
     }
 }
 </script>

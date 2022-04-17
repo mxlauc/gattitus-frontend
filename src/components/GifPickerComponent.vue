@@ -76,7 +76,7 @@ export default {
     emits: ["gifSeleccionado"],
     methods: {
         cargarDefaultGifs () {
-            axios.get("https://g.tenor.com/v1/search?q=gente alegre&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard", { withCredentials: false })
+            axios.get("https://g.tenor.com/v1/search?q=gato alegre&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard", { withCredentials: false })
                 .then(response => {
                     this.gifs = response.data.results
                     sharedData.gifs = response.data.results
