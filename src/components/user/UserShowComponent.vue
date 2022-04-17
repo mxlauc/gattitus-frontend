@@ -1,5 +1,7 @@
 <template>
-    <user-header-component :user="user" />
+    <user-header-component
+        v-if="user"
+        :user="user" />
     <div class="row gy-4 gx-0 mt-0">
         <div class="col-12 col-md-7 order-2 order-md-1 text-center">
             <div style="max-width: 460px; margin: auto">

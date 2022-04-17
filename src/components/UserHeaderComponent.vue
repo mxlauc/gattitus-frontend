@@ -22,7 +22,7 @@
                     <button
                         class="btn btn-sm btn-primary mt-2"
                         @click="follow">
-                        (Array.isArray(user?.my_follow) ? user?.my_follow.length : user?.my_follow) ? 'Dejar de seguir' : 'Seguir'
+                        {{ my_follow ? 'Dejar de seguir' : 'Seguir' }}
                     </button>
                 </div>
             </div>
@@ -32,14 +32,21 @@
 <script>
 import ImagePreloader from "./ImagePreloader.vue"
 import axios from "axios"
+import { useMainStore } from "@/stores/mainStore"
 
 export default {
     components: {
         ImagePreloader
     },
+    setup () {
+        const mainStore = useMainStore()
+        return {
+            mainStore
+        }
+    },
     data () {
         return {
-            my_follow: false
+            my_follow: Array.isArray(this.user?.my_follow) ? this.user?.my_follow.length : !!this.user?.my_follow,
         }
     },
     props: ["user"],
@@ -48,7 +55,7 @@ export default {
     },
     methods: {
         follow () {
-            axios.post("/followers", {
+            axios.post(`${this.mainStore.backendUrl}/api/followers`, {
                 user_id: this.user.id
             })
                 .then(response => {
