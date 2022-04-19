@@ -24,7 +24,9 @@
                         Ver publicación
                     </button>
 
-                    <button class="btn btn-primary mx-2">
+                    <button
+                        class="btn btn-primary mx-2"
+                        @click="applyPunishment=true">
                         Aplicar castigo
                     </button>
                 </div>
@@ -32,12 +34,23 @@
         </div>
     </div>
     <br>
+    <ApplyPunishment
+        @close="applyPunishment = false"
+        v-if="applyPunishment===true" />
 </template>
 <script>
 import ImagePreloader from "@/components/ImagePreloader.vue"
+import ApplyPunishment from "@/components/admin/reports/ApplyPunishment.vue"
+
 export default {
     components: {
         ImagePreloader,
+        ApplyPunishment,
+    },
+    data () {
+        return {
+            applyPunishment: false,
+        }
     },
     props: ["post"]
 }
