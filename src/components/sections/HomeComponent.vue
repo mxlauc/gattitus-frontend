@@ -10,9 +10,11 @@
             </div>
         </div>
         <div
-            class="col-12 col-md-4 sticky-top"
-            style="max-width: 400px; max-width: 100%; align-self: flex-start; top: 80px;">
-            <UserToFollowListVue />
+            ref="lastCol"
+            class="col-12 col-md-4"
+            style="max-width: 400px; max-width: 100%; align-self: flex-start; position:sticky;">
+            <UserToFollowList />
+            <CatToSeeList />
             <h4>
                 <strong>Ideas para publicar</strong>
             </h4>
@@ -112,14 +114,16 @@
 <script>
 import SimplePostComponent from "../PostComponent.vue"
 import ImagePreloader from "@/components/ImagePreloader.vue"
-import UserToFollowListVue from "../user/UserToFollowList.vue"
+import UserToFollowList from "../user/UserToFollowList.vue"
+import CatToSeeList from "../cat/CatToSeeList.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
     components: {
         SimplePostComponent,
         ImagePreloader,
-        UserToFollowListVue,
+        UserToFollowList,
+        CatToSeeList,
     },
     setup () {
         const mainStore = useMainStore()
@@ -129,15 +133,50 @@ export default {
     },
     data () {
         return {
-
+            lastScrollPos: 0,
+            maxTop: 80,
+            minTop: 0,
+            topScroll: 0,
+            divColObserver: null,
         }
     },
     mounted () {
         this.mainStore.loadPosts()
+
+        window.addEventListener("scroll", this.onScroll)
+        this.divColObserver = new ResizeObserver(this.calcMinTop)
+        this.divColObserver.observe(this.$refs.lastCol)
+    },
+    unmounted () {
+        window.removeEventListener("scroll", this.onScroll)
+        this.divColObserver.disconnect()
     },
     computed: {
         posts () {
             return this.mainStore.posts
+        }
+    },
+    methods: {
+        onScroll () {
+            const diffScroll = document.documentElement.scrollTop - this.lastScrollPos
+
+            if (diffScroll > 0) { // scroll bajando
+                this.topScroll -= diffScroll
+                if (this.topScroll < this.minTop) {
+                    this.topScroll = this.minTop
+                }
+            } else { // scroll subiendo
+                this.topScroll -= diffScroll
+                if (this.topScroll > this.maxTop) {
+                    this.topScroll = this.maxTop
+                }
+            }
+            this.$refs.lastCol.style.top = `${this.topScroll}px`
+
+            this.lastScrollPos = document.documentElement.scrollTop
+        },
+        calcMinTop () {
+            this.minTop = window.innerHeight - this.$refs.lastCol.clientHeight
         }
     }
 }
