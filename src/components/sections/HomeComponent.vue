@@ -12,9 +12,11 @@
         <div
             class="col-12 col-md-4 sticky-top"
             style="max-width: 400px; max-width: 100%; align-self: flex-start; top: 80px;">
+            <UserToFollowListVue />
             <h4>
                 <strong>Ideas para publicar</strong>
             </h4>
+
             <div class="card shadow-sm mb-3">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">
@@ -110,12 +112,14 @@
 <script>
 import SimplePostComponent from "../PostComponent.vue"
 import ImagePreloader from "@/components/ImagePreloader.vue"
+import UserToFollowListVue from "../user/UserToFollowList.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
     components: {
         SimplePostComponent,
         ImagePreloader,
+        UserToFollowListVue,
     },
     setup () {
         const mainStore = useMainStore()
