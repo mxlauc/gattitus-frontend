@@ -15,7 +15,7 @@
                 {{ user.name }}
             </router-link>
             <br>
-            <small>
+            <small class="text-muted">
                 <router-link
                     :to="'/@' + user.username"
                     class="text-decoration-none text-muted">
@@ -27,29 +27,59 @@
             </small>
         </div>
         <div class="col-auto">
-            <button class="btn btn-sm btn-primary">
-                Seguir
+            <button
+                class="btn btn-sm"
+                :class="{'btn-outline-primary': my_follow, 'btn-primary': !my_follow}"
+                @click="follow">
+                {{ my_follow ? 'Dejar de seguir' : 'Seguir' }}
             </button>
         </div>
     </div>
 </template>
 <script>
 import ImagePreloader from "@/components/ImagePreloader.vue"
+import axios from "axios"
+import { useMainStore } from "@/stores/mainStore"
+
 export default {
     components: {
         ImagePreloader,
+    },
+    setup () {
+        const mainStore = useMainStore()
+        return {
+            mainStore,
+        }
+    },
+    data () {
+        return {
+            my_follow: Array.isArray(this.user?.my_follow) ? this.user?.my_follow.length : !!this.user?.my_follow,
+        }
     },
     props: {
         user: Object
     },
     computed: {
         cats_amount () {
-            const cats_n = Math.floor(Math.random() * 3 + 1)
+            const cats_n = Math.min(3, this.user?.cats_count)
             if (cats_n) {
-                return "| " + "🐱".repeat(cats_n) + (cats_n > 2 ? " + " : "")
+                return "| " + "🐱".repeat(cats_n) + (this.user?.cats_count > 3 ? " + " : "")
             } else {
                 return ""
             }
+        }
+    },
+    methods: {
+        follow () {
+            axios.post(`${this.mainStore.backendUrl}/api/followers`, {
+                user_id: this.user.id
+            })
+                .then(response => {
+                    this.my_follow = response.data.following
+                })
+                .catch(error => {
+                    console.error(error)
+                })
         }
     }
 }
