@@ -12,24 +12,34 @@
             <div class="cat-card-popper">
                 <div class="row g-2">
                     <div class="col-auto">
-                        <ImagePreloader
-                            option="url_lg"
-                            :image="cat.image"
-                            :aspect="1"
-                            class="shadow-sm rounded-5 cat-icon-popper" />
+                        <router-link
+                            :to="'/cats/' + cat.slug">
+                            <ImagePreloader
+                                option="url_lg"
+                                :image="cat.image"
+                                :aspect="1"
+                                class="shadow-sm rounded-5 cat-icon-popper" />
+                        </router-link>
                     </div>
                     <div class="col">
-                        <h3 class="mb-0">
-                            <strong>{{ cat.name }}</strong>
-                        </h3>
+                        <router-link
+                            :to="'/cats/' + cat.slug"
+                            class="text-decoration-none">
+                            <h3 class="mb-0">
+                                <strong>{{ cat.name }}</strong>
+                            </h3>
+                        </router-link>
+
                         <h6 class="mb-0">
                             {{ cat.nickname }}
                         </h6>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-2 float-end">
+                <router-link
+                    :to="'/cats/' + cat.slug"
+                    class="btn btn-primary mt-2 float-end">
                     Ver más fotos
-                </button>
+                </router-link>
             </div>
         </template>
     </Popper>

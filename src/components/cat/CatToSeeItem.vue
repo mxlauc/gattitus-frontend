@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-auto">
-            <router-link :to="'/@' + cat.username">
+            <router-link :to="'/cats/' + cat.slug">
                 <ImagePreloader
                     :image="cat.image"
                     class="cat-item-img shadow"
@@ -10,17 +10,13 @@
         </div>
         <div class="col">
             <router-link
-                :to="'/@' + cat.username"
+                :to="'/cats/' + cat.slug"
                 class="text-decoration-none">
                 {{ cat.name }}
             </router-link>
             <br>
-            <small>
-                <router-link
-                    :to="'/@' + cat.username"
-                    class="text-decoration-none text-muted">
-                    {{ cat.nickname }}
-                </router-link>
+            <small class="text-muted">
+                {{ cat.nickname }}
             </small>
         </div>
     </div>
