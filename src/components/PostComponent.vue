@@ -40,6 +40,11 @@
                     <post-menu :post-id="post.id" />
                 </div>
             </div>
+
+            <p class="fs-6 mt-1 mb-1 text-muted">
+                {{ post.simple_post.description }}
+            </p>
+            <CatIconList />
             <div class="my-2 position-relative">
                 <image-preloader
                     option="url_lg"
@@ -49,13 +54,6 @@
                     class="position-absolute top-0 start-0 end-0 bottom-0"
                     @click="clickHandler" />
             </div>
-
-            <p class="fs-6 mb-2 text-muted">
-                {{ post.simple_post.description }}
-            </p>
-            <hr
-                class="my-0"
-                style="opacity: 0.1;">
 
             <div class="row g-0 py-2">
                 <div class="col text-center">
@@ -128,6 +126,7 @@
 import SeccionComentariosComponent from "./SeccionComentariosComponent.vue"
 import ImagePreloader from "./ImagePreloader.vue"
 import PostMenu from "./posts/PostMenu.vue"
+import CatIconList from "./posts/CatIconList.vue"
 import axios from "axios"
 import { useMainStore } from "@/stores/mainStore"
 
@@ -136,6 +135,7 @@ export default {
         SeccionComentariosComponent,
         ImagePreloader,
         PostMenu,
+        CatIconList,
     },
     setup () {
         const mainStore = useMainStore()
