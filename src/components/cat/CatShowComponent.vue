@@ -1,6 +1,6 @@
 <template>
     <div class="row g-3">
-        <div class="col-12 col-md-8 order-2 order-md-1">
+        <div class="col-12 col-md-8 order-2 order-md-1 pb-5">
             <div
                 ref="catRow"
                 class="row g-2"
