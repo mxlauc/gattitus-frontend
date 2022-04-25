@@ -17,7 +17,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-4 order-1 order-md-2">
+        <StickyMiddleColumn
+            top="80"
+            class="col-12 col-md-4 order-1 order-md-2">
             <div class="card">
                 <div class="card-body text-center">
                     <img
@@ -100,7 +102,31 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    hola como estan
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    hola como estan
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    hola como estan
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    hola como estan
+                </div>
+            </div>
+        </StickyMiddleColumn>
     </div>
 </template>
 <script>
@@ -108,10 +134,11 @@ import Masonry from "masonry-layout"
 import { useMainStore } from "@/stores/mainStore"
 import axios from "axios"
 import ImagePreloader from "../ImagePreloader.vue"
-
+import StickyMiddleColumn from "../StickyMiddleColumn.vue"
 export default {
     components: {
         ImagePreloader,
+        StickyMiddleColumn,
     },
     setup () {
         const mainStore = useMainStore()
