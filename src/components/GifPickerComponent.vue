@@ -28,12 +28,13 @@
                         class="row g-0"
                         :id="['masonry-gifs-row' + postId]">
                         <div
-                            class="col col-6"
+                            class="col-6"
                             v-for="gif in gifs"
                             :key="gif"
+                            :style="{aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1]}"
                             @click="imprimir(gif.media[0].tinygif.url)">
                             <gif-searched-component
-                                :img-url="gif.media[0].nanogif.url" />
+                                :img="gif.media[0].nanogif" />
                         </div>
                     </div>
                 </div>
@@ -42,6 +43,7 @@
     </div>
 </template>
 <script>
+import Masonry from "masonry-layout"
 import GifSearchedComponent from "./GifSearchedComponent.vue"
 import axios from "axios"
 
@@ -76,11 +78,7 @@ export default {
     emits: ["gifSeleccionado"],
     methods: {
         cargarDefaultGifs () {
-            axios.get("https://g.tenor.com/v1/search?q=gato alegre&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard", { withCredentials: false })
-                .then(response => {
-                    this.gifs = response.data.results
-                    sharedData.gifs = response.data.results
-                })
+            this.obtenerGifsTenor("gato alegre")
         },
         escribir () {
             clearTimeout(this.timeOut)
@@ -93,9 +91,20 @@ export default {
             }, 1000)
         },
         buscarGifs () {
-            axios.get(`https://g.tenor.com/v1/search?q=${this.textoEscrito}&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard`, { withCredentials: false })
+            this.obtenerGifsTenor(this.textoEscrito)
+        },
+        obtenerGifsTenor (texto) {
+            axios.get(`https://g.tenor.com/v1/search?q=${texto}&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard`, { withCredentials: false })
                 .then(response => {
                     this.gifs = response.data.results
+                    sharedData.gifs = response.data.results
+                })
+                .then(() => {
+                    const msnry = new Masonry("#masonry-gifs-row" + this.postId, {
+                        percentPosition: true,
+                    })
+                    msnry.reloadItems()
+                    msnry.layout()
                 })
         },
         imprimir (url) {
