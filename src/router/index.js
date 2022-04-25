@@ -33,6 +33,10 @@ const routes = [
                 component: () => import(/* webpackChunkName: "user" */ "../components/user/UserShowComponent.vue"),
             },
             {
+                path: "/cats/:slug",
+                component: () => import(/* webpackChunkName: "cats" */ "../components/cat/CatShowComponent.vue"),
+            },
+            {
                 path: "admin",
                 component: () => import(/* webpackChunkName: "admin" */ "../components/admin/DashboardComponent.vue"),
                 children: [
