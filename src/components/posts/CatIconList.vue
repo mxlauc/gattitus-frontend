@@ -13,7 +13,6 @@
 </template>
 <script>
 import { useMainStore } from "@/stores/mainStore"
-import axios from "axios"
 import CatIconItem from "./CatIconItem.vue"
 
 export default {
@@ -24,16 +23,6 @@ export default {
             mainStore
         }
     },
-    data () {
-        return {
-            cats: null
-        }
-    },
-    mounted () {
-        axios.get(`${this.mainStore.backendUrl}/api/cats`)
-            .then(response => {
-                this.cats = response.data.data
-            })
-    }
+    props: ["cats", "cats_count"],
 }
 </script>

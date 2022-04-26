@@ -44,7 +44,10 @@
             <p class="fs-6 mt-1 mb-1 text-muted">
                 {{ post.simple_post.description }}
             </p>
-            <CatIconList />
+            <CatIconList
+                v-if="post.cats_count"
+                :cats="post.cats"
+                :cats-count="post.cats_count" />
             <div class="my-2 position-relative">
                 <image-preloader
                     option="url_lg"
