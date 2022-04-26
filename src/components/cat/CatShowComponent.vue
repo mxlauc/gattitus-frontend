@@ -11,6 +11,7 @@
                     :key="p.id">
                     <ImagePreloader
                         :image="p.simple_post.image"
+                        option="url_lg"
                         class="cat-post-img"
                         :width="'100%'"
                         :aspect="p.simple_post.image.meta_data.aspect_ratio" />
