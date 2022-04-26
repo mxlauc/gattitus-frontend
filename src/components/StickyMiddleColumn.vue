@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         onScroll () {
-            if (this.$refs.col.clientHeight > window.innerHeight) {
+            if (this.$refs.col.clientHeight + this.maxTop > window.innerHeight) {
                 const diffScroll = document.documentElement.scrollTop - this.scrollPos
 
                 if (diffScroll > 0) { // scroll bajando
