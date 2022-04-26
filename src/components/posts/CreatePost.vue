@@ -60,6 +60,28 @@
                             @keyup="keyup"
                             placeholder="What are you thinking about?" />
                     </div>
+                    <h6>Gatos etiquetados</h6>
+
+                    <div>
+                        <img
+                            v-for="c in catsTagged"
+                            :key="c.id"
+                            :src="c.image.url_xs"
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"
+                            alt="">
+                        <button
+                            type="button"
+                            class="btn btn-outline-primary"
+                            @click="showSearchCat=true">
+                            {{ (catsTagged && catsTagged.length) ? '+':'Etiquetar gatos' }}
+                        </button>
+                    </div>
+
+                    <SearchToTagACat
+                        v-if="showSearchCat"
+                        :cats-previous="catsTagged"
+                        @cats-selected="onCatsSelectedChanged"
+                        @close="showSearchCat=false" />
                 </div>
             </div>
 
@@ -83,8 +105,12 @@
 <script>
 import axios from "axios"
 import { useMainStore } from "@/stores/mainStore"
+import SearchToTagACat from "./SearchToTagACat.vue"
 
 export default {
+    components: {
+        SearchToTagACat,
+    },
     setup () {
         const mainStore = useMainStore()
         return {
@@ -96,12 +122,14 @@ export default {
             imagenPreview: null,
             textareaLength: 0,
             imageId: null,
+            showSearchCat: false,
+            catsTagged: [],
         }
     },
     mounted () {},
     computed: {
         disableButton () {
-            return !this.imagenPreview && !this.textareaLength
+            return !this.imagenPreview
         },
     },
     emits: ["postCreated"],
@@ -114,8 +142,12 @@ export default {
 
             const formData = new FormData(this.$refs.formCrear)
             formData.append("image_id", this.imageId)
-            axios
-                .post(`${this.mainStore.backendUrl}/api/posts`, formData)
+
+            this.catsTagged.forEach(c => {
+                formData.append("cats[]", c.id)
+            })
+
+            axios.post(`${this.mainStore.backendUrl}/api/posts`, formData)
                 .then((response) => {
                     console.log(response.data)
                     this.$refs.formCrear.reset()
@@ -151,6 +183,9 @@ export default {
         borrarImagen () {
             this.$refs.formCrear.imagen.value = ""
             this.imagenPreview = null
+        },
+        onCatsSelectedChanged (cats) {
+            this.catsTagged = cats
         },
     },
 }
