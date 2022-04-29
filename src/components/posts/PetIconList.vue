@@ -4,25 +4,25 @@
         <div
             class="col-auto position-relative">
             <small class="text-muted me-2">Gatos que aparecen en esta publicación</small>
-            <CatIconItem
-                v-for="c in cats"
+            <PetIconItem
+                v-for="c in pets"
                 :key="c.id"
-                :cat="c" />
+                :pet="c" />
         </div>
     </div>
 </template>
 <script>
 import { useMainStore } from "@/stores/mainStore"
-import CatIconItem from "./CatIconItem.vue"
+import PetIconItem from "./PetIconItem.vue"
 
 export default {
-    components: { CatIconItem },
+    components: { PetIconItem },
     setup () {
         const mainStore = useMainStore()
         return {
             mainStore
         }
     },
-    props: ["cats", "cats_count"],
+    props: ["pets", "pets_count"],
 }
 </script>

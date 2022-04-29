@@ -7,15 +7,15 @@
                 </h4>
                 <div style="height: 300px;width: 100%; overflow-y: auto; overflow-x: hidden;">
                     <div
-                        v-for="c in cats"
+                        v-for="c in pets"
                         :key="c.id"
-                        class="row-cat"
-                        @click="c.selected = !c.selected; refreshCatsSelected()">
+                        class="row-pet"
+                        @click="c.selected = !c.selected; refreshPetsSelected()">
                         <div class="row g-1">
                             <div class="col-auto">
                                 <ImagePreloader
                                     :image="c.image"
-                                    class="cat-item-img"
+                                    class="pet-item-img"
                                     style="width:40px;"
                                     aspect="1" />
                             </div>
@@ -62,7 +62,7 @@
                         <button
                             type="submit"
                             class="btn btn-primary"
-                            @click="sendsBackCats(); close()">
+                            @click="sendsBackPets(); close()">
                             Listo
                         </button>
                     </div>
@@ -88,33 +88,33 @@ export default {
     },
     data () {
         return {
-            cats: null,
-            catsSelected: [],
+            pets: null,
+            petsSelected: [],
         }
     },
-    props: ["catsPrevious"],
-    emits: ["catsSelected", "close"],
+    props: ["petsPrevious"],
+    emits: ["petsSelected", "close"],
     mounted () {
-        axios.get(`${this.mainStore.backendUrl}/api/cats/mine`)
+        axios.get(`${this.mainStore.backendUrl}/api/pets/mine`)
             .then(response => {
-                this.cats = response.data.data.map(c => {
-                    if (this.catsPrevious.find(c2 => c2.id === c.id)) {
+                this.pets = response.data.data.map(c => {
+                    if (this.petsPrevious.find(c2 => c2.id === c.id)) {
                         c.selected = true
                     }
                     return c
                 })
-                this.refreshCatsSelected()
+                this.refreshPetsSelected()
             })
     },
     methods: {
         close () {
             this.$emit("close")
         },
-        sendsBackCats () {
-            this.$emit("catsSelected", this.catsSelected)
+        sendsBackPets () {
+            this.$emit("petsSelected", this.petsSelected)
         },
-        refreshCatsSelected () {
-            this.catsSelected = this.cats.filter(c => {
+        refreshPetsSelected () {
+            this.petsSelected = this.pets.filter(c => {
                 return c.selected
             })
         },
@@ -143,16 +143,16 @@ export default {
     justify-content: center;
     max-width: 80%;
 }
-.cat-item-img{
+.pet-item-img{
     border-radius: 6px;
 }
-.row-cat{
+.row-pet{
     border-radius: 10px;
     overflow: hidden;
     padding: 5px;
     margin: 5px;
 }
-.row-cat:hover{
+.row-pet:hover{
     background-color: #eee;
 }
 </style>

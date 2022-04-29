@@ -5,38 +5,38 @@
         class="popper-activator">
         <ImagePreloader
             option="url_lg"
-            :image="cat.image"
+            :image="pet.image"
             :aspect="1"
-            class="shadow-sm cat-icon" />
+            class="shadow-sm pet-icon" />
         <template #content>
-            <div class="cat-card-popper">
+            <div class="pet-card-popper">
                 <div class="row g-2">
                     <div class="col-auto">
                         <router-link
-                            :to="'/cats/' + cat.slug">
+                            :to="'/pets/' + pet.slug">
                             <ImagePreloader
                                 option="url_lg"
-                                :image="cat.image"
+                                :image="pet.image"
                                 :aspect="1"
-                                class="shadow-sm rounded-5 cat-icon-popper" />
+                                class="shadow-sm rounded-5 pet-icon-popper" />
                         </router-link>
                     </div>
                     <div class="col">
                         <router-link
-                            :to="'/cats/' + cat.slug"
+                            :to="'/pets/' + pet.slug"
                             class="text-decoration-none">
                             <h3 class="mb-0">
-                                <strong>{{ cat.name }}</strong>
+                                <strong>{{ pet.name }}</strong>
                             </h3>
                         </router-link>
 
                         <h6 class="mb-0">
-                            {{ cat.nickname }}
+                            {{ pet.nickname }}
                         </h6>
                     </div>
                 </div>
                 <router-link
-                    :to="'/cats/' + cat.slug"
+                    :to="'/pets/' + pet.slug"
                     class="btn btn-primary mt-2 float-end">
                     Ver más fotos
                 </router-link>
@@ -54,12 +54,12 @@ export default {
         Popper,
     },
     props: {
-        cat: Object,
+        pet: Object,
     },
 }
 </script>
 <style>
-.cat-icon{
+.pet-icon{
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -72,11 +72,11 @@ export default {
 .popper-activator:not(:first-child){
     margin-left: -5px !important;
 }
-.cat-icon-popper{
+.pet-icon-popper{
     width: 50px;
     height: 50px;
 }
-.cat-card-popper{
+.pet-card-popper{
     min-width: 300px;
 }
 

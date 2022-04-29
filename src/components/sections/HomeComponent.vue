@@ -14,7 +14,7 @@
             class="col-12 col-md-4"
             style="max-width: 400px; max-width: 100%;">
             <UserToFollowList />
-            <CatToSeeList />
+            <PetToSeeList />
             <h4>
                 <strong>Ideas para publicar</strong>
             </h4>
@@ -115,7 +115,7 @@
 import SimplePostComponent from "../PostComponent.vue"
 import ImagePreloader from "@/components/ImagePreloader.vue"
 import UserToFollowList from "../user/UserToFollowList.vue"
-import CatToSeeList from "../cat/CatToSeeList.vue"
+import PetToSeeList from "../pet/PetToSeeList.vue"
 import { useMainStore } from "@/stores/mainStore"
 import StickyMiddleColumn from "../StickyMiddleColumn.vue"
 
@@ -124,7 +124,7 @@ export default {
         SimplePostComponent,
         ImagePreloader,
         UserToFollowList,
-        CatToSeeList,
+        PetToSeeList,
         StickyMiddleColumn,
     },
     setup () {

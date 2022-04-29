@@ -23,7 +23,7 @@
                     @{{ user.username }}
 
                 </router-link>
-                {{ cats_amount }}
+                {{ pets_amount }}
             </small>
         </div>
         <div class="col-auto">
@@ -60,10 +60,10 @@ export default {
         user: Object
     },
     computed: {
-        cats_amount () {
-            const cats_n = Math.min(3, this.user?.cats_count)
-            if (cats_n) {
-                return "| " + "🐱".repeat(cats_n) + (this.user?.cats_count > 3 ? " + " : "")
+        pets_amount () {
+            const pets_n = Math.min(3, this.user?.pets_count)
+            if (pets_n) {
+                return "| " + "🐱".repeat(pets_n) + (this.user?.pets_count > 3 ? " + " : "")
             } else {
                 return ""
             }

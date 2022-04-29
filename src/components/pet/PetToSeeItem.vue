@@ -1,22 +1,22 @@
 <template>
     <div class="row">
         <div class="col-auto">
-            <router-link :to="'/cats/' + cat.slug">
+            <router-link :to="'/pets/' + pet.slug">
                 <ImagePreloader
-                    :image="cat.image"
-                    class="cat-item-img shadow"
+                    :image="pet.image"
+                    class="pet-item-img shadow"
                     aspect="1" />
             </router-link>
         </div>
         <div class="col">
             <router-link
-                :to="'/cats/' + cat.slug"
+                :to="'/pets/' + pet.slug"
                 class="text-decoration-none">
-                {{ cat.name }}
+                {{ pet.name }}
             </router-link>
             <br>
             <small class="text-muted">
-                {{ cat.nickname }}
+                {{ pet.nickname }}
             </small>
         </div>
     </div>
@@ -26,12 +26,12 @@ import ImagePreloader from "../ImagePreloader.vue"
 export default {
     components: { ImagePreloader },
     props: {
-        cat: Object
+        pet: Object
     }
 }
 </script>
 <style scoped>
-.cat-item-img{
+.pet-item-img{
     width: 50px;
     height: 50px;
     border-radius: 0.8rem;

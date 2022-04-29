@@ -2,9 +2,9 @@
     <div class="row g-3">
         <div class="col-12 col-md-8 order-2 order-md-1 pb-5">
             <div
-                ref="catRow"
+                ref="petRow"
                 class="row g-2"
-                id="cat-posts">
+                id="pet-posts">
                 <div
                     class="col-6 col-sm-4"
                     v-for="p in posts"
@@ -12,7 +12,7 @@
                     <ImagePreloader
                         :image="p.simple_post.image"
                         option="url_lg"
-                        class="cat-post-img"
+                        class="pet-post-img"
                         :width="'100%'"
                         :aspect="p.simple_post.image.meta_data.aspect_ratio" />
                 </div>
@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="card-body text-center">
                     <img
-                        :src="cat?.image.url_lg"
+                        :src="pet?.image.url_lg"
                         class="my-3"
                         style="height: 100px;
                         border-radius: 50%;
@@ -34,10 +34,10 @@
                           outline-offset: 3px;"
                         alt="">
                     <h2 class="mb-0 fw-bold">
-                        {{ cat?.name }}
+                        {{ pet?.name }}
                     </h2>
                     <p>
-                        {{ cat?.nickname }}
+                        {{ pet?.nickname }}
                     </p>
                     <div class="row g-3">
                         <div class="col-6 text-start">
@@ -149,20 +149,20 @@ export default {
     },
     data () {
         return {
-            cat: null,
+            pet: null,
             posts: null,
         }
     },
     mounted () {
-        axios.get(`${this.mainStore.backendUrl}/api/cats/${this.$route.params.slug}`)
+        axios.get(`${this.mainStore.backendUrl}/api/pets/${this.$route.params.slug}`)
             .then(response => {
-                this.cat = response.data.data
+                this.pet = response.data.data
             })
         axios.get(`${this.mainStore.backendUrl}/api/posts`)
             .then(response => {
                 this.posts = response.data.data
             }).then(() => {
-                const msnry = new Masonry("#cat-posts", {
+                const msnry = new Masonry("#pet-posts", {
                     percentPosition: true,
                 })
                 msnry.reloadItems()
@@ -172,7 +172,7 @@ export default {
 }
 </script>
 <style scoped>
-.cat-post-img{
+.pet-post-img{
     border-radius: 6px;
 }
 </style>

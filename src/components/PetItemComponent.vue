@@ -1,10 +1,10 @@
 <template>
     <div class="text-center">
         <image-preloader
-            :image="cat.image"
-            class="cat-item-img shadow"
+            :image="pet.image"
+            class="pet-item-img shadow"
             aspect="1" />
-        <span class="d-block mt-2 text-muted"><small>{{ cat.name }}</small></span>
+        <span class="d-block mt-2 text-muted"><small>{{ pet.name }}</small></span>
     </div>
 </template>
 <script>
@@ -13,11 +13,11 @@ export default {
     components: {
         ImagePreloader,
     },
-    props: ["cat"]
+    props: ["pet"]
 }
 </script>
 <style scoped>
-.cat-item-img{
+.pet-item-img{
     width: 100%;
     border-radius: 20%;
 }

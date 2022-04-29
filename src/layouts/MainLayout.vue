@@ -7,7 +7,7 @@
     <div
         class="container-xxl px-0"
         id="app">
-        <create-cat-component />
+        <create-pet-component />
         <nav
             class="bg-white shadow-sm fixed-top"
             style="min-height: 64px">
@@ -166,13 +166,13 @@
 </template>
 <script>
 import HeaderComponent from "../components/HeaderComponent.vue"
-import CreateCatComponent from "../components/CreateCatComponent.vue"
+import CreatePetComponent from "../components/CreatePetComponent.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
     components: {
         HeaderComponent,
-        CreateCatComponent,
+        CreatePetComponent,
     },
     setup () {
         const mainStore = useMainStore()

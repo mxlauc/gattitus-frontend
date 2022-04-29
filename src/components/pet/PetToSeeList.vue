@@ -4,23 +4,23 @@
     </h4>
     <div class="card shadow-sm mb-3">
         <div class="card-body">
-            <CatToSeeItem
-                class="cat-item"
-                v-for="c in cats"
+            <PetToSeeItem
+                class="pet-item"
+                v-for="c in pets"
                 :key="c.id"
-                :cat="c" />
+                :pet="c" />
         </div>
     </div>
 </template>
 <script>
 
-import CatToSeeItem from "./CatToSeeItem.vue"
+import PetToSeeItem from "./PetToSeeItem.vue"
 import { useMainStore } from "@/stores/mainStore"
 import axios from "axios"
 
 export default {
     components: {
-        CatToSeeItem,
+        PetToSeeItem,
     },
     setup () {
         const mainStore = useMainStore()
@@ -30,20 +30,20 @@ export default {
     },
     data () {
         return {
-            cats: null
+            pets: null
         }
     },
     mounted () {
-        axios.get(`${this.mainStore.backendUrl}/api/cats`)
+        axios.get(`${this.mainStore.backendUrl}/api/pets`)
             .then(response => {
-                this.cats = response.data.data
+                this.pets = response.data.data
                 console.log(response.data.data)
             })
     }
 }
 </script>
 <style scoped>
-.cat-item:not(:last-child){
+.pet-item:not(:last-child){
     margin-bottom: 15px;
 }
 </style>

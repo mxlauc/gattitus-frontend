@@ -3,7 +3,7 @@
         <!-- Modal -->
         <div
             class="modal fade"
-            id="createCat"
+            id="createPet"
             tabindex="-1"
             data-bs-backdrop="static"
             data-bs-keyboard="false"
@@ -49,7 +49,7 @@
                                                 @click="borrarImagen" />
                                         </div>
                                         <label
-                                            for="imageCat"
+                                            for="imagePet"
                                             class="form-control"
                                             tabindex="0"
                                             role="button"
@@ -85,7 +85,7 @@
 
                                 <input
                                     type="file"
-                                    id="imageCat"
+                                    id="imagePet"
                                     class="d-none"
                                     accept="image/png, image/jpeg"
                                     @change="mostrarPreview">
@@ -142,14 +142,14 @@ export default {
 
             const formData = new FormData(this.$refs.formCrear)
             formData.append("image_id", this.imageId)
-            axios.post(`${this.mainStore.backendUrl}/api/cats`, formData)
+            axios.post(`${this.mainStore.backendUrl}/api/pets`, formData)
                 .then((response) => {
                     console.log(response.data)
                     this.$refs.formCrear.reset()
                     this.imageId = null
                     this.textareaLength = 0
                     this.imagenPreview = null
-                    const modal = Modal.getInstance(document.getElementById("createCat"))
+                    const modal = Modal.getInstance(document.getElementById("createPet"))
                     modal.hide()
                 // this.$emit("postCreated", response.data.data);
                 // this.ocultarModal();
@@ -159,7 +159,7 @@ export default {
                 })
         },
         ocultarModal () {
-            const myModal = window.bootstrap.Modal.getInstance(document.getElementById("createCat"))
+            const myModal = window.bootstrap.Modal.getInstance(document.getElementById("createPet"))
             myModal.hide()
             this.imagenPreview = null
             this.$refs.formCrear.reset()
@@ -184,7 +184,7 @@ export default {
                 })
         },
         borrarImagen () {
-            this.$refs.formCrear.imageCat.value = ""
+            this.$refs.formCrear.imagePet.value = ""
             this.imagenPreview = null
         },
     },

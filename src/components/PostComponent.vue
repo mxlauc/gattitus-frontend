@@ -44,10 +44,10 @@
             <p class="fs-6 mt-1 mb-1 text-muted">
                 {{ post.simple_post.description }}
             </p>
-            <CatIconList
-                v-if="post.cats_count"
-                :cats="post.cats"
-                :cats-count="post.cats_count" />
+            <PetIconList
+                v-if="post.pets_count"
+                :pets="post.pets"
+                :pets-count="post.pets_count" />
             <div class="my-2 position-relative">
                 <image-preloader
                     option="url_lg"
@@ -129,7 +129,7 @@
 import SeccionComentariosComponent from "./SeccionComentariosComponent.vue"
 import ImagePreloader from "./ImagePreloader.vue"
 import PostMenu from "./posts/PostMenu.vue"
-import CatIconList from "./posts/CatIconList.vue"
+import PetIconList from "./posts/PetIconList.vue"
 import axios from "axios"
 import { useMainStore } from "@/stores/mainStore"
 
@@ -138,7 +138,7 @@ export default {
         SeccionComentariosComponent,
         ImagePreloader,
         PostMenu,
-        CatIconList,
+        PetIconList,
     },
     setup () {
         const mainStore = useMainStore()

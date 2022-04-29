@@ -1,7 +1,7 @@
 const messages = {
     home: "Inicio",
     profile: "Mi perfil",
-    myCats: "Mis gatos",
+    myPets: "Mis gatos",
     todayThereIsNewPosts: "Hoy hay nuevas publicaciones para ver",
 
     minutesAgo: "Hace un momento | Hace un minuto | Hace {n} minutos",

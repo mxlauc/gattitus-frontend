@@ -64,7 +64,7 @@
 
                     <div>
                         <img
-                            v-for="c in catsTagged"
+                            v-for="c in petsTagged"
                             :key="c.id"
                             :src="c.image.url_xs"
                             style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"
@@ -72,16 +72,16 @@
                         <button
                             type="button"
                             class="btn btn-outline-primary"
-                            @click="showSearchCat=true">
-                            {{ (catsTagged && catsTagged.length) ? '+':'Etiquetar gatos' }}
+                            @click="showSearchPet=true">
+                            {{ (petsTagged && petsTagged.length) ? '+':'Etiquetar gatos' }}
                         </button>
                     </div>
 
-                    <SearchToTagACat
-                        v-if="showSearchCat"
-                        :cats-previous="catsTagged"
-                        @cats-selected="onCatsSelectedChanged"
-                        @close="showSearchCat=false" />
+                    <SearchToTagAPet
+                        v-if="showSearchPet"
+                        :pets-previous="petsTagged"
+                        @pets-selected="onPetsSelectedChanged"
+                        @close="showSearchPet=false" />
                 </div>
             </div>
 
@@ -105,11 +105,11 @@
 <script>
 import axios from "axios"
 import { useMainStore } from "@/stores/mainStore"
-import SearchToTagACat from "./SearchToTagACat.vue"
+import SearchToTagAPet from "./SearchToTagAPet.vue"
 
 export default {
     components: {
-        SearchToTagACat,
+        SearchToTagAPet,
     },
     setup () {
         const mainStore = useMainStore()
@@ -122,8 +122,8 @@ export default {
             imagenPreview: null,
             textareaLength: 0,
             imageId: null,
-            showSearchCat: false,
-            catsTagged: [],
+            showSearchPet: false,
+            petsTagged: [],
         }
     },
     mounted () {},
@@ -143,8 +143,8 @@ export default {
             const formData = new FormData(this.$refs.formCrear)
             formData.append("image_id", this.imageId)
 
-            this.catsTagged.forEach(c => {
-                formData.append("cats[]", c.id)
+            this.petsTagged.forEach(c => {
+                formData.append("pets[]", c.id)
             })
 
             axios.post(`${this.mainStore.backendUrl}/api/posts`, formData)
@@ -184,8 +184,8 @@ export default {
             this.$refs.formCrear.imagen.value = ""
             this.imagenPreview = null
         },
-        onCatsSelectedChanged (cats) {
-            this.catsTagged = cats
+        onPetsSelectedChanged (pets) {
+            this.petsTagged = pets
         },
     },
 }
