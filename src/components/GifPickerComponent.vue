@@ -34,6 +34,7 @@
                             :style="{aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1]}"
                             @click="imprimir(gif.media[0].tinygif.url)">
                             <gif-searched-component
+                                :post-id="postId"
                                 :img="gif.media[0].nanogif" />
                         </div>
                     </div>
@@ -62,7 +63,7 @@ export default {
             textoEscrito: ""
         }
     },
-    inject: ["postId"],
+    props: ["postId"],
     mounted () {
         const myDropdown = document.getElementById("myDropdown" + this.postId)
         myDropdown.addEventListener("shown.bs.dropdown", () => {

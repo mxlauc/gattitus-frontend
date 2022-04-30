@@ -58,68 +58,15 @@
                     @click="clickHandler" />
             </div>
 
-            <div class="row g-0 py-2">
-                <div class="col text-center">
-                    <span class="text-muted">{{ reactions_count }} Reacciones</span>
-                </div>
-                <div class="col text-center">
-                    <span class="text-muted">{{ comments_count }} Comentarios</span>
-                </div>
-            </div>
-
-            <hr
-                class="my-0"
-                style="opacity: 0.1;">
-
-            <div
-                class="row text-secondary g-0 fw-bold"
-                role="button"
-                style="user-select: none; font-size: 14px;">
-                <div class="col">
-                    <div
-                        class="text-center py-3 guide-3"
-                        @click="react"
-                        v-wave>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            v-if="my_reaction"
-                            width="30"
-                            height="20"
-                            fill="currentColor"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                        </svg>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            v-else
-                            width="30"
-                            height="20"
-                            fill="currentColor"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-                        </svg>
-                        Me encanta
-                    </div>
-                </div>
-                <div
-                    class="col text-center py-3"
-                    v-wave>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="20"
-                        fill="currentColor"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                    </svg>
-                    Comentar
-                </div>
-            </div>
+            <ReactAndCommentButtons
+                :id="post.id"
+                :my-reaction="my_reaction"
+                :reactions-count="reactions_count"
+                :comments-count="comments_count"
+                @react="react" />
 
             <seccion-comentarios-component
+                :post-id="this.post.id"
                 :best-comments="post.comments"
                 @contadorActualizado="contadorActualizado" />
         </div>
@@ -130,7 +77,8 @@ import SeccionComentariosComponent from "./SeccionComentariosComponent.vue"
 import ImagePreloader from "./ImagePreloader.vue"
 import PostMenu from "./posts/PostMenu.vue"
 import PetIconList from "./posts/PetIconList.vue"
-import axios from "axios"
+import ReactAndCommentButtons from "@/components/posts/ReactAndCommentButtons.vue"
+
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
@@ -139,6 +87,7 @@ export default {
         ImagePreloader,
         PostMenu,
         PetIconList,
+        ReactAndCommentButtons,
     },
     setup () {
         const mainStore = useMainStore()
@@ -151,7 +100,6 @@ export default {
             reactions_count: this.post.reactions_count,
             comments_count: this.post.comments_count,
             my_reaction: this.post.my_reaction,
-            reactioning: false,
         }
     },
     props: ["post"],
@@ -167,22 +115,9 @@ export default {
                 this.react()
             }
         },
-        react () {
-            console.log("reaction")
-            if (this.reactioning) {
-                return
-            }
-            this.reactioning = true
-            // document.getElementById("soundMeow").play();
-            axios.post(`${this.mainStore.backendUrl}/api/posts/${this.post.id}/reactions`)
-                .then(response => {
-                    console.log(response.data)
-                    this.my_reaction = response.data.own_reaction
-                    this.reactions_count = response.data.reactions_count
-                })
-                .finally(() => {
-                    this.reactioning = false
-                })
+        react (response) {
+            this.my_reaction = response.own_reaction
+            this.reactions_count = response.reactions_count
         },
         contadorActualizado (count) {
             this.comments_count = count
@@ -200,7 +135,7 @@ export default {
             }
         },
         click () {
-            this.$router.push(`/posts/${this.post.id}/fullscreen`)
+            this.$router.push(`/posts/${this.post.id}`)
         },
         doubleclick () {
             this.reactLove()

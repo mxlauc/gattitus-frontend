@@ -11,8 +11,7 @@
 <script>
 
 export default {
-    props: ["img"],
-    inject: ["postId"],
+    props: ["img", "postId"],
 }
 </script>
 <style scoped>

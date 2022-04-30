@@ -29,6 +29,10 @@ const routes = [
                 component: () => import(/* webpackChunkName: "editor" */ "../components/posts/CreatePost.vue"),
             },
             {
+                path: "/posts/:id",
+                component: () => import(/* webpackChunkName: "posts" */ "../components/posts/ViewPost.vue"),
+            },
+            {
                 path: "/@:user",
                 component: () => import(/* webpackChunkName: "user" */ "../components/user/UserShowComponent.vue"),
             },

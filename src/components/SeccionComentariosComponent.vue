@@ -15,17 +15,36 @@
         <hr
             class="my-0"
             v-if="comentariosPaginador && comentariosPaginador.next">
-        <div>
+        <div
+            style="height: 350px; overflow: hidden auto;  scroll-behavior: smooth;"
+            class="px-3 commentsDiv"
+            ref="commentsDiv">
             <transition-group name="grupo-comentarios">
                 <comentario-component
-                    v-for="comentario in comentarios.slice().reverse()"
+                    :post-id="postId"
+                    v-for="comentario in comentarios?.slice().reverse()"
                     :key="comentario.id"
                     :comentario="comentario" />
             </transition-group>
         </div>
 
+        <div class="row g-0">
+            <div
+                class="col-auto position-relative mx-auto"
+                v-if="gifSeleccionado">
+                <img
+                    :src="gifSeleccionado"
+                    style="height: 100px; border-radius: 5px;">
+                <button
+                    type="button"
+                    class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle"
+                    aria-label="Close"
+                    @click="gifSeleccionado=null" />
+            </div>
+        </div>
+
         <div
-            class="row g-0 py-2"
+            class="row g-0 py-2 px-3"
             v-if="userLogged">
             <div class="col col-auto">
                 <image-preloader
@@ -46,7 +65,9 @@
                     <div
                         class="col col-auto guide-4"
                         style="color: #f50">
-                        <gif-picker-component @gif-seleccionado="recibirGif" />
+                        <gif-picker-component
+                            :post-id="postId"
+                            @gif-seleccionado="recibirGif" />
                         <svg
                             @click="enviarComentario"
                             class="pe-2"
@@ -62,18 +83,6 @@
                         </svg>
                     </div>
                 </div>
-            </div>
-            <div
-                class="col-12 p-3 position-relative"
-                v-if="gifSeleccionado">
-                <img
-                    :src="gifSeleccionado"
-                    class="w-100">
-                <button
-                    type="button"
-                    class="btn-close bg-white shadow position-absolute top-0 end-0 m-4 p-2 rounded-circle"
-                    aria-label="Close"
-                    @click="gifSeleccionado=null" />
             </div>
         </div>
         <!-- Modal Eliminar comentario -->
@@ -265,8 +274,7 @@ export default {
             gifSeleccionado: null
         }
     },
-    props: ["bestComments"],
-    inject: ["postId"],
+    props: ["bestComments", "postId"],
     emits: ["contadorActualizado"],
     mounted () {
         axios({
@@ -343,7 +351,9 @@ export default {
                     this.gifSeleccionado = null
                     this.$emit("contadorActualizado", response.data.comments_count)
                 })
-
+                .then(() => {
+                    this.$refs.commentsDiv.scrollTop = this.$refs.commentsDiv.scrollHeight
+                })
                 .catch((error) => {
                     const indices = Object.keys(error.response.data.errors)
                     if (indices.length > 0) {
@@ -359,6 +369,9 @@ export default {
                 .then((response) => {
                     this.comentariosPaginador = response.data.links
                     this.comentarios = this.comentarios.concat(response.data.data)
+                })
+                .then(() => {
+                    this.$refs.commentsDiv.scrollTop = 0
                 })
                 .catch((response) => {
                     console.log(response)
@@ -486,5 +499,25 @@ export default {
 }
 .grupo-comentarios-move {
   transition: transform 0.5s ease-out;
+}
+
+/* custom scroll */
+.commentsDiv::-webkit-scrollbar {
+    width: 8px;
+}
+.commentsDiv::-webkit-scrollbar-thumb {
+    background-color: #0004;
+    border-radius: 4px;
+}
+.commentsDiv::-webkit-scrollbar-thumb:hover {
+    background-color: #0006;
+}
+
+.commentsDiv::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+}
+
+.commentsDiv::-webkit-scrollbar-track-piece:end {
+    background: transparent;
 }
 </style>

@@ -194,8 +194,7 @@ export default {
             showLikes: false,
         }
     },
-    props: ["comentario"],
-    inject: ["postId"],
+    props: ["comentario", "postId"],
     mounted () {
         this.miLike = this.comentario.myLike
         this.contador = this.comentario.contador
