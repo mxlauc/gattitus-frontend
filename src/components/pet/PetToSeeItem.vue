@@ -22,7 +22,7 @@
     </div>
 </template>
 <script>
-import ImagePreloader from "../ImagePreloader.vue"
+import ImagePreloader from "../images/ImagePreloader.vue"
 export default {
     components: { ImagePreloader },
     props: {

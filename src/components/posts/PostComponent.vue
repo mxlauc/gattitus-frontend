@@ -74,11 +74,11 @@
 </template>
 <script>
 
-import ImagePreloader from "./ImagePreloader.vue"
-import PostMenu from "./posts/PostMenu.vue"
-import PetIconList from "./posts/PetIconList.vue"
+import ImagePreloader from "../images/ImagePreloader.vue"
+import PostMenu from "./PostMenu.vue"
+import PetIconList from "./PetIconList.vue"
 import ReactAndCommentButtons from "@/components/posts/ReactAndCommentButtons.vue"
-import BestComments from "./BestComments.vue"
+import BestComments from "../comments/BestComments.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {

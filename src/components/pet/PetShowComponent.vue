@@ -134,7 +134,7 @@
 import Masonry from "masonry-layout"
 import { useMainStore } from "@/stores/mainStore"
 import axios from "axios"
-import ImagePreloader from "../ImagePreloader.vue"
+import ImagePreloader from "../images/ImagePreloader.vue"
 import StickyMiddleColumn from "../StickyMiddleColumn.vue"
 export default {
     components: {

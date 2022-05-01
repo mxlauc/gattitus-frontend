@@ -49,7 +49,7 @@
 <script>
 
 import UserHeaderComponent from "../UserHeaderComponent.vue"
-import PetItemComponent from "../PetItemComponent.vue"
+import PetItemComponent from "../pet/PetItemComponent.vue"
 import { useMainStore } from "@/stores/mainStore"
 import axios from "axios"
 

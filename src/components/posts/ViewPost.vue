@@ -80,8 +80,8 @@
     </div>
 </template>
 <script>
-import SeccionComentariosComponent from "../SeccionComentariosComponent.vue"
-import ImagePreloader from "@/components/ImagePreloader.vue"
+import SeccionComentariosComponent from "@/components/comments/SeccionComentariosComponent.vue"
+import ImagePreloader from "@/components/images/ImagePreloader.vue"
 import PetIconList from "@/components/posts/PetIconList.vue"
 import PostMenu from "@/components/posts/PostMenu.vue"
 import ReactAndCommentButtons from "./ReactAndCommentButtons.vue"

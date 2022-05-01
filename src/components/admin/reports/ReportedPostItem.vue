@@ -39,7 +39,7 @@
         v-if="applyPunishment===true" />
 </template>
 <script>
-import ImagePreloader from "@/components/ImagePreloader.vue"
+import ImagePreloader from "@/components/images/ImagePreloader.vue"
 import ApplyPunishment from "@/components/admin/reports/ApplyPunishment.vue"
 
 export default {

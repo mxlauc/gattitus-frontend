@@ -15,7 +15,7 @@ const routes = [
                 children: [
                     {
                         path: "/posts/:id/fullscreen",
-                        component: () => import(/* webpackChunkName: "postfullscreen" */ "../components/ImageFullscreen.vue"),
+                        component: () => import(/* webpackChunkName: "postfullscreen" */ "../components/images/ImageFullscreen.vue"),
                     },
                 ]
             },
@@ -83,7 +83,7 @@ const routes = [
     },
     {
         path: "/landing",
-        component: () => import(/* webpackChunkName: "landing" */ "../components/LandingPageComponent.vue"),
+        component: () => import(/* webpackChunkName: "landing" */ "../components/sections/LandingPageComponent.vue"),
         meta: {
             title: "Gattitus | Sube una foto de tu gato hoy",
         }

@@ -166,7 +166,7 @@
 </template>
 <script>
 import HeaderComponent from "../components/HeaderComponent.vue"
-import CreatePetComponent from "../components/CreatePetComponent.vue"
+import CreatePetComponent from "../components/pet/CreatePetComponent.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {

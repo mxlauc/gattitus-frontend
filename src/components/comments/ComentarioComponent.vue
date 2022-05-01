@@ -172,7 +172,7 @@
 <script>
 
 /* import LikesComponent from './LikesComponent.vue'; */
-import ImagePreloader from "./ImagePreloader.vue"
+import ImagePreloader from "@/components/images/ImagePreloader.vue"
 import axios from "axios"
 import { useMainStore } from "@/stores/mainStore"
 

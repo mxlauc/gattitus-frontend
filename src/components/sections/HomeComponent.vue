@@ -112,8 +112,8 @@
     </div>
 </template>
 <script>
-import SimplePostComponent from "../PostComponent.vue"
-import ImagePreloader from "@/components/ImagePreloader.vue"
+import SimplePostComponent from "../posts/PostComponent.vue"
+import ImagePreloader from "@/components/images/ImagePreloader.vue"
 import UserToFollowList from "../user/UserToFollowList.vue"
 import PetToSeeList from "../pet/PetToSeeList.vue"
 import { useMainStore } from "@/stores/mainStore"
