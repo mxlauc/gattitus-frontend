@@ -8,8 +8,11 @@
                 height: 600px; object-fit: contain; background-color: #000;">
         </div>
         <div class="col-5">
-            <div class="card shadow-sm">
-                <div class="card-body p-0">
+            <div
+                class="card shadow-sm"
+                style="height: calc(100vh - 120px); ">
+                <div
+                    class="card-body p-0 container-x">
                     <div class="row g-0 p-3 pb-0">
                         <div class="col-auto">
                             <router-link :to="'/@' + post?.user.username">
@@ -69,7 +72,8 @@
                     <seccion-comentarios-component
                         v-if="post"
                         :post-id="post.id"
-                        :best-comments="post.comments" />
+                        :best-comments="post.comments"
+                        style="flex-grow: 1; overflow: hidden;" />
                 </div>
             </div>
         </div>
@@ -133,4 +137,24 @@ export default {
     border-radius: 0.8rem;
 }
 
+.container-x {
+    height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-fitcontents {
+  background-color: blue;
+}
+
+.flex-fillremaining {
+    flex: 1;
+    overflow: hidden;
+    background-color: red;
+}
+
+.flex-fillparent {
+    height: 90%;
+  background-color: green;
+}
 </style>

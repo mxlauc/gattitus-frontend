@@ -9,7 +9,7 @@
             :aspect="1"
             class="shadow-sm pet-icon" />
         <template #content>
-            <div class="pet-card-popper">
+            <div class="pet-card-popper m-3">
                 <div class="row g-2">
                     <div class="col-auto">
                         <router-link
@@ -37,7 +37,7 @@
                 </div>
                 <router-link
                     :to="'/pets/' + pet.slug"
-                    class="btn btn-primary mt-2 float-end">
+                    class="btn btn-primary mt-2">
                     Ver más fotos
                 </router-link>
             </div>
@@ -79,16 +79,4 @@ export default {
 .pet-card-popper{
     min-width: 300px;
 }
-
- :root {
-    --popper-theme-background-color: #fff;
-    --popper-theme-background-color-hover: #fff;
-
-    --popper-theme-border-width: 0px;
-    --popper-theme-border-style: solid;
-    --popper-theme-border-radius: 6px;
-
-    --popper-theme-padding: 20px;
-    --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, .5);
-  }
 </style>

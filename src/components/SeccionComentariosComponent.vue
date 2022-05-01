@@ -1,243 +1,245 @@
 <template>
     <div>
-        <hr
-            class="my-0"
-            v-if="comentarios?.length">
-        <a
-            v-if="comentariosPaginador && comentariosPaginador.next"
-            class="d-block text-muted text-center py-2 fw-bold ms-2"
-            style="font-size: 12px; text-decoration:none;"
-            role="button"
-            v-wave
-            @click="cargarMasComentarios">
-            {{ $t('previousComments') }}
-        </a>
-        <hr
-            class="my-0"
-            v-if="comentariosPaginador && comentariosPaginador.next">
-        <div
-            style="height: 350px; overflow: hidden auto;  scroll-behavior: smooth;"
-            class="px-3 commentsDiv"
-            ref="commentsDiv">
-            <transition-group name="grupo-comentarios">
-                <comentario-component
-                    :post-id="postId"
-                    v-for="comentario in comentarios?.slice().reverse()"
-                    :key="comentario.id"
-                    :comentario="comentario" />
-            </transition-group>
-        </div>
-
-        <div class="row g-0">
+        <div style="height: 100%; display: flex; flex-direction: column;">
+            <hr
+                class="my-0"
+                v-if="comentarios?.length">
+            <a
+                v-if="comentariosPaginador && comentariosPaginador.next"
+                class="d-block text-muted text-center py-2 fw-bold ms-2"
+                style="font-size: 12px; text-decoration:none;"
+                role="button"
+                v-wave
+                @click="cargarMasComentarios">
+                {{ $t('previousComments') }}
+            </a>
+            <hr
+                class="my-0"
+                v-if="comentariosPaginador && comentariosPaginador.next">
             <div
-                class="col-auto position-relative mx-auto"
-                v-if="gifSeleccionado">
-                <img
-                    :src="gifSeleccionado"
-                    style="height: 100px; border-radius: 5px;">
-                <button
-                    type="button"
-                    class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle"
-                    aria-label="Close"
-                    @click="gifSeleccionado=null" />
+                style="overflow: hidden auto;  scroll-behavior: smooth; flex-grow: 1;"
+                class="ps-3 pe-0 commentsDiv"
+                ref="commentsDiv">
+                <transition-group name="grupo-comentarios">
+                    <comentario-component
+                        :post-id="postId"
+                        v-for="comentario in comentarios?.slice().reverse()"
+                        :key="comentario.id"
+                        :comentario="comentario" />
+                </transition-group>
             </div>
-        </div>
 
-        <div
-            class="row g-0 py-2 px-3"
-            v-if="userLogged">
-            <div class="col col-auto">
-                <image-preloader
-                    :image="userLogged?.image"
-                    :aspect="1"
-                    class="imagenUsuario shadow" />
+            <div class="row g-0">
+                <div
+                    class="col-auto position-relative mx-auto"
+                    v-if="gifSeleccionado">
+                    <img
+                        :src="gifSeleccionado"
+                        style="height: 100px; border-radius: 5px;">
+                    <button
+                        type="button"
+                        class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle"
+                        aria-label="Close"
+                        @click="gifSeleccionado=null" />
+                </div>
             </div>
-            <div class="col ms-2">
-                <div class="row g-0 contenedorTextarea">
-                    <div class="col">
-                        <span
-                            :id="'cajaTexto' + postId"
-                            class="textarea text-break"
-                            contenteditable
-                            ref="textarea"
-                            @keydown="onKeyDown" />
-                    </div>
-                    <div
-                        class="col col-auto guide-4"
-                        style="color: #f50">
-                        <gif-picker-component
-                            :post-id="postId"
-                            @gif-seleccionado="recibirGif" />
-                        <svg
-                            @click="enviarComentario"
-                            class="pe-2"
-                            fill="currentColor"
-                            role="button"
-                            width="35"
-                            height="35"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z"
-                                fill-rule="evenodd"
-                                stroke="none" />
-                        </svg>
+
+            <div
+                class="row g-0 py-2 px-3"
+                v-if="userLogged">
+                <div class="col col-auto">
+                    <image-preloader
+                        :image="userLogged?.image"
+                        :aspect="1"
+                        class="imagenUsuario shadow" />
+                </div>
+                <div class="col ms-2">
+                    <div class="row g-0 contenedorTextarea">
+                        <div class="col">
+                            <span
+                                :id="'cajaTexto' + postId"
+                                class="textarea text-break"
+                                contenteditable
+                                ref="textarea"
+                                @keydown="onKeyDown" />
+                        </div>
+                        <div
+                            class="col col-auto guide-4"
+                            style="color: #f50">
+                            <gif-picker-component
+                                :post-id="postId"
+                                @gif-seleccionado="recibirGif" />
+                            <svg
+                                @click="enviarComentario"
+                                class="pe-2"
+                                fill="currentColor"
+                                role="button"
+                                width="35"
+                                height="35"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z"
+                                    fill-rule="evenodd"
+                                    stroke="none" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Modal Eliminar comentario -->
-        <div
-            v-if="userLogged"
-            class="modal fade"
-            :id="'eliminarComentarioModal' + postId"
-            tabindex="-1"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            {{ $t('deleteComment') }}
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close" />
-                    </div>
-                    <div class="modal-body">
-                        <p class="mb-3">
-                            {{ $t('rusDeleteComment') }}
-                        </p>
-                        <div class="row g-0">
-                            <div class="col col-auto py-1 ps-2">
-                                <img
-                                    class="imagenUsuario"
-                                    :src="
-                                        comentarioAEliminar?.user.avatar
-                                    ">
-                            </div>
-                            <div class="col ps-2 pt-1 pb-1">
-                                <div
-                                    class="contenedorTextarea text-break p-2"
-                                    style="font-size: 12px">
-                                    <label class="fw-bold">{{
-                                        comentarioAEliminar?.user.name
-                                    }}</label>
-                                    <p class="m-0">
-                                        {{ comentarioAEliminar?.description }}
-                                    </p>
+            <!-- Modal Eliminar comentario -->
+            <div
+                v-if="userLogged"
+                class="modal fade"
+                :id="'eliminarComentarioModal' + postId"
+                tabindex="-1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                {{ $t('deleteComment') }}
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close" />
+                        </div>
+                        <div class="modal-body">
+                            <p class="mb-3">
+                                {{ $t('rusDeleteComment') }}
+                            </p>
+                            <div class="row g-0">
+                                <div class="col col-auto py-1 ps-2">
                                     <img
-                                        :src="comentarioAEliminar?.gif_url"
-                                        v-if="comentarioAEliminar?.gif_url"
-                                        class="img-fluid rounded">
+                                        class="imagenUsuario"
+                                        :src="
+                                            comentarioAEliminar?.user.avatar
+                                        ">
+                                </div>
+                                <div class="col ps-2 pt-1 pb-1">
+                                    <div
+                                        class="contenedorTextarea text-break p-2"
+                                        style="font-size: 12px">
+                                        <label class="fw-bold">{{
+                                            comentarioAEliminar?.user.name
+                                        }}</label>
+                                        <p class="m-0">
+                                            {{ comentarioAEliminar?.description }}
+                                        </p>
+                                        <img
+                                            :src="comentarioAEliminar?.gif_url"
+                                            v-if="comentarioAEliminar?.gif_url"
+                                            class="img-fluid rounded">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-x"
-                                viewBox="0 0 16 16">
-                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                            </svg>
-                            {{ $t('cancel') }}
-                        </button>
-                        <button
-                            type="button"
-                            class="btn btn-danger"
-                            @click="eliminarComentario">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-check2"
-                                viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                            </svg>
-                            {{ $t('delete') }}
-                        </button>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-x"
+                                    viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                                {{ $t('cancel') }}
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-danger"
+                                @click="eliminarComentario">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-check2"
+                                    viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                                </svg>
+                                {{ $t('delete') }}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Modal Editar comentario -->
-        <div
-            v-if="userLogged"
-            class="modal fade"
-            :id="'editarComentarioModal' + postId"
-            tabindex="-1"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            {{ $t('editComment') }}
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close" />
-                    </div>
-                    <div class="modal-body">
-                        <div class="row g-0">
-                            <div class="col col-auto py-2 ps-2">
-                                <img
-                                    :src="comentarioAEditar?.user.avatar"
-                                    class="imagenUsuario">
-                            </div>
-                            <div class="col p-2">
-                                <div class="contenedorTextarea">
-                                    <span
-                                        class="textarea text-break"
-                                        contenteditable
-                                        ref="textareaEditar">
-                                        {{ comentarioAEditar?.description }}
-                                    </span>
+            <!-- Modal Editar comentario -->
+            <div
+                v-if="userLogged"
+                class="modal fade"
+                :id="'editarComentarioModal' + postId"
+                tabindex="-1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                {{ $t('editComment') }}
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close" />
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-0">
+                                <div class="col col-auto py-2 ps-2">
+                                    <img
+                                        :src="comentarioAEditar?.user.avatar"
+                                        class="imagenUsuario">
+                                </div>
+                                <div class="col p-2">
+                                    <div class="contenedorTextarea">
+                                        <span
+                                            class="textarea text-break"
+                                            contenteditable
+                                            ref="textareaEditar">
+                                            {{ comentarioAEditar?.description }}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-x"
-                                viewBox="0 0 16 16">
-                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                            </svg>
-                            {{ $t('cancel') }}
-                        </button>
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            @click="editarComentario">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-check2"
-                                viewBox="0 0 16 16">
-                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                            </svg>
-                            {{ $t('save') }}
-                        </button>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-x"
+                                    viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                                {{ $t('cancel') }}
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                @click="editarComentario">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-check2"
+                                    viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                                </svg>
+                                {{ $t('save') }}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
