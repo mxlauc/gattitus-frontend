@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="row g-0">
+        <div class="row g-0 border-top pt-1">
             <div
-                class="col-auto position-relative mx-auto"
+                class="col-auto position-relative mx-auto "
                 v-if="gifSeleccionado">
                 <img
                     :src="gifSeleccionado"
@@ -16,7 +16,7 @@
         </div>
 
         <div
-            class="row g-0 py-2"
+            class="row g-0 pb-2 pt-1"
             v-if="userLogged">
             <div class="col col-auto">
                 <image-preloader
