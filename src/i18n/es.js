@@ -20,6 +20,7 @@ const messages = {
     search: "Buscar",
     like: "Me encanta",
     peopleLikedComment: "These people liked this comment",
+    previousComments: "Comentarios anteriores",
 
 }
 

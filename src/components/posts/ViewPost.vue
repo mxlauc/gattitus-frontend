@@ -72,7 +72,7 @@
                     <seccion-comentarios-component
                         v-if="post"
                         :post-id="post.id"
-                        :best-comments="post.comments"
+                        @contadorActualizado="contadorActualizado"
                         style="flex-grow: 1; overflow: hidden;" />
                 </div>
             </div>
@@ -120,6 +120,9 @@ export default {
             })
     },
     methods: {
+        contadorActualizado (count) {
+            this.comments_count = count
+        },
         back () {
             this.$router.replace("/")
         },
