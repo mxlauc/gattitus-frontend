@@ -199,10 +199,10 @@ export default {
         this.miLike = this.comentario.myLike
         this.contador = this.comentario.contador
 
-        const myModalEl = document.getElementById("likesComment" + this.comentario?.id)
+        /* const myModalEl = document.getElementById("likesComment" + this.comentario?.id)
         myModalEl.addEventListener("shown.bs.modal", () => {
             this.showLikes = true
-        })
+        }) */
     },
     methods: {
         like () {

@@ -65,29 +65,29 @@
                 :comments-count="comments_count"
                 @react="react" />
 
-            <seccion-comentarios-component
-                :post-id="this.post.id"
-                :best-comments="post.comments"
+            <BestComments
+                :post-id="post.id"
+                :best-comments="post.best_comments"
                 @contadorActualizado="contadorActualizado" />
         </div>
     </div>
 </template>
 <script>
-import SeccionComentariosComponent from "./SeccionComentariosComponent.vue"
+
 import ImagePreloader from "./ImagePreloader.vue"
 import PostMenu from "./posts/PostMenu.vue"
 import PetIconList from "./posts/PetIconList.vue"
 import ReactAndCommentButtons from "@/components/posts/ReactAndCommentButtons.vue"
-
+import BestComments from "./BestComments.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
     components: {
-        SeccionComentariosComponent,
         ImagePreloader,
         PostMenu,
         PetIconList,
         ReactAndCommentButtons,
+        BestComments,
     },
     setup () {
         const mainStore = useMainStore()

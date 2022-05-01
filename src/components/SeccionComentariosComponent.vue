@@ -455,33 +455,6 @@ export default {
 </script>
 
 <style scoped>
-.imagenUsuario {
-    border-radius: 30%;
-    height: 35px;
-}
-.contenedorTextarea{
-    background-color: #f9f9f9;
-    border: 1px #eee solid;
-    border-radius: 12px;
-}
-.textarea {
-
-    outline: none;
-    font-family: inherit;
-    font-size: inherit;
-    padding: 8px 10px;
-    display: block;
-
-    resize: none;
-    min-height: 35px;
-
-    font-size: 15px;
-}
-
-.textarea[contenteditable]:empty::before {
-    content: "Escribe un comentario...";
-    color: gray;
-}
 
 .grupo-comentarios-enter-active {
   transition: all 0.8s ease-in-out;
