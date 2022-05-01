@@ -28,7 +28,6 @@
                 <div class="row g-0 contenedorTextarea">
                     <div class="col">
                         <span
-                            :id="'cajaTexto' + postId"
                             class="textarea text-break"
                             contenteditable
                             ref="textarea"

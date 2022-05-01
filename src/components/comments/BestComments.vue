@@ -12,6 +12,7 @@
     <hr class="my-0">
     <transition-group name="grupo-comentarios">
         <comentario-component
+            :hide-options="true"
             :post-id="postId"
             v-for="comentario in comments"
             :key="comentario.id"

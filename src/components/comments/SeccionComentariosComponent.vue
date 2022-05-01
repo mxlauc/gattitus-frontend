@@ -25,7 +25,10 @@
                         :post-id="postId"
                         v-for="comentario in comentarios?.slice().reverse()"
                         :key="comentario.id"
-                        :comentario="comentario" />
+                        :comentario="comentario"
+                        @comment-deleted="commentDeleted"
+                        @contador-actualizado="contadorActualizado"
+                        @comment-edited="commentEdited" />
                 </transition-group>
             </div>
             <NewComment
@@ -95,6 +98,16 @@ export default {
         },
         contadorActualizado (c) {
             this.$emit("contadorActualizado", c)
+        },
+        commentDeleted (id) {
+            const indice = this.comentarios.findIndex((comentario) =>
+                comentario.id === id
+            )
+            this.comentarios.splice(indice, 1)
+        },
+        commentEdited (c) {
+            const comment_f = this.comentarios.find((comentario) => comentario.id === c.id)
+            comment_f.description = c.description
         },
     },
     computed: {
