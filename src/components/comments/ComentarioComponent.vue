@@ -179,8 +179,8 @@ export default {
     props: ["comentario", "postId", "hideOptions"],
     emits: ["commentDeleted", "commentEdited", "contadorActualizado"],
     mounted () {
-        this.miLike = this.comentario.myLike
-        this.contador = this.comentario.contador
+        this.miLike = this.comentario.my_reaction
+        this.contador = this.comentario.reactions_count
 
         /* const myModalEl = document.getElementById("likesComment" + this.comentario?.id)
         myModalEl.addEventListener("shown.bs.modal", () => {
@@ -189,10 +189,10 @@ export default {
     },
     methods: {
         like () {
-            axios.post(`/comments/${this.comentario.id}/likes`)
+            axios.post(`${this.mainStore.backendUrl}/api/comments/${this.comentario.id}/reactions`)
                 .then(response => {
-                    this.miLike = response.data.miLike
-                    this.contador = response.data.count
+                    this.miLike = response.data.own_reaction
+                    this.contador = response.data.reactions_count
                 })
                 .catch(response => {
                     console.log(response.data)
