@@ -68,7 +68,7 @@
             <BestComments
                 :post-id="post.id"
                 :best-comments="post.best_comments"
-                @contadorActualizado="contadorActualizado" />
+                @contador-actualizado="contadorActualizado" />
         </div>
     </div>
 </template>

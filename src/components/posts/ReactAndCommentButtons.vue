@@ -4,7 +4,12 @@
             <span class="text-muted">{{ reactionsCount }} Reacciones</span>
         </div>
         <div class="col text-center">
-            <span class="text-muted">{{ commentsCount }} Comentarios</span>
+            <router-link
+                :to="'/posts/' + id"
+                class="text-muted text-decoration-none"
+                role="button">
+                {{ commentsCount }} Comentarios
+            </router-link>
         </div>
     </div>
     <hr

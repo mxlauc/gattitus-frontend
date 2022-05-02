@@ -1,15 +1,5 @@
 <template>
     <hr class="my-0">
-    <router-link
-        :to="'/posts/' + postId"
-        v-if="comments"
-        class="d-block text-muted text-center py-2 fw-bold"
-        style="font-size: 12px; text-decoration:none;"
-        role="button"
-        v-wave>
-        {{ $t('previousComments') }}
-    </router-link>
-    <hr class="my-0">
     <transition-group name="grupo-comentarios">
         <comentario-component
             :hide-options="true"
