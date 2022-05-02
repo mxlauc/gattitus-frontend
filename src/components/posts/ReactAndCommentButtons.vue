@@ -18,6 +18,7 @@
         <div class="col">
             <div
                 class="text-center py-3 guide-3"
+                :class="{'text-primary': myReaction}"
                 @click="react"
                 v-wave>
                 <svg
