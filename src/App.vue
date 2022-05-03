@@ -152,4 +152,24 @@ body{
         opacity: 0.5 !important;
     }
 }
+
+/* custom scroll */
+.custom-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #0004;
+    border-radius: 4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #0006;
+}
+
+.custom-scroll::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+}
 </style>

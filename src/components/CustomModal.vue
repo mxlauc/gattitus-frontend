@@ -11,7 +11,9 @@
                     <slot name="title" />
                 </h3>
                 <slot />
-                <div class="row">
+                <div
+                    class="row"
+                    v-if="!hideButtons">
                     <div class="col text-center">
                         <button
                             @click="$emit('cancel')"
@@ -41,6 +43,7 @@ export default {
     unmounted () {
         document.body.style.overflow = null
     },
+    props: ["hideButtons"],
     emits: ["cancel", "ok"],
 }
 </script>

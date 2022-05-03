@@ -1,6 +1,9 @@
 <template>
     <div class="row g-0 py-2">
-        <div class="col text-center">
+        <div
+            class="col text-center"
+            role="button"
+            @click="showReactions = true">
             <span class="text-muted">{{ reactionsCount }} Reacciones</span>
         </div>
         <div class="col text-center">
@@ -63,13 +66,21 @@
             </svg>
             Comentar
         </div>
+        <ShowReactionsDialog
+            v-if="showReactions"
+            @close="showReactions=false"
+            :url="mainStore.backendUrl + '/api/posts/' + id + '/reactions'" />
     </div>
 </template>
 <script>
 import axios from "axios"
+import ShowReactionsDialog from "../ShowReactionsDialog.vue"
 import { useMainStore } from "@/stores/mainStore"
 
 export default {
+    components: {
+        ShowReactionsDialog,
+    },
     setup () {
         const mainStore = useMainStore()
         return {
@@ -79,6 +90,7 @@ export default {
     data () {
         return {
             reactioning: false,
+            showReactions: false,
         }
     },
     props: ["myReaction", "id", "reactionsCount", "commentsCount"],

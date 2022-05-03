@@ -18,7 +18,7 @@
                 v-if="comentariosPaginador && comentariosPaginador.next">
             <div
                 style="overflow: hidden auto;  scroll-behavior: smooth; flex-grow: 1;"
-                class="ps-3 pe-0 commentsDiv"
+                class="ps-3 pe-0 custom-scroll"
                 ref="commentsDiv">
                 <transition-group name="grupo-comentarios">
                     <comentario-component
@@ -138,25 +138,5 @@ export default {
 }
 .grupo-comentarios-move {
   transition: transform 0.5s ease-out;
-}
-
-/* custom scroll */
-.commentsDiv::-webkit-scrollbar {
-    width: 8px;
-}
-.commentsDiv::-webkit-scrollbar-thumb {
-    background-color: #0004;
-    border-radius: 4px;
-}
-.commentsDiv::-webkit-scrollbar-thumb:hover {
-    background-color: #0006;
-}
-
-.commentsDiv::-webkit-scrollbar-track-piece:start {
-    background: transparent;
-}
-
-.commentsDiv::-webkit-scrollbar-track-piece:end {
-    background: transparent;
 }
 </style>
