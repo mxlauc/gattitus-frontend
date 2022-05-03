@@ -29,6 +29,10 @@ const routes = [
                 component: () => import(/* webpackChunkName: "editor" */ "../components/posts/CreatePost.vue"),
             },
             {
+                path: "/posts/:id/edit",
+                component: () => import(/* webpackChunkName: "editor" */ "../components/posts/EditPost.vue"),
+            },
+            {
                 path: "/posts/:id",
                 component: () => import(/* webpackChunkName: "posts" */ "../components/posts/ViewPost.vue"),
             },

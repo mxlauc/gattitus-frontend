@@ -85,7 +85,7 @@
                                             <path
                                                 d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                         </svg>
-                                        <span>{{ $t('profile') }}</span>
+                                        <span>Usuarios</span>
                                     </li>
                                 </router-link>
                                 <router-link :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'">
@@ -100,7 +100,7 @@
                                             <path
                                                 d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                         </svg>
-                                        <span>{{ $t('profile') }}</span>
+                                        <span>Gatos</span>
                                     </li>
                                 </router-link>
                                 <router-link :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'">
