@@ -1,5 +1,3 @@
-import * as bootstrap from "bootstrap"
-
 const mixin = {
     methods: {
         timeAgo (date) {
@@ -25,10 +23,6 @@ const mixin = {
 
             return this.$t("date", { year: y, month: m, day: d, hours: h % 12, minutes: mm < 10 ? "0" + mm : mm, ampm: h > 11 ? "PM" : "AM" })
         },
-        mostrarLoginModal () {
-            const modal = bootstrap.Modal.getOrCreateInstance(document.querySelector("#loginModal"))
-            modal.show()
-        }
     }
 }
 
