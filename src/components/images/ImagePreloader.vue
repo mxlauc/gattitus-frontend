@@ -2,6 +2,7 @@
     <div
         class="overflow-hidden"
         style="display:inline-table; max-width:100%"
+        ref="background"
         :style="{aspectRatio: aspectRatio,
                  background: `linear-gradient(45deg,
         ${image?.meta_data?.color_bl} 0%, ${image?.meta_data?.color_tr} 100%)`,
@@ -10,16 +11,17 @@
         <img
             class="image-preloader img-fluid w-100 opacity-0"
             :src="image?.[option ?? 'url_sm'] ?? image"
-            :style="{aspectRatio: aspectRatio}"
+            :style="{aspectRatio: aspectRatio, objectFit: (objectFit ? objectFit : null)}"
             @load="onLoadImage">
     </div>
 </template>
 <script>
 export default {
-    props: ["image", "option", "aspect", "width", "height"],
+    props: ["image", "option", "aspect", "objectFit", "width", "height"],
     methods: {
         onLoadImage (e) {
             e.currentTarget.classList.remove("opacity-0")
+            this.$refs.background.style.background = "#000"
         },
     },
     computed: {

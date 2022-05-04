@@ -1,11 +1,13 @@
 <template>
     <div class="row">
         <div class="col-7">
-            <img
-                :src="post?.simple_post.image.url_xl"
-                alt=""
-                style="width: 100%;
-                height: 600px; object-fit: contain; background-color: #000;">
+            <ImagePreloader
+                :aspect="post?.simple_post.aspect_ratio"
+                :image="post?.simple_post.image"
+                option="url_xl"
+                object-fit="contain"
+                style="width: 100%; height: 600px; display: block;"
+                class="rounded-5 w-100 shadow-sm" />
         </div>
         <div class="col-5">
             <div
@@ -72,7 +74,7 @@
                     <seccion-comentarios-component
                         v-if="post"
                         :post-id="post.id"
-                        @contadorActualizado="contadorActualizado"
+                        @contador-actualizado="contadorActualizado"
                         style="flex-grow: 1; overflow: hidden;" />
                 </div>
             </div>
