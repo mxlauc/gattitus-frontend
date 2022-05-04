@@ -80,7 +80,7 @@ body{
     margin-left: 20px;
     font-weight: bold;
 }
-.options-sidebar  li:hover, .options-sidebar-active{
+.options-sidebar  li:hover, .options-sidebar-active li{
     background-color: #f90;
     color: #fff;
 }

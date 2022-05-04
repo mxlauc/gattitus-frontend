@@ -39,8 +39,10 @@
                         </router-link>
                         <div class="card shadow mt-3 p-2">
                             <ul class="options-sidebar mb-0">
-                                <router-link to="/">
-                                    <li class="options-sidebar-active">
+                                <router-link
+                                    to="/"
+                                    exact-active-class="options-sidebar-active">
+                                    <li>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="25"
@@ -57,7 +59,9 @@
                                         <span>{{ $t('home') }}</span>
                                     </li>
                                 </router-link>
-                                <router-link :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'">
+                                <router-link
+                                    :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'"
+                                    active-class="options-sidebar-active">
                                     <li>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +77,9 @@
                                     </li>
                                 </router-link>
 
-                                <router-link :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'">
+                                <router-link
+                                    :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'"
+                                    active-class="options-sidebar-active">
                                     <li>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +94,9 @@
                                         <span>Usuarios</span>
                                     </li>
                                 </router-link>
-                                <router-link :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'">
+                                <router-link
+                                    :to="'/pets'"
+                                    active-class="options-sidebar-active">
                                     <li>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
