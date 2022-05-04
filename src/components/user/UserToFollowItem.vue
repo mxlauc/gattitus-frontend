@@ -8,7 +8,7 @@
                     aspect="1" />
             </router-link>
         </div>
-        <div class="col">
+        <div class="col text-start">
             <router-link
                 :to="'/@' + user.username"
                 class="text-decoration-none">

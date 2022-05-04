@@ -65,43 +65,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 text-start">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <h2>👨‍⚕️</h2>
-                                </div>
-                                <div class="col">
-                                    <h6 class="mb-0">
-                                        Esterilización
-                                    </h6>
-                                    <h5 class="mb-0 fw-bold">
-                                        Hace dos días
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 text-start">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <h2>👨‍⚕️</h2>
-                                </div>
-                                <div class="col">
-                                    <h6 class="mb-0">
-                                        Esterilización
-                                    </h6>
-                                    <h5 class="mb-0 fw-bold">
-                                        Hace dos días
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="card mt-3">
                 <div class="card-body">
-                    hola como estan
+                    <UserToFollowItem
+                        v-if="pet"
+                        :user="pet.user" />
                 </div>
             </div>
 
@@ -131,11 +103,13 @@ import { useMainStore } from "@/stores/mainStore"
 import axios from "axios"
 import StickyMiddleColumn from "../StickyMiddleColumn.vue"
 import PostThumbnail from "../posts/PostThumbnail.vue"
+import UserToFollowItem from "../user/UserToFollowItem.vue"
 
 export default {
     components: {
         StickyMiddleColumn,
         PostThumbnail,
+        UserToFollowItem,
     },
     setup () {
         const mainStore = useMainStore()
