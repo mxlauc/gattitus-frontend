@@ -30,7 +30,7 @@
                     <img
                         src="/img/icons/icon-72x72.png"
                         style="height: 40px     ; margin-top: -10px;">
-                    <span>Gattitus</span>
+                    <span class="title">Gattitus</span>
                 </router-link>
             </div>
             <div class="col d-none d-lg-block ms-3">

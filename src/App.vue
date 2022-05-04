@@ -41,7 +41,7 @@ body
 
 </style>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&family=Roboto&family=Rubik&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Itim&family=Nunito:wght@400;700;800&family=Roboto&family=Rubik&family=Varela+Round&display=swap');
 body{
     margin: 0px;
 }
@@ -171,5 +171,10 @@ body{
 
 .custom-scroll::-webkit-scrollbar-track-piece:end {
     background: transparent;
+}
+
+/* title */
+.title{
+    font-family: 'Itim', cursive;
 }
 </style>

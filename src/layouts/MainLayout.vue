@@ -35,7 +35,7 @@
                             <img
                                 src="/img/icons/icon-72x72.png"
                                 style="height: 40px; margin-top: -10px">
-                            <span>Gattitus</span>
+                            <span class="title">Gattitus</span>
                         </router-link>
                         <div class="card shadow mt-3 p-2">
                             <ul class="options-sidebar mb-0">
