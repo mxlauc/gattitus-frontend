@@ -9,12 +9,7 @@
                     class="col-6 col-sm-4"
                     v-for="p in posts"
                     :key="p.id">
-                    <ImagePreloader
-                        :image="p.simple_post.image"
-                        option="url_lg"
-                        class="pet-post-img"
-                        :width="'100%'"
-                        :aspect="p.simple_post.image.meta_data.aspect_ratio" />
+                    <PostThumbnail :post="p" />
                 </div>
             </div>
         </div>
@@ -134,12 +129,13 @@
 import Masonry from "masonry-layout"
 import { useMainStore } from "@/stores/mainStore"
 import axios from "axios"
-import ImagePreloader from "../images/ImagePreloader.vue"
 import StickyMiddleColumn from "../StickyMiddleColumn.vue"
+import PostThumbnail from "../posts/PostThumbnail.vue"
+
 export default {
     components: {
-        ImagePreloader,
         StickyMiddleColumn,
+        PostThumbnail,
     },
     setup () {
         const mainStore = useMainStore()
@@ -171,8 +167,3 @@ export default {
     },
 }
 </script>
-<style scoped>
-.pet-post-img{
-    border-radius: 6px;
-}
-</style>
