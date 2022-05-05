@@ -5,7 +5,7 @@
             class="w-100 form-control my-4"
             placeholder="Buscar mascota">
 
-        <div class="row g-3">
+        <div class="row g-3 mx-0">
             <div
                 class="col-6 col-sm-4 col-md-3 col-lg-2"
                 v-for="p in pets"
