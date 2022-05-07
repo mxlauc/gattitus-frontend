@@ -73,7 +73,23 @@ const routes = [
                         path: "reports/types/create",
                         component: () => import(/* webpackChunkName: "admin.users" */ "@/components/admin/reports/CreateReportType.vue"),
                     },
+                    {
+                        path: "pages",
+                        component: () => import(/* webpackChunkName: "admin.users" */ "@/components/admin/pages/PagesList.vue"),
+                    },
+                    {
+                        path: "pages/create",
+                        component: () => import(/* webpackChunkName: "admin.users" */ "@/components/admin/pages/PageCreate.vue"),
+                    },
+                    {
+                        path: "pages/:slug/edit",
+                        component: () => import(/* webpackChunkName: "admin.users" */ "@/components/admin/pages/PageEdit.vue"),
+                    },
                 ]
+            },
+            {
+                path: "pages/:slug",
+                component: () => import(/* webpackChunkName: "admin.users" */ "@/components/PageShow.vue"),
             },
             {
                 path: "/offline",

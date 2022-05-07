@@ -1,8 +1,25 @@
 <template>
-    <div class="card border-0 shadow-sm">
-        <div class="card-body pt-3">
-            <div id="editorjs" />
+    <button
+        class="btn btn-primary"
+        @click="save">
+        Guardar
+    </button>
+    <div class="row">
+        <div class="col-6">
+            <input
+                type="text"
+                placeholder="title"
+                ref="title">
         </div>
+        <div class="col-6">
+            <input
+                type="text"
+                placeholder="slug"
+                ref="slug">
+        </div>
+    </div>
+    <div class="card">
+        <div id="editorjs" />
     </div>
 </template>
 <script>
@@ -11,8 +28,8 @@ import Header from "@editorjs/header"
 import ImageTool from "@editorjs/image"
 import List from "@editorjs/list"
 
-import axios from "axios"
 import { useMainStore } from "@/stores/mainStore"
+import axios from "axios"
 
 export default {
     setup () {
@@ -29,8 +46,7 @@ export default {
     mounted () {
         const methodUploader = this.uploadByFile
         this.editor = new EditorJS({
-            readOnly: true,
-            data: { time: 1651716698371, blocks: [{ id: "XrtVzQGpjW", type: "header", data: { text: "Hola como estan todos ustedes", level: 2 } }, { id: "s0H35YXEAM", type: "paragraph", data: { text: "As described in&nbsp;<a href=\"https://editorjs.io/base-concepts\">Base Concepts</a>, each Block in Editor.js is provided by a Plugin.&nbsp;There are simple external scripts with their own logic.&nbsp;" } }, { id: "5edMkIX98I", type: "paragraph", data: { text: "There is the only Paragraph block already included in Editor.js. Probably you want to use several Block Tools that should be installed and connected." } }, { id: "etnLnMfFQk", type: "paragraph", data: { text: "You can find some available Blocks&nbsp;<a href=\"https://github.com/editor-js\">here</a>. Select the Blocks you need and follow the installation guide in their README.md files." } }, { id: "NvViyBiKK6", type: "paragraph", data: { text: "To get started using Editor.js, follow these steps:" } }, { id: "2gbqMrLPD1", type: "list", data: { style: "ordered", items: ["Install Editor.js&nbsp;", "Configure and initialise the Editor", "Install and connect Tools"] } }, { id: "mmERjCpqrm", type: "header", data: { text: "Installation", level: 4 } }, { id: "11PS5KRqpI", type: "paragraph", data: { text: "Choose the most usable method of getting Editor.js for you." } }, { id: "LvyZq5n22u", type: "list", data: { style: "ordered", items: ["Node package", "Source from CDN", "Local file from project"] } }, { id: "T0Yf8EIAbg", type: "header", data: { text: "Node.js package", level: 4 } }, { id: "TNMttrxbQX", type: "paragraph", data: { text: "Install the package via NPM&nbsp;or Yarn" } }, { id: "VT3xrabSPu", type: "image", data: { file: { url: "https://firebasestorage.googleapis.com/v0/b/proyectoxdxd-6a713.appspot.com/o/gattitus%2F2484623438347919%2Fimgs%2F18091faa1dd_d3d72caa-3166-4595-a54f-384671378bbe%2Flg.jpg?alt=media&token=3a2fc164-4383-4dfd-8cb6-8b807e80aea1" }, caption: "", withBorder: false, stretched: false, withBackground: false } }], version: "2.23.2" },
+            readOnly: false,
             tools: {
                 header: Header,
                 image: {
@@ -101,7 +117,6 @@ export default {
     },
     methods: {
         uploadByFile (file) {
-            this.editor.save().then(r => console.log(JSON.stringify(r)))
             return new Promise((resolve, reject) => {
                 const formData = new FormData()
                 formData.append("file", file)
@@ -123,7 +138,18 @@ export default {
                         reject(error)
                     })
             })
-        }
+        },
+        save () {
+            this.editor.save().then(r => console.log(JSON.stringify(r)))
+            this.editor.save().then(r => {
+                axios.post(`${this.mainStore.backendUrl}/api/pages`,
+                    {
+                        title: this.$refs.title.value,
+                        slug: this.$refs.slug.value,
+                        content: JSON.stringify(r),
+                    })
+            })
+        },
     }
 }
 </script>
