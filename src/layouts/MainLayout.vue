@@ -171,6 +171,83 @@
                                         <span>Más opciones</span>
                                     </li>
                                 </router-link>
+                                <hr>
+                                <router-link
+                                    to="/admin/users"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Usuarios
+                                        </span>
+                                    </li>
+                                </router-link>
+                                <router-link
+                                    to="/admin/reports/types"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Tipos de reporte
+                                        </span>
+                                    </li>
+                                </router-link>
+                                <router-link
+                                    to="/admin/reports/posts"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Publicaciones reportadas
+                                        </span>
+                                    </li>
+                                </router-link>
+                                <router-link
+                                    to="/admin/pages"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Pages list
+                                        </span>
+                                    </li>
+                                </router-link>
                             </ul>
                         </div>
                     </div>
