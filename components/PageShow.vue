@@ -4,29 +4,26 @@
     </div>
 </template>
 <script setup>
+import { useMainStore } from "~/store/mainStore"
+
+const mainStore = useMainStore()
+
 let EditorJS = Object
 let Header = Object
 let ImageTool = Object
 let List = Object
 if (process.client) {
-    EditorJS = await import("@editorjs/editorjs")
-    Header = await import("@editorjs/header")
-    ImageTool = await import("@editorjs/image")
-    List = await import("@editorjs/list")
+    EditorJS = (await import("@editorjs/editorjs")).default
+    Header = (await import("@editorjs/header")).default
+    ImageTool = (await import("@editorjs/image")).default
+    List = (await import("@editorjs/list")).default
 }
 </script>
 <script>
 
-import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
 
 export default {
-    setup () {
-        const mainStore = useMainStore()
-        return {
-            mainStore
-        }
-    },
     data () {
         return {
             editor: null,
@@ -38,16 +35,16 @@ export default {
             .then(response => {
                 this.page = response.data
 
-                this.editor = new EditorJS({
+                this.editor = new this.EditorJS({
                     readOnly: true,
                     data: JSON.parse(response.data.content),
                     tools: {
-                        header: Header,
+                        header: this.Header,
                         image: {
-                            class: ImageTool,
+                            class: this.ImageTool,
                         },
                         list: {
-                            class: List,
+                            class: this.List,
                             inlineToolbar: true,
                         }
 

@@ -46,7 +46,7 @@
 <script setup>
 let Masonry = Object
 if (process.client) {
-    Masonry = await import("masonry-layout")
+    Masonry = (await import("masonry-layout")).default
 }
 </script>
 <script>
@@ -109,7 +109,7 @@ export default {
                     sharedData.gifs = response.data.results
                 })
                 .then(() => {
-                    const msnry = new Masonry("#masonry-gifs-row" + this.postId, {
+                    const msnry = new this.Masonry("#masonry-gifs-row" + this.postId, {
                         percentPosition: true,
                     })
                     msnry.reloadItems()

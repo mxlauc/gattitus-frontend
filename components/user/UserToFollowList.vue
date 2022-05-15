@@ -27,9 +27,6 @@ export default {
     components: {
         UserToFollowItem,
     },
-    setup () {
-
-    },
     data () {
         return {
 

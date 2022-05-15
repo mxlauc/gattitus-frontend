@@ -98,13 +98,18 @@
     </div>
 </template>
 <script setup>
+import { useMainStore } from "~/store/mainStore"
+
+const mainStore = useMainStore()
+
 let Masonry = Object
 if (process.client) {
-    Masonry = await import("masonry-layout")
+    Masonry = (await import("masonry-layout")).default
 }
+
 </script>
 <script>
-import { useMainStore } from "~/store/mainStore"
+
 import axios from "axios"
 import StickyMiddleColumn from "../StickyMiddleColumn.vue"
 import PostThumbnail from "../posts/PostThumbnail.vue"
@@ -115,12 +120,6 @@ export default {
         StickyMiddleColumn,
         PostThumbnail,
         UserToFollowItem,
-    },
-    setup () {
-        const mainStore = useMainStore()
-        return {
-            mainStore
-        }
     },
     data () {
         return {
@@ -137,7 +136,7 @@ export default {
             .then(response => {
                 this.posts = response.data.data
             }).then(() => {
-                const msnry = new Masonry("#pet-posts", {
+                const msnry = new this.Masonry("#pet-posts", {
                     percentPosition: true,
                 })
                 msnry.reloadItems()
