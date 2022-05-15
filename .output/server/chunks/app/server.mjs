@@ -1,5 +1,6 @@
 import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, withBase, withQuery } from 'ufo';
+import { createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -3789,12 +3790,30 @@ const _2f12118a = defineNuxtPlugin(async (nuxtApp) => {
   });
   return { provide: { router } };
 });
+const PiniaNuxtPlugin = (context, inject2) => {
+  const pinia = createPinia();
+  {
+    context.vueApp.use(pinia);
+  }
+  inject2("pinia", pinia);
+  context.pinia = pinia;
+  setActivePinia(pinia);
+  pinia._p.push(({ store }) => {
+    Object.defineProperty(store, "$nuxt", { value: context });
+  });
+  {
+    {
+      context.nuxtState.pinia = pinia.state.value;
+    }
+  }
+};
 const _plugins = [
   preload,
   componentsPlugin_50ade27a,
   vueuseHead_4a9f6d35,
   _7cf82f29,
-  _2f12118a
+  _2f12118a,
+  PiniaNuxtPlugin
 ];
 const _sfc_main$6 = {
   __ssrInlineRender: true,
