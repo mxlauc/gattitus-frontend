@@ -13510,10 +13510,7 @@ const _sfc_main$a = {
   }
 };
 function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_HomeComponent = vue_cjs_prod.resolveComponent("HomeComponent");
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido `);
-  _push(serverRenderer.exports.ssrRenderComponent(_component_HomeComponent, null, null, _parent));
-  _push(`</div>`);
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido </div>`);
 }
 const _sfc_setup$a = _sfc_main$a.setup;
 _sfc_main$a.setup = (props, ctx) => {
