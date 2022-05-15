@@ -1,21 +1,33 @@
 {
   "private": true,
   "bundledDependencies": [
+    "destr",
     "source-map-support",
-    "h3",
     "ohmyfetch",
-    "radix3",
+    "h3",
     "hookable",
-    "unenv",
+    "radix3",
     "unstorage",
     "pathe",
+    "unenv",
     "scule",
     "ohash",
     "ufo",
+    "pinia",
     "node-fetch-native",
-    "destr",
+    "vue-demi",
     "cookie-es",
     "source-map",
-    "buffer-from"
+    "@vue/devtools-api",
+    "buffer-from",
+    "vue",
+    "@vue/shared",
+    "@vue/compiler-dom",
+    "@vue/runtime-dom",
+    "@vue/compiler-core",
+    "@vue/runtime-core",
+    "@vue/reactivity",
+    "estree-walker",
+    "@babel/parser"
   ]
 }
