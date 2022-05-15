@@ -1,6 +1,5 @@
 import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, withBase, withQuery } from 'ufo';
-import { defineStore } from 'pinia';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -3648,28 +3647,6 @@ const NuxtPage = vue_cjs_prod.defineComponent({
   }
 });
 const defaultPageTransition = { name: "page", mode: "out-in" };
-defineStore("main", {
-  state: () => {
-    return {
-      posts: null,
-      userLogged: null,
-      backendUrl: "https://api.donotify.com",
-      toasts: []
-    };
-  },
-  actions: {
-    async login() {
-    },
-    setUser() {
-    },
-    async loadPosts() {
-    },
-    async deletePost(id) {
-    },
-    showToast(msg) {
-    }
-  }
-});
 console.log("ejecuntado composable");
 function miStore() {
   console.log("obteniedo mi store");
