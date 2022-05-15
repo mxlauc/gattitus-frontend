@@ -1,6 +1,6 @@
 import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, withBase, withQuery } from 'ufo';
-import { defineStore, createPinia } from 'pinia';
+import { defineStore } from 'pinia';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -3648,7 +3648,7 @@ const NuxtPage = vue_cjs_prod.defineComponent({
   }
 });
 const defaultPageTransition = { name: "page", mode: "out-in" };
-const useMainStore = defineStore("main", {
+defineStore("main", {
   state: () => {
     return {
       posts: null,
@@ -3687,7 +3687,7 @@ const useMainStore = defineStore("main", {
 console.log("ejecuntado composable");
 function miStore() {
   console.log("obteniedo mi store");
-  return useMainStore(createPinia());
+  return "hola";
 }
 const meta = void 0;
 const routes = [
