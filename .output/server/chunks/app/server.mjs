@@ -1,6 +1,6 @@
 import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, withBase, withQuery } from 'ufo';
-import { createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
+import { defineStore, createPinia } from 'pinia';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -3648,13 +3648,47 @@ const NuxtPage = vue_cjs_prod.defineComponent({
   }
 });
 const defaultPageTransition = { name: "page", mode: "out-in" };
-const _export_sfc = (sfc, props) => {
-  const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
-    target[key] = val;
+const useMainStore = defineStore("main", {
+  state: () => {
+    return {
+      posts: null,
+      userLogged: null,
+      backendUrl: "https://api.donotify.com",
+      toasts: []
+    };
+  },
+  actions: {
+    async login() {
+      await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`);
+    },
+    setUser() {
+      return fetchWithCookie(`${this.backendUrl}/api/user`).then((result) => {
+        this.userLogged = result.data;
+      });
+    },
+    async loadPosts() {
+      console.log("cargando posts...");
+      const result = await fetchWithCookie(`${this.backendUrl}/api/posts`);
+      this.posts = result.data;
+    },
+    async deletePost(id) {
+      await fetchWithCookie(`${this.backendUrl}/api/posts/${id}`);
+      const indice = this.posts.findIndex((post) => post.id === id);
+      this.posts.splice(indice, 1);
+    },
+    showToast(msg) {
+      this.toasts.push({ message: msg });
+      window.setTimeout(() => {
+        this.toasts.splice(0, 1);
+      }, 5e3);
+    }
   }
-  return target;
-};
+});
+console.log("ejecuntado composable");
+function miStore() {
+  console.log("obteniedo mi store");
+  return useMainStore(createPinia());
+}
 const meta = void 0;
 const routes = [
   {
@@ -3665,7 +3699,7 @@ const routes = [
     meta,
     alias: [],
     component: () => Promise.resolve().then(function() {
-      return index$1;
+      return index;
     })
   }
 ];
@@ -7025,23 +7059,9 @@ const nuxt3Plugin_1ee1e800 = defineNuxtPlugin(async (nuxt) => {
     await loadAndSetLocale(finalLocale, i18n);
   }
 });
-const PiniaNuxtPlugin = (context, inject2) => {
-  const pinia = createPinia();
-  {
-    context.vueApp.use(pinia);
-  }
-  inject2("pinia", pinia);
-  context.pinia = pinia;
-  setActivePinia(pinia);
-  pinia._p.push(({ store }) => {
-    Object.defineProperty(store, "$nuxt", { value: context });
-  });
-  {
-    {
-      context.nuxtState.pinia = pinia.state.value;
-    }
-  }
-};
+const piniaServer_8c65039c = defineNuxtPlugin((nuxtApp) => {
+  createPinia();
+});
 const _plugins = [
   preload,
   componentsPlugin_50ade27a,
@@ -7049,8 +7069,15 @@ const _plugins = [
   _7cf82f29,
   _2f12118a,
   nuxt3Plugin_1ee1e800,
-  PiniaNuxtPlugin
+  piniaServer_8c65039c
 ];
+const _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
 const _sfc_main$6 = {
   __ssrInlineRender: true,
   props: {
@@ -7252,7 +7279,7 @@ const __nuxt_component_0 = vue_cjs_prod.defineComponent({
   }
 });
 const _sfc_main$1 = {};
-function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   const _component_NuxtLayout = __nuxt_component_0;
   const _component_NuxtPage = vue_cjs_prod.resolveComponent("NuxtPage");
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, _attrs, {
@@ -7274,7 +7301,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/pages/runtime/app.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender$1]]);
+const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender]]);
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch.create({
     baseURL: baseURL()
@@ -7298,20 +7325,24 @@ const plugins = normalizePlugins(_plugins);
   };
 }
 const entry$1 = (ctx) => entry(ctx);
-const _sfc_main = {};
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido </div>`);
-}
+const _sfc_main = {
+  __ssrInlineRender: true,
+  setup(__props) {
+    const s = miStore();
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(s).$state)}</div>`);
+    };
+  }
+};
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
-const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": index
+  "default": _sfc_main
 }, Symbol.toStringTag, { value: "Module" }));
 
 export { entry$1 as default };
