@@ -13888,7 +13888,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie("https://api.donotify.com/sanctum/csrf-cookie").then((r) => {
       mensaje = r;
     }).catch((r) => {
-      mensaje = "error es: " + JSON.stringify(r);
+      mensaje = "error es: " + r.message;
     })), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> hola layout mensaje: ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mensaje))} `);
