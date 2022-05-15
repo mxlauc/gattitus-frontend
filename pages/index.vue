@@ -1,19 +1,19 @@
 <template>
-  <div>
-    bienvenido
-    <HomeComponent/>
-  </div>
+    <div>
+        bienvenido
+        <HomeComponent />
+    </div>
 </template>
 <script>
 // This will also work in `<script setup>`
-definePageMeta({
-  layout: "main",
-});
+import HomeComponent from "~~/components/sections/HomeComponent.vue"
 
-import HomeComponent from "~~/components/sections/HomeComponent.vue";
-export default{
-  components:{
-    HomeComponent,
-  }
+definePageMeta({
+    layout: "main",
+})
+export default {
+    components: {
+        HomeComponent,
+    }
 }
 </script>

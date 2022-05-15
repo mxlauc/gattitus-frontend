@@ -1,17 +1,17 @@
 <template>
     lista de pets
-    <PetsComponent/>
+    <PetsComponent />
 </template>
 <script>
 // This will also work in `<script setup>`
-definePageMeta({
-  layout: "main",
-});
+import PetsComponent from "~~/components/pet/PetsComponent.vue"
 
-import PetsComponent from "~~/components/pet/PetsComponent.vue";
-export default{
-  components:{
-    PetsComponent,
-  }
+definePageMeta({
+    layout: "main",
+})
+export default {
+    components: {
+        PetsComponent,
+    }
 }
 </script>

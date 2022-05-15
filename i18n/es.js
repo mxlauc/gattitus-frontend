@@ -11,7 +11,7 @@ const messages = {
 
     date: ({ named, linked }) => `${named("day")} de ${linked(`monthsName.${named("month")}`)} del ${named("year")} a las ${named("hours")}:${named("minutes")} ${named("ampm")}`,
     seePost: "Ver publicación",
-    
+
     deleteComment: "Eliminar publicación",
     rusDeleteComment: "¿Esta seguro de eliminar este comentario?",
     cancel: "Cancelar",
@@ -22,9 +22,9 @@ const messages = {
     like: "Me encanta",
     peopleLikedComment: "These people liked this comment",
     previousComments: "Comentarios anteriores",
-    timeAgo: ({named, linked}) => {
+    timeAgo: ({ named, linked }) => {
         const ahora = Date.now()
-        const date = named("date");
+        const date = named("date")
 
         let diferencia = Math.trunc(((ahora / 1000) - date) / 60) // en minutos
         if (diferencia < 60) {
@@ -32,7 +32,7 @@ const messages = {
         }
         diferencia = Math.trunc(diferencia / 60) // en horas
         if (diferencia < 24) {
-            return linked("hoursAgo", diferencia);
+            return linked("hoursAgo", diferencia)
         }
         diferencia = Math.trunc(diferencia / 24) // en dias
         if (diferencia < 14) {

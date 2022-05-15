@@ -160,24 +160,28 @@
     </div>
 </template>
 <script setup>
+import axios from "axios"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import { useMainStore } from "~/store/mainStore"
+
 const mainStore = useMainStore()
+
 </script>
 <script>
-import ImagePreloader from "~/components/images/ImagePreloader.vue"
-import axios from "axios"
-
-
 export default {
     components: {
         ImagePreloader,
     },
-    mounted () {
-    },
+    mounted () {},
     computed: {
         saludo () {
             const hour = new Date().getHours()
-            const saludoStr = hour < 12 ? "Buenos días" : (hour < 18 ? "Buenas tardes" : "Buenas noches")
+            const saludoStr =
+                hour < 12
+                    ? "Buenos días"
+                    : hour < 18
+                        ? "Buenas tardes"
+                        : "Buenas noches"
             return `Hola ${this.userLogged?.name}, ${saludoStr} 🐱`
         },
         userLogged () {
@@ -187,8 +191,9 @@ export default {
 
     methods: {
         logout () {
-            axios.post(`${this.mainStore.backendUrl}/api/auth/logout`)
-                .then(response => {
+            axios
+                .post(`${this.mainStore.backendUrl}/api/auth/logout`)
+                .then((response) => {
                     window.location = "/"
                 })
         },
@@ -196,12 +201,12 @@ export default {
             document.querySelector("#sidebar").classList.add("show-sidebar")
             document.querySelector("#dark").classList.add("show-dark")
             document.body.style.overflow = "hidden"
-        }
-    }
+        },
+    },
 }
 </script>
 <style scoped>
-.user-img-small{
+.user-img-small {
     border-radius: 35%;
     width: 40px;
     height: 40px;
@@ -210,18 +215,17 @@ export default {
     box-sizing: content-box;
     transition: border 0.2s ease-out;
 }
-.btn-user-url{
+.btn-user-url {
     border-radius: 16px;
     transition: background-color 0.2s ease-out;
 }
-.btn-user-url:hover{
+.btn-user-url:hover {
     background-color: #ddd;
 }
-.more-options{
+.more-options {
     transition: background-color 0.2s ease-out;
 }
-.more-options:hover{
+.more-options:hover {
     background-color: #ddd;
 }
-
 </style>

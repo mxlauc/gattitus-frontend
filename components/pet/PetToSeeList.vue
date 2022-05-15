@@ -13,14 +13,15 @@
     </div>
 </template>
 <script setup>
+import PetToSeeItem from "./PetToSeeItem.vue"
 import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
 const result = await fetchWithCookie(`${mainStore.backendUrl}/api/pets`)
 const pets = result.data
+
 </script>
 <script>
-import PetToSeeItem from "./PetToSeeItem.vue"
 
 export default {
     components: {

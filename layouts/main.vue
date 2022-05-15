@@ -1,13 +1,13 @@
 <template>
     <div
-        class="container-xxl px-0"
-        id="app">
+        id="app"
+        class="container-xxl px-0">
         <audio
-        src="https://www.gattitus.com/assets/audio/cat_meow.mp3"
-        id="soundMeow"
-        preload="auto"
-        style="display: none" />
-        
+            id="soundMeow"
+            src="https://www.gattitus.com/assets/audio/cat_meow.mp3"
+            preload="auto"
+            style="display: none" />
+
         <nav
             class="bg-white shadow-sm fixed-top"
             style="min-height: 64px">
@@ -21,11 +21,11 @@
                 @click="hideDrawer" />
 
             <div
-                class="col-auto sticky-top ps-4"
                 id="sidebar"
                 ref="sidebar"
-                @click="hideDrawer"
-                style="width: 260px; height: 100vh">
+                class="col-auto sticky-top ps-4"
+                style="width: 260px; height: 100vh"
+                @click="hideDrawer">
                 <div class="d-flex flex-column h-100">
                     <div class>
                         <NuxtLink
@@ -265,23 +265,22 @@
     </div>
 </template>
 <script setup>
-    import { useMainStore } from "~/store/mainStore"
+import { useMainStore } from "~/store/mainStore"
+import HeaderComponent from "~/components/HeaderComponent.vue"
+import CreatePetComponent from "~/components/pet/CreatePetComponent.vue"
 
-    const mainStore = useMainStore()
-    
-    if(process.server){
-        await mainStore.login()
-    }    
-    await mainStore.setUser();
+const mainStore = useMainStore()
+
+if (process.server) {
+    await mainStore.login()
+}
+await mainStore.setUser()
 
 </script>
 <script>
 if (process.client) {
     await import("bootstrap")
 }
-import HeaderComponent from "~/components/HeaderComponent.vue"
-import CreatePetComponent from "~/components/pet/CreatePetComponent.vue"
-
 
 export default {
     components: {
@@ -289,7 +288,7 @@ export default {
         CreatePetComponent,
     },
     mounted () {
-        
+
     },
     methods: {
         hideDrawer () {
@@ -299,7 +298,6 @@ export default {
             if (process.client) {
                 document.body.style.overflow = "auto"
             }
-
         }
     },
 }
@@ -449,9 +447,9 @@ body{
     background-color: #0004;
     border-radius: 4px;
 }
-.custom-scroll::-webkit-scrollbar-thumb:hover {
-    background-color: #0006;
-}
+ .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: #0006;
+  }
 
 .custom-scroll::-webkit-scrollbar-track-piece:start {
     background: transparent;
@@ -462,7 +460,7 @@ body{
 }
 
 /* title */
-.title{
+  .title{
     font-family: 'Itim', cursive;
 }
 </style>

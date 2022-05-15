@@ -1,12 +1,11 @@
 <template>
-    hola {{ $route.params.username}}
+    hola {{ $route.params.username }}
 
-<UserShowComponent/>
-
+    <UserShowComponent />
 </template>
 <script>
 // This will also work in `<script setup>`
 definePageMeta({
-  layout: "main",
-});
+    layout: "main",
+})
 </script>

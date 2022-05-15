@@ -1,8 +1,8 @@
 <template>
-    pagina del gato {{$route.params.nickname}}
+    pagina del gato {{ $route.params.nickname }}
 </template>
 <script>
 definePageMeta({
-  layout: "main",
-});
+    layout: "main",
+})
 </script>

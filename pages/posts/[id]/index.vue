@@ -1,16 +1,16 @@
 <template>
     ver post
-    {{$route.params.id}}
-    <ViewPost/>
+    {{ $route.params.id }}
+    <ViewPost />
 </template>
 <script>
 // This will also work in `<script setup>`
+import ViewPost from "~~/components/posts/ViewPost.vue"
 definePageMeta({
-  layout: "main",
-});
-import ViewPost from "~~/components/posts/ViewPost.vue";
-export default{
-    components:{
+    layout: "main",
+})
+export default {
+    components: {
         ViewPost,
     }
 }

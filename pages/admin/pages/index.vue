@@ -1,17 +1,17 @@
 <template>
     lista de pages
-    <PagesList/>
+    <PagesList />
 </template>
 <script>
 // This will also work in `<script setup>`
-definePageMeta({
-  layout: "main",
-});
+import PagesList from "~~/components/admin/pages/PagesList.vue"
 
-import PagesList from "~~/components/admin/pages/PagesList.vue";
-export default{
-  components:{
-    PagesList,
-  }
+definePageMeta({
+    layout: "main",
+})
+export default {
+    components: {
+        PagesList,
+    }
 }
 </script>

@@ -11,13 +11,13 @@ export const useMainStore = defineStore("main", {
     },
     actions: {
         async login () {
-            await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`);
+            await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`)
         },
-        setUser(){
+        setUser () {
             return fetchWithCookie(`${this.backendUrl}/api/user`)
-            .then(result=>{
-                this.userLogged = result.data
-            });
+                .then(result => {
+                    this.userLogged = result.data
+                })
         },
         async loadPosts () {
             console.log("cargando posts...")

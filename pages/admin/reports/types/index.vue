@@ -1,16 +1,16 @@
 <template>
     lista de rerpots types
-    <ReportTypesList/>
+    <ReportTypesList />
 </template>
 <script>
 // This will also work in `<script setup>`
+import ReportTypesList from "~~/components/admin/reports/ReportTypesList.vue"
 definePageMeta({
-  layout: "main",
-});
-import ReportTypesList from "~~/components/admin/reports/ReportTypesList.vue";
-export default{
-  components:{
-    ReportTypesList,
-  }
+    layout: "main",
+})
+export default {
+    components: {
+        ReportTypesList,
+    }
 }
 </script>

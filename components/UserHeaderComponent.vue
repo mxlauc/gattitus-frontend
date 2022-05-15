@@ -57,8 +57,8 @@ export default {
         follow () {
             axios.post(`${this.mainStore.backendUrl}/api/followers`, {
                 user_id: this.user.id
-            },{
-                withCredentials:true
+            }, {
+                withCredentials: true
             })
                 .then(response => {
                     this.my_follow = response.data.following
