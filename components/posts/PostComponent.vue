@@ -6,7 +6,7 @@
                     <NuxtLink :to="'/@' + post.user.username">
                         <image-preloader
                             :image="post.user.image"
-                            class="img-user-post shadow"/>
+                            class="img-user-post shadow" />
                     </NuxtLink>
                 </div>
                 <div class="col px-2">
@@ -70,7 +70,6 @@
                 :post-id="post.id"
                 :best-comments="post.best_comments"
                 @contador-actualizado="contadorActualizado" />
-
         </div>
     </div>
 </template>
@@ -145,7 +144,7 @@ export default {
     },
     computed: {
         userLogged () {
-            return this.mainStore.userLogged
+            return this.mainStore?.userLogged
         },
     },
 }

@@ -84,7 +84,7 @@ export default {
     emits: ["commented", "contadorActualizado"],
     computed: {
         userLogged () {
-            return this.mainStore.userLogged
+            return this.mainStore?.userLogged
         }
     },
     methods: {

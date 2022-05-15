@@ -197,7 +197,7 @@ export default {
     },
     computed: {
         userLogged () {
-            return this.mainStore.userLogged
+            return this.mainStore?.userLogged
         },
     },
 }

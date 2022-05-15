@@ -185,7 +185,7 @@ export default {
             return `Hola ${this.userLogged?.name}, ${saludoStr} 🐱`
         },
         userLogged () {
-            return this.mainStore.userLogged
+            return this.mainStore?.userLogged
         },
     },
 

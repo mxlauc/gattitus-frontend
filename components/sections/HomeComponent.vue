@@ -143,7 +143,7 @@ export default {
     },
     computed: {
         posts () {
-            return this.mainStore.posts
+            return this.mainStore?.posts
         }
     },
 
