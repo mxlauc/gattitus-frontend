@@ -268,12 +268,12 @@
 import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
-/*
+
 if (process.server) {
     await mainStore.login()
 }
 await mainStore.setUser()
- */
+
 if (process.client) {
     await import("bootstrap")
 }
