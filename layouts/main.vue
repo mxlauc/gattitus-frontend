@@ -276,11 +276,12 @@ if (process.server) {
 }
 await mainStore.setUser()
 
-</script>
-<script>
 if (process.client) {
     await import("bootstrap")
 }
+
+</script>
+<script>
 
 export default {
     components: {
