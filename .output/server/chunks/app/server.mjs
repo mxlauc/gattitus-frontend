@@ -1,5 +1,5 @@
-import { v as vue_cjs_prod, s as serverRenderer, r as require$$0 } from '../handlers/renderer.mjs';
-import { hasProtocol, isEqual, joinURL, withBase, withQuery } from 'ufo';
+import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../handlers/renderer.mjs';
+import { hasProtocol, isEqual, withBase, withQuery } from 'ufo';
 import { createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
@@ -258,10 +258,6 @@ const Headers = _globalThis$3.Headers;
 const $fetch = createFetch({ fetch, Headers });
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
-const publicAssetsURL = (...path) => {
-  const publicBase = appConfig.cdnURL || appConfig.baseURL;
-  return path.length ? joinURL(publicBase, ...path) : publicBase;
-};
 function flatHooks(configHooks, hooks = {}, parentName) {
   for (const key in configHooks) {
     const subHook = configHooks[key];
@@ -2482,7 +2478,7 @@ const firstNonUndefined = (...args) => args.find((arg) => arg !== void 0);
 const DEFAULT_EXTERNAL_REL_ATTRIBUTE = "noopener noreferrer";
 function defineNuxtLink(options) {
   const componentName = options.componentName || "NuxtLink";
-  const checkPropConflicts = (props, main2, sub) => {
+  const checkPropConflicts = (props, main, sub) => {
   };
   return vue_cjs_prod.defineComponent({
     name: componentName,
@@ -3659,9 +3655,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const meta = {
-  layout: "main"
-};
+const meta = void 0;
 const routes = [
   {
     name: "index",
@@ -3669,7 +3663,7 @@ const routes = [
     file: "/home/marx/proyectos/gattitus-frontend/pages/index.vue",
     children: [],
     meta,
-    alias: (meta == null ? void 0 : meta.alias) || [],
+    alias: [],
     component: () => Promise.resolve().then(function() {
       return index$1;
     })
@@ -7057,7 +7051,7 @@ const _plugins = [
   nuxt3Plugin_1ee1e800,
   PiniaNuxtPlugin
 ];
-const _sfc_main$7 = {
+const _sfc_main$6 = {
   __ssrInlineRender: true,
   props: {
     appName: {
@@ -7118,14 +7112,14 @@ const _sfc_main$7 = {
     };
   }
 };
-const _sfc_setup$7 = _sfc_main$7.setup;
-_sfc_main$7.setup = (props, ctx) => {
+const _sfc_setup$6 = _sfc_main$6.setup;
+_sfc_main$6.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-404.vue");
-  return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
+  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
 };
-const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-011aae6d"]]);
-const _sfc_main$6 = {
+const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-011aae6d"]]);
+const _sfc_main$5 = {
   __ssrInlineRender: true,
   props: {
     appName: {
@@ -7165,14 +7159,14 @@ const _sfc_main$6 = {
     };
   }
 };
-const _sfc_setup$6 = _sfc_main$6.setup;
-_sfc_main$6.setup = (props, ctx) => {
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-500.vue");
-  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
-const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-6aee6495"]]);
-const _sfc_main$4 = {
+const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-6aee6495"]]);
+const _sfc_main$3 = {
   __ssrInlineRender: true,
   props: {
     error: Object
@@ -7199,13 +7193,13 @@ const _sfc_main$4 = {
     };
   }
 };
-const _sfc_setup$4 = _sfc_main$4.setup;
-_sfc_main$4.setup = (props, ctx) => {
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
-  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const _sfc_main$3 = {
+const _sfc_main$2 = {
   __ssrInlineRender: true,
   setup(__props) {
     const nuxtApp = useNuxtApp();
@@ -7222,7 +7216,7 @@ const _sfc_main$3 = {
       serverRenderer.exports.ssrRenderSuspense(_push, {
         default: () => {
           if (vue_cjs_prod.unref(error)) {
-            _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(_sfc_main$4), { error: vue_cjs_prod.unref(error) }, null, _parent));
+            _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(_sfc_main$3), { error: vue_cjs_prod.unref(error) }, null, _parent));
           } else {
             _push(serverRenderer.exports.ssrRenderComponent(_component_App, null, null, _parent));
           }
@@ -7232,17 +7226,13 @@ const _sfc_main$3 = {
     };
   }
 };
-const _sfc_setup$3 = _sfc_main$3.setup;
-_sfc_main$3.setup = (props, ctx) => {
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
-  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const layouts = {
-  main: vue_cjs_prod.defineAsyncComponent(() => Promise.resolve().then(function() {
-    return main;
-  }))
-};
+const layouts = {};
 const defaultLayoutTransition = { name: "layout", mode: "out-in" };
 const __nuxt_component_0 = vue_cjs_prod.defineComponent({
   props: {
@@ -7261,7 +7251,7 @@ const __nuxt_component_0 = vue_cjs_prod.defineComponent({
     };
   }
 });
-const _sfc_main$2 = {};
+const _sfc_main$1 = {};
 function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
   const _component_NuxtLayout = __nuxt_component_0;
   const _component_NuxtPage = vue_cjs_prod.resolveComponent("NuxtPage");
@@ -7278,13 +7268,13 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
     _: 1
   }, _parent));
 }
-const _sfc_setup$2 = _sfc_main$2.setup;
-_sfc_main$2.setup = (props, ctx) => {
+const _sfc_setup$1 = _sfc_main$1.setup;
+_sfc_main$1.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/pages/runtime/app.vue");
-  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["ssrRender", _sfc_ssrRender$1]]);
+const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender$1]]);
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch.create({
     baseURL: baseURL()
@@ -7294,7 +7284,7 @@ let entry;
 const plugins = normalizePlugins(_plugins);
 {
   entry = async function createNuxtAppServer(ssrContext = {}) {
-    const vueApp = vue_cjs_prod.createApp(_sfc_main$3);
+    const vueApp = vue_cjs_prod.createApp(_sfc_main$2);
     vueApp.component("App", AppComponent);
     const nuxt = createNuxtApp({ vueApp, ssrContext });
     try {
@@ -7308,77 +7298,20 @@ const plugins = normalizePlugins(_plugins);
   };
 }
 const entry$1 = (ctx) => entry(ctx);
-const _sfc_main$1 = {};
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+const _sfc_main = {};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido </div>`);
 }
-const _sfc_setup$1 = _sfc_main$1.setup;
-_sfc_main$1.setup = (props, ctx) => {
-  const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
-  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
-};
-const index = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender]]);
-const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  "default": index
-}, Symbol.toStringTag, { value: "Module" }));
-const _imports_0 = publicAssetsURL(`img/icons/icon-72x72.png`);
-const __default__ = {
-  mounted() {
-  },
-  methods: {
-    hideDrawer() {
-      this.$refs.sidebar.classList.remove("show-sidebar");
-      this.$refs.dark.classList.remove("show-dark");
-    }
-  }
-};
-const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
-  __ssrInlineRender: true,
-  async setup(__props) {
-    return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLink = __nuxt_component_0$1;
-      const _component_router_view = vue_cjs_prod.resolveComponent("router-view");
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
-        id: "app",
-        class: "container-xxl px-0"
-      }, _attrs))}><audio id="soundMeow" src="https://www.gattitus.com/assets/audio/cat_meow.mp3" preload="auto" style="${serverRenderer.exports.ssrRenderStyle({ "display": "none" })}"></audio><nav class="bg-white shadow-sm fixed-top" style="${serverRenderer.exports.ssrRenderStyle({ "min-height": "64px" })}"></nav><div class="row gx-0"><div id="dark"></div><div id="sidebar" class="col-auto sticky-top ps-4" style="${serverRenderer.exports.ssrRenderStyle({ "width": "260px", "height": "100vh" })}"><div class="d-flex flex-column h-100"><div class>`);
-      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
-        to: "/",
-        class: "navbar-brand fw-bold text-black d-inline-block p-1 m-3 mb-0",
-        style: { "font-size": "30px" }
-      }, {
-        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`<img${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "40px", "margin-top": "-10px" })}"${_scopeId}><span class="title"${_scopeId}>Gattitus</span>`);
-          } else {
-            return [
-              vue_cjs_prod.createVNode("img", {
-                src: _imports_0,
-                style: { "height": "40px", "margin-top": "-10px" }
-              }),
-              vue_cjs_prod.createVNode("span", { class: "title" }, "Gattitus")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`<div class="card shadow mt-3 p-2"> ga </div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">`);
-      _push(serverRenderer.exports.ssrRenderComponent(_component_router_view, null, null, _parent));
-      _push(`</div></div></div></div>`);
-    };
-  }
-});
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("layouts/main.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const main = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  "default": _sfc_main
+  "default": index
 }, Symbol.toStringTag, { value: "Module" }));
 
 export { entry$1 as default };
