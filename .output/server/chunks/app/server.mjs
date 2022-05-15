@@ -1,6 +1,6 @@
 import { v as vue_cjs_prod, s as serverRenderer, r as require$$0 } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, joinURL, withBase, withQuery } from 'ufo';
-import { defineStore, createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
+import { createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -7324,42 +7324,6 @@ const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   "default": index
 }, Symbol.toStringTag, { value: "Module" }));
 const _imports_0 = publicAssetsURL(`img/icons/icon-72x72.png`);
-const useMainStore = defineStore("main", {
-  state: () => {
-    return {
-      posts: null,
-      userLogged: null,
-      backendUrl: "https://api.donotify.com",
-      toasts: []
-    };
-  },
-  actions: {
-    async login() {
-      await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`);
-    },
-    setUser() {
-      return fetchWithCookie(`${this.backendUrl}/api/user`).then((result) => {
-        this.userLogged = result.data;
-      });
-    },
-    async loadPosts() {
-      console.log("cargando posts...");
-      const result = await fetchWithCookie(`${this.backendUrl}/api/posts`);
-      this.posts = result.data;
-    },
-    async deletePost(id) {
-      await fetchWithCookie(`${this.backendUrl}/api/posts/${id}`);
-      const indice = this.posts.findIndex((post) => post.id === id);
-      this.posts.splice(indice, 1);
-    },
-    showToast(msg) {
-      this.toasts.push({ message: msg });
-      window.setTimeout(() => {
-        this.toasts.splice(0, 1);
-      }, 5e3);
-    }
-  }
-});
 const __default__ = {
   mounted() {
   },
@@ -7373,7 +7337,6 @@ const __default__ = {
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   __ssrInlineRender: true,
   async setup(__props) {
-    useMainStore();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$1;
       const _component_router_view = vue_cjs_prod.resolveComponent("router-view");
