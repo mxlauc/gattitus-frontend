@@ -13885,13 +13885,19 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   async setup(__props) {
     let __temp, __restore;
     let mensaje = "consultando";
-    [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie("https://api.donotify.com/sanctum/csrf-cookie").then((r) => {
-      mensaje = r;
-    }).catch((r) => {
-      mensaje = "error es: " + r.message;
-    })), await __temp, __restore();
+    const headers = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useRequestHeaders()), __temp = await __temp, __restore(), __temp);
+    {
+      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("https://api.donotify.com/sanctum/csrf-cookie", {
+        withCredentials: true,
+        headers
+      }).then((r) => {
+        mensaje = JSON.stringify(r.data);
+      }).catch((r) => {
+        mensaje = "error es: " + r.message;
+      })), await __temp, __restore();
+    }
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> hola layout mensaje: ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mensaje))} `);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> hola layout mensaje: ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mensaje))} <br> headers: ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(headers))} `);
       serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
       _push(`</div>`);
     };
