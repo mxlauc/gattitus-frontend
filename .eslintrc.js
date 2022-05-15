@@ -35,9 +35,11 @@ module.exports = {
         }],
         "vue/require-default-prop": "off",
         "vue/multi-word-component-names": "off",
+        "import/first": "off",
     },
     globals: {
         fetchWithCookie: "readable",
         definePageMeta: "readable",
+        useRoute: "readable",
     },
 }
