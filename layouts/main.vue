@@ -266,8 +266,6 @@
 </template>
 <script setup>
 import { useMainStore } from "~/store/mainStore"
-import HeaderComponent from "~/components/HeaderComponent.vue"
-import CreatePetComponent from "~/components/pet/CreatePetComponent.vue"
 
 const mainStore = useMainStore()
 
@@ -282,6 +280,8 @@ if (process.client) {
 
 </script>
 <script>
+import HeaderComponent from "~/components/HeaderComponent.vue"
+import CreatePetComponent from "~/components/pet/CreatePetComponent.vue"
 
 export default {
     components: {

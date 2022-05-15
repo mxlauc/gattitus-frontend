@@ -23,7 +23,6 @@ const users = result.data
 <script>
 import UserToFollowItem from "./UserToFollowItem.vue"
 
-
 export default {
     components: {
         UserToFollowItem,
@@ -33,11 +32,11 @@ export default {
     },
     data () {
         return {
-            
+
         }
     },
     mounted () {
-        
+
     }
 }
 </script>

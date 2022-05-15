@@ -13,7 +13,6 @@
     </div>
 </template>
 <script setup>
-import PetToSeeItem from "./PetToSeeItem.vue"
 import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
@@ -22,7 +21,7 @@ const pets = result.data
 
 </script>
 <script>
-
+import PetToSeeItem from "./PetToSeeItem.vue"
 export default {
     components: {
         PetToSeeItem,

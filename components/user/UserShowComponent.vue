@@ -63,14 +63,11 @@ result = await fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/pet
 
 pets = result.data
 
-
 </script>
 <script>
 
 import UserHeaderComponent from "../UserHeaderComponent.vue"
 import PetItemComponent from "../pet/PetItemComponent.vue"
-
-
 
 export default {
     components: {
@@ -82,7 +79,7 @@ export default {
         }
     },
     mounted () {
-        
+
     }
 }
 </script>

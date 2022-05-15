@@ -43,9 +43,13 @@
         </template>
     </Popper>
 </template>
+<script setup>
+let Masonry = Object
+if (process.client) {
+    Masonry = await import("masonry-layout")
+}
+</script>
 <script>
-
-import Masonry from "~/masonry.js"
 import GifSearchedComponent from "./GifSearchedComponent.vue"
 import Popper from "vue3-popper"
 import axios from "axios"

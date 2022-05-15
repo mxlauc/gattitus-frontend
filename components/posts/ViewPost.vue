@@ -87,12 +87,12 @@ import { useMainStore } from "~/store/mainStore"
 const mainStore = useMainStore()
 const route = useRoute()
 
-let post = null;
-let my_reaction = null;
-let reactions_count = null;
-let comments_count = null;
+let post = null
+let my_reaction = null
+let reactions_count = null
+let comments_count = null
 
-let result = await fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)
+const result = await fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)
 
 post = result.data
 my_reaction = post.my_reaction
@@ -107,7 +107,6 @@ import PetIconList from "~/components/posts/PetIconList.vue"
 import PostMenu from "~/components/posts/PostMenu.vue"
 import ReactAndCommentButtons from "~/components/posts/ReactAndCommentButtons.vue"
 
-
 export default {
     components: {
         SeccionComentariosComponent,
@@ -118,7 +117,7 @@ export default {
     },
     data () {
         return {
-            
+
         }
     },
     methods: {

@@ -160,14 +160,14 @@
     </div>
 </template>
 <script setup>
-import axios from "axios"
-import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
 
 </script>
 <script>
+import axios from "axios"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
 export default {
     components: {
         ImagePreloader,

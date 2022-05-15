@@ -22,12 +22,19 @@
         <div id="editorjs" />
     </div>
 </template>
+<script setup>
+let EditorJS = Object
+let Header = Object
+let ImageTool = Object
+let List = Object
+if (process.client) {
+    EditorJS = await import("@editorjs/editorjs")
+    Header = await import("@editorjs/header")
+    ImageTool = await import("@editorjs/image")
+    List = await import("@editorjs/list")
+}
+</script>
 <script>
-import EditorJS from "~/editorjs"
-import Header from "~/header"
-import ImageTool from "~/imageTool"
-import List from "~/list"
-
 import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
 

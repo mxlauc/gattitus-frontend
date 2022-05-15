@@ -97,9 +97,13 @@
         </StickyMiddleColumn>
     </div>
 </template>
+<script setup>
+let Masonry = Object
+if (process.client) {
+    Masonry = await import("masonry-layout")
+}
+</script>
 <script>
-
-import Masonry from "~/masonry.js"
 import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
 import StickyMiddleColumn from "../StickyMiddleColumn.vue"

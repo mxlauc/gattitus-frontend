@@ -17,7 +17,7 @@
             <PetToSeeList />
             <h4>
                 <strong>Ideas para publicar</strong>
-                {{mainStore.state}}
+                {{ mainStore.state }}
             </h4>
 
             <div class="card shadow-sm mb-3">
@@ -114,8 +114,8 @@
 </template>
 <script setup>
 import { useMainStore } from "~/store/mainStore"
-    const mainStore = useMainStore()
-    await mainStore.loadPosts()
+const mainStore = useMainStore()
+await mainStore.loadPosts()
 </script>
 <script>
 import SimplePostComponent from "~~/components/posts/PostComponent.vue"
@@ -139,7 +139,7 @@ export default {
         }
     },
     mounted () {
-        //this.mainStore.loadPosts()
+        // this.mainStore.loadPosts()
     },
     computed: {
         posts () {
