@@ -1,6 +1,5 @@
 import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, withBase, withQuery } from 'ufo';
-import { createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
@@ -241,7 +240,7 @@ function createFetch(globalOptions) {
   }));
   return $fetch2;
 }
-const _globalThis$2 = function() {
+const _globalThis$3 = function() {
   if (typeof globalThis !== "undefined") {
     return globalThis;
   }
@@ -253,8 +252,8 @@ const _globalThis$2 = function() {
   }
   throw new Error("unable to locate global object");
 }();
-const fetch = _globalThis$2.fetch || (() => Promise.reject(new Error("[ohmyfetch] global.fetch is not supported!")));
-const Headers = _globalThis$2.Headers;
+const fetch = _globalThis$3.fetch || (() => Promise.reject(new Error("[ohmyfetch] global.fetch is not supported!")));
+const Headers = _globalThis$3.Headers;
 const $fetch = createFetch({ fetch, Headers });
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
@@ -433,12 +432,12 @@ function createNamespace() {
     }
   };
 }
-const _globalThis$1 = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : {};
+const _globalThis$2 = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : {};
 const globalKey = "__unctx__";
-const defaultNamespace = _globalThis$1[globalKey] || (_globalThis$1[globalKey] = createNamespace());
+const defaultNamespace = _globalThis$2[globalKey] || (_globalThis$2[globalKey] = createNamespace());
 const getContext = (key) => defaultNamespace.get(key);
 const asyncHandlersKey = "__unctx_async_handlers__";
-const asyncHandlers = _globalThis$1[asyncHandlersKey] || (_globalThis$1[asyncHandlersKey] = /* @__PURE__ */ new Set());
+const asyncHandlers = _globalThis$2[asyncHandlersKey] || (_globalThis$2[asyncHandlersKey] = /* @__PURE__ */ new Set());
 function createMock(name, overrides = {}) {
   const fn = function() {
   };
@@ -679,17 +678,17 @@ var vueRouter_cjs_prod = {};
 (function(exports) {
   Object.defineProperty(exports, "__esModule", { value: true });
   var vue = require$$0;
-  const hasSymbol = typeof Symbol === "function" && typeof Symbol.toStringTag === "symbol";
-  const PolySymbol = (name) => hasSymbol ? Symbol(name) : "_vr_" + name;
+  const hasSymbol2 = typeof Symbol === "function" && typeof Symbol.toStringTag === "symbol";
+  const PolySymbol = (name) => hasSymbol2 ? Symbol(name) : "_vr_" + name;
   const matchedRouteKey = /* @__PURE__ */ PolySymbol("rvlm");
   const viewDepthKey = /* @__PURE__ */ PolySymbol("rvd");
   const routerKey = /* @__PURE__ */ PolySymbol("r");
   const routeLocationKey = /* @__PURE__ */ PolySymbol("rl");
   const routerViewLocationKey = /* @__PURE__ */ PolySymbol("rvl");
   function isESModule(obj) {
-    return obj.__esModule || hasSymbol && obj[Symbol.toStringTag] === "Module";
+    return obj.__esModule || hasSymbol2 && obj[Symbol.toStringTag] === "Module";
   }
-  const assign = Object.assign;
+  const assign2 = Object.assign;
   function applyToParams(fn, params) {
     const newParams = {};
     for (const key in params) {
@@ -700,8 +699,8 @@ var vueRouter_cjs_prod = {};
   }
   const noop = () => {
   };
-  const TRAILING_SLASH_RE = /\/$/;
-  const removeTrailingSlash = (path) => path.replace(TRAILING_SLASH_RE, "");
+  const TRAILING_SLASH_RE2 = /\/$/;
+  const removeTrailingSlash = (path) => path.replace(TRAILING_SLASH_RE2, "");
   function parseURL(parseQuery2, location2, currentLocation = "/") {
     let path, query = {}, searchString = "", hash = "";
     const searchPos = location2.indexOf("?");
@@ -865,7 +864,7 @@ var vueRouter_cjs_prod = {};
       const { history: history2 } = window;
       if (!history2.state)
         return;
-      history2.replaceState(assign({}, history2.state, { scroll: computeScrollPosition() }), "");
+      history2.replaceState(assign2({}, history2.state, { scroll: computeScrollPosition() }), "");
     }
     function destroy() {
       for (const teardown of teardowns)
@@ -922,17 +921,17 @@ var vueRouter_cjs_prod = {};
       }
     }
     function replace(to, data) {
-      const state = assign({}, history2.state, buildState(historyState.value.back, to, historyState.value.forward, true), data, { position: historyState.value.position });
+      const state = assign2({}, history2.state, buildState(historyState.value.back, to, historyState.value.forward, true), data, { position: historyState.value.position });
       changeLocation(to, state, true);
       currentLocation.value = to;
     }
     function push(to, data) {
-      const currentState = assign({}, historyState.value, history2.state, {
+      const currentState = assign2({}, historyState.value, history2.state, {
         forward: to,
         scroll: computeScrollPosition()
       });
       changeLocation(currentState.current, currentState, true);
-      const state = assign({}, buildState(currentLocation.value, to, null), { position: currentState.position + 1 }, data);
+      const state = assign2({}, buildState(currentLocation.value, to, null), { position: currentState.position + 1 }, data);
       changeLocation(to, state, false);
       currentLocation.value = to;
     }
@@ -952,7 +951,7 @@ var vueRouter_cjs_prod = {};
         historyListeners.pauseListeners();
       history.go(delta);
     }
-    const routerHistory = assign({
+    const routerHistory = assign2({
       location: "",
       base,
       go,
@@ -1085,7 +1084,7 @@ var vueRouter_cjs_prod = {};
   };
   function createRouterError(type, params) {
     {
-      return assign(new Error(ErrorTypeMessages[type](params)), {
+      return assign2(new Error(ErrorTypeMessages[type](params)), {
         type,
         [NavigationFailureSymbol]: true
       }, params);
@@ -1116,7 +1115,7 @@ var vueRouter_cjs_prod = {};
   };
   const REGEX_CHARS_RE = /[.+*?^${}()[\]/\\]/g;
   function tokensToParser(segments, extraOptions) {
-    const options = assign({}, BASE_PATH_PARSER_OPTIONS, extraOptions);
+    const options = assign2({}, BASE_PATH_PARSER_OPTIONS, extraOptions);
     const score = [];
     let pattern = options.start ? "^" : "";
     const keys = [];
@@ -1177,7 +1176,7 @@ var vueRouter_cjs_prod = {};
     else if (options.strict)
       pattern += "(?:/|$)";
     const re = new RegExp(pattern, options.sensitive ? "" : "i");
-    function parse(path) {
+    function parse2(path) {
       const match = path.match(re);
       const params = {};
       if (!match)
@@ -1226,7 +1225,7 @@ var vueRouter_cjs_prod = {};
       re,
       score,
       keys,
-      parse,
+      parse: parse2,
       stringify
     };
   }
@@ -1379,7 +1378,7 @@ var vueRouter_cjs_prod = {};
   }
   function createRouteRecordMatcher(record, parent, options) {
     const parser = tokensToParser(tokenizePath(record.path), options);
-    const matcher = assign(parser, {
+    const matcher = assign2(parser, {
       record,
       parent,
       children: [],
@@ -1409,7 +1408,7 @@ var vueRouter_cjs_prod = {};
       if ("alias" in record) {
         const aliases = typeof record.alias === "string" ? [record.alias] : record.alias;
         for (const alias of aliases) {
-          normalizedRecords.push(assign({}, mainNormalizedRecord, {
+          normalizedRecords.push(assign2({}, mainNormalizedRecord, {
             components: originalRecord ? originalRecord.record.components : mainNormalizedRecord.components,
             path: alias,
             aliasOf: originalRecord ? originalRecord.record : mainNormalizedRecord
@@ -1491,7 +1490,7 @@ var vueRouter_cjs_prod = {};
             location: location2
           });
         name = matcher.record.name;
-        params = assign(paramsFromLocation(currentLocation.params, matcher.keys.filter((k) => !k.optional).map((k) => k.name)), location2.params);
+        params = assign2(paramsFromLocation(currentLocation.params, matcher.keys.filter((k) => !k.optional).map((k) => k.name)), location2.params);
         path = matcher.stringify(params);
       } else if ("path" in location2) {
         path = location2.path;
@@ -1508,7 +1507,7 @@ var vueRouter_cjs_prod = {};
             currentLocation
           });
         name = matcher.record.name;
-        params = assign({}, currentLocation.params, location2.params);
+        params = assign2({}, currentLocation.params, location2.params);
         path = matcher.stringify(params);
       }
       const matched = [];
@@ -1573,7 +1572,7 @@ var vueRouter_cjs_prod = {};
     return false;
   }
   function mergeMetaFields(matched) {
-    return matched.reduce((meta2, record) => assign(meta2, record.meta), {});
+    return matched.reduce((meta2, record) => assign2(meta2, record.meta), {});
   }
   function mergeOptions(defaults, partialOptions) {
     const options = {};
@@ -1936,7 +1935,7 @@ var vueRouter_cjs_prod = {};
             matchedRoute.instances[currentName] = null;
           }
         };
-        const component = vue.h(ViewComponent, assign({}, routeProps, attrs, {
+        const component = vue.h(ViewComponent, assign2({}, routeProps, attrs, {
           onVnodeUnmounted,
           ref: viewRef
         }));
@@ -1988,12 +1987,12 @@ var vueRouter_cjs_prod = {};
       return !!matcher.getRecordMatcher(name);
     }
     function resolve(rawLocation, currentLocation) {
-      currentLocation = assign({}, currentLocation || currentRoute.value);
+      currentLocation = assign2({}, currentLocation || currentRoute.value);
       if (typeof rawLocation === "string") {
         const locationNormalized = parseURL(parseQuery$1, rawLocation, currentLocation.path);
         const matchedRoute2 = matcher.resolve({ path: locationNormalized.path }, currentLocation);
         const href2 = routerHistory.createHref(locationNormalized.fullPath);
-        return assign(locationNormalized, matchedRoute2, {
+        return assign2(locationNormalized, matchedRoute2, {
           params: decodeParams(matchedRoute2.params),
           hash: decode(locationNormalized.hash),
           redirectedFrom: void 0,
@@ -2002,17 +2001,17 @@ var vueRouter_cjs_prod = {};
       }
       let matcherLocation;
       if ("path" in rawLocation) {
-        matcherLocation = assign({}, rawLocation, {
+        matcherLocation = assign2({}, rawLocation, {
           path: parseURL(parseQuery$1, rawLocation.path, currentLocation.path).path
         });
       } else {
-        const targetParams = assign({}, rawLocation.params);
+        const targetParams = assign2({}, rawLocation.params);
         for (const key in targetParams) {
           if (targetParams[key] == null) {
             delete targetParams[key];
           }
         }
-        matcherLocation = assign({}, rawLocation, {
+        matcherLocation = assign2({}, rawLocation, {
           params: encodeParams(rawLocation.params)
         });
         currentLocation.params = encodeParams(currentLocation.params);
@@ -2020,12 +2019,12 @@ var vueRouter_cjs_prod = {};
       const matchedRoute = matcher.resolve(matcherLocation, currentLocation);
       const hash = rawLocation.hash || "";
       matchedRoute.params = normalizeParams(decodeParams(matchedRoute.params));
-      const fullPath = stringifyURL(stringifyQuery$1, assign({}, rawLocation, {
+      const fullPath = stringifyURL(stringifyQuery$1, assign2({}, rawLocation, {
         hash: encodeHash(hash),
         path: matchedRoute.path
       }));
       const href = routerHistory.createHref(fullPath);
-      return assign({
+      return assign2({
         fullPath,
         hash,
         query: stringifyQuery$1 === stringifyQuery ? normalizeQuery(rawLocation.query) : rawLocation.query || {}
@@ -2035,7 +2034,7 @@ var vueRouter_cjs_prod = {};
       });
     }
     function locationAsObject(to) {
-      return typeof to === "string" ? parseURL(parseQuery$1, to, currentRoute.value.path) : assign({}, to);
+      return typeof to === "string" ? parseURL(parseQuery$1, to, currentRoute.value.path) : assign2({}, to);
     }
     function checkCanceledNavigation(to, from) {
       if (pendingLocation !== to) {
@@ -2049,7 +2048,7 @@ var vueRouter_cjs_prod = {};
       return pushWithRedirect(to);
     }
     function replace(to) {
-      return push(assign(locationAsObject(to), { replace: true }));
+      return push(assign2(locationAsObject(to), { replace: true }));
     }
     function handleRedirectRecord(to) {
       const lastMatched = to.matched[to.matched.length - 1];
@@ -2060,7 +2059,7 @@ var vueRouter_cjs_prod = {};
           newTargetLocation = newTargetLocation.includes("?") || newTargetLocation.includes("#") ? newTargetLocation = locationAsObject(newTargetLocation) : { path: newTargetLocation };
           newTargetLocation.params = {};
         }
-        return assign({
+        return assign2({
           query: to.query,
           hash: to.hash,
           params: to.params
@@ -2075,7 +2074,7 @@ var vueRouter_cjs_prod = {};
       const replace2 = to.replace === true;
       const shouldRedirect = handleRedirectRecord(targetLocation);
       if (shouldRedirect)
-        return pushWithRedirect(assign(locationAsObject(shouldRedirect), {
+        return pushWithRedirect(assign2(locationAsObject(shouldRedirect), {
           state: data,
           force,
           replace: replace2
@@ -2090,7 +2089,7 @@ var vueRouter_cjs_prod = {};
       return (failure ? Promise.resolve(failure) : navigate(toLocation, from)).catch((error) => isNavigationFailure(error) ? isNavigationFailure(error, 2) ? error : markAsReady(error) : triggerError(error, toLocation, from)).then((failure2) => {
         if (failure2) {
           if (isNavigationFailure(failure2, 2)) {
-            return pushWithRedirect(assign(locationAsObject(failure2.to), {
+            return pushWithRedirect(assign2(locationAsObject(failure2.to), {
               state: data,
               force,
               replace: replace2
@@ -2174,7 +2173,7 @@ var vueRouter_cjs_prod = {};
       const state = {};
       if (isPush) {
         if (replace2 || isFirstNavigation)
-          routerHistory.replace(toLocation.fullPath, assign({
+          routerHistory.replace(toLocation.fullPath, assign2({
             scroll: isFirstNavigation && state && state.scroll
           }, data));
         else
@@ -2192,7 +2191,7 @@ var vueRouter_cjs_prod = {};
         const toLocation = resolve(to);
         const shouldRedirect = handleRedirectRecord(toLocation);
         if (shouldRedirect) {
-          pushWithRedirect(assign(shouldRedirect, { replace: true }), toLocation).catch(noop);
+          pushWithRedirect(assign2(shouldRedirect, { replace: true }), toLocation).catch(noop);
           return;
         }
         pendingLocation = toLocation;
@@ -2411,8 +2410,8 @@ function defaultContentType(event, type) {
     event.res.setHeader("Content-Type", type);
   }
 }
-function sendRedirect(event, location2, code = 302) {
-  event.res.statusCode = code;
+function sendRedirect(event, location2, code2 = 302) {
+  event.res.statusCode = code2;
   event.res.setHeader("Location", location2);
   return send(event, "Redirecting to " + location2, MIMES.html);
 }
@@ -2612,7 +2611,7 @@ const slotFlagsText = {
 const GLOBALS_WHITE_LISTED = "Infinity,undefined,NaN,isFinite,isNaN,parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,BigInt";
 const isGloballyWhitelisted = /* @__PURE__ */ makeMap(GLOBALS_WHITE_LISTED);
 const range = 2;
-function generateCodeFrame(source, start = 0, end = source.length) {
+function generateCodeFrame$1(source, start = 0, end = source.length) {
   let lines = source.split(/(\r?\n)/);
   const newlineSequences = lines.filter((_, idx) => idx % 2 === 1);
   lines = lines.filter((_, idx) => idx % 2 === 0);
@@ -2673,11 +2672,11 @@ const isNoUnitNumericStyleProp = /* @__PURE__ */ makeMap(`animation-iteration-co
 const isKnownHtmlAttr = /* @__PURE__ */ makeMap(`accept,accept-charset,accesskey,action,align,allow,alt,async,autocapitalize,autocomplete,autofocus,autoplay,background,bgcolor,border,buffered,capture,challenge,charset,checked,cite,class,code,codebase,color,cols,colspan,content,contenteditable,contextmenu,controls,coords,crossorigin,csp,data,datetime,decoding,default,defer,dir,dirname,disabled,download,draggable,dropzone,enctype,enterkeyhint,for,form,formaction,formenctype,formmethod,formnovalidate,formtarget,headers,height,hidden,high,href,hreflang,http-equiv,icon,id,importance,integrity,ismap,itemprop,keytype,kind,label,lang,language,loading,list,loop,low,manifest,max,maxlength,minlength,media,min,multiple,muted,name,novalidate,open,optimum,pattern,ping,placeholder,poster,preload,radiogroup,readonly,referrerpolicy,rel,required,reversed,rows,rowspan,sandbox,scope,scoped,selected,shape,size,sizes,slot,span,spellcheck,src,srcdoc,srclang,srcset,start,step,style,summary,tabindex,target,title,translate,type,usemap,value,width,wrap`);
 const isKnownSvgAttr = /* @__PURE__ */ makeMap(`xmlns,accent-height,accumulate,additive,alignment-baseline,alphabetic,amplitude,arabic-form,ascent,attributeName,attributeType,azimuth,baseFrequency,baseline-shift,baseProfile,bbox,begin,bias,by,calcMode,cap-height,class,clip,clipPathUnits,clip-path,clip-rule,color,color-interpolation,color-interpolation-filters,color-profile,color-rendering,contentScriptType,contentStyleType,crossorigin,cursor,cx,cy,d,decelerate,descent,diffuseConstant,direction,display,divisor,dominant-baseline,dur,dx,dy,edgeMode,elevation,enable-background,end,exponent,fill,fill-opacity,fill-rule,filter,filterRes,filterUnits,flood-color,flood-opacity,font-family,font-size,font-size-adjust,font-stretch,font-style,font-variant,font-weight,format,from,fr,fx,fy,g1,g2,glyph-name,glyph-orientation-horizontal,glyph-orientation-vertical,glyphRef,gradientTransform,gradientUnits,hanging,height,href,hreflang,horiz-adv-x,horiz-origin-x,id,ideographic,image-rendering,in,in2,intercept,k,k1,k2,k3,k4,kernelMatrix,kernelUnitLength,kerning,keyPoints,keySplines,keyTimes,lang,lengthAdjust,letter-spacing,lighting-color,limitingConeAngle,local,marker-end,marker-mid,marker-start,markerHeight,markerUnits,markerWidth,mask,maskContentUnits,maskUnits,mathematical,max,media,method,min,mode,name,numOctaves,offset,opacity,operator,order,orient,orientation,origin,overflow,overline-position,overline-thickness,panose-1,paint-order,path,pathLength,patternContentUnits,patternTransform,patternUnits,ping,pointer-events,points,pointsAtX,pointsAtY,pointsAtZ,preserveAlpha,preserveAspectRatio,primitiveUnits,r,radius,referrerPolicy,refX,refY,rel,rendering-intent,repeatCount,repeatDur,requiredExtensions,requiredFeatures,restart,result,rotate,rx,ry,scale,seed,shape-rendering,slope,spacing,specularConstant,specularExponent,speed,spreadMethod,startOffset,stdDeviation,stemh,stemv,stitchTiles,stop-color,stop-opacity,strikethrough-position,strikethrough-thickness,string,stroke,stroke-dasharray,stroke-dashoffset,stroke-linecap,stroke-linejoin,stroke-miterlimit,stroke-opacity,stroke-width,style,surfaceScale,systemLanguage,tabindex,tableValues,target,targetX,targetY,text-anchor,text-decoration,text-rendering,textLength,to,transform,transform-origin,type,u1,u2,underline-position,underline-thickness,unicode,unicode-bidi,unicode-range,units-per-em,v-alphabetic,v-hanging,v-ideographic,v-mathematical,values,vector-effect,version,vert-adv-y,vert-origin-x,vert-origin-y,viewBox,viewTarget,visibility,width,widths,word-spacing,writing-mode,x,x-height,x1,x2,xChannelSelector,xlink:actuate,xlink:arcrole,xlink:href,xlink:role,xlink:show,xlink:title,xlink:type,xml:base,xml:lang,xml:space,y,y1,y2,yChannelSelector,z,zoomAndPan`);
 function normalizeStyle(value) {
-  if (isArray(value)) {
+  if (isArray$2(value)) {
     const res = {};
     for (let i = 0; i < value.length; i++) {
       const item = value[i];
-      const normalized = isString(item) ? parseStringStyle(item) : normalizeStyle(item);
+      const normalized = isString$2(item) ? parseStringStyle(item) : normalizeStyle(item);
       if (normalized) {
         for (const key in normalized) {
           res[key] = normalized[key];
@@ -2685,9 +2684,9 @@ function normalizeStyle(value) {
       }
     }
     return res;
-  } else if (isString(value)) {
+  } else if (isString$2(value)) {
     return value;
-  } else if (isObject$1(value)) {
+  } else if (isObject$3(value)) {
     return value;
   }
 }
@@ -2705,13 +2704,13 @@ function parseStringStyle(cssText) {
 }
 function stringifyStyle(styles) {
   let ret = "";
-  if (!styles || isString(styles)) {
+  if (!styles || isString$2(styles)) {
     return ret;
   }
   for (const key in styles) {
     const value = styles[key];
     const normalizedKey = key.startsWith(`--`) ? key : hyphenate(key);
-    if (isString(value) || typeof value === "number" && isNoUnitNumericStyleProp(normalizedKey)) {
+    if (isString$2(value) || typeof value === "number" && isNoUnitNumericStyleProp(normalizedKey)) {
       ret += `${normalizedKey}:${value};`;
     }
   }
@@ -2719,16 +2718,16 @@ function stringifyStyle(styles) {
 }
 function normalizeClass(value) {
   let res = "";
-  if (isString(value)) {
+  if (isString$2(value)) {
     res = value;
-  } else if (isArray(value)) {
+  } else if (isArray$2(value)) {
     for (let i = 0; i < value.length; i++) {
       const normalized = normalizeClass(value[i]);
       if (normalized) {
         res += normalized + " ";
       }
     }
-  } else if (isObject$1(value)) {
+  } else if (isObject$3(value)) {
     for (const name in value) {
       if (value[name]) {
         res += name + " ";
@@ -2741,7 +2740,7 @@ function normalizeProps(props) {
   if (!props)
     return null;
   let { class: klass, style } = props;
-  if (klass && !isString(klass)) {
+  if (klass && !isString$2(klass)) {
     props.class = normalizeClass(klass);
   }
   if (style) {
@@ -2756,7 +2755,7 @@ const isHTMLTag = /* @__PURE__ */ makeMap(HTML_TAGS);
 const isSVGTag = /* @__PURE__ */ makeMap(SVG_TAGS);
 const isVoidTag = /* @__PURE__ */ makeMap(VOID_TAGS);
 const escapeRE = /["'&<>]/;
-function escapeHtml(string) {
+function escapeHtml$1(string) {
   const str = "" + string;
   const match = escapeRE.exec(str);
   if (!match) {
@@ -2810,18 +2809,18 @@ function looseCompareArrays(a, b) {
 function looseEqual(a, b) {
   if (a === b)
     return true;
-  let aValidType = isDate(a);
-  let bValidType = isDate(b);
+  let aValidType = isDate$1(a);
+  let bValidType = isDate$1(b);
   if (aValidType || bValidType) {
     return aValidType && bValidType ? a.getTime() === b.getTime() : false;
   }
-  aValidType = isArray(a);
-  bValidType = isArray(b);
+  aValidType = isArray$2(a);
+  bValidType = isArray$2(b);
   if (aValidType || bValidType) {
     return aValidType && bValidType ? looseCompareArrays(a, b) : false;
   }
-  aValidType = isObject$1(a);
-  bValidType = isObject$1(b);
+  aValidType = isObject$3(a);
+  bValidType = isObject$3(b);
   if (aValidType || bValidType) {
     if (!aValidType || !bValidType) {
       return false;
@@ -2844,8 +2843,8 @@ function looseEqual(a, b) {
 function looseIndexOf(arr, val) {
   return arr.findIndex((item) => looseEqual(item, val));
 }
-const toDisplayString = (val) => {
-  return isString(val) ? val : val == null ? "" : isArray(val) || isObject$1(val) && (val.toString === objectToString || !isFunction(val.toString)) ? JSON.stringify(val, replacer, 2) : String(val);
+const toDisplayString$1 = (val) => {
+  return isString$2(val) ? val : val == null ? "" : isArray$2(val) || isObject$3(val) && (val.toString === objectToString$1 || !isFunction$2(val.toString)) ? JSON.stringify(val, replacer, 2) : String(val);
 };
 const replacer = (_key, val) => {
   if (val && val.__v_isRef) {
@@ -2861,7 +2860,7 @@ const replacer = (_key, val) => {
     return {
       [`Set(${val.size})`]: [...val.values()]
     };
-  } else if (isObject$1(val) && !isArray(val) && !isPlainObject(val)) {
+  } else if (isObject$3(val) && !isArray$2(val) && !isPlainObject$1(val)) {
     return String(val);
   }
   return val;
@@ -2881,33 +2880,33 @@ const remove = (arr, el) => {
     arr.splice(i, 1);
   }
 };
-const hasOwnProperty = Object.prototype.hasOwnProperty;
-const hasOwn = (val, key) => hasOwnProperty.call(val, key);
-const isArray = Array.isArray;
-const isMap = (val) => toTypeString(val) === "[object Map]";
-const isSet = (val) => toTypeString(val) === "[object Set]";
-const isDate = (val) => val instanceof Date;
-const isFunction = (val) => typeof val === "function";
-const isString = (val) => typeof val === "string";
-const isSymbol = (val) => typeof val === "symbol";
-const isObject$1 = (val) => val !== null && typeof val === "object";
+const hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+const hasOwn$1 = (val, key) => hasOwnProperty$1.call(val, key);
+const isArray$2 = Array.isArray;
+const isMap = (val) => toTypeString$1(val) === "[object Map]";
+const isSet = (val) => toTypeString$1(val) === "[object Set]";
+const isDate$1 = (val) => val instanceof Date;
+const isFunction$2 = (val) => typeof val === "function";
+const isString$2 = (val) => typeof val === "string";
+const isSymbol$1 = (val) => typeof val === "symbol";
+const isObject$3 = (val) => val !== null && typeof val === "object";
 const isPromise = (val) => {
-  return isObject$1(val) && isFunction(val.then) && isFunction(val.catch);
+  return isObject$3(val) && isFunction$2(val.then) && isFunction$2(val.catch);
 };
-const objectToString = Object.prototype.toString;
-const toTypeString = (value) => objectToString.call(value);
+const objectToString$1 = Object.prototype.toString;
+const toTypeString$1 = (value) => objectToString$1.call(value);
 const toRawType = (value) => {
-  return toTypeString(value).slice(8, -1);
+  return toTypeString$1(value).slice(8, -1);
 };
-const isPlainObject = (val) => toTypeString(val) === "[object Object]";
-const isIntegerKey = (key) => isString(key) && key !== "NaN" && key[0] !== "-" && "" + parseInt(key, 10) === key;
+const isPlainObject$1 = (val) => toTypeString$1(val) === "[object Object]";
+const isIntegerKey = (key) => isString$2(key) && key !== "NaN" && key[0] !== "-" && "" + parseInt(key, 10) === key;
 const isReservedProp = /* @__PURE__ */ makeMap(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted");
 const isBuiltInDirective = /* @__PURE__ */ makeMap("bind,cloak,else-if,else,for,html,if,model,on,once,pre,show,slot,text,memo");
 const cacheStringFunction = (fn) => {
-  const cache = /* @__PURE__ */ Object.create(null);
+  const cache2 = /* @__PURE__ */ Object.create(null);
   return (str) => {
-    const hit = cache[str];
-    return hit || (cache[str] = fn(str));
+    const hit = cache2[str];
+    return hit || (cache2[str] = fn(str));
   };
 };
 const camelizeRE = /-(\w)/g;
@@ -2935,9 +2934,9 @@ const toNumber = (val) => {
   const n = parseFloat(val);
   return isNaN(n) ? val : n;
 };
-let _globalThis;
-const getGlobalThis = () => {
-  return _globalThis || (_globalThis = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof commonjsGlobal !== "undefined" ? commonjsGlobal : {});
+let _globalThis$1;
+const getGlobalThis$1 = () => {
+  return _globalThis$1 || (_globalThis$1 = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof commonjsGlobal !== "undefined" ? commonjsGlobal : {});
 };
 shared_cjs_prod.EMPTY_ARR = EMPTY_ARR;
 shared_cjs_prod.EMPTY_OBJ = EMPTY_OBJ;
@@ -2947,21 +2946,21 @@ shared_cjs_prod.PatchFlagNames = PatchFlagNames;
 shared_cjs_prod.camelize = camelize;
 shared_cjs_prod.capitalize = capitalize;
 shared_cjs_prod.def = def;
-shared_cjs_prod.escapeHtml = escapeHtml;
+shared_cjs_prod.escapeHtml = escapeHtml$1;
 shared_cjs_prod.escapeHtmlComment = escapeHtmlComment;
 shared_cjs_prod.extend = extend;
-shared_cjs_prod.generateCodeFrame = generateCodeFrame;
-shared_cjs_prod.getGlobalThis = getGlobalThis;
+shared_cjs_prod.generateCodeFrame = generateCodeFrame$1;
+shared_cjs_prod.getGlobalThis = getGlobalThis$1;
 shared_cjs_prod.hasChanged = hasChanged;
-shared_cjs_prod.hasOwn = hasOwn;
+shared_cjs_prod.hasOwn = hasOwn$1;
 shared_cjs_prod.hyphenate = hyphenate;
 shared_cjs_prod.includeBooleanAttr = includeBooleanAttr;
 shared_cjs_prod.invokeArrayFns = invokeArrayFns;
-shared_cjs_prod.isArray = isArray;
+shared_cjs_prod.isArray = isArray$2;
 shared_cjs_prod.isBooleanAttr = isBooleanAttr;
 shared_cjs_prod.isBuiltInDirective = isBuiltInDirective;
-shared_cjs_prod.isDate = isDate;
-var isFunction_1 = shared_cjs_prod.isFunction = isFunction;
+shared_cjs_prod.isDate = isDate$1;
+var isFunction_1 = shared_cjs_prod.isFunction = isFunction$2;
 shared_cjs_prod.isGloballyWhitelisted = isGloballyWhitelisted;
 shared_cjs_prod.isHTMLTag = isHTMLTag;
 shared_cjs_prod.isIntegerKey = isIntegerKey;
@@ -2970,17 +2969,17 @@ shared_cjs_prod.isKnownSvgAttr = isKnownSvgAttr;
 shared_cjs_prod.isMap = isMap;
 shared_cjs_prod.isModelListener = isModelListener;
 shared_cjs_prod.isNoUnitNumericStyleProp = isNoUnitNumericStyleProp;
-shared_cjs_prod.isObject = isObject$1;
+shared_cjs_prod.isObject = isObject$3;
 shared_cjs_prod.isOn = isOn;
-shared_cjs_prod.isPlainObject = isPlainObject;
+shared_cjs_prod.isPlainObject = isPlainObject$1;
 shared_cjs_prod.isPromise = isPromise;
 shared_cjs_prod.isReservedProp = isReservedProp;
 shared_cjs_prod.isSSRSafeAttrName = isSSRSafeAttrName;
 shared_cjs_prod.isSVGTag = isSVGTag;
 shared_cjs_prod.isSet = isSet;
 shared_cjs_prod.isSpecialBooleanAttr = isSpecialBooleanAttr;
-shared_cjs_prod.isString = isString;
-shared_cjs_prod.isSymbol = isSymbol;
+shared_cjs_prod.isString = isString$2;
+shared_cjs_prod.isSymbol = isSymbol$1;
 shared_cjs_prod.isVoidTag = isVoidTag;
 shared_cjs_prod.looseEqual = looseEqual;
 shared_cjs_prod.looseIndexOf = looseIndexOf;
@@ -2988,17 +2987,17 @@ shared_cjs_prod.makeMap = makeMap;
 shared_cjs_prod.normalizeClass = normalizeClass;
 shared_cjs_prod.normalizeProps = normalizeProps;
 shared_cjs_prod.normalizeStyle = normalizeStyle;
-shared_cjs_prod.objectToString = objectToString;
+shared_cjs_prod.objectToString = objectToString$1;
 shared_cjs_prod.parseStringStyle = parseStringStyle;
 shared_cjs_prod.propsToAttrMap = propsToAttrMap;
 shared_cjs_prod.remove = remove;
 shared_cjs_prod.slotFlagsText = slotFlagsText;
 shared_cjs_prod.stringifyStyle = stringifyStyle;
-shared_cjs_prod.toDisplayString = toDisplayString;
+shared_cjs_prod.toDisplayString = toDisplayString$1;
 shared_cjs_prod.toHandlerKey = toHandlerKey;
 shared_cjs_prod.toNumber = toNumber;
 shared_cjs_prod.toRawType = toRawType;
-shared_cjs_prod.toTypeString = toTypeString;
+shared_cjs_prod.toTypeString = toTypeString$1;
 function useHead(meta2) {
   const resolvedMeta = isFunction_1(meta2) ? vue_cjs_prod.computed(meta2) : meta2;
   useNuxtApp()._useHead(resolvedMeta);
@@ -3019,25 +3018,25 @@ function componentsPlugin_50ade27a(nuxtApp) {
     nuxtApp.vueApp.component("Lazy" + name, components[name]);
   }
 }
-var __defProp2 = Object.defineProperty;
-var __defProps2 = Object.defineProperties;
-var __getOwnPropDescs2 = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols2 = Object.getOwnPropertySymbols;
-var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-var __propIsEnum2 = Object.prototype.propertyIsEnumerable;
-var __defNormalProp2 = (obj, key, value) => key in obj ? __defProp2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues2 = (a, b) => {
+var __defProp$1 = Object.defineProperty;
+var __defProps$1 = Object.defineProperties;
+var __getOwnPropDescs$1 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$1 = Object.getOwnPropertySymbols;
+var __hasOwnProp$1 = Object.prototype.hasOwnProperty;
+var __propIsEnum$1 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$1 = (obj, key, value) => key in obj ? __defProp$1(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$1 = (a, b) => {
   for (var prop in b || (b = {}))
-    if (__hasOwnProp2.call(b, prop))
-      __defNormalProp2(a, prop, b[prop]);
-  if (__getOwnPropSymbols2)
-    for (var prop of __getOwnPropSymbols2(b)) {
-      if (__propIsEnum2.call(b, prop))
-        __defNormalProp2(a, prop, b[prop]);
+    if (__hasOwnProp$1.call(b, prop))
+      __defNormalProp$1(a, prop, b[prop]);
+  if (__getOwnPropSymbols$1)
+    for (var prop of __getOwnPropSymbols$1(b)) {
+      if (__propIsEnum$1.call(b, prop))
+        __defNormalProp$1(a, prop, b[prop]);
     }
   return a;
 };
-var __spreadProps2 = (a, b) => __defProps2(a, __getOwnPropDescs2(b));
+var __spreadProps$1 = (a, b) => __defProps$1(a, __getOwnPropDescs$1(b));
 var PROVIDE_KEY = `usehead`;
 var HEAD_COUNT_KEY = `head:count`;
 var HEAD_ATTRS_KEY = `data-head-attrs`;
@@ -3114,7 +3113,7 @@ var headObjToTags = (obj) => {
     if (key === "title") {
       tags.push({ tag: key, props: { children: obj[key] } });
     } else if (key === "base") {
-      tags.push({ tag: key, props: __spreadValues2({ key: "default" }, obj[key]) });
+      tags.push({ tag: key, props: __spreadValues$1({ key: "default" }, obj[key]) });
     } else if (acceptFields.includes(key)) {
       const value = obj[key];
       if (Array.isArray(value)) {
@@ -3300,22 +3299,22 @@ var renderHeadToString = (head) => {
       return titleTag + tags.join("");
     },
     get htmlAttrs() {
-      return stringifyAttrs(__spreadProps2(__spreadValues2({}, htmlAttrs), {
+      return stringifyAttrs(__spreadProps$1(__spreadValues$1({}, htmlAttrs), {
         [HEAD_ATTRS_KEY]: Object.keys(htmlAttrs).join(",")
       }));
     },
     get bodyAttrs() {
-      return stringifyAttrs(__spreadProps2(__spreadValues2({}, bodyAttrs), {
+      return stringifyAttrs(__spreadProps$1(__spreadValues$1({}, bodyAttrs), {
         [HEAD_ATTRS_KEY]: Object.keys(bodyAttrs).join(",")
       }));
     }
   };
 };
-function isObject(val) {
+function isObject$2(val) {
   return val !== null && typeof val === "object";
 }
 function _defu(baseObj, defaults, namespace = ".", merger) {
-  if (!isObject(defaults)) {
+  if (!isObject$2(defaults)) {
     return _defu(baseObj, {}, namespace, merger);
   }
   const obj = Object.assign({}, defaults);
@@ -3332,7 +3331,7 @@ function _defu(baseObj, defaults, namespace = ".", merger) {
     }
     if (Array.isArray(val) && Array.isArray(obj[key])) {
       obj[key] = val.concat(obj[key]);
-    } else if (isObject(val) && isObject(obj[key])) {
+    } else if (isObject$2(val) && isObject$2(obj[key])) {
       obj[key] = _defu(val, obj[key], (namespace ? `${namespace}.` : "") + key.toString(), merger);
     } else {
       obj[key] = val;
@@ -3790,30 +3789,3248 @@ const _2f12118a = defineNuxtPlugin(async (nuxtApp) => {
   });
   return { provide: { router } };
 });
-const PiniaNuxtPlugin = (context, inject2) => {
-  const pinia = createPinia();
-  {
-    context.vueApp.use(pinia);
-  }
-  inject2("pinia", pinia);
-  context.pinia = pinia;
-  setActivePinia(pinia);
-  pinia._p.push(({ store }) => {
-    Object.defineProperty(store, "$nuxt", { value: context });
-  });
-  {
-    {
-      context.nuxtState.pinia = pinia.state.value;
+/*!
+  * shared v9.2.0-beta.35
+  * (c) 2022 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const inBrowser = false;
+const hasSymbol$1 = typeof Symbol === "function" && typeof Symbol.toStringTag === "symbol";
+const makeSymbol$1 = (name) => hasSymbol$1 ? Symbol(name) : name;
+const generateFormatCacheKey = (locale, key, source) => friendlyJSONstringify({ l: locale, k: key, s: source });
+const friendlyJSONstringify = (json) => JSON.stringify(json).replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029").replace(/\u0027/g, "\\u0027");
+const isNumber = (val) => typeof val === "number" && isFinite(val);
+const isDate = (val) => toTypeString(val) === "[object Date]";
+const isRegExp = (val) => toTypeString(val) === "[object RegExp]";
+const isEmptyObject = (val) => isPlainObject(val) && Object.keys(val).length === 0;
+function warn$1(msg, err) {
+  if (typeof console !== "undefined") {
+    console.warn(`[intlify] ` + msg);
+    if (err) {
+      console.warn(err.stack);
     }
   }
+}
+const assign$1 = Object.assign;
+let _globalThis;
+const getGlobalThis = () => {
+  return _globalThis || (_globalThis = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : {});
 };
+function escapeHtml(rawText) {
+  return rawText.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+}
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+function hasOwn(obj, key) {
+  return hasOwnProperty.call(obj, key);
+}
+const isArray$1 = Array.isArray;
+const isFunction$1 = (val) => typeof val === "function";
+const isString$1 = (val) => typeof val === "string";
+const isBoolean$1 = (val) => typeof val === "boolean";
+const isObject$1 = (val) => val !== null && typeof val === "object";
+const objectToString = Object.prototype.toString;
+const toTypeString = (value) => objectToString.call(value);
+const isPlainObject = (val) => toTypeString(val) === "[object Object]";
+const toDisplayString = (val) => {
+  return val == null ? "" : isArray$1(val) || isPlainObject(val) && val.toString === objectToString ? JSON.stringify(val, null, 2) : String(val);
+};
+/*!
+  * message-compiler v9.2.0-beta.35
+  * (c) 2022 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const CompileErrorCodes = {
+  EXPECTED_TOKEN: 1,
+  INVALID_TOKEN_IN_PLACEHOLDER: 2,
+  UNTERMINATED_SINGLE_QUOTE_IN_PLACEHOLDER: 3,
+  UNKNOWN_ESCAPE_SEQUENCE: 4,
+  INVALID_UNICODE_ESCAPE_SEQUENCE: 5,
+  UNBALANCED_CLOSING_BRACE: 6,
+  UNTERMINATED_CLOSING_BRACE: 7,
+  EMPTY_PLACEHOLDER: 8,
+  NOT_ALLOW_NEST_PLACEHOLDER: 9,
+  INVALID_LINKED_FORMAT: 10,
+  MUST_HAVE_MESSAGES_IN_PLURAL: 11,
+  UNEXPECTED_EMPTY_LINKED_MODIFIER: 12,
+  UNEXPECTED_EMPTY_LINKED_KEY: 13,
+  UNEXPECTED_LEXICAL_ANALYSIS: 14,
+  __EXTEND_POINT__: 15
+};
+function createCompileError(code2, loc, options = {}) {
+  const { domain, messages, args } = options;
+  const msg = code2;
+  const error = new SyntaxError(String(msg));
+  error.code = code2;
+  if (loc) {
+    error.location = loc;
+  }
+  error.domain = domain;
+  return error;
+}
+/*!
+  * devtools-if v9.2.0-beta.35
+  * (c) 2022 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const IntlifyDevToolsHooks = {
+  I18nInit: "i18n:init",
+  FunctionTranslate: "function:translate"
+};
+/*!
+  * core-base v9.2.0-beta.35
+  * (c) 2022 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const pathStateMachine = [];
+pathStateMachine[0] = {
+  ["w"]: [0],
+  ["i"]: [3, 0],
+  ["["]: [4],
+  ["o"]: [7]
+};
+pathStateMachine[1] = {
+  ["w"]: [1],
+  ["."]: [2],
+  ["["]: [4],
+  ["o"]: [7]
+};
+pathStateMachine[2] = {
+  ["w"]: [2],
+  ["i"]: [3, 0],
+  ["0"]: [3, 0]
+};
+pathStateMachine[3] = {
+  ["i"]: [3, 0],
+  ["0"]: [3, 0],
+  ["w"]: [1, 1],
+  ["."]: [2, 1],
+  ["["]: [4, 1],
+  ["o"]: [7, 1]
+};
+pathStateMachine[4] = {
+  ["'"]: [5, 0],
+  ['"']: [6, 0],
+  ["["]: [
+    4,
+    2
+  ],
+  ["]"]: [1, 3],
+  ["o"]: 8,
+  ["l"]: [4, 0]
+};
+pathStateMachine[5] = {
+  ["'"]: [4, 0],
+  ["o"]: 8,
+  ["l"]: [5, 0]
+};
+pathStateMachine[6] = {
+  ['"']: [4, 0],
+  ["o"]: 8,
+  ["l"]: [6, 0]
+};
+const literalValueRE = /^\s?(?:true|false|-?[\d.]+|'[^']*'|"[^"]*")\s?$/;
+function isLiteral(exp) {
+  return literalValueRE.test(exp);
+}
+function stripQuotes(str) {
+  const a = str.charCodeAt(0);
+  const b = str.charCodeAt(str.length - 1);
+  return a === b && (a === 34 || a === 39) ? str.slice(1, -1) : str;
+}
+function getPathCharType(ch) {
+  if (ch === void 0 || ch === null) {
+    return "o";
+  }
+  const code2 = ch.charCodeAt(0);
+  switch (code2) {
+    case 91:
+    case 93:
+    case 46:
+    case 34:
+    case 39:
+      return ch;
+    case 95:
+    case 36:
+    case 45:
+      return "i";
+    case 9:
+    case 10:
+    case 13:
+    case 160:
+    case 65279:
+    case 8232:
+    case 8233:
+      return "w";
+  }
+  return "i";
+}
+function formatSubPath(path) {
+  const trimmed = path.trim();
+  if (path.charAt(0) === "0" && isNaN(parseInt(path))) {
+    return false;
+  }
+  return isLiteral(trimmed) ? stripQuotes(trimmed) : "*" + trimmed;
+}
+function parse(path) {
+  const keys = [];
+  let index2 = -1;
+  let mode = 0;
+  let subPathDepth = 0;
+  let c;
+  let key;
+  let newChar;
+  let type;
+  let transition;
+  let action;
+  let typeMap;
+  const actions = [];
+  actions[0] = () => {
+    if (key === void 0) {
+      key = newChar;
+    } else {
+      key += newChar;
+    }
+  };
+  actions[1] = () => {
+    if (key !== void 0) {
+      keys.push(key);
+      key = void 0;
+    }
+  };
+  actions[2] = () => {
+    actions[0]();
+    subPathDepth++;
+  };
+  actions[3] = () => {
+    if (subPathDepth > 0) {
+      subPathDepth--;
+      mode = 4;
+      actions[0]();
+    } else {
+      subPathDepth = 0;
+      if (key === void 0) {
+        return false;
+      }
+      key = formatSubPath(key);
+      if (key === false) {
+        return false;
+      } else {
+        actions[1]();
+      }
+    }
+  };
+  function maybeUnescapeQuote() {
+    const nextChar = path[index2 + 1];
+    if (mode === 5 && nextChar === "'" || mode === 6 && nextChar === '"') {
+      index2++;
+      newChar = "\\" + nextChar;
+      actions[0]();
+      return true;
+    }
+  }
+  while (mode !== null) {
+    index2++;
+    c = path[index2];
+    if (c === "\\" && maybeUnescapeQuote()) {
+      continue;
+    }
+    type = getPathCharType(c);
+    typeMap = pathStateMachine[mode];
+    transition = typeMap[type] || typeMap["l"] || 8;
+    if (transition === 8) {
+      return;
+    }
+    mode = transition[0];
+    if (transition[1] !== void 0) {
+      action = actions[transition[1]];
+      if (action) {
+        newChar = c;
+        if (action() === false) {
+          return;
+        }
+      }
+    }
+    if (mode === 7) {
+      return keys;
+    }
+  }
+}
+const cache = /* @__PURE__ */ new Map();
+function resolveWithKeyValue(obj, path) {
+  return isObject$1(obj) ? obj[path] : null;
+}
+function resolveValue(obj, path) {
+  if (!isObject$1(obj)) {
+    return null;
+  }
+  let hit = cache.get(path);
+  if (!hit) {
+    hit = parse(path);
+    if (hit) {
+      cache.set(path, hit);
+    }
+  }
+  if (!hit) {
+    return null;
+  }
+  const len = hit.length;
+  let last = obj;
+  let i = 0;
+  while (i < len) {
+    const val = last[hit[i]];
+    if (val === void 0) {
+      return null;
+    }
+    last = val;
+    i++;
+  }
+  return last;
+}
+const DEFAULT_MODIFIER = (str) => str;
+const DEFAULT_MESSAGE = (ctx) => "";
+const DEFAULT_MESSAGE_DATA_TYPE = "text";
+const DEFAULT_NORMALIZE = (values) => values.length === 0 ? "" : values.join("");
+const DEFAULT_INTERPOLATE = toDisplayString;
+function pluralDefault(choice, choicesLength) {
+  choice = Math.abs(choice);
+  if (choicesLength === 2) {
+    return choice ? choice > 1 ? 1 : 0 : 1;
+  }
+  return choice ? Math.min(choice, 2) : 0;
+}
+function getPluralIndex(options) {
+  const index2 = isNumber(options.pluralIndex) ? options.pluralIndex : -1;
+  return options.named && (isNumber(options.named.count) || isNumber(options.named.n)) ? isNumber(options.named.count) ? options.named.count : isNumber(options.named.n) ? options.named.n : index2 : index2;
+}
+function normalizeNamed(pluralIndex, props) {
+  if (!props.count) {
+    props.count = pluralIndex;
+  }
+  if (!props.n) {
+    props.n = pluralIndex;
+  }
+}
+function createMessageContext(options = {}) {
+  const locale = options.locale;
+  const pluralIndex = getPluralIndex(options);
+  const pluralRule = isObject$1(options.pluralRules) && isString$1(locale) && isFunction$1(options.pluralRules[locale]) ? options.pluralRules[locale] : pluralDefault;
+  const orgPluralRule = isObject$1(options.pluralRules) && isString$1(locale) && isFunction$1(options.pluralRules[locale]) ? pluralDefault : void 0;
+  const plural = (messages) => messages[pluralRule(pluralIndex, messages.length, orgPluralRule)];
+  const _list = options.list || [];
+  const list = (index2) => _list[index2];
+  const _named = options.named || {};
+  isNumber(options.pluralIndex) && normalizeNamed(pluralIndex, _named);
+  const named = (key) => _named[key];
+  function message(key) {
+    const msg = isFunction$1(options.messages) ? options.messages(key) : isObject$1(options.messages) ? options.messages[key] : false;
+    return !msg ? options.parent ? options.parent.message(key) : DEFAULT_MESSAGE : msg;
+  }
+  const _modifier = (name) => options.modifiers ? options.modifiers[name] : DEFAULT_MODIFIER;
+  const normalize = isPlainObject(options.processor) && isFunction$1(options.processor.normalize) ? options.processor.normalize : DEFAULT_NORMALIZE;
+  const interpolate = isPlainObject(options.processor) && isFunction$1(options.processor.interpolate) ? options.processor.interpolate : DEFAULT_INTERPOLATE;
+  const linked = (key, modifier) => {
+    const msg = message(key)(ctx);
+    return isString$1(modifier) ? _modifier(modifier)(msg) : msg;
+  };
+  const type = isPlainObject(options.processor) && isString$1(options.processor.type) ? options.processor.type : DEFAULT_MESSAGE_DATA_TYPE;
+  const ctx = {
+    ["list"]: list,
+    ["named"]: named,
+    ["plural"]: plural,
+    ["linked"]: linked,
+    ["message"]: message,
+    ["type"]: type,
+    ["interpolate"]: interpolate,
+    ["normalize"]: normalize
+  };
+  return ctx;
+}
+let devtools = null;
+function setDevToolsHook(hook) {
+  devtools = hook;
+}
+function initI18nDevTools(i18n, version, meta2) {
+  devtools && devtools.emit(IntlifyDevToolsHooks.I18nInit, {
+    timestamp: Date.now(),
+    i18n,
+    version,
+    meta: meta2
+  });
+}
+const translateDevTools = /* @__PURE__ */ createDevToolsHook(IntlifyDevToolsHooks.FunctionTranslate);
+function createDevToolsHook(hook) {
+  return (payloads) => devtools && devtools.emit(hook, payloads);
+}
+function fallbackWithSimple(ctx, fallback, start) {
+  return [.../* @__PURE__ */ new Set([
+    start,
+    ...isArray$1(fallback) ? fallback : isObject$1(fallback) ? Object.keys(fallback) : isString$1(fallback) ? [fallback] : [start]
+  ])];
+}
+function fallbackWithLocaleChain(ctx, fallback, start) {
+  const startLocale = isString$1(start) ? start : DEFAULT_LOCALE$1;
+  const context = ctx;
+  if (!context.__localeChainCache) {
+    context.__localeChainCache = /* @__PURE__ */ new Map();
+  }
+  let chain = context.__localeChainCache.get(startLocale);
+  if (!chain) {
+    chain = [];
+    let block = [start];
+    while (isArray$1(block)) {
+      block = appendBlockToChain(chain, block, fallback);
+    }
+    const defaults = isArray$1(fallback) || !isPlainObject(fallback) ? fallback : fallback["default"] ? fallback["default"] : null;
+    block = isString$1(defaults) ? [defaults] : defaults;
+    if (isArray$1(block)) {
+      appendBlockToChain(chain, block, false);
+    }
+    context.__localeChainCache.set(startLocale, chain);
+  }
+  return chain;
+}
+function appendBlockToChain(chain, block, blocks) {
+  let follow = true;
+  for (let i = 0; i < block.length && isBoolean$1(follow); i++) {
+    const locale = block[i];
+    if (isString$1(locale)) {
+      follow = appendLocaleToChain(chain, block[i], blocks);
+    }
+  }
+  return follow;
+}
+function appendLocaleToChain(chain, locale, blocks) {
+  let follow;
+  const tokens = locale.split("-");
+  do {
+    const target = tokens.join("-");
+    follow = appendItemToChain(chain, target, blocks);
+    tokens.splice(-1, 1);
+  } while (tokens.length && follow === true);
+  return follow;
+}
+function appendItemToChain(chain, target, blocks) {
+  let follow = false;
+  if (!chain.includes(target)) {
+    follow = true;
+    if (target) {
+      follow = target[target.length - 1] !== "!";
+      const locale = target.replace(/!/g, "");
+      chain.push(locale);
+      if ((isArray$1(blocks) || isPlainObject(blocks)) && blocks[locale]) {
+        follow = blocks[locale];
+      }
+    }
+  }
+  return follow;
+}
+const VERSION$1 = "9.2.0-beta.35";
+const NOT_REOSLVED = -1;
+const DEFAULT_LOCALE$1 = "en-US";
+const MISSING_RESOLVE_VALUE = "";
+function getDefaultLinkedModifiers() {
+  return {
+    upper: (val) => isString$1(val) ? val.toUpperCase() : val,
+    lower: (val) => isString$1(val) ? val.toLowerCase() : val,
+    capitalize: (val) => isString$1(val) ? `${val.charAt(0).toLocaleUpperCase()}${val.substr(1)}` : val
+  };
+}
+let _compiler;
+let _resolver;
+function registerMessageResolver(resolver) {
+  _resolver = resolver;
+}
+let _fallbacker;
+function registerLocaleFallbacker(fallbacker) {
+  _fallbacker = fallbacker;
+}
+let _additionalMeta = null;
+const setAdditionalMeta = (meta2) => {
+  _additionalMeta = meta2;
+};
+const getAdditionalMeta = () => _additionalMeta;
+let _fallbackContext = null;
+const setFallbackContext = (context) => {
+  _fallbackContext = context;
+};
+const getFallbackContext = () => _fallbackContext;
+let _cid = 0;
+function createCoreContext(options = {}) {
+  const version = isString$1(options.version) ? options.version : VERSION$1;
+  const locale = isString$1(options.locale) ? options.locale : DEFAULT_LOCALE$1;
+  const fallbackLocale = isArray$1(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || isString$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
+  const messages = isPlainObject(options.messages) ? options.messages : { [locale]: {} };
+  const datetimeFormats = isPlainObject(options.datetimeFormats) ? options.datetimeFormats : { [locale]: {} };
+  const numberFormats = isPlainObject(options.numberFormats) ? options.numberFormats : { [locale]: {} };
+  const modifiers = assign$1({}, options.modifiers || {}, getDefaultLinkedModifiers());
+  const pluralRules = options.pluralRules || {};
+  const missing = isFunction$1(options.missing) ? options.missing : null;
+  const missingWarn = isBoolean$1(options.missingWarn) || isRegExp(options.missingWarn) ? options.missingWarn : true;
+  const fallbackWarn = isBoolean$1(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
+  const fallbackFormat = !!options.fallbackFormat;
+  const unresolving = !!options.unresolving;
+  const postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : null;
+  const processor = isPlainObject(options.processor) ? options.processor : null;
+  const warnHtmlMessage = isBoolean$1(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
+  const escapeParameter = !!options.escapeParameter;
+  const messageCompiler = isFunction$1(options.messageCompiler) ? options.messageCompiler : _compiler;
+  const messageResolver = isFunction$1(options.messageResolver) ? options.messageResolver : _resolver || resolveWithKeyValue;
+  const localeFallbacker = isFunction$1(options.localeFallbacker) ? options.localeFallbacker : _fallbacker || fallbackWithSimple;
+  const fallbackContext = isObject$1(options.fallbackContext) ? options.fallbackContext : void 0;
+  const onWarn = isFunction$1(options.onWarn) ? options.onWarn : warn$1;
+  const internalOptions = options;
+  const __datetimeFormatters = isObject$1(internalOptions.__datetimeFormatters) ? internalOptions.__datetimeFormatters : /* @__PURE__ */ new Map();
+  const __numberFormatters = isObject$1(internalOptions.__numberFormatters) ? internalOptions.__numberFormatters : /* @__PURE__ */ new Map();
+  const __meta = isObject$1(internalOptions.__meta) ? internalOptions.__meta : {};
+  _cid++;
+  const context = {
+    version,
+    cid: _cid,
+    locale,
+    fallbackLocale,
+    messages,
+    modifiers,
+    pluralRules,
+    missing,
+    missingWarn,
+    fallbackWarn,
+    fallbackFormat,
+    unresolving,
+    postTranslation,
+    processor,
+    warnHtmlMessage,
+    escapeParameter,
+    messageCompiler,
+    messageResolver,
+    localeFallbacker,
+    fallbackContext,
+    onWarn,
+    __meta
+  };
+  {
+    context.datetimeFormats = datetimeFormats;
+    context.numberFormats = numberFormats;
+    context.__datetimeFormatters = __datetimeFormatters;
+    context.__numberFormatters = __numberFormatters;
+  }
+  if (__INTLIFY_PROD_DEVTOOLS__) {
+    initI18nDevTools(context, version, __meta);
+  }
+  return context;
+}
+function handleMissing(context, key, locale, missingWarn, type) {
+  const { missing, onWarn } = context;
+  if (missing !== null) {
+    const ret = missing(context, locale, key, type);
+    return isString$1(ret) ? ret : key;
+  } else {
+    return key;
+  }
+}
+function updateFallbackLocale(ctx, locale, fallback) {
+  const context = ctx;
+  context.__localeChainCache = /* @__PURE__ */ new Map();
+  ctx.localeFallbacker(ctx, fallback, locale);
+}
+let code$2 = CompileErrorCodes.__EXTEND_POINT__;
+const inc$2 = () => ++code$2;
+const CoreErrorCodes = {
+  INVALID_ARGUMENT: code$2,
+  INVALID_DATE_ARGUMENT: inc$2(),
+  INVALID_ISO_DATE_ARGUMENT: inc$2(),
+  __EXTEND_POINT__: inc$2()
+};
+function createCoreError(code2) {
+  return createCompileError(code2, null, void 0);
+}
+const NOOP_MESSAGE_FUNCTION = () => "";
+const isMessageFunction = (val) => isFunction$1(val);
+function translate(context, ...args) {
+  const { fallbackFormat, postTranslation, unresolving, messageCompiler, fallbackLocale, messages } = context;
+  const [key, options] = parseTranslateArgs(...args);
+  const missingWarn = isBoolean$1(options.missingWarn) ? options.missingWarn : context.missingWarn;
+  const fallbackWarn = isBoolean$1(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
+  const escapeParameter = isBoolean$1(options.escapeParameter) ? options.escapeParameter : context.escapeParameter;
+  const resolvedMessage = !!options.resolvedMessage;
+  const defaultMsgOrKey = isString$1(options.default) || isBoolean$1(options.default) ? !isBoolean$1(options.default) ? options.default : !messageCompiler ? () => key : key : fallbackFormat ? !messageCompiler ? () => key : key : "";
+  const enableDefaultMsg = fallbackFormat || defaultMsgOrKey !== "";
+  const locale = isString$1(options.locale) ? options.locale : context.locale;
+  escapeParameter && escapeParams(options);
+  let [formatScope, targetLocale, message] = !resolvedMessage ? resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) : [
+    key,
+    locale,
+    messages[locale] || {}
+  ];
+  let format2 = formatScope;
+  let cacheBaseKey = key;
+  if (!resolvedMessage && !(isString$1(format2) || isMessageFunction(format2))) {
+    if (enableDefaultMsg) {
+      format2 = defaultMsgOrKey;
+      cacheBaseKey = format2;
+    }
+  }
+  if (!resolvedMessage && (!(isString$1(format2) || isMessageFunction(format2)) || !isString$1(targetLocale))) {
+    return unresolving ? NOT_REOSLVED : key;
+  }
+  let occurred = false;
+  const errorDetector = () => {
+    occurred = true;
+  };
+  const msg = !isMessageFunction(format2) ? compileMessageFormat(context, key, targetLocale, format2, cacheBaseKey, errorDetector) : format2;
+  if (occurred) {
+    return format2;
+  }
+  const ctxOptions = getMessageContextOptions(context, targetLocale, message, options);
+  const msgContext = createMessageContext(ctxOptions);
+  const messaged = evaluateMessage(context, msg, msgContext);
+  const ret = postTranslation ? postTranslation(messaged) : messaged;
+  if (__INTLIFY_PROD_DEVTOOLS__) {
+    const payloads = {
+      timestamp: Date.now(),
+      key: isString$1(key) ? key : isMessageFunction(format2) ? format2.key : "",
+      locale: targetLocale || (isMessageFunction(format2) ? format2.locale : ""),
+      format: isString$1(format2) ? format2 : isMessageFunction(format2) ? format2.source : "",
+      message: ret
+    };
+    payloads.meta = assign$1({}, context.__meta, getAdditionalMeta() || {});
+    translateDevTools(payloads);
+  }
+  return ret;
+}
+function escapeParams(options) {
+  if (isArray$1(options.list)) {
+    options.list = options.list.map((item) => isString$1(item) ? escapeHtml(item) : item);
+  } else if (isObject$1(options.named)) {
+    Object.keys(options.named).forEach((key) => {
+      if (isString$1(options.named[key])) {
+        options.named[key] = escapeHtml(options.named[key]);
+      }
+    });
+  }
+}
+function resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) {
+  const { messages, onWarn, messageResolver: resolveValue2, localeFallbacker } = context;
+  const locales = localeFallbacker(context, fallbackLocale, locale);
+  let message = {};
+  let targetLocale;
+  let format2 = null;
+  const type = "translate";
+  for (let i = 0; i < locales.length; i++) {
+    targetLocale = locales[i];
+    message = messages[targetLocale] || {};
+    if ((format2 = resolveValue2(message, key)) === null) {
+      format2 = message[key];
+    }
+    if (isString$1(format2) || isFunction$1(format2))
+      break;
+    const missingRet = handleMissing(context, key, targetLocale, missingWarn, type);
+    if (missingRet !== key) {
+      format2 = missingRet;
+    }
+  }
+  return [format2, targetLocale, message];
+}
+function compileMessageFormat(context, key, targetLocale, format2, cacheBaseKey, errorDetector) {
+  const { messageCompiler, warnHtmlMessage } = context;
+  if (isMessageFunction(format2)) {
+    const msg2 = format2;
+    msg2.locale = msg2.locale || targetLocale;
+    msg2.key = msg2.key || key;
+    return msg2;
+  }
+  if (messageCompiler == null) {
+    const msg2 = () => format2;
+    msg2.locale = targetLocale;
+    msg2.key = key;
+    return msg2;
+  }
+  const msg = messageCompiler(format2, getCompileOptions(context, targetLocale, cacheBaseKey, format2, warnHtmlMessage, errorDetector));
+  msg.locale = targetLocale;
+  msg.key = key;
+  msg.source = format2;
+  return msg;
+}
+function evaluateMessage(context, msg, msgCtx) {
+  const messaged = msg(msgCtx);
+  return messaged;
+}
+function parseTranslateArgs(...args) {
+  const [arg1, arg2, arg3] = args;
+  const options = {};
+  if (!isString$1(arg1) && !isNumber(arg1) && !isMessageFunction(arg1)) {
+    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
+  }
+  const key = isNumber(arg1) ? String(arg1) : isMessageFunction(arg1) ? arg1 : arg1;
+  if (isNumber(arg2)) {
+    options.plural = arg2;
+  } else if (isString$1(arg2)) {
+    options.default = arg2;
+  } else if (isPlainObject(arg2) && !isEmptyObject(arg2)) {
+    options.named = arg2;
+  } else if (isArray$1(arg2)) {
+    options.list = arg2;
+  }
+  if (isNumber(arg3)) {
+    options.plural = arg3;
+  } else if (isString$1(arg3)) {
+    options.default = arg3;
+  } else if (isPlainObject(arg3)) {
+    assign$1(options, arg3);
+  }
+  return [key, options];
+}
+function getCompileOptions(context, locale, key, source, warnHtmlMessage, errorDetector) {
+  return {
+    warnHtmlMessage,
+    onError: (err) => {
+      errorDetector && errorDetector(err);
+      {
+        throw err;
+      }
+    },
+    onCacheKey: (source2) => generateFormatCacheKey(locale, key, source2)
+  };
+}
+function getMessageContextOptions(context, locale, message, options) {
+  const { modifiers, pluralRules, messageResolver: resolveValue2, fallbackLocale, fallbackWarn, missingWarn, fallbackContext } = context;
+  const resolveMessage = (key) => {
+    let val = resolveValue2(message, key);
+    if (val == null && fallbackContext) {
+      const [, , message2] = resolveMessageFormat(fallbackContext, key, locale, fallbackLocale, fallbackWarn, missingWarn);
+      val = resolveValue2(message2, key);
+    }
+    if (isString$1(val)) {
+      let occurred = false;
+      const errorDetector = () => {
+        occurred = true;
+      };
+      const msg = compileMessageFormat(context, key, locale, val, key, errorDetector);
+      return !occurred ? msg : NOOP_MESSAGE_FUNCTION;
+    } else if (isMessageFunction(val)) {
+      return val;
+    } else {
+      return NOOP_MESSAGE_FUNCTION;
+    }
+  };
+  const ctxOptions = {
+    locale,
+    modifiers,
+    pluralRules,
+    messages: resolveMessage
+  };
+  if (context.processor) {
+    ctxOptions.processor = context.processor;
+  }
+  if (options.list) {
+    ctxOptions.list = options.list;
+  }
+  if (options.named) {
+    ctxOptions.named = options.named;
+  }
+  if (isNumber(options.plural)) {
+    ctxOptions.pluralIndex = options.plural;
+  }
+  return ctxOptions;
+}
+function datetime(context, ...args) {
+  const { datetimeFormats, unresolving, fallbackLocale, onWarn, localeFallbacker } = context;
+  const { __datetimeFormatters } = context;
+  const [key, value, options, overrides] = parseDateTimeArgs(...args);
+  const missingWarn = isBoolean$1(options.missingWarn) ? options.missingWarn : context.missingWarn;
+  isBoolean$1(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
+  const part = !!options.part;
+  const locale = isString$1(options.locale) ? options.locale : context.locale;
+  const locales = localeFallbacker(context, fallbackLocale, locale);
+  if (!isString$1(key) || key === "") {
+    return new Intl.DateTimeFormat(locale).format(value);
+  }
+  let datetimeFormat = {};
+  let targetLocale;
+  let format2 = null;
+  const type = "datetime format";
+  for (let i = 0; i < locales.length; i++) {
+    targetLocale = locales[i];
+    datetimeFormat = datetimeFormats[targetLocale] || {};
+    format2 = datetimeFormat[key];
+    if (isPlainObject(format2))
+      break;
+    handleMissing(context, key, targetLocale, missingWarn, type);
+  }
+  if (!isPlainObject(format2) || !isString$1(targetLocale)) {
+    return unresolving ? NOT_REOSLVED : key;
+  }
+  let id = `${targetLocale}__${key}`;
+  if (!isEmptyObject(overrides)) {
+    id = `${id}__${JSON.stringify(overrides)}`;
+  }
+  let formatter = __datetimeFormatters.get(id);
+  if (!formatter) {
+    formatter = new Intl.DateTimeFormat(targetLocale, assign$1({}, format2, overrides));
+    __datetimeFormatters.set(id, formatter);
+  }
+  return !part ? formatter.format(value) : formatter.formatToParts(value);
+}
+function parseDateTimeArgs(...args) {
+  const [arg1, arg2, arg3, arg4] = args;
+  let options = {};
+  let overrides = {};
+  let value;
+  if (isString$1(arg1)) {
+    const matches = arg1.match(/(\d{4}-\d{2}-\d{2})(T|\s)?(.*)/);
+    if (!matches) {
+      throw createCoreError(CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT);
+    }
+    const dateTime = matches[3] ? matches[3].trim().startsWith("T") ? `${matches[1].trim()}${matches[3].trim()}` : `${matches[1].trim()}T${matches[3].trim()}` : matches[1].trim();
+    value = new Date(dateTime);
+    try {
+      value.toISOString();
+    } catch (e) {
+      throw createCoreError(CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT);
+    }
+  } else if (isDate(arg1)) {
+    if (isNaN(arg1.getTime())) {
+      throw createCoreError(CoreErrorCodes.INVALID_DATE_ARGUMENT);
+    }
+    value = arg1;
+  } else if (isNumber(arg1)) {
+    value = arg1;
+  } else {
+    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
+  }
+  if (isString$1(arg2)) {
+    options.key = arg2;
+  } else if (isPlainObject(arg2)) {
+    options = arg2;
+  }
+  if (isString$1(arg3)) {
+    options.locale = arg3;
+  } else if (isPlainObject(arg3)) {
+    overrides = arg3;
+  }
+  if (isPlainObject(arg4)) {
+    overrides = arg4;
+  }
+  return [options.key || "", value, options, overrides];
+}
+function clearDateTimeFormat(ctx, locale, format2) {
+  const context = ctx;
+  for (const key in format2) {
+    const id = `${locale}__${key}`;
+    if (!context.__datetimeFormatters.has(id)) {
+      continue;
+    }
+    context.__datetimeFormatters.delete(id);
+  }
+}
+function number(context, ...args) {
+  const { numberFormats, unresolving, fallbackLocale, onWarn, localeFallbacker } = context;
+  const { __numberFormatters } = context;
+  const [key, value, options, overrides] = parseNumberArgs(...args);
+  const missingWarn = isBoolean$1(options.missingWarn) ? options.missingWarn : context.missingWarn;
+  isBoolean$1(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
+  const part = !!options.part;
+  const locale = isString$1(options.locale) ? options.locale : context.locale;
+  const locales = localeFallbacker(context, fallbackLocale, locale);
+  if (!isString$1(key) || key === "") {
+    return new Intl.NumberFormat(locale).format(value);
+  }
+  let numberFormat = {};
+  let targetLocale;
+  let format2 = null;
+  const type = "number format";
+  for (let i = 0; i < locales.length; i++) {
+    targetLocale = locales[i];
+    numberFormat = numberFormats[targetLocale] || {};
+    format2 = numberFormat[key];
+    if (isPlainObject(format2))
+      break;
+    handleMissing(context, key, targetLocale, missingWarn, type);
+  }
+  if (!isPlainObject(format2) || !isString$1(targetLocale)) {
+    return unresolving ? NOT_REOSLVED : key;
+  }
+  let id = `${targetLocale}__${key}`;
+  if (!isEmptyObject(overrides)) {
+    id = `${id}__${JSON.stringify(overrides)}`;
+  }
+  let formatter = __numberFormatters.get(id);
+  if (!formatter) {
+    formatter = new Intl.NumberFormat(targetLocale, assign$1({}, format2, overrides));
+    __numberFormatters.set(id, formatter);
+  }
+  return !part ? formatter.format(value) : formatter.formatToParts(value);
+}
+function parseNumberArgs(...args) {
+  const [arg1, arg2, arg3, arg4] = args;
+  let options = {};
+  let overrides = {};
+  if (!isNumber(arg1)) {
+    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
+  }
+  const value = arg1;
+  if (isString$1(arg2)) {
+    options.key = arg2;
+  } else if (isPlainObject(arg2)) {
+    options = arg2;
+  }
+  if (isString$1(arg3)) {
+    options.locale = arg3;
+  } else if (isPlainObject(arg3)) {
+    overrides = arg3;
+  }
+  if (isPlainObject(arg4)) {
+    overrides = arg4;
+  }
+  return [options.key || "", value, options, overrides];
+}
+function clearNumberFormat(ctx, locale, format2) {
+  const context = ctx;
+  for (const key in format2) {
+    const id = `${locale}__${key}`;
+    if (!context.__numberFormatters.has(id)) {
+      continue;
+    }
+    context.__numberFormatters.delete(id);
+  }
+}
+{
+  if (typeof __INTLIFY_PROD_DEVTOOLS__ !== "boolean") {
+    getGlobalThis().__INTLIFY_PROD_DEVTOOLS__ = false;
+  }
+}
+/*!
+  * vue-i18n v9.2.0-beta.35
+  * (c) 2022 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const VERSION = "9.2.0-beta.35";
+function initFeatureFlags() {
+  if (typeof __VUE_I18N_FULL_INSTALL__ !== "boolean") {
+    getGlobalThis().__VUE_I18N_FULL_INSTALL__ = true;
+  }
+  if (typeof __VUE_I18N_LEGACY_API__ !== "boolean") {
+    getGlobalThis().__VUE_I18N_LEGACY_API__ = true;
+  }
+  if (typeof __INTLIFY_PROD_DEVTOOLS__ !== "boolean") {
+    getGlobalThis().__INTLIFY_PROD_DEVTOOLS__ = false;
+  }
+}
+let code = CompileErrorCodes.__EXTEND_POINT__;
+const inc = () => ++code;
+const I18nErrorCodes = {
+  UNEXPECTED_RETURN_TYPE: code,
+  INVALID_ARGUMENT: inc(),
+  MUST_BE_CALL_SETUP_TOP: inc(),
+  NOT_INSLALLED: inc(),
+  NOT_AVAILABLE_IN_LEGACY_MODE: inc(),
+  REQUIRED_VALUE: inc(),
+  INVALID_VALUE: inc(),
+  CANNOT_SETUP_VUE_DEVTOOLS_PLUGIN: inc(),
+  NOT_INSLALLED_WITH_PROVIDE: inc(),
+  UNEXPECTED_ERROR: inc(),
+  NOT_COMPATIBLE_LEGACY_VUE_I18N: inc(),
+  BRIDGE_SUPPORT_VUE_2_ONLY: inc(),
+  MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION: inc(),
+  NOT_AVAILABLE_COMPOSITION_IN_LEGACY: inc(),
+  __EXTEND_POINT__: inc()
+};
+function createI18nError(code2, ...args) {
+  return createCompileError(code2, null, void 0);
+}
+const TransrateVNodeSymbol = /* @__PURE__ */ makeSymbol$1("__transrateVNode");
+const DatetimePartsSymbol = /* @__PURE__ */ makeSymbol$1("__datetimeParts");
+const NumberPartsSymbol = /* @__PURE__ */ makeSymbol$1("__numberParts");
+const SetPluralRulesSymbol = makeSymbol$1("__setPluralRules");
+const InejctWithOption = /* @__PURE__ */ makeSymbol$1("__injectWithOption");
+function handleFlatJson(obj) {
+  if (!isObject$1(obj)) {
+    return obj;
+  }
+  for (const key in obj) {
+    if (!hasOwn(obj, key)) {
+      continue;
+    }
+    if (!key.includes(".")) {
+      if (isObject$1(obj[key])) {
+        handleFlatJson(obj[key]);
+      }
+    } else {
+      const subKeys = key.split(".");
+      const lastIndex = subKeys.length - 1;
+      let currentObj = obj;
+      for (let i = 0; i < lastIndex; i++) {
+        if (!(subKeys[i] in currentObj)) {
+          currentObj[subKeys[i]] = {};
+        }
+        currentObj = currentObj[subKeys[i]];
+      }
+      currentObj[subKeys[lastIndex]] = obj[key];
+      delete obj[key];
+      if (isObject$1(currentObj[subKeys[lastIndex]])) {
+        handleFlatJson(currentObj[subKeys[lastIndex]]);
+      }
+    }
+  }
+  return obj;
+}
+function getLocaleMessages(locale, options) {
+  const { messages, __i18n, messageResolver, flatJson } = options;
+  const ret = isPlainObject(messages) ? messages : isArray$1(__i18n) ? {} : { [locale]: {} };
+  if (isArray$1(__i18n)) {
+    __i18n.forEach((custom) => {
+      if ("locale" in custom && "resource" in custom) {
+        const { locale: locale2, resource } = custom;
+        if (locale2) {
+          ret[locale2] = ret[locale2] || {};
+          deepCopy(resource, ret[locale2]);
+        } else {
+          deepCopy(resource, ret);
+        }
+      } else {
+        isString$1(custom) && deepCopy(JSON.parse(custom), ret);
+      }
+    });
+  }
+  if (messageResolver == null && flatJson) {
+    for (const key in ret) {
+      if (hasOwn(ret, key)) {
+        handleFlatJson(ret[key]);
+      }
+    }
+  }
+  return ret;
+}
+const isNotObjectOrIsArray = (val) => !isObject$1(val) || isArray$1(val);
+function deepCopy(src, des) {
+  if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
+    throw createI18nError(I18nErrorCodes.INVALID_VALUE);
+  }
+  for (const key in src) {
+    if (hasOwn(src, key)) {
+      if (isNotObjectOrIsArray(src[key]) || isNotObjectOrIsArray(des[key])) {
+        des[key] = src[key];
+      } else {
+        deepCopy(src[key], des[key]);
+      }
+    }
+  }
+}
+function getComponentOptions(instance) {
+  return instance.type;
+}
+function adjustI18nResources(global2, options, componentOptions) {
+  let messages = isObject$1(options.messages) ? options.messages : {};
+  if ("__i18nGlobal" in componentOptions) {
+    messages = getLocaleMessages(global2.locale.value, {
+      messages,
+      __i18n: componentOptions.__i18nGlobal
+    });
+  }
+  const locales = Object.keys(messages);
+  if (locales.length) {
+    locales.forEach((locale) => {
+      global2.mergeLocaleMessage(locale, messages[locale]);
+    });
+  }
+  {
+    if (isObject$1(options.datetimeFormats)) {
+      const locales2 = Object.keys(options.datetimeFormats);
+      if (locales2.length) {
+        locales2.forEach((locale) => {
+          global2.mergeDateTimeFormat(locale, options.datetimeFormats[locale]);
+        });
+      }
+    }
+    if (isObject$1(options.numberFormats)) {
+      const locales2 = Object.keys(options.numberFormats);
+      if (locales2.length) {
+        locales2.forEach((locale) => {
+          global2.mergeNumberFormat(locale, options.numberFormats[locale]);
+        });
+      }
+    }
+  }
+}
+function createTextNode(key) {
+  return vue_cjs_prod.createVNode(vue_cjs_prod.Text, null, key, 0);
+}
+const DEVTOOLS_META = "__INTLIFY_META__";
+let composerID = 0;
+function defineCoreMissingHandler(missing) {
+  return (ctx, locale, key, type) => {
+    return missing(locale, key, vue_cjs_prod.getCurrentInstance() || void 0, type);
+  };
+}
+const getMetaInfo = () => {
+  const instance = vue_cjs_prod.getCurrentInstance();
+  let meta2 = null;
+  return instance && (meta2 = getComponentOptions(instance)[DEVTOOLS_META]) ? { [DEVTOOLS_META]: meta2 } : null;
+};
+function createComposer(options = {}, VueI18nLegacy) {
+  const { __root } = options;
+  const _isGlobal = __root === void 0;
+  let _inheritLocale = isBoolean$1(options.inheritLocale) ? options.inheritLocale : true;
+  const _locale = vue_cjs_prod.ref(__root && _inheritLocale ? __root.locale.value : isString$1(options.locale) ? options.locale : DEFAULT_LOCALE$1);
+  const _fallbackLocale = vue_cjs_prod.ref(__root && _inheritLocale ? __root.fallbackLocale.value : isString$1(options.fallbackLocale) || isArray$1(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value);
+  const _messages = vue_cjs_prod.ref(getLocaleMessages(_locale.value, options));
+  const _datetimeFormats = vue_cjs_prod.ref(isPlainObject(options.datetimeFormats) ? options.datetimeFormats : { [_locale.value]: {} });
+  const _numberFormats = vue_cjs_prod.ref(isPlainObject(options.numberFormats) ? options.numberFormats : { [_locale.value]: {} });
+  let _missingWarn = __root ? __root.missingWarn : isBoolean$1(options.missingWarn) || isRegExp(options.missingWarn) ? options.missingWarn : true;
+  let _fallbackWarn = __root ? __root.fallbackWarn : isBoolean$1(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
+  let _fallbackRoot = __root ? __root.fallbackRoot : isBoolean$1(options.fallbackRoot) ? options.fallbackRoot : true;
+  let _fallbackFormat = !!options.fallbackFormat;
+  let _missing = isFunction$1(options.missing) ? options.missing : null;
+  let _runtimeMissing = isFunction$1(options.missing) ? defineCoreMissingHandler(options.missing) : null;
+  let _postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : null;
+  let _warnHtmlMessage = __root ? __root.warnHtmlMessage : isBoolean$1(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
+  let _escapeParameter = !!options.escapeParameter;
+  const _modifiers = __root ? __root.modifiers : isPlainObject(options.modifiers) ? options.modifiers : {};
+  let _pluralRules = options.pluralRules || __root && __root.pluralRules;
+  let _context;
+  function getCoreContext() {
+    _isGlobal && setFallbackContext(null);
+    const ctxOptions = {
+      version: VERSION,
+      locale: _locale.value,
+      fallbackLocale: _fallbackLocale.value,
+      messages: _messages.value,
+      modifiers: _modifiers,
+      pluralRules: _pluralRules,
+      missing: _runtimeMissing === null ? void 0 : _runtimeMissing,
+      missingWarn: _missingWarn,
+      fallbackWarn: _fallbackWarn,
+      fallbackFormat: _fallbackFormat,
+      unresolving: true,
+      postTranslation: _postTranslation === null ? void 0 : _postTranslation,
+      warnHtmlMessage: _warnHtmlMessage,
+      escapeParameter: _escapeParameter,
+      messageResolver: options.messageResolver,
+      __meta: { framework: "vue" }
+    };
+    {
+      ctxOptions.datetimeFormats = _datetimeFormats.value;
+      ctxOptions.numberFormats = _numberFormats.value;
+      ctxOptions.__datetimeFormatters = isPlainObject(_context) ? _context.__datetimeFormatters : void 0;
+      ctxOptions.__numberFormatters = isPlainObject(_context) ? _context.__numberFormatters : void 0;
+    }
+    const ctx = createCoreContext(ctxOptions);
+    _isGlobal && setFallbackContext(ctx);
+    return ctx;
+  }
+  _context = getCoreContext();
+  updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+  function trackReactivityValues() {
+    return [
+      _locale.value,
+      _fallbackLocale.value,
+      _messages.value,
+      _datetimeFormats.value,
+      _numberFormats.value
+    ];
+  }
+  const locale = vue_cjs_prod.computed({
+    get: () => _locale.value,
+    set: (val) => {
+      _locale.value = val;
+      _context.locale = _locale.value;
+    }
+  });
+  const fallbackLocale = vue_cjs_prod.computed({
+    get: () => _fallbackLocale.value,
+    set: (val) => {
+      _fallbackLocale.value = val;
+      _context.fallbackLocale = _fallbackLocale.value;
+      updateFallbackLocale(_context, _locale.value, val);
+    }
+  });
+  const messages = vue_cjs_prod.computed(() => _messages.value);
+  const datetimeFormats = /* @__PURE__ */ vue_cjs_prod.computed(() => _datetimeFormats.value);
+  const numberFormats = /* @__PURE__ */ vue_cjs_prod.computed(() => _numberFormats.value);
+  function getPostTranslationHandler() {
+    return isFunction$1(_postTranslation) ? _postTranslation : null;
+  }
+  function setPostTranslationHandler(handler) {
+    _postTranslation = handler;
+    _context.postTranslation = handler;
+  }
+  function getMissingHandler() {
+    return _missing;
+  }
+  function setMissingHandler(handler) {
+    if (handler !== null) {
+      _runtimeMissing = defineCoreMissingHandler(handler);
+    }
+    _missing = handler;
+    _context.missing = _runtimeMissing;
+  }
+  function wrapWithDeps(fn, argumentParser, warnType, fallbackSuccess, fallbackFail, successCondition) {
+    trackReactivityValues();
+    let ret;
+    if (__INTLIFY_PROD_DEVTOOLS__) {
+      try {
+        setAdditionalMeta(getMetaInfo());
+        if (!_isGlobal) {
+          _context.fallbackContext = __root ? getFallbackContext() : void 0;
+        }
+        ret = fn(_context);
+      } finally {
+        setAdditionalMeta(null);
+        if (!_isGlobal) {
+          _context.fallbackContext = void 0;
+        }
+      }
+    } else {
+      ret = fn(_context);
+    }
+    if (isNumber(ret) && ret === NOT_REOSLVED) {
+      const [key, arg2] = argumentParser();
+      return __root && _fallbackRoot ? fallbackSuccess(__root) : fallbackFail(key);
+    } else if (successCondition(ret)) {
+      return ret;
+    } else {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_RETURN_TYPE);
+    }
+  }
+  function t(...args) {
+    return wrapWithDeps((context) => Reflect.apply(translate, null, [context, ...args]), () => parseTranslateArgs(...args), "translate", (root) => Reflect.apply(root.t, root, [...args]), (key) => key, (val) => isString$1(val));
+  }
+  function rt(...args) {
+    const [arg1, arg2, arg3] = args;
+    if (arg3 && !isObject$1(arg3)) {
+      throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
+    }
+    return t(...[arg1, arg2, assign$1({ resolvedMessage: true }, arg3 || {})]);
+  }
+  function d(...args) {
+    return wrapWithDeps((context) => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), "datetime format", (root) => Reflect.apply(root.d, root, [...args]), () => MISSING_RESOLVE_VALUE, (val) => isString$1(val));
+  }
+  function n(...args) {
+    return wrapWithDeps((context) => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), "number format", (root) => Reflect.apply(root.n, root, [...args]), () => MISSING_RESOLVE_VALUE, (val) => isString$1(val));
+  }
+  function normalize(values) {
+    return values.map((val) => isString$1(val) ? createTextNode(val) : val);
+  }
+  const interpolate = (val) => val;
+  const processor = {
+    normalize,
+    interpolate,
+    type: "vnode"
+  };
+  function transrateVNode(...args) {
+    return wrapWithDeps((context) => {
+      let ret;
+      const _context2 = context;
+      try {
+        _context2.processor = processor;
+        ret = Reflect.apply(translate, null, [_context2, ...args]);
+      } finally {
+        _context2.processor = null;
+      }
+      return ret;
+    }, () => parseTranslateArgs(...args), "translate", (root) => root[TransrateVNodeSymbol](...args), (key) => [createTextNode(key)], (val) => isArray$1(val));
+  }
+  function numberParts(...args) {
+    return wrapWithDeps((context) => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), "number format", (root) => root[NumberPartsSymbol](...args), () => [], (val) => isString$1(val) || isArray$1(val));
+  }
+  function datetimeParts(...args) {
+    return wrapWithDeps((context) => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), "datetime format", (root) => root[DatetimePartsSymbol](...args), () => [], (val) => isString$1(val) || isArray$1(val));
+  }
+  function setPluralRules(rules) {
+    _pluralRules = rules;
+    _context.pluralRules = _pluralRules;
+  }
+  function te(key, locale2) {
+    const targetLocale = isString$1(locale2) ? locale2 : _locale.value;
+    const message = getLocaleMessage(targetLocale);
+    return _context.messageResolver(message, key) !== null;
+  }
+  function resolveMessages(key) {
+    let messages2 = null;
+    const locales = fallbackWithLocaleChain(_context, _fallbackLocale.value, _locale.value);
+    for (let i = 0; i < locales.length; i++) {
+      const targetLocaleMessages = _messages.value[locales[i]] || {};
+      const messageValue = _context.messageResolver(targetLocaleMessages, key);
+      if (messageValue != null) {
+        messages2 = messageValue;
+        break;
+      }
+    }
+    return messages2;
+  }
+  function tm(key) {
+    const messages2 = resolveMessages(key);
+    return messages2 != null ? messages2 : __root ? __root.tm(key) || {} : {};
+  }
+  function getLocaleMessage(locale2) {
+    return _messages.value[locale2] || {};
+  }
+  function setLocaleMessage(locale2, message) {
+    _messages.value[locale2] = message;
+    _context.messages = _messages.value;
+  }
+  function mergeLocaleMessage(locale2, message) {
+    _messages.value[locale2] = _messages.value[locale2] || {};
+    deepCopy(message, _messages.value[locale2]);
+    _context.messages = _messages.value;
+  }
+  function getDateTimeFormat(locale2) {
+    return _datetimeFormats.value[locale2] || {};
+  }
+  function setDateTimeFormat(locale2, format2) {
+    _datetimeFormats.value[locale2] = format2;
+    _context.datetimeFormats = _datetimeFormats.value;
+    clearDateTimeFormat(_context, locale2, format2);
+  }
+  function mergeDateTimeFormat(locale2, format2) {
+    _datetimeFormats.value[locale2] = assign$1(_datetimeFormats.value[locale2] || {}, format2);
+    _context.datetimeFormats = _datetimeFormats.value;
+    clearDateTimeFormat(_context, locale2, format2);
+  }
+  function getNumberFormat(locale2) {
+    return _numberFormats.value[locale2] || {};
+  }
+  function setNumberFormat(locale2, format2) {
+    _numberFormats.value[locale2] = format2;
+    _context.numberFormats = _numberFormats.value;
+    clearNumberFormat(_context, locale2, format2);
+  }
+  function mergeNumberFormat(locale2, format2) {
+    _numberFormats.value[locale2] = assign$1(_numberFormats.value[locale2] || {}, format2);
+    _context.numberFormats = _numberFormats.value;
+    clearNumberFormat(_context, locale2, format2);
+  }
+  composerID++;
+  if (__root && inBrowser) {
+    vue_cjs_prod.watch(__root.locale, (val) => {
+      if (_inheritLocale) {
+        _locale.value = val;
+        _context.locale = val;
+        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+      }
+    });
+    vue_cjs_prod.watch(__root.fallbackLocale, (val) => {
+      if (_inheritLocale) {
+        _fallbackLocale.value = val;
+        _context.fallbackLocale = val;
+        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+      }
+    });
+  }
+  const composer = {
+    id: composerID,
+    locale,
+    fallbackLocale,
+    get inheritLocale() {
+      return _inheritLocale;
+    },
+    set inheritLocale(val) {
+      _inheritLocale = val;
+      if (val && __root) {
+        _locale.value = __root.locale.value;
+        _fallbackLocale.value = __root.fallbackLocale.value;
+        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+      }
+    },
+    get availableLocales() {
+      return Object.keys(_messages.value).sort();
+    },
+    messages,
+    get modifiers() {
+      return _modifiers;
+    },
+    get pluralRules() {
+      return _pluralRules || {};
+    },
+    get isGlobal() {
+      return _isGlobal;
+    },
+    get missingWarn() {
+      return _missingWarn;
+    },
+    set missingWarn(val) {
+      _missingWarn = val;
+      _context.missingWarn = _missingWarn;
+    },
+    get fallbackWarn() {
+      return _fallbackWarn;
+    },
+    set fallbackWarn(val) {
+      _fallbackWarn = val;
+      _context.fallbackWarn = _fallbackWarn;
+    },
+    get fallbackRoot() {
+      return _fallbackRoot;
+    },
+    set fallbackRoot(val) {
+      _fallbackRoot = val;
+    },
+    get fallbackFormat() {
+      return _fallbackFormat;
+    },
+    set fallbackFormat(val) {
+      _fallbackFormat = val;
+      _context.fallbackFormat = _fallbackFormat;
+    },
+    get warnHtmlMessage() {
+      return _warnHtmlMessage;
+    },
+    set warnHtmlMessage(val) {
+      _warnHtmlMessage = val;
+      _context.warnHtmlMessage = val;
+    },
+    get escapeParameter() {
+      return _escapeParameter;
+    },
+    set escapeParameter(val) {
+      _escapeParameter = val;
+      _context.escapeParameter = val;
+    },
+    t,
+    getLocaleMessage,
+    setLocaleMessage,
+    mergeLocaleMessage,
+    getPostTranslationHandler,
+    setPostTranslationHandler,
+    getMissingHandler,
+    setMissingHandler,
+    [SetPluralRulesSymbol]: setPluralRules
+  };
+  {
+    composer.datetimeFormats = datetimeFormats;
+    composer.numberFormats = numberFormats;
+    composer.rt = rt;
+    composer.te = te;
+    composer.tm = tm;
+    composer.d = d;
+    composer.n = n;
+    composer.getDateTimeFormat = getDateTimeFormat;
+    composer.setDateTimeFormat = setDateTimeFormat;
+    composer.mergeDateTimeFormat = mergeDateTimeFormat;
+    composer.getNumberFormat = getNumberFormat;
+    composer.setNumberFormat = setNumberFormat;
+    composer.mergeNumberFormat = mergeNumberFormat;
+    composer[InejctWithOption] = options.__injectWithOption;
+    composer[TransrateVNodeSymbol] = transrateVNode;
+    composer[DatetimePartsSymbol] = datetimeParts;
+    composer[NumberPartsSymbol] = numberParts;
+  }
+  return composer;
+}
+function convertComposerOptions(options) {
+  const locale = isString$1(options.locale) ? options.locale : DEFAULT_LOCALE$1;
+  const fallbackLocale = isString$1(options.fallbackLocale) || isArray$1(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
+  const missing = isFunction$1(options.missing) ? options.missing : void 0;
+  const missingWarn = isBoolean$1(options.silentTranslationWarn) || isRegExp(options.silentTranslationWarn) ? !options.silentTranslationWarn : true;
+  const fallbackWarn = isBoolean$1(options.silentFallbackWarn) || isRegExp(options.silentFallbackWarn) ? !options.silentFallbackWarn : true;
+  const fallbackRoot = isBoolean$1(options.fallbackRoot) ? options.fallbackRoot : true;
+  const fallbackFormat = !!options.formatFallbackMessages;
+  const modifiers = isPlainObject(options.modifiers) ? options.modifiers : {};
+  const pluralizationRules = options.pluralizationRules;
+  const postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : void 0;
+  const warnHtmlMessage = isString$1(options.warnHtmlInMessage) ? options.warnHtmlInMessage !== "off" : true;
+  const escapeParameter = !!options.escapeParameterHtml;
+  const inheritLocale = isBoolean$1(options.sync) ? options.sync : true;
+  let messages = options.messages;
+  if (isPlainObject(options.sharedMessages)) {
+    const sharedMessages = options.sharedMessages;
+    const locales = Object.keys(sharedMessages);
+    messages = locales.reduce((messages2, locale2) => {
+      const message = messages2[locale2] || (messages2[locale2] = {});
+      assign$1(message, sharedMessages[locale2]);
+      return messages2;
+    }, messages || {});
+  }
+  const { __i18n, __root, __injectWithOption } = options;
+  const datetimeFormats = options.datetimeFormats;
+  const numberFormats = options.numberFormats;
+  const flatJson = options.flatJson;
+  return {
+    locale,
+    fallbackLocale,
+    messages,
+    flatJson,
+    datetimeFormats,
+    numberFormats,
+    missing,
+    missingWarn,
+    fallbackWarn,
+    fallbackRoot,
+    fallbackFormat,
+    modifiers,
+    pluralRules: pluralizationRules,
+    postTranslation,
+    warnHtmlMessage,
+    escapeParameter,
+    messageResolver: options.messageResolver,
+    inheritLocale,
+    __i18n,
+    __root,
+    __injectWithOption
+  };
+}
+function createVueI18n(options = {}, VueI18nLegacy) {
+  {
+    const composer = createComposer(convertComposerOptions(options));
+    const vueI18n = {
+      id: composer.id,
+      get locale() {
+        return composer.locale.value;
+      },
+      set locale(val) {
+        composer.locale.value = val;
+      },
+      get fallbackLocale() {
+        return composer.fallbackLocale.value;
+      },
+      set fallbackLocale(val) {
+        composer.fallbackLocale.value = val;
+      },
+      get messages() {
+        return composer.messages.value;
+      },
+      get datetimeFormats() {
+        return composer.datetimeFormats.value;
+      },
+      get numberFormats() {
+        return composer.numberFormats.value;
+      },
+      get availableLocales() {
+        return composer.availableLocales;
+      },
+      get formatter() {
+        return {
+          interpolate() {
+            return [];
+          }
+        };
+      },
+      set formatter(val) {
+      },
+      get missing() {
+        return composer.getMissingHandler();
+      },
+      set missing(handler) {
+        composer.setMissingHandler(handler);
+      },
+      get silentTranslationWarn() {
+        return isBoolean$1(composer.missingWarn) ? !composer.missingWarn : composer.missingWarn;
+      },
+      set silentTranslationWarn(val) {
+        composer.missingWarn = isBoolean$1(val) ? !val : val;
+      },
+      get silentFallbackWarn() {
+        return isBoolean$1(composer.fallbackWarn) ? !composer.fallbackWarn : composer.fallbackWarn;
+      },
+      set silentFallbackWarn(val) {
+        composer.fallbackWarn = isBoolean$1(val) ? !val : val;
+      },
+      get modifiers() {
+        return composer.modifiers;
+      },
+      get formatFallbackMessages() {
+        return composer.fallbackFormat;
+      },
+      set formatFallbackMessages(val) {
+        composer.fallbackFormat = val;
+      },
+      get postTranslation() {
+        return composer.getPostTranslationHandler();
+      },
+      set postTranslation(handler) {
+        composer.setPostTranslationHandler(handler);
+      },
+      get sync() {
+        return composer.inheritLocale;
+      },
+      set sync(val) {
+        composer.inheritLocale = val;
+      },
+      get warnHtmlInMessage() {
+        return composer.warnHtmlMessage ? "warn" : "off";
+      },
+      set warnHtmlInMessage(val) {
+        composer.warnHtmlMessage = val !== "off";
+      },
+      get escapeParameterHtml() {
+        return composer.escapeParameter;
+      },
+      set escapeParameterHtml(val) {
+        composer.escapeParameter = val;
+      },
+      get preserveDirectiveContent() {
+        return true;
+      },
+      set preserveDirectiveContent(val) {
+      },
+      get pluralizationRules() {
+        return composer.pluralRules || {};
+      },
+      __composer: composer,
+      t(...args) {
+        const [arg1, arg2, arg3] = args;
+        const options2 = {};
+        let list = null;
+        let named = null;
+        if (!isString$1(arg1)) {
+          throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
+        }
+        const key = arg1;
+        if (isString$1(arg2)) {
+          options2.locale = arg2;
+        } else if (isArray$1(arg2)) {
+          list = arg2;
+        } else if (isPlainObject(arg2)) {
+          named = arg2;
+        }
+        if (isArray$1(arg3)) {
+          list = arg3;
+        } else if (isPlainObject(arg3)) {
+          named = arg3;
+        }
+        return Reflect.apply(composer.t, composer, [
+          key,
+          list || named || {},
+          options2
+        ]);
+      },
+      rt(...args) {
+        return Reflect.apply(composer.rt, composer, [...args]);
+      },
+      tc(...args) {
+        const [arg1, arg2, arg3] = args;
+        const options2 = { plural: 1 };
+        let list = null;
+        let named = null;
+        if (!isString$1(arg1)) {
+          throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
+        }
+        const key = arg1;
+        if (isString$1(arg2)) {
+          options2.locale = arg2;
+        } else if (isNumber(arg2)) {
+          options2.plural = arg2;
+        } else if (isArray$1(arg2)) {
+          list = arg2;
+        } else if (isPlainObject(arg2)) {
+          named = arg2;
+        }
+        if (isString$1(arg3)) {
+          options2.locale = arg3;
+        } else if (isArray$1(arg3)) {
+          list = arg3;
+        } else if (isPlainObject(arg3)) {
+          named = arg3;
+        }
+        return Reflect.apply(composer.t, composer, [
+          key,
+          list || named || {},
+          options2
+        ]);
+      },
+      te(key, locale) {
+        return composer.te(key, locale);
+      },
+      tm(key) {
+        return composer.tm(key);
+      },
+      getLocaleMessage(locale) {
+        return composer.getLocaleMessage(locale);
+      },
+      setLocaleMessage(locale, message) {
+        composer.setLocaleMessage(locale, message);
+      },
+      mergeLocaleMessage(locale, message) {
+        composer.mergeLocaleMessage(locale, message);
+      },
+      d(...args) {
+        return Reflect.apply(composer.d, composer, [...args]);
+      },
+      getDateTimeFormat(locale) {
+        return composer.getDateTimeFormat(locale);
+      },
+      setDateTimeFormat(locale, format2) {
+        composer.setDateTimeFormat(locale, format2);
+      },
+      mergeDateTimeFormat(locale, format2) {
+        composer.mergeDateTimeFormat(locale, format2);
+      },
+      n(...args) {
+        return Reflect.apply(composer.n, composer, [...args]);
+      },
+      getNumberFormat(locale) {
+        return composer.getNumberFormat(locale);
+      },
+      setNumberFormat(locale, format2) {
+        composer.setNumberFormat(locale, format2);
+      },
+      mergeNumberFormat(locale, format2) {
+        composer.mergeNumberFormat(locale, format2);
+      },
+      getChoiceIndex(choice, choicesLength) {
+        return -1;
+      },
+      __onComponentInstanceCreated(target) {
+        const { componentInstanceCreatedListener } = options;
+        if (componentInstanceCreatedListener) {
+          componentInstanceCreatedListener(target, vueI18n);
+        }
+      }
+    };
+    return vueI18n;
+  }
+}
+const baseFormatProps = {
+  tag: {
+    type: [String, Object]
+  },
+  locale: {
+    type: String
+  },
+  scope: {
+    type: String,
+    validator: (val) => val === "parent" || val === "global",
+    default: "parent"
+  },
+  i18n: {
+    type: Object
+  }
+};
+function getInterpolateArg({ slots }, keys) {
+  if (keys.length === 1 && keys[0] === "default") {
+    const ret = slots.default ? slots.default() : [];
+    return ret.reduce((slot, current) => {
+      return slot = [
+        ...slot,
+        ...isArray$1(current.children) ? current.children : [current]
+      ];
+    }, []);
+  } else {
+    return keys.reduce((arg, key) => {
+      const slot = slots[key];
+      if (slot) {
+        arg[key] = slot();
+      }
+      return arg;
+    }, {});
+  }
+}
+function getFragmentableTag(tag) {
+  return vue_cjs_prod.Fragment;
+}
+const Translation = {
+  name: "i18n-t",
+  props: assign$1({
+    keypath: {
+      type: String,
+      required: true
+    },
+    plural: {
+      type: [Number, String],
+      validator: (val) => isNumber(val) || !isNaN(val)
+    }
+  }, baseFormatProps),
+  setup(props, context) {
+    const { slots, attrs } = context;
+    const i18n = props.i18n || useI18n({
+      useScope: props.scope,
+      __useComponent: true
+    });
+    const keys = Object.keys(slots).filter((key) => key !== "_");
+    return () => {
+      const options = {};
+      if (props.locale) {
+        options.locale = props.locale;
+      }
+      if (props.plural !== void 0) {
+        options.plural = isString$1(props.plural) ? +props.plural : props.plural;
+      }
+      const arg = getInterpolateArg(context, keys);
+      const children = i18n[TransrateVNodeSymbol](props.keypath, arg, options);
+      const assignedAttrs = assign$1({}, attrs);
+      const tag = isString$1(props.tag) || isObject$1(props.tag) ? props.tag : getFragmentableTag();
+      return vue_cjs_prod.h(tag, assignedAttrs, children);
+    };
+  }
+};
+function isVNode(target) {
+  return isArray$1(target) && !isString$1(target[0]);
+}
+function renderFormatter(props, context, slotKeys, partFormatter) {
+  const { slots, attrs } = context;
+  return () => {
+    const options = { part: true };
+    let overrides = {};
+    if (props.locale) {
+      options.locale = props.locale;
+    }
+    if (isString$1(props.format)) {
+      options.key = props.format;
+    } else if (isObject$1(props.format)) {
+      if (isString$1(props.format.key)) {
+        options.key = props.format.key;
+      }
+      overrides = Object.keys(props.format).reduce((options2, prop) => {
+        return slotKeys.includes(prop) ? assign$1({}, options2, { [prop]: props.format[prop] }) : options2;
+      }, {});
+    }
+    const parts = partFormatter(...[props.value, options, overrides]);
+    let children = [options.key];
+    if (isArray$1(parts)) {
+      children = parts.map((part, index2) => {
+        const slot = slots[part.type];
+        const node = slot ? slot({ [part.type]: part.value, index: index2, parts }) : [part.value];
+        if (isVNode(node)) {
+          node[0].key = `${part.type}-${index2}`;
+        }
+        return node;
+      });
+    } else if (isString$1(parts)) {
+      children = [parts];
+    }
+    const assignedAttrs = assign$1({}, attrs);
+    const tag = isString$1(props.tag) || isObject$1(props.tag) ? props.tag : getFragmentableTag();
+    return vue_cjs_prod.h(tag, assignedAttrs, children);
+  };
+}
+const NUMBER_FORMAT_KEYS = [
+  "localeMatcher",
+  "style",
+  "unit",
+  "unitDisplay",
+  "currency",
+  "currencyDisplay",
+  "useGrouping",
+  "numberingSystem",
+  "minimumIntegerDigits",
+  "minimumFractionDigits",
+  "maximumFractionDigits",
+  "minimumSignificantDigits",
+  "maximumSignificantDigits",
+  "notation",
+  "formatMatcher"
+];
+const NumberFormat = {
+  name: "i18n-n",
+  props: assign$1({
+    value: {
+      type: Number,
+      required: true
+    },
+    format: {
+      type: [String, Object]
+    }
+  }, baseFormatProps),
+  setup(props, context) {
+    const i18n = props.i18n || useI18n({ useScope: "parent", __useComponent: true });
+    return renderFormatter(props, context, NUMBER_FORMAT_KEYS, (...args) => i18n[NumberPartsSymbol](...args));
+  }
+};
+const DATETIME_FORMAT_KEYS = [
+  "dateStyle",
+  "timeStyle",
+  "fractionalSecondDigits",
+  "calendar",
+  "dayPeriod",
+  "numberingSystem",
+  "localeMatcher",
+  "timeZone",
+  "hour12",
+  "hourCycle",
+  "formatMatcher",
+  "weekday",
+  "era",
+  "year",
+  "month",
+  "day",
+  "hour",
+  "minute",
+  "second",
+  "timeZoneName"
+];
+const DatetimeFormat = {
+  name: "i18n-d",
+  props: assign$1({
+    value: {
+      type: [Number, Date],
+      required: true
+    },
+    format: {
+      type: [String, Object]
+    }
+  }, baseFormatProps),
+  setup(props, context) {
+    const i18n = props.i18n || useI18n({ useScope: "parent", __useComponent: true });
+    return renderFormatter(props, context, DATETIME_FORMAT_KEYS, (...args) => i18n[DatetimePartsSymbol](...args));
+  }
+};
+function getComposer$2(i18n, instance) {
+  const i18nInternal = i18n;
+  if (i18n.mode === "composition") {
+    return i18nInternal.__getInstance(instance) || i18n.global;
+  } else {
+    const vueI18n = i18nInternal.__getInstance(instance);
+    return vueI18n != null ? vueI18n.__composer : i18n.global.__composer;
+  }
+}
+function vTDirective(i18n) {
+  const bind = (el, { instance, value, modifiers }) => {
+    if (!instance || !instance.$) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    const composer = getComposer$2(i18n, instance.$);
+    const parsedValue = parseValue(value);
+    el.textContent = Reflect.apply(composer.t, composer, [
+      ...makeParams(parsedValue)
+    ]);
+  };
+  return {
+    beforeMount: bind,
+    beforeUpdate: bind
+  };
+}
+function parseValue(value) {
+  if (isString$1(value)) {
+    return { path: value };
+  } else if (isPlainObject(value)) {
+    if (!("path" in value)) {
+      throw createI18nError(I18nErrorCodes.REQUIRED_VALUE, "path");
+    }
+    return value;
+  } else {
+    throw createI18nError(I18nErrorCodes.INVALID_VALUE);
+  }
+}
+function makeParams(value) {
+  const { path, locale, args, choice, plural } = value;
+  const options = {};
+  const named = args || {};
+  if (isString$1(locale)) {
+    options.locale = locale;
+  }
+  if (isNumber(choice)) {
+    options.plural = choice;
+  }
+  if (isNumber(plural)) {
+    options.plural = plural;
+  }
+  return [path, named, options];
+}
+function apply(app, i18n, ...options) {
+  const pluginOptions = isPlainObject(options[0]) ? options[0] : {};
+  const useI18nComponentName = !!pluginOptions.useI18nComponentName;
+  const globalInstall = isBoolean$1(pluginOptions.globalInstall) ? pluginOptions.globalInstall : true;
+  if (globalInstall) {
+    app.component(!useI18nComponentName ? Translation.name : "i18n", Translation);
+    app.component(NumberFormat.name, NumberFormat);
+    app.component(DatetimeFormat.name, DatetimeFormat);
+  }
+  {
+    app.directive("t", vTDirective(i18n));
+  }
+}
+function defineMixin(vuei18n, composer, i18n) {
+  return {
+    beforeCreate() {
+      const instance = vue_cjs_prod.getCurrentInstance();
+      if (!instance) {
+        throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+      }
+      const options = this.$options;
+      if (options.i18n) {
+        const optionsI18n = options.i18n;
+        if (options.__i18n) {
+          optionsI18n.__i18n = options.__i18n;
+        }
+        optionsI18n.__root = composer;
+        if (this === this.$root) {
+          this.$i18n = mergeToRoot(vuei18n, optionsI18n);
+        } else {
+          optionsI18n.__injectWithOption = true;
+          this.$i18n = createVueI18n(optionsI18n);
+        }
+      } else if (options.__i18n) {
+        if (this === this.$root) {
+          this.$i18n = mergeToRoot(vuei18n, options);
+        } else {
+          this.$i18n = createVueI18n({
+            __i18n: options.__i18n,
+            __injectWithOption: true,
+            __root: composer
+          });
+        }
+      } else {
+        this.$i18n = vuei18n;
+      }
+      if (options.__i18nGlobal) {
+        adjustI18nResources(composer, options, options);
+      }
+      vuei18n.__onComponentInstanceCreated(this.$i18n);
+      i18n.__setInstance(instance, this.$i18n);
+      this.$t = (...args) => this.$i18n.t(...args);
+      this.$rt = (...args) => this.$i18n.rt(...args);
+      this.$tc = (...args) => this.$i18n.tc(...args);
+      this.$te = (key, locale) => this.$i18n.te(key, locale);
+      this.$d = (...args) => this.$i18n.d(...args);
+      this.$n = (...args) => this.$i18n.n(...args);
+      this.$tm = (key) => this.$i18n.tm(key);
+    },
+    mounted() {
+    },
+    unmounted() {
+      const instance = vue_cjs_prod.getCurrentInstance();
+      if (!instance) {
+        throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+      }
+      delete this.$t;
+      delete this.$rt;
+      delete this.$tc;
+      delete this.$te;
+      delete this.$d;
+      delete this.$n;
+      delete this.$tm;
+      i18n.__deleteInstance(instance);
+      delete this.$i18n;
+    }
+  };
+}
+function mergeToRoot(root, options) {
+  root.locale = options.locale || root.locale;
+  root.fallbackLocale = options.fallbackLocale || root.fallbackLocale;
+  root.missing = options.missing || root.missing;
+  root.silentTranslationWarn = options.silentTranslationWarn || root.silentFallbackWarn;
+  root.silentFallbackWarn = options.silentFallbackWarn || root.silentFallbackWarn;
+  root.formatFallbackMessages = options.formatFallbackMessages || root.formatFallbackMessages;
+  root.postTranslation = options.postTranslation || root.postTranslation;
+  root.warnHtmlInMessage = options.warnHtmlInMessage || root.warnHtmlInMessage;
+  root.escapeParameterHtml = options.escapeParameterHtml || root.escapeParameterHtml;
+  root.sync = options.sync || root.sync;
+  root.__composer[SetPluralRulesSymbol](options.pluralizationRules || root.pluralizationRules);
+  const messages = getLocaleMessages(root.locale, {
+    messages: options.messages,
+    __i18n: options.__i18n
+  });
+  Object.keys(messages).forEach((locale) => root.mergeLocaleMessage(locale, messages[locale]));
+  if (options.datetimeFormats) {
+    Object.keys(options.datetimeFormats).forEach((locale) => root.mergeDateTimeFormat(locale, options.datetimeFormats[locale]));
+  }
+  if (options.numberFormats) {
+    Object.keys(options.numberFormats).forEach((locale) => root.mergeNumberFormat(locale, options.numberFormats[locale]));
+  }
+  return root;
+}
+const I18nInjectionKey = /* @__PURE__ */ makeSymbol$1("global-vue-i18n");
+function createI18n(options = {}, VueI18nLegacy) {
+  const __legacyMode = __VUE_I18N_LEGACY_API__ && isBoolean$1(options.legacy) ? options.legacy : __VUE_I18N_LEGACY_API__;
+  const __globalInjection = isBoolean$1(options.globalInjection) ? options.globalInjection : true;
+  const __allowComposition = __VUE_I18N_LEGACY_API__ && __legacyMode ? !!options.allowComposition : true;
+  const __instances = /* @__PURE__ */ new Map();
+  const [globalScope, __global] = createGlobal(options, __legacyMode);
+  const symbol = makeSymbol$1("");
+  function __getInstance(component) {
+    return __instances.get(component) || null;
+  }
+  function __setInstance(component, instance) {
+    __instances.set(component, instance);
+  }
+  function __deleteInstance(component) {
+    __instances.delete(component);
+  }
+  {
+    const i18n = {
+      get mode() {
+        return __VUE_I18N_LEGACY_API__ && __legacyMode ? "legacy" : "composition";
+      },
+      get allowComposition() {
+        return __allowComposition;
+      },
+      async install(app, ...options2) {
+        app.__VUE_I18N_SYMBOL__ = symbol;
+        app.provide(app.__VUE_I18N_SYMBOL__, i18n);
+        if (!__legacyMode && __globalInjection) {
+          injectGlobalFields(app, i18n.global);
+        }
+        if (__VUE_I18N_FULL_INSTALL__) {
+          apply(app, i18n, ...options2);
+        }
+        if (__VUE_I18N_LEGACY_API__ && __legacyMode) {
+          app.mixin(defineMixin(__global, __global.__composer, i18n));
+        }
+        const unmountApp = app.unmount;
+        app.unmount = () => {
+          i18n.dispose();
+          unmountApp();
+        };
+      },
+      get global() {
+        return __global;
+      },
+      dispose() {
+        globalScope.stop();
+      },
+      __instances,
+      __getInstance,
+      __setInstance,
+      __deleteInstance
+    };
+    return i18n;
+  }
+}
+function useI18n(options = {}) {
+  const instance = vue_cjs_prod.getCurrentInstance();
+  if (instance == null) {
+    throw createI18nError(I18nErrorCodes.MUST_BE_CALL_SETUP_TOP);
+  }
+  if (!instance.isCE && instance.appContext.app != null && !instance.appContext.app.__VUE_I18N_SYMBOL__) {
+    throw createI18nError(I18nErrorCodes.NOT_INSLALLED);
+  }
+  const i18n = getI18nInstance(instance);
+  const global2 = getGlobalComposer(i18n);
+  const componentOptions = getComponentOptions(instance);
+  const scope = getScope(options, componentOptions);
+  if (__VUE_I18N_LEGACY_API__) {
+    if (i18n.mode === "legacy" && !options.__useComponent) {
+      if (!i18n.allowComposition) {
+        throw createI18nError(I18nErrorCodes.NOT_AVAILABLE_IN_LEGACY_MODE);
+      }
+      return useI18nForLegacy(instance, scope, global2, options);
+    }
+  }
+  if (scope === "global") {
+    adjustI18nResources(global2, options, componentOptions);
+    return global2;
+  }
+  if (scope === "parent") {
+    let composer2 = getComposer$3(i18n, instance, options.__useComponent);
+    if (composer2 == null) {
+      composer2 = global2;
+    }
+    return composer2;
+  }
+  const i18nInternal = i18n;
+  let composer = i18nInternal.__getInstance(instance);
+  if (composer == null) {
+    const composerOptions = assign$1({}, options);
+    if ("__i18n" in componentOptions) {
+      composerOptions.__i18n = componentOptions.__i18n;
+    }
+    if (global2) {
+      composerOptions.__root = global2;
+    }
+    composer = createComposer(composerOptions);
+    setupLifeCycle(i18nInternal, instance);
+    i18nInternal.__setInstance(instance, composer);
+  }
+  return composer;
+}
+function createGlobal(options, legacyMode, VueI18nLegacy) {
+  const scope = vue_cjs_prod.effectScope();
+  {
+    const obj = __VUE_I18N_LEGACY_API__ && legacyMode ? scope.run(() => createVueI18n(options)) : scope.run(() => createComposer(options));
+    if (obj == null) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    return [scope, obj];
+  }
+}
+function getI18nInstance(instance) {
+  {
+    const i18n = vue_cjs_prod.inject(!instance.isCE ? instance.appContext.app.__VUE_I18N_SYMBOL__ : I18nInjectionKey);
+    if (!i18n) {
+      throw createI18nError(!instance.isCE ? I18nErrorCodes.UNEXPECTED_ERROR : I18nErrorCodes.NOT_INSLALLED_WITH_PROVIDE);
+    }
+    return i18n;
+  }
+}
+function getScope(options, componentOptions) {
+  return isEmptyObject(options) ? "__i18n" in componentOptions ? "local" : "global" : !options.useScope ? "local" : options.useScope;
+}
+function getGlobalComposer(i18n) {
+  return i18n.mode === "composition" ? i18n.global : i18n.global.__composer;
+}
+function getComposer$3(i18n, target, useComponent = false) {
+  let composer = null;
+  const root = target.root;
+  let current = target.parent;
+  while (current != null) {
+    const i18nInternal = i18n;
+    if (i18n.mode === "composition") {
+      composer = i18nInternal.__getInstance(current);
+    } else {
+      if (__VUE_I18N_LEGACY_API__) {
+        const vueI18n = i18nInternal.__getInstance(current);
+        if (vueI18n != null) {
+          composer = vueI18n.__composer;
+          if (useComponent && composer && !composer[InejctWithOption]) {
+            composer = null;
+          }
+        }
+      }
+    }
+    if (composer != null) {
+      break;
+    }
+    if (root === current) {
+      break;
+    }
+    current = current.parent;
+  }
+  return composer;
+}
+function setupLifeCycle(i18n, target, composer) {
+  {
+    vue_cjs_prod.onMounted(() => {
+    }, target);
+    vue_cjs_prod.onUnmounted(() => {
+      i18n.__deleteInstance(target);
+    }, target);
+  }
+}
+function useI18nForLegacy(instance, scope, root, options = {}) {
+  const isLocale = scope === "local";
+  const _composer = vue_cjs_prod.shallowRef(null);
+  if (isLocale && instance.proxy && !instance.proxy.$options.i18n) {
+    throw createI18nError(I18nErrorCodes.MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION);
+  }
+  const _inheritLocale = isBoolean$1(options.inheritLocale) ? options.inheritLocale : true;
+  const _locale = vue_cjs_prod.ref(isLocale && _inheritLocale ? root.locale.value : isString$1(options.locale) ? options.locale : DEFAULT_LOCALE$1);
+  const _fallbackLocale = vue_cjs_prod.ref(isLocale && _inheritLocale ? root.fallbackLocale.value : isString$1(options.fallbackLocale) || isArray$1(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value);
+  const _messages = vue_cjs_prod.ref(getLocaleMessages(_locale.value, options));
+  const _datetimeFormats = vue_cjs_prod.ref(isPlainObject(options.datetimeFormats) ? options.datetimeFormats : { [_locale.value]: {} });
+  const _numberFormats = vue_cjs_prod.ref(isPlainObject(options.numberFormats) ? options.numberFormats : { [_locale.value]: {} });
+  const _missingWarn = isLocale ? root.missingWarn : isBoolean$1(options.missingWarn) || isRegExp(options.missingWarn) ? options.missingWarn : true;
+  const _fallbackWarn = isLocale ? root.fallbackWarn : isBoolean$1(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
+  const _fallbackRoot = isLocale ? root.fallbackRoot : isBoolean$1(options.fallbackRoot) ? options.fallbackRoot : true;
+  const _fallbackFormat = !!options.fallbackFormat;
+  const _missing = isFunction$1(options.missing) ? options.missing : null;
+  const _postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : null;
+  const _warnHtmlMessage = isLocale ? root.warnHtmlMessage : isBoolean$1(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
+  const _escapeParameter = !!options.escapeParameter;
+  const _modifiers = isLocale ? root.modifiers : isPlainObject(options.modifiers) ? options.modifiers : {};
+  const _pluralRules = options.pluralRules || isLocale && root.pluralRules;
+  function trackReactivityValues() {
+    return [
+      _locale.value,
+      _fallbackLocale.value,
+      _messages.value,
+      _datetimeFormats.value,
+      _numberFormats.value
+    ];
+  }
+  const locale = vue_cjs_prod.computed({
+    get: () => {
+      return _composer.value ? _composer.value.locale.value : _locale.value;
+    },
+    set: (val) => {
+      if (_composer.value) {
+        _composer.value.locale.value = val;
+      }
+      _locale.value = val;
+    }
+  });
+  const fallbackLocale = vue_cjs_prod.computed({
+    get: () => {
+      return _composer.value ? _composer.value.fallbackLocale.value : _fallbackLocale.value;
+    },
+    set: (val) => {
+      if (_composer.value) {
+        _composer.value.fallbackLocale.value = val;
+      }
+      _fallbackLocale.value = val;
+    }
+  });
+  const messages = vue_cjs_prod.computed(() => {
+    if (_composer.value) {
+      return _composer.value.messages.value;
+    } else {
+      return _messages.value;
+    }
+  });
+  const datetimeFormats = vue_cjs_prod.computed(() => _datetimeFormats.value);
+  const numberFormats = vue_cjs_prod.computed(() => _numberFormats.value);
+  function getPostTranslationHandler() {
+    return _composer.value ? _composer.value.getPostTranslationHandler() : _postTranslation;
+  }
+  function setPostTranslationHandler(handler) {
+    if (_composer.value) {
+      _composer.value.setPostTranslationHandler(handler);
+    }
+  }
+  function getMissingHandler() {
+    return _composer.value ? _composer.value.getMissingHandler() : _missing;
+  }
+  function setMissingHandler(handler) {
+    if (_composer.value) {
+      _composer.value.setMissingHandler(handler);
+    }
+  }
+  function warpWithDeps(fn) {
+    trackReactivityValues();
+    return fn();
+  }
+  function t(...args) {
+    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.t, null, [...args])) : warpWithDeps(() => "");
+  }
+  function rt(...args) {
+    return _composer.value ? Reflect.apply(_composer.value.rt, null, [...args]) : "";
+  }
+  function d(...args) {
+    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.d, null, [...args])) : warpWithDeps(() => "");
+  }
+  function n(...args) {
+    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.n, null, [...args])) : warpWithDeps(() => "");
+  }
+  function tm(key) {
+    return _composer.value ? _composer.value.tm(key) : {};
+  }
+  function te(key, locale2) {
+    return _composer.value ? _composer.value.te(key, locale2) : false;
+  }
+  function getLocaleMessage(locale2) {
+    return _composer.value ? _composer.value.getLocaleMessage(locale2) : {};
+  }
+  function setLocaleMessage(locale2, message) {
+    if (_composer.value) {
+      _composer.value.setLocaleMessage(locale2, message);
+      _messages.value[locale2] = message;
+    }
+  }
+  function mergeLocaleMessage(locale2, message) {
+    if (_composer.value) {
+      _composer.value.mergeLocaleMessage(locale2, message);
+    }
+  }
+  function getDateTimeFormat(locale2) {
+    return _composer.value ? _composer.value.getDateTimeFormat(locale2) : {};
+  }
+  function setDateTimeFormat(locale2, format2) {
+    if (_composer.value) {
+      _composer.value.setDateTimeFormat(locale2, format2);
+      _datetimeFormats.value[locale2] = format2;
+    }
+  }
+  function mergeDateTimeFormat(locale2, format2) {
+    if (_composer.value) {
+      _composer.value.mergeDateTimeFormat(locale2, format2);
+    }
+  }
+  function getNumberFormat(locale2) {
+    return _composer.value ? _composer.value.getNumberFormat(locale2) : {};
+  }
+  function setNumberFormat(locale2, format2) {
+    if (_composer.value) {
+      _composer.value.setNumberFormat(locale2, format2);
+      _numberFormats.value[locale2] = format2;
+    }
+  }
+  function mergeNumberFormat(locale2, format2) {
+    if (_composer.value) {
+      _composer.value.mergeNumberFormat(locale2, format2);
+    }
+  }
+  const wrapper = {
+    get id() {
+      return _composer.value ? _composer.value.id : -1;
+    },
+    locale,
+    fallbackLocale,
+    messages,
+    datetimeFormats,
+    numberFormats,
+    get inheritLocale() {
+      return _composer.value ? _composer.value.inheritLocale : _inheritLocale;
+    },
+    set inheritLocale(val) {
+      if (_composer.value) {
+        _composer.value.inheritLocale = val;
+      }
+    },
+    get availableLocales() {
+      return _composer.value ? _composer.value.availableLocales : Object.keys(_messages.value);
+    },
+    get modifiers() {
+      return _composer.value ? _composer.value.modifiers : _modifiers;
+    },
+    get pluralRules() {
+      return _composer.value ? _composer.value.pluralRules : _pluralRules;
+    },
+    get isGlobal() {
+      return _composer.value ? _composer.value.isGlobal : false;
+    },
+    get missingWarn() {
+      return _composer.value ? _composer.value.missingWarn : _missingWarn;
+    },
+    set missingWarn(val) {
+      if (_composer.value) {
+        _composer.value.missingWarn = val;
+      }
+    },
+    get fallbackWarn() {
+      return _composer.value ? _composer.value.fallbackWarn : _fallbackWarn;
+    },
+    set fallbackWarn(val) {
+      if (_composer.value) {
+        _composer.value.missingWarn = val;
+      }
+    },
+    get fallbackRoot() {
+      return _composer.value ? _composer.value.fallbackRoot : _fallbackRoot;
+    },
+    set fallbackRoot(val) {
+      if (_composer.value) {
+        _composer.value.fallbackRoot = val;
+      }
+    },
+    get fallbackFormat() {
+      return _composer.value ? _composer.value.fallbackFormat : _fallbackFormat;
+    },
+    set fallbackFormat(val) {
+      if (_composer.value) {
+        _composer.value.fallbackFormat = val;
+      }
+    },
+    get warnHtmlMessage() {
+      return _composer.value ? _composer.value.warnHtmlMessage : _warnHtmlMessage;
+    },
+    set warnHtmlMessage(val) {
+      if (_composer.value) {
+        _composer.value.warnHtmlMessage = val;
+      }
+    },
+    get escapeParameter() {
+      return _composer.value ? _composer.value.escapeParameter : _escapeParameter;
+    },
+    set escapeParameter(val) {
+      if (_composer.value) {
+        _composer.value.escapeParameter = val;
+      }
+    },
+    t,
+    getPostTranslationHandler,
+    setPostTranslationHandler,
+    getMissingHandler,
+    setMissingHandler,
+    rt,
+    d,
+    n,
+    tm,
+    te,
+    getLocaleMessage,
+    setLocaleMessage,
+    mergeLocaleMessage,
+    getDateTimeFormat,
+    setDateTimeFormat,
+    mergeDateTimeFormat,
+    getNumberFormat,
+    setNumberFormat,
+    mergeNumberFormat
+  };
+  function sync(composer) {
+    composer.locale.value = _locale.value;
+    composer.fallbackLocale.value = _fallbackLocale.value;
+    Object.keys(_messages.value).forEach((locale2) => {
+      composer.mergeLocaleMessage(locale2, _messages.value[locale2]);
+    });
+    Object.keys(_datetimeFormats.value).forEach((locale2) => {
+      composer.mergeDateTimeFormat(locale2, _datetimeFormats.value[locale2]);
+    });
+    Object.keys(_numberFormats.value).forEach((locale2) => {
+      composer.mergeNumberFormat(locale2, _numberFormats.value[locale2]);
+    });
+    composer.escapeParameter = _escapeParameter;
+    composer.fallbackFormat = _fallbackFormat;
+    composer.fallbackRoot = _fallbackRoot;
+    composer.fallbackWarn = _fallbackWarn;
+    composer.missingWarn = _missingWarn;
+    composer.warnHtmlMessage = _warnHtmlMessage;
+  }
+  vue_cjs_prod.onBeforeMount(() => {
+    if (instance.proxy == null || instance.proxy.$i18n == null) {
+      throw createI18nError(I18nErrorCodes.NOT_AVAILABLE_COMPOSITION_IN_LEGACY);
+    }
+    const composer = _composer.value = instance.proxy.$i18n.__composer;
+    if (scope === "global") {
+      _locale.value = composer.locale.value;
+      _fallbackLocale.value = composer.fallbackLocale.value;
+      _messages.value = composer.messages.value;
+      _datetimeFormats.value = composer.datetimeFormats.value;
+      _numberFormats.value = composer.numberFormats.value;
+    } else if (isLocale) {
+      sync(composer);
+    }
+  });
+  return wrapper;
+}
+const globalExportProps = [
+  "locale",
+  "fallbackLocale",
+  "availableLocales"
+];
+const globalExportMethods = ["t", "rt", "d", "n", "tm"];
+function injectGlobalFields(app, composer) {
+  const i18n = /* @__PURE__ */ Object.create(null);
+  globalExportProps.forEach((prop) => {
+    const desc = Object.getOwnPropertyDescriptor(composer, prop);
+    if (!desc) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    const wrap = vue_cjs_prod.isRef(desc.value) ? {
+      get() {
+        return desc.value.value;
+      },
+      set(val) {
+        desc.value.value = val;
+      }
+    } : {
+      get() {
+        return desc.get && desc.get();
+      }
+    };
+    Object.defineProperty(i18n, prop, wrap);
+  });
+  app.config.globalProperties.$i18n = i18n;
+  globalExportMethods.forEach((method) => {
+    const desc = Object.getOwnPropertyDescriptor(composer, method);
+    if (!desc || !desc.value) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    Object.defineProperty(app.config.globalProperties, `$${method}`, desc);
+  });
+}
+registerMessageResolver(resolveValue);
+registerLocaleFallbacker(fallbackWithLocaleChain);
+{
+  initFeatureFlags();
+}
+if (__INTLIFY_PROD_DEVTOOLS__) {
+  const target = getGlobalThis();
+  target.__INTLIFY__ = true;
+  setDevToolsHook(target.__INTLIFY_DEVTOOLS_GLOBAL_HOOK__);
+}
+var __defProp2 = Object.defineProperty;
+var __defProps2 = Object.defineProperties;
+var __getOwnPropDescs2 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols2 = Object.getOwnPropertySymbols;
+var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+var __propIsEnum2 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp2 = (obj, key, value) => key in obj ? __defProp2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues2 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp2.call(b, prop))
+      __defNormalProp2(a, prop, b[prop]);
+  if (__getOwnPropSymbols2)
+    for (var prop of __getOwnPropSymbols2(b)) {
+      if (__propIsEnum2.call(b, prop))
+        __defNormalProp2(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps2 = (a, b) => __defProps2(a, __getOwnPropDescs2(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp2.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols2)
+    for (var prop of __getOwnPropSymbols2(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum2.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const STRATEGIES = {
+  PREFIX: "prefix",
+  PREFIX_EXCEPT_DEFAULT: "prefix_except_default",
+  PREFIX_AND_DEFAULT: "prefix_and_default",
+  NO_PREFIX: "no_prefix"
+};
+const DEFAULT_LOCALE = "";
+const DEFAULT_STRATEGY = STRATEGIES.PREFIX_EXCEPT_DEFAULT;
+const DEFAULT_TRAILING_SLASH = false;
+const DEFAULT_ROUTES_NAME_SEPARATOR = "___";
+const DEFAULT_LOCALE_ROUTE_NAME_SUFFIX = "default";
+const DEFAULT_DETECTION_DIRECTION = "ltr";
+const DEFAULT_BASE_URL = "";
+/*!
+  * shared v9.2.0-beta.35
+  * (c) 2022 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const hasSymbol = typeof Symbol === "function" && typeof Symbol.toStringTag === "symbol";
+const makeSymbol = (name) => hasSymbol ? Symbol(name) : name;
+const assign = Object.assign;
+const isArray = Array.isArray;
+const isFunction = (val) => typeof val === "function";
+const isString = (val) => typeof val === "string";
+const isBoolean = (val) => typeof val === "boolean";
+const isSymbol = (val) => typeof val === "symbol";
+const isObject = (val) => val !== null && typeof val === "object";
+const TRAILING_SLASH_RE = /\/$|\/\?/;
+function hasTrailingSlash(input = "", queryParams = false) {
+  if (!queryParams) {
+    return input.endsWith("/");
+  }
+  return TRAILING_SLASH_RE.test(input);
+}
+function withoutTrailingSlash(input = "", queryParams = false) {
+  if (!queryParams) {
+    return (hasTrailingSlash(input) ? input.slice(0, -1) : input) || "/";
+  }
+  if (!hasTrailingSlash(input, true)) {
+    return input || "/";
+  }
+  const [s0, ...s] = input.split("?");
+  return (s0.slice(0, -1) || "/") + (s.length ? `?${s.join("?")}` : "");
+}
+function withTrailingSlash(input = "", queryParams = false) {
+  if (!queryParams) {
+    return input.endsWith("/") ? input : input + "/";
+  }
+  if (hasTrailingSlash(input, true)) {
+    return input || "/";
+  }
+  const [s0, ...s] = input.split("?");
+  return s0 + "/" + (s.length ? `?${s.join("?")}` : "");
+}
+function warn(msg, err) {
+  if (typeof console !== "undefined") {
+    console.warn(`[vue-i18n-routing] ` + msg);
+    if (err) {
+      console.warn(err.stack);
+    }
+  }
+}
+function getNormalizedLocales(locales) {
+  locales = locales || [];
+  const normalized = [];
+  for (const locale of locales) {
+    if (isString(locale)) {
+      normalized.push({ code: locale });
+    } else {
+      normalized.push(locale);
+    }
+  }
+  return normalized;
+}
+function isI18nInstance(i18n) {
+  return i18n != null && "global" in i18n && "mode" in i18n;
+}
+function isComposer(target) {
+  return target != null && !("__composer" in target) && vue_cjs_prod.isRef(target.locale);
+}
+function isVueI18n(target) {
+  return target != null && "__composer" in target;
+}
+function isExportedGlobalComposer(target) {
+  return target != null && !("__composer" in target) && !vue_cjs_prod.isRef(target.locale);
+}
+function isLegacyVueI18n(target) {
+  return target != null && ("__VUE_I18N_BRIDGE__" in target || "_sync" in target);
+}
+function getComposer(i18n) {
+  return isI18nInstance(i18n) ? isComposer(i18n.global) ? i18n.global : i18n.global.__composer : isVueI18n(i18n) ? i18n.__composer : i18n;
+}
+function getLocale(i18n) {
+  const target = isI18nInstance(i18n) ? i18n.global : i18n;
+  return isComposer(target) ? target.locale.value : isExportedGlobalComposer(target) || isVueI18n(target) || isLegacyVueI18n(target) ? target.locale : target.locale;
+}
+function getLocales(i18n) {
+  const target = isI18nInstance(i18n) ? i18n.global : i18n;
+  return isComposer(target) ? target.locales.value : isExportedGlobalComposer(target) || isVueI18n(target) || isLegacyVueI18n(target) ? target.locales : target.locales;
+}
+function setLocale(i18n, locale) {
+  const target = isI18nInstance(i18n) ? i18n.global : i18n;
+  if (isComposer(target)) {
+    {
+      target.locale.value = locale;
+    }
+  } else if (isExportedGlobalComposer(target) || isVueI18n(target) || isLegacyVueI18n(target)) {
+    target.locale = locale;
+  } else {
+    throw new Error("TODO:");
+  }
+}
+function getRouteName(routeName) {
+  return isString(routeName) ? routeName : isSymbol(routeName) ? routeName.toString() : "(null)";
+}
+function getLocaleRouteName(routeName, locale, {
+  defaultLocale,
+  strategy,
+  routesNameSeparator,
+  defaultLocaleRouteNameSuffix
+}) {
+  let name = getRouteName(routeName) + (strategy === "no_prefix" ? "" : routesNameSeparator + locale);
+  if (locale === defaultLocale && strategy === "prefix_and_default") {
+    name += routesNameSeparator + defaultLocaleRouteNameSuffix;
+  }
+  return name;
+}
+function resolveBaseUrl(baseUrl, context) {
+  if (isFunction(baseUrl)) {
+    return baseUrl(context);
+  }
+  return baseUrl;
+}
+function proxyVueInstance(target) {
+  return function() {
+    return Reflect.apply(target, {
+      getRouteBaseName: this.getRouteBaseName,
+      localePath: this.localePath,
+      localeRoute: this.localeRoute,
+      localeLocation: this.localeLocation,
+      resolveRoute: this.resolveRoute,
+      switchLocalePath: this.switchLocalePath,
+      localeHead: this.localeHead,
+      i18n: this.$i18n,
+      route: this.$route,
+      router: this.$router
+    }, arguments);
+  };
+}
+function extendI18n(i18n, { locales = [], localeCodes: localeCodes2 = [], baseUrl = DEFAULT_BASE_URL, hooks = {} } = {}) {
+  const scope = vue_cjs_prod.effectScope();
+  const orgInstall = i18n.install;
+  i18n.install = (vue, ...options) => {
+    Reflect.apply(orgInstall, i18n, [vue, ...options]);
+    const composer = getComposer(i18n);
+    scope.run(() => extendComposer(composer, { locales, localeCodes: localeCodes2, baseUrl, hooks }));
+    if (isVueI18n(i18n.global)) {
+      extendVueI18n(i18n.global, hooks.onExtendVueI18n);
+    }
+    const app = vue;
+    const exported = i18n.mode === "composition" ? app.config.globalProperties.$i18n : null;
+    if (exported) {
+      extendExportedGlobal(exported, composer, hooks.onExtendExportedGlobal);
+    }
+    const pluginOptions = isPluginOptions(options[0]) ? options[0] : { inject: true };
+    if (pluginOptions.inject) {
+      vue.mixin({
+        methods: {
+          resolveRoute: proxyVueInstance(resolveRoute),
+          localePath: proxyVueInstance(localePath),
+          localeRoute: proxyVueInstance(localeRoute),
+          localeLocation: proxyVueInstance(localeLocation),
+          switchLocalePath: proxyVueInstance(switchLocalePath),
+          getRouteBaseName: proxyVueInstance(getRouteBaseName),
+          localeHead: proxyVueInstance(localeHead)
+        }
+      });
+    }
+    if (app.unmount) {
+      const unmountApp = app.unmount;
+      app.unmount = () => {
+        scope.stop();
+        unmountApp();
+      };
+    }
+  };
+  return scope;
+}
+function extendComposer(composer, options) {
+  const { locales, localeCodes: localeCodes2, baseUrl } = options;
+  const _locales = vue_cjs_prod.ref(locales);
+  const _localeCodes = vue_cjs_prod.ref(localeCodes2);
+  composer.locales = vue_cjs_prod.computed(() => _locales.value);
+  composer.localeCodes = vue_cjs_prod.computed(() => _localeCodes.value);
+  composer.__baseUrl = resolveBaseUrl(baseUrl, {});
+  if (options.hooks && options.hooks.onExtendComposer) {
+    options.hooks.onExtendComposer(composer);
+  }
+}
+function extendExportedGlobal(exported, global2, hook) {
+  const properties = [
+    {
+      locales: {
+        get() {
+          return global2.locales.value;
+        }
+      },
+      localeCodes: {
+        get() {
+          return global2.localeCodes.value;
+        }
+      },
+      __baseUrl: {
+        get() {
+          return global2.__baseUrl;
+        }
+      }
+    }
+  ];
+  hook && properties.push(hook(global2));
+  for (const property of properties) {
+    for (const [key, descriptor] of Object.entries(property)) {
+      Object.defineProperty(exported, key, descriptor);
+    }
+  }
+}
+function extendVueI18n(vueI18n, hook) {
+  const composer = getComposer(vueI18n);
+  const properties = [
+    {
+      locales: {
+        get() {
+          return composer.locales.value;
+        }
+      },
+      localeCodes: {
+        get() {
+          return composer.localeCodes.value;
+        }
+      },
+      __baseUrl: {
+        get() {
+          return composer.__baseUrl;
+        }
+      }
+    }
+  ];
+  hook && properties.push(hook(composer));
+  for (const property of properties) {
+    for (const [key, descriptor] of Object.entries(property)) {
+      Object.defineProperty(vueI18n, key, descriptor);
+    }
+  }
+}
+function isPluginOptions(options) {
+  return isObject(options) && "inject" in options && isBoolean(options.inject);
+}
+const GlobalOptionsRegistory = makeSymbol("vue-i18n-routing-gor");
+function registerGlobalOptions(router, options) {
+  const _options = router[GlobalOptionsRegistory];
+  if (_options) {
+    warn("already registered global options");
+  } else {
+    router[GlobalOptionsRegistory] = options;
+  }
+}
+function getGlobalOptions(router) {
+  var _a;
+  return (_a = router[GlobalOptionsRegistory]) != null ? _a : {};
+}
+function getLocalesRegex(localeCodes2) {
+  return new RegExp(`^/(${localeCodes2.join("|")})(?:/|$)`, "i");
+}
+function createLocaleFromRouteGetter(localeCodes2, routesNameSeparator, defaultLocaleRouteNameSuffix) {
+  const localesPattern = `(${localeCodes2.join("|")})`;
+  const defaultSuffixPattern = `(?:${routesNameSeparator}${defaultLocaleRouteNameSuffix})?`;
+  const regexpName = new RegExp(`${routesNameSeparator}${localesPattern}${defaultSuffixPattern}$`, "i");
+  const regexpPath = getLocalesRegex(localeCodes2);
+  const getLocaleFromRoute = (route) => {
+    if (isObject(route)) {
+      if (route.name) {
+        const name = isString(route.name) ? route.name : route.name.toString();
+        const matches = name.match(regexpName);
+        if (matches && matches.length > 1) {
+          return matches[1];
+        }
+      } else if (route.path) {
+        const matches = route.path.match(regexpPath);
+        if (matches && matches.length > 1) {
+          return matches[1];
+        }
+      }
+    } else if (isString(route)) {
+      const matches = route.match(regexpPath);
+      if (matches && matches.length > 1) {
+        return matches[1];
+      }
+    }
+    return "";
+  };
+  return getLocaleFromRoute;
+}
+function getI18nRoutingOptions(router, proxy, {
+  defaultLocale = DEFAULT_LOCALE,
+  defaultDirection = DEFAULT_DETECTION_DIRECTION,
+  defaultLocaleRouteNameSuffix = DEFAULT_LOCALE_ROUTE_NAME_SUFFIX,
+  routesNameSeparator = DEFAULT_ROUTES_NAME_SEPARATOR,
+  strategy = DEFAULT_STRATEGY,
+  trailingSlash = DEFAULT_TRAILING_SLASH,
+  localeCodes: localeCodes2 = []
+} = {}) {
+  const options = getGlobalOptions(router);
+  return {
+    defaultLocale: proxy.defaultLocale || options.defaultLocale || defaultLocale,
+    defaultDirection: proxy.defaultDirection || options.defaultDirection || defaultDirection,
+    defaultLocaleRouteNameSuffix: proxy.defaultLocaleRouteNameSuffix || options.defaultLocaleRouteNameSuffix || defaultLocaleRouteNameSuffix,
+    routesNameSeparator: proxy.routesNameSeparator || options.routesNameSeparator || routesNameSeparator,
+    strategy: proxy.strategy || options.strategy || strategy,
+    trailingSlash: proxy.trailingSlash || options.trailingSlash || trailingSlash,
+    localeCodes: proxy.localeCodes || options.localeCodes || localeCodes2
+  };
+}
+const RESOLVED_PREFIXED = /* @__PURE__ */ new Set([STRATEGIES.PREFIX_AND_DEFAULT, STRATEGIES.PREFIX_EXCEPT_DEFAULT]);
+function getRouteBaseName(givenRoute) {
+  const router = this.router;
+  const { routesNameSeparator } = getI18nRoutingOptions(router, this);
+  const route = givenRoute != null ? vue_cjs_prod.isRef(givenRoute) ? vue_cjs_prod.unref(givenRoute) : givenRoute : this.route;
+  if (!route.name) {
+    return;
+  }
+  const name = getRouteName(route.name);
+  return name.split(routesNameSeparator)[0];
+}
+function localePath(route, locale) {
+  const localizedRoute = resolveRoute.call(this, route, locale);
+  return localizedRoute == null ? "" : localizedRoute.redirectedFrom || localizedRoute.fullPath;
+}
+function localeRoute(route, locale) {
+  const resolved = resolveRoute.call(this, route, locale);
+  return resolved == null ? void 0 : resolved;
+}
+function localeLocation(route, locale) {
+  const resolved = resolveRoute.call(this, route, locale);
+  return resolved == null ? void 0 : resolved;
+}
+function resolveRoute(route, locale) {
+  const router = this.router;
+  const i18n = this.i18n;
+  const _locale = locale || getLocale(i18n);
+  const { routesNameSeparator, defaultLocale, defaultLocaleRouteNameSuffix, strategy, trailingSlash } = getI18nRoutingOptions(router, this);
+  let _route = route;
+  if (isString(route)) {
+    if (_route[0] === "/") {
+      _route = { path: route };
+    } else {
+      _route = { name: route };
+    }
+  }
+  let localizedRoute = assign({}, _route);
+  if (localizedRoute.path && !localizedRoute.name) {
+    const _resolvedRoute = router.resolve(localizedRoute);
+    const resolvedRoute2 = _resolvedRoute;
+    const resolvedRouteName = getRouteBaseName.call(this, resolvedRoute2);
+    if (isString(resolvedRouteName)) {
+      localizedRoute = {
+        name: getLocaleRouteName(resolvedRouteName, _locale, {
+          defaultLocale,
+          strategy,
+          routesNameSeparator,
+          defaultLocaleRouteNameSuffix
+        }),
+        params: resolvedRoute2.params,
+        query: resolvedRoute2.query,
+        hash: resolvedRoute2.hash
+      };
+    } else {
+      const isDefaultLocale = _locale === defaultLocale;
+      const isPrefixed = !(isDefaultLocale && RESOLVED_PREFIXED.has(strategy)) && !(strategy === STRATEGIES.NO_PREFIX);
+      if (isPrefixed) {
+        localizedRoute.path = `/${_locale}${localizedRoute.path}`;
+      }
+      localizedRoute.path = trailingSlash ? withTrailingSlash(localizedRoute.path, true) : withoutTrailingSlash(localizedRoute.path, true);
+    }
+  } else {
+    localizedRoute.name = getLocaleRouteName(localizedRoute.name, _locale, {
+      defaultLocale,
+      strategy,
+      routesNameSeparator,
+      defaultLocaleRouteNameSuffix
+    });
+    const { params } = localizedRoute;
+    if (params && params["0"] === void 0 && params.pathMatch) {
+      params["0"] = params.pathMatch;
+    }
+  }
+  const resolvedRoute = router.resolve(localizedRoute);
+  if (resolvedRoute.name) {
+    return resolvedRoute;
+  }
+  return router.resolve(route);
+}
+function switchLocalePath(locale) {
+  const route = this.route;
+  const name = getRouteBaseName.call(this, route);
+  if (!name) {
+    return "";
+  }
+  const _a = route, { params } = _a, routeCopy = __objRest(_a, ["params"]);
+  const langSwitchParams = {};
+  const baseRoute = assign({}, routeCopy, {
+    name,
+    params: __spreadProps2(__spreadValues2(__spreadValues2({}, params), langSwitchParams), {
+      0: params.pathMatch
+    })
+  });
+  const path = localePath.call(this, baseRoute, locale);
+  return path;
+}
+function localeHead({ addDirAttribute = false, addSeoAttributes = false } = {}) {
+  const router = this.router;
+  const i18n = this.i18n;
+  const { defaultDirection } = getI18nRoutingOptions(router, this);
+  const metaObject = {
+    htmlAttrs: {},
+    link: [],
+    meta: []
+  };
+  if (i18n.locales == null || i18n.__baseUrl == null) {
+    return metaObject;
+  }
+  const locale = getLocale(i18n);
+  const locales = getLocales(i18n);
+  const currentLocale = getNormalizedLocales(locales).find((l) => l.code === locale) || {
+    code: locale
+  };
+  const currentLocaleIso = currentLocale.iso;
+  const currentLocaleDir = currentLocale.dir || defaultDirection;
+  if (addDirAttribute) {
+    metaObject.htmlAttrs.dir = currentLocaleDir;
+  }
+  if (addSeoAttributes && locale && i18n.locales) {
+    if (currentLocaleIso) {
+      metaObject.htmlAttrs.lang = currentLocaleIso;
+    }
+    addHreflangLinks.call(this, locales, i18n.__baseUrl, metaObject.link);
+    addCanonicalLinks.call(this, i18n.__baseUrl, metaObject.link, addSeoAttributes);
+    addCurrentOgLocale(currentLocale, currentLocaleIso, metaObject.meta);
+    addAlternateOgLocales(locales, currentLocaleIso, metaObject.meta);
+  }
+  return metaObject;
+}
+function addHreflangLinks(locales, baseUrl, link) {
+  const router = this.router;
+  const { defaultLocale, strategy } = getI18nRoutingOptions(router, this);
+  if (strategy === STRATEGIES.NO_PREFIX) {
+    return;
+  }
+  const localeMap = /* @__PURE__ */ new Map();
+  for (const locale of locales) {
+    const localeIso = locale.iso;
+    if (!localeIso) {
+      warn("Locale ISO code is required to generate alternate link");
+      continue;
+    }
+    const [language, region] = localeIso.split("-");
+    if (language && region && (locale.isCatchallLocale || !localeMap.has(language))) {
+      localeMap.set(language, locale);
+    }
+    localeMap.set(localeIso, locale);
+  }
+  for (const [iso, mapLocale] of localeMap.entries()) {
+    const localePath2 = switchLocalePath.call(this, mapLocale.code);
+    if (localePath2) {
+      link.push({
+        hid: `i18n-alt-${iso}`,
+        rel: "alternate",
+        href: toAbsoluteUrl(localePath2, baseUrl),
+        hreflang: iso
+      });
+    }
+  }
+  if (defaultLocale) {
+    const localePath2 = switchLocalePath.call(this, defaultLocale);
+    if (localePath2) {
+      link.push({
+        hid: "i18n-xd",
+        rel: "alternate",
+        href: toAbsoluteUrl(localePath2, baseUrl),
+        hreflang: "x-default"
+      });
+    }
+  }
+}
+function addCanonicalLinks(baseUrl, link, seoAttributesOptions) {
+  const route = this.route;
+  const currentRoute = localeRoute.call(this, __spreadProps2(__spreadValues2({}, route), {
+    name: getRouteBaseName.call(this, route)
+  }));
+  if (currentRoute) {
+    let href = toAbsoluteUrl(currentRoute.path, baseUrl);
+    const canonicalQueries = isObject(seoAttributesOptions) && seoAttributesOptions.canonicalQueries || [];
+    if (canonicalQueries.length) {
+      const currentRouteQueryParams = currentRoute.query;
+      const params = new URLSearchParams();
+      for (const queryParamName of canonicalQueries) {
+        if (queryParamName in currentRouteQueryParams) {
+          const queryParamValue = currentRouteQueryParams[queryParamName];
+          if (isArray(queryParamValue)) {
+            queryParamValue.forEach((v) => params.append(queryParamName, v || ""));
+          } else {
+            params.append(queryParamName, queryParamValue || "");
+          }
+        }
+      }
+      const queryString = params.toString();
+      if (queryString) {
+        href = `${href}?${queryString}`;
+      }
+    }
+    link.push({
+      hid: "i18n-can",
+      rel: "canonical",
+      href
+    });
+  }
+}
+function addCurrentOgLocale(currentLocale, currentLocaleIso, meta2) {
+  const hasCurrentLocaleAndIso = currentLocale && currentLocaleIso;
+  if (!hasCurrentLocaleAndIso) {
+    return;
+  }
+  meta2.push({
+    hid: "i18n-og",
+    property: "og:locale",
+    content: hypenToUnderscore(currentLocaleIso)
+  });
+}
+function addAlternateOgLocales(locales, currentLocaleIso, meta2) {
+  const localesWithoutCurrent = locales.filter((locale) => {
+    const localeIso = locale.iso;
+    return localeIso && localeIso !== currentLocaleIso;
+  });
+  if (localesWithoutCurrent.length) {
+    const alternateLocales = localesWithoutCurrent.map((locale) => ({
+      hid: `i18n-og-alt-${locale.iso}`,
+      property: "og:locale:alternate",
+      content: hypenToUnderscore(locale.iso)
+    }));
+    meta2.push(...alternateLocales);
+  }
+}
+function hypenToUnderscore(str) {
+  return (str || "").replace(/-/g, "_");
+}
+function toAbsoluteUrl(urlOrPath, baseUrl) {
+  if (urlOrPath.match(/^https?:\/\//)) {
+    return urlOrPath;
+  }
+  return baseUrl + urlOrPath;
+}
+const localeCodes = ["en", "es"];
+const loadMessages = async () => {
+  const messages = Object({});
+  return Promise.resolve(messages);
+};
+const resolveNuxtI18nOptions = async (context) => {
+  const nuxtI18nOptions = Object({});
+  const vueI18nOptionsLoader = async (context2) => Object({ "fallbackLocale": "en", "messages": Object({ "es": Object({ "home": "Inicio", "profile": "Mi perfil", "myPets": "Mis gatos", "todayThereIsNewPosts": "Hoy hay nuevas publicaciones para ver", "minutesAgo": "Hace un momento | Hace un minuto | Hace {n} minutos", "hoursAgo": "Hace una hora | Hace {n} horas", "daysAgo": "Hace un d\xEDa | Hace {n} d\xEDas", "monthsName": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"], "date": ({ named, linked }) => `${named("day")} de ${linked(`monthsName.${named("month")}`)} del ${named("year")} a las ${named("hours")}:${named("minutes")} ${named("ampm")}`, "seePost": "Ver publicaci\xF3n", "deleteComment": "Eliminar publicaci\xF3n", "rusDeleteComment": "\xBFEsta seguro de eliminar este comentario?", "cancel": "Cancelar", "delete": "Eliminar", "editComment": "Editar comentario", "save": "Guardar", "search": "Buscar", "like": "Me encanta", "peopleLikedComment": "These people liked this comment", "previousComments": "Comentarios anteriores", "timeAgo": ({ named, linked }) => {
+    const ahora = Date.now();
+    const date = named("date");
+    let diferencia = Math.trunc((ahora / 1e3 - date) / 60);
+    if (diferencia < 60) {
+      return linked("message.minutesAgo", diferencia);
+    }
+    diferencia = Math.trunc(diferencia / 60);
+    if (diferencia < 24) {
+      return linked("hoursAgo", diferencia);
+    }
+    diferencia = Math.trunc(diferencia / 24);
+    if (diferencia < 14) {
+      return linked("daysAgo", diferencia);
+    }
+    const fecha = new Date(date * 1e3);
+    const mm = fecha.getMinutes();
+    const h2 = fecha.getHours();
+    const d = fecha.getDate();
+    const m = fecha.getMonth();
+    const y = fecha.getFullYear();
+    return linked("date", { year: y, month: m, day: d, hours: h2 % 12, minutes: mm < 10 ? "0" + mm : mm, ampm: h2 > 11 ? "PM" : "AM" });
+  } }), "en": Object({ "home": "Home", "profile": "My profile", "myPets": "My cats", "todayThereIsNewPosts": "Today there is new posts to see", "minutesAgo": "A momment ago | A minute ago | {n} minutes ago", "hoursAgo": "An hour ago | {n} hours ago", "daysAgo": "A day ago | {n} days ago", "monthsName": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "date": ({ named, linked }) => `${named("day")} ${linked(`monthsName.${named("month")}`)} ${named("year")} at ${named("hours")}:${named("minutes")} ${named("ampm")}`, "seePost": "See post" }) }) });
+  nuxtI18nOptions.vueI18n = await vueI18nOptionsLoader();
+  nuxtI18nOptions.locales = ["en", "es"];
+  nuxtI18nOptions.defaultLocale = "es";
+  nuxtI18nOptions.defaultDirection = "ltr";
+  nuxtI18nOptions.routesNameSeparator = "___";
+  nuxtI18nOptions.trailingSlash = false;
+  nuxtI18nOptions.defaultLocaleRouteNameSuffix = "default";
+  nuxtI18nOptions.strategy = "no_prefix";
+  nuxtI18nOptions.lazy = false;
+  nuxtI18nOptions.langDir = null;
+  nuxtI18nOptions.baseUrl = "";
+  nuxtI18nOptions.pages = Object({});
+  return nuxtI18nOptions;
+};
+const nuxtI18nInternalOptions = Object({ __normalizedLocales: [Object({ "code": "en" }), Object({ "code": "es" })] });
+async function loadAndSetLocale(newLocale, i18n) {
+  if (!newLocale) {
+    return;
+  }
+  const oldLocale = getLocale(i18n);
+  if (newLocale === oldLocale) {
+    return;
+  }
+  setLocale(i18n, newLocale);
+  console.log("loadAndSetLocale", newLocale, oldLocale, i18n);
+}
+function getBrowserLocale(options, context) {
+  {
+    {
+      throw new Error("Not implement for nuxt3 options API style");
+    }
+  }
+}
+const nuxt3Plugin_1ee1e800 = defineNuxtPlugin(async (nuxt) => {
+  const router = useRouter();
+  const { vueApp: app } = nuxt;
+  const nuxtI18nOptions = await resolveNuxtI18nOptions();
+  const getLocaleFromRoute = createLocaleFromRouteGetter(localeCodes, nuxtI18nOptions.routesNameSeparator, nuxtI18nOptions.defaultLocaleRouteNameSuffix);
+  const vueI18nOptions = nuxtI18nOptions.vueI18n;
+  registerGlobalOptions(router, nuxtI18nOptions);
+  const messages = await loadMessages();
+  if (!isEmptyObject(messages)) {
+    vueI18nOptions.messages = messages;
+  }
+  const initialLocale = vueI18nOptions.locale || "en-US";
+  const i18n = createI18n(__spreadProps(__spreadValues({}, vueI18nOptions), {
+    locale: nuxtI18nOptions.defaultLocale
+  }));
+  extendI18n(i18n, {
+    locales: nuxtI18nOptions.locales,
+    localeCodes,
+    baseUrl: nuxtI18nOptions.baseUrl,
+    hooks: {
+      onExtendComposer(composer) {
+        const _localeProperties = vue_cjs_prod.ref(nuxtI18nInternalOptions.__normalizedLocales.find((l) => l.code === composer.locale.value) || {
+          code: composer.locale.value
+        });
+        composer.localeProperties = vue_cjs_prod.computed(() => _localeProperties.value);
+        composer.setLocale = (locale) => loadAndSetLocale(locale, i18n);
+        composer.getBrowserLocale = () => getBrowserLocale(nuxtI18nInternalOptions, nuxt.ssrContext);
+      },
+      onExtendExportedGlobal(global2) {
+        return {
+          localeProperties: {
+            get() {
+              return global2.localeProperties.value;
+            }
+          },
+          getBrowserLocale: {
+            get() {
+              return () => Reflect.apply(global2.getBrowserLocale, global2, []);
+            }
+          }
+        };
+      },
+      onExtendVueI18n(composer) {
+        return {
+          localeProperties: {
+            get() {
+              return composer.localeProperties.value;
+            }
+          },
+          getBrowserLocale: {
+            get() {
+              return () => Reflect.apply(composer.getBrowserLocale, composer, []);
+            }
+          }
+        };
+      }
+    }
+  });
+  app.use(i18n);
+  {
+    const finalLocale = getLocaleFromRoute(nuxt.ssrContext.url) || nuxtI18nOptions.defaultLocale || initialLocale;
+    await loadAndSetLocale(finalLocale, i18n);
+  }
+});
 const _plugins = [
   preload,
   componentsPlugin_50ade27a,
   vueuseHead_4a9f6d35,
   _7cf82f29,
   _2f12118a,
-  PiniaNuxtPlugin
+  nuxt3Plugin_1ee1e800
 ];
 const _sfc_main$6 = {
   __ssrInlineRender: true,
