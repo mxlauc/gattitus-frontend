@@ -6242,16 +6242,14 @@ const NuxtPage = vue_cjs_prod.defineComponent({
 const defaultPageTransition = { name: "page", mode: "out-in" };
 function fetchWithCookie(url, replaceCookies = false) {
   {
-    const cookie_to_modify = useCookie("XSRF-TOKEN");
-    useCookie("gattitus_session");
     const headers = useRequestHeaders();
     const hds = {
-      referer: "https://donotify.com/"
+      referer: headers.host
     };
-    hds.referer = headers.host;
     if (headers.cookie) {
       hds.cookie = headers.cookie;
     }
+    const cookie_to_modify = useCookie("XSRF-TOKEN");
     if (cookie_to_modify.value) {
       hds["X-XSRF-TOKEN"] = cookie_to_modify.value;
     }
@@ -13909,7 +13907,10 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   async setup(__props) {
     let __temp, __restore;
     const mainStore = useMainStore();
+    let proceso = "inicio\n ";
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => mainStore.setUser()), await __temp, __restore();
+    proceso += JSON.stringify(mainStore.userLogged);
+    proceso += "fin \n ";
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$4;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
@@ -14264,7 +14265,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         }),
         _: 1
       }, _parent));
-      _push(`</ul></div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mainStore).userLogged)} `);
+      _push(`</ul></div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mainStore).userLogged)} <br> ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(proceso))} `);
       serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
       _push(`</div></div></div></div>`);
     };
