@@ -13887,8 +13887,13 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     let mensaje = "consultando";
     let headers = null;
     headers = null;
+    headers = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useRequestHeaders()), __temp = await __temp, __restore(), __temp);
     {
-      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("https://api.donotify.com/api/users", {}).then((r) => {
+      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("https://api.donotify.com/api/users", {
+        headers: {
+          cookie: headers.cookie
+        }
+      }).then((r) => {
         console.log(r.headers);
         mensaje = JSON.stringify(r.data);
       }).catch((r) => {
