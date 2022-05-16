@@ -1,6 +1,7 @@
 import { v as vue_cjs_prod, s as serverRenderer, r as require$$0 } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, joinURL, withBase, withQuery } from 'ufo';
 import { defineStore, createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
+import cookie from 'cookie';
 import axios from 'axios';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
@@ -5002,18 +5003,18 @@ function useCookie(name, _opts) {
   var _a, _b;
   const opts = __spreadValues(__spreadValues({}, CookieDefaults), _opts);
   const cookies = readRawCookies(opts);
-  const cookie = wrapInRef((_b = cookies[name]) != null ? _b : (_a = opts.default) == null ? void 0 : _a.call(opts));
+  const cookie2 = wrapInRef((_b = cookies[name]) != null ? _b : (_a = opts.default) == null ? void 0 : _a.call(opts));
   {
     const nuxtApp = useNuxtApp();
     const writeFinalCookieValue = () => {
-      if (cookie.value !== cookies[name]) {
-        writeServerCookie(useRequestEvent(nuxtApp), name, cookie.value, opts);
+      if (cookie2.value !== cookies[name]) {
+        writeServerCookie(useRequestEvent(nuxtApp), name, cookie2.value, opts);
       }
     };
     nuxtApp.hooks.hookOnce("app:rendered", writeFinalCookieValue);
     nuxtApp.hooks.hookOnce("app:redirected", writeFinalCookieValue);
   }
-  return cookie;
+  return cookie2;
 }
 function readRawCookies(opts = {}) {
   var _a;
@@ -6257,12 +6258,29 @@ const fetchWithCookie = async (url, method = "get", replaceCookies = true) => {
     });
   }
   if (replaceCookies && true && response.headers && response.headers.get("set-cookie")) {
-    const cookies = Object.fromEntries((_a = response.headers.get("set-cookie")) == null ? void 0 : _a.split(",").map((a) => a.trim().split("=")));
-    if ("XSRF-TOKEN" in cookies) {
-      cookie_to_modify.value = cookies["XSRF-TOKEN"];
-    }
-    if ("gattitus_session" in cookies) {
-      cookie_to_modify2.value = cookies.gattitus_session;
+    let cookies = Object.fromEntries((_a = response.headers.get("set-cookie")) == null ? void 0 : _a.split(",").map((a) => a.trim().split("=")));
+    cookies = cookie.parse(response.headers.get("set-cookie"));
+    for (const key in cookies) {
+      let k = "XSRF-TOKEN";
+      if (key.includes(k)) {
+        cookie_to_modify.value = cookies[key];
+        cookie_to_modify.domain = ".donotify.com";
+        cookie_to_modify.maxAge = cookie["Max-Age"];
+        cookie_to_modify.expires = cookie.expires;
+        cookie_to_modify.path = cookie.path;
+        cookie_to_modify.sameSite = cookie.samesite;
+        cookie_to_modify.secure = true;
+      }
+      k = "gattitus_session";
+      if (key.includes(k)) {
+        cookie_to_modify2.value = cookies[key];
+        cookie_to_modify2.domain = ".donotify.com";
+        cookie_to_modify2.maxAge = cookie["Max-Age"];
+        cookie_to_modify2.expires = cookie.expires;
+        cookie_to_modify2.path = cookie.path;
+        cookie_to_modify2.sameSite = cookie.samesite;
+        cookie_to_modify2.secure = true;
+      }
     }
   }
   {
