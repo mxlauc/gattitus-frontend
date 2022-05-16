@@ -5,7 +5,7 @@ export const useMainStore = defineStore("main", {
         return {
             posts: null,
             userLogged: null,
-            backendUrl: "https://api.donotify.com",
+            backendUrl: "http://localhost:8000",
             toasts: []
         }
     },
