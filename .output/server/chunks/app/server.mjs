@@ -8925,14 +8925,7 @@ const _sfc_main$u = /* @__PURE__ */ Object.assign(__default__$4, {
       const _component_router_view = vue_cjs_prod.resolveComponent("router-view");
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row g-0" }, _attrs))}><div class="col-12 col-md-8"><div style="${serverRenderer.exports.ssrRenderStyle({ "max-width": "500px", "margin": "auto" })}">`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_router_view, null, null, _parent));
-      _push(`<!--[-->`);
-      serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(mainStore).posts, (p) => {
-        _push(serverRenderer.exports.ssrRenderComponent(SimplePostComponent, {
-          post: p,
-          key: p.id
-        }, null, _parent));
-      });
-      _push(`<!--]--></div></div>`);
+      _push(`</div></div>`);
       _push(serverRenderer.exports.ssrRenderComponent(StickyMiddleColumn, {
         top: "80",
         class: "col-12 col-md-4",
@@ -13496,7 +13489,10 @@ const _sfc_main$a = {
   }
 };
 function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido </div>`);
+  const _component_HomeComponent = vue_cjs_prod.resolveComponent("HomeComponent");
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido `);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_HomeComponent, null, null, _parent));
+  _push(`</div>`);
 }
 const _sfc_setup$a = _sfc_main$a.setup;
 _sfc_main$a.setup = (props, ctx) => {
