@@ -13912,7 +13912,6 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => mainStore.setUser()), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$4;
-      const _component_router_view = vue_cjs_prod.resolveComponent("router-view");
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         id: "app",
         class: "container-xxl px-0"
@@ -14266,7 +14265,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         _: 1
       }, _parent));
       _push(`</ul></div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mainStore).userLogged)} `);
-      _push(serverRenderer.exports.ssrRenderComponent(_component_router_view, null, null, _parent));
+      serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
       _push(`</div></div></div></div>`);
     };
   }
