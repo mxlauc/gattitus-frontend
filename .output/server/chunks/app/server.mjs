@@ -6251,7 +6251,7 @@ const fetchWithCookie = async (url, method = "get", replaceCookies = true) => {
       credentials: "include",
       headers: {
         cookie: headers.cookie,
-        referer: "https://www.donotify.com",
+        referer: headers.host,
         "X-XSRF-TOKEN": cookie_to_modify.value
       },
       method: method === "post" ? "POST" : "GET"
@@ -6263,7 +6263,7 @@ const fetchWithCookie = async (url, method = "get", replaceCookies = true) => {
       let k = "XSRF-TOKEN";
       if (key.includes(k)) {
         cookie_to_modify.value = cookies[key];
-        cookie_to_modify.domain = cookies.domain;
+        cookie_to_modify.domain = ".donotify.com";
         cookie_to_modify.maxAge = cookies["Max-Age"];
         cookie_to_modify.expires = cookies.expires;
         cookie_to_modify.path = cookies.path;
@@ -6273,7 +6273,7 @@ const fetchWithCookie = async (url, method = "get", replaceCookies = true) => {
       k = "gattitus_session";
       if (key.includes(k)) {
         cookie_to_modify2.value = cookies[key];
-        cookie_to_modify2.domain = cookies.domain;
+        cookie_to_modify2.domain = ".donotify.com";
         cookie_to_modify2.maxAge = cookies["Max-Age"];
         cookie_to_modify2.expires = cookies.expires;
         cookie_to_modify2.path = cookies.path;
@@ -6369,7 +6369,7 @@ const useMainStore = defineStore("main", {
     return {
       posts: null,
       userLogged: null,
-      backendUrl: "https://api.donotify.com",
+      backendUrl: "http://localhost:8000",
       toasts: []
     };
   },
