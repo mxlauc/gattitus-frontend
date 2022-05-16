@@ -8724,11 +8724,11 @@ const _sfc_main$y = /* @__PURE__ */ Object.assign(__default__$6, {
     const mainStore = useMainStore();
     let users = null;
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/users`).then((response) => {
-      users = response.data;
+      users = response.data.data;
     }).catch((error) => {
     })), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<!--[--><h4 data-v-a457dade><strong data-v-a457dade>Usuarios que podr\xEDan interesarte</strong></h4><div class="card shadow-sm mb-3" data-v-a457dade><div class="card-body" data-v-a457dade><!--[-->`);
+      _push(`<!--[--><h4 data-v-fe9c3886><strong data-v-fe9c3886>Usuarios que podr\xEDan interesarte</strong></h4><div class="card shadow-sm mb-3" data-v-fe9c3886><div class="card-body" data-v-fe9c3886><!--[-->`);
       serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(users), (u) => {
         _push(serverRenderer.exports.ssrRenderComponent(__nuxt_component_0$1, {
           class: "user-item",
@@ -8746,7 +8746,7 @@ _sfc_main$y.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/user/UserToFollowList.vue");
   return _sfc_setup$y ? _sfc_setup$y(props, ctx) : void 0;
 };
-const UserToFollowList = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-a457dade"]]);
+const UserToFollowList = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-fe9c3886"]]);
 const _sfc_main$x = {
   components: { ImagePreloader },
   props: {
@@ -8816,11 +8816,11 @@ const _sfc_main$w = /* @__PURE__ */ Object.assign(__default__$5, {
     const mainStore = useMainStore();
     let pets = null;
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/pets`).then((response) => {
-      pets = response.data;
+      pets = response.data.data;
     }).catch((error) => {
     })), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<!--[--><h4 data-v-3faa9019><strong data-v-3faa9019>Gatos que podr\xEDan gustarte</strong></h4><div class="card shadow-sm mb-3" data-v-3faa9019><div class="card-body" data-v-3faa9019><!--[-->`);
+      _push(`<!--[--><h4 data-v-5f99d5f1><strong data-v-5f99d5f1>Gatos que podr\xEDan gustarte</strong></h4><div class="card shadow-sm mb-3" data-v-5f99d5f1><div class="card-body" data-v-5f99d5f1><!--[-->`);
       serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(pets), (c) => {
         _push(serverRenderer.exports.ssrRenderComponent(PetToSeeItem, {
           class: "pet-item",
@@ -8838,7 +8838,7 @@ _sfc_main$w.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/pet/PetToSeeList.vue");
   return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const PetToSeeList = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-3faa9019"]]);
+const PetToSeeList = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-5f99d5f1"]]);
 const _sfc_main$v = {
   data() {
     var _a;
