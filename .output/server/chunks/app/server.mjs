@@ -7307,9 +7307,10 @@ const _sfc_main$N = {
   inject: ["postId"],
   methods: {
     sendReport() {
+      var _a;
       const formData = new FormData(this.$refs.form);
       formData.append("post_id", this.postId);
-      formData.append("user_id", this.mainStore.userLogged.id);
+      formData.append("user_id", (_a = this.mainStore.userLogged) == null ? void 0 : _a.id);
       console.log(formData);
       axios.post(`${this.mainStore.backendUrl}/api/admin/reports`, formData).then((response) => {
         this.close();
@@ -7323,11 +7324,11 @@ const _sfc_main$N = {
 function _sfc_ssrRender$y(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   serverRenderer.exports.ssrRenderTeleport(_push, (_push2) => {
     var _a;
-    _push2(`<div class="post-modal" data-v-6f0b010c><div class="card shadow p-4" data-v-6f0b010c><h3 data-v-6f0b010c>\xBFReportar publicaci\xF3n?</h3><form data-v-6f0b010c><!--[-->`);
+    _push2(`<div class="post-modal" data-v-5ea56779><div class="card shadow p-4" data-v-5ea56779><h3 data-v-5ea56779>\xBFReportar publicaci\xF3n?</h3><form data-v-5ea56779><!--[-->`);
     serverRenderer.exports.ssrRenderList((_a = $data.reportsPaginate) == null ? void 0 : _a.data, (report) => {
-      _push2(`<label class="d-block" data-v-6f0b010c><input type="radio" name="report_type_id"${serverRenderer.exports.ssrRenderAttr("value", report.id)} data-v-6f0b010c> ${serverRenderer.exports.ssrInterpolate(report.title)}</label>`);
+      _push2(`<label class="d-block" data-v-5ea56779><input type="radio" name="report_type_id"${serverRenderer.exports.ssrRenderAttr("value", report.id)} data-v-5ea56779> ${serverRenderer.exports.ssrInterpolate(report.title)}</label>`);
     });
-    _push2(`<!--]--><textarea class="form-control my-3" name="details" id="" cols="30" rows="4" placeholder="Detalles" data-v-6f0b010c></textarea><p class="text-center" data-v-6f0b010c><small data-v-6f0b010c> Reportar esta publicaci\xF3n para que <br data-v-6f0b010c> el administrador de Gattitus la revise </small></p><div class="row" data-v-6f0b010c><div class="col" data-v-6f0b010c><button type="button" class="btn btn-secondary" data-v-6f0b010c> Cancelar </button></div><div class="col" data-v-6f0b010c><button type="submit" class="btn btn-primary" data-v-6f0b010c> Enviar reporte </button></div></div></form></div></div>`);
+    _push2(`<!--]--><textarea class="form-control my-3" name="details" id="" cols="30" rows="4" placeholder="Detalles" data-v-5ea56779></textarea><p class="text-center" data-v-5ea56779><small data-v-5ea56779> Reportar esta publicaci\xF3n para que <br data-v-5ea56779> el administrador de Gattitus la revise </small></p><div class="row" data-v-5ea56779><div class="col" data-v-5ea56779><button type="button" class="btn btn-secondary" data-v-5ea56779> Cancelar </button></div><div class="col" data-v-5ea56779><button type="submit" class="btn btn-primary" data-v-5ea56779> Enviar reporte </button></div></div></form></div></div>`);
   }, "body", false, _parent);
 }
 const _sfc_setup$N = _sfc_main$N.setup;
@@ -7336,7 +7337,7 @@ _sfc_main$N.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/ReportPostDialog.vue");
   return _sfc_setup$N ? _sfc_setup$N(props, ctx) : void 0;
 };
-const ReportPostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["ssrRender", _sfc_ssrRender$y], ["__scopeId", "data-v-6f0b010c"]]);
+const ReportPostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["ssrRender", _sfc_ssrRender$y], ["__scopeId", "data-v-5ea56779"]]);
 const _sfc_main$M = {
   components: {
     DeletePostDialog,
@@ -8318,7 +8319,8 @@ const __default__$7 = {
   },
   data() {
     return {
-      gifSeleccionado: null
+      gifSeleccionado: null,
+      mainStore: useMainStore()
     };
   },
   props: ["postId"],
@@ -8373,23 +8375,23 @@ const _sfc_main$C = /* @__PURE__ */ Object.assign(__default__$7, {
     const mainStore = useMainStore();
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-02700426><div class="row g-0 border-top pt-1" data-v-02700426>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-fea70226><div class="row g-0 border-top pt-1" data-v-fea70226>`);
       if (_ctx.gifSeleccionado) {
-        _push(`<div class="col-auto position-relative mx-auto" data-v-02700426><img${serverRenderer.exports.ssrRenderAttr("src", _ctx.gifSeleccionado)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "100px", "border-radius": "5px" })}" data-v-02700426><button type="button" class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle" aria-label="Close" data-v-02700426></button></div>`);
+        _push(`<div class="col-auto position-relative mx-auto" data-v-fea70226><img${serverRenderer.exports.ssrRenderAttr("src", _ctx.gifSeleccionado)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "100px", "border-radius": "5px" })}" data-v-fea70226><button type="button" class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle" aria-label="Close" data-v-fea70226></button></div>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div>`);
       if (vue_cjs_prod.unref(mainStore).userLogged) {
-        _push(`<div class="row g-0 pb-2 pt-1" data-v-02700426><div class="col col-auto" data-v-02700426>`);
+        _push(`<div class="row g-0 pb-2 pt-1" data-v-fea70226><div class="col col-auto" data-v-fea70226>`);
         _push(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
           image: (_a = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _a.image,
           aspect: "1",
           class: "imagenUsuario shadow"
         }, null, _parent));
-        _push(`</div><div class="col ms-2" data-v-02700426><div class="row g-0 contenedorTextarea" data-v-02700426><div class="col" data-v-02700426><span class="textarea text-break" contenteditable data-v-02700426></span></div><div class="col col-auto guide-4" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#f50" })}" data-v-02700426>`);
+        _push(`</div><div class="col ms-2" data-v-fea70226><div class="row g-0 contenedorTextarea" data-v-fea70226><div class="col" data-v-fea70226><span class="textarea text-break" contenteditable data-v-fea70226></span></div><div class="col col-auto guide-4" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#f50" })}" data-v-fea70226>`);
         _push(serverRenderer.exports.ssrRenderComponent(GifPickerComponent, { "post-id": __props.postId }, null, _parent));
-        _push(`<svg class="pe-2" fill="currentColor" role="button" width="35" height="35" viewBox="0 0 24 24" data-v-02700426><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill-rule="evenodd" stroke="none" data-v-02700426></path></svg></div></div></div></div>`);
+        _push(`<svg class="pe-2" fill="currentColor" role="button" width="35" height="35" viewBox="0 0 24 24" data-v-fea70226><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill-rule="evenodd" stroke="none" data-v-fea70226></path></svg></div></div></div></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -8403,7 +8405,7 @@ _sfc_main$C.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/NewComment.vue");
   return _sfc_setup$C ? _sfc_setup$C(props, ctx) : void 0;
 };
-const NewComment = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["__scopeId", "data-v-02700426"]]);
+const NewComment = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["__scopeId", "data-v-fea70226"]]);
 const _sfc_main$B = {
   components: {
     ComentarioComponent,
@@ -13868,10 +13870,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   async setup(__props) {
     let __temp, __restore;
     const mainStore = useMainStore();
-    let proceso = "inicio\n ";
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => mainStore.setUser()), await __temp, __restore();
-    proceso += JSON.stringify(mainStore.userLogged);
-    proceso += "fin \n ";
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$3;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
@@ -14226,7 +14225,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         }),
         _: 1
       }, _parent));
-      _push(`</ul></div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mainStore).userLogged)} <br> ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(proceso))} `);
+      _push(`</ul></div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">`);
       serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
       _push(`</div></div></div></div>`);
     };
