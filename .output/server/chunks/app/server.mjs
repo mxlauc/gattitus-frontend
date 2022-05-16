@@ -2,13 +2,13 @@ import { v as vue_cjs_prod, s as serverRenderer, r as require$$0 } from '../hand
 import { hasProtocol, isEqual, joinURL, withBase, withQuery } from 'ufo';
 import { defineStore, createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
 import axios from 'axios';
+import https from 'https';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
 import 'unenv/runtime/mock/proxy';
 import 'stream';
 import 'node-fetch-native/polyfill';
 import 'http';
-import 'https';
 import 'destr';
 import 'ohmyfetch';
 import 'radix3';
@@ -13888,12 +13888,15 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     const headers = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useRequestHeaders()), __temp = await __temp, __restore(), __temp);
     headers.referer = "https://www.donotify.com/";
     {
-      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("/", {
+      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("https://api.donotify.com", {
         withCredentials: true,
         headers,
-        baseURL: "https://api.donotify.com"
+        httpsAgent: new https.Agent({
+          rejectUnauthorized: false
+        })
       }).then((r) => {
-        mensaje = JSON.stringify(r.data);
+        console.log(r.headers);
+        mensaje = JSON.stringify(r.headers);
       }).catch((r) => {
         mensaje = "error es: " + r.message;
       })), await __temp, __restore();
