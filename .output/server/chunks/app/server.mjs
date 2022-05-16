@@ -6240,7 +6240,7 @@ const NuxtPage = vue_cjs_prod.defineComponent({
   }
 });
 const defaultPageTransition = { name: "page", mode: "out-in" };
-function fetchWithCookie(url, replaceCookies = false) {
+function fetchWithCookie(url) {
   {
     const headers = useRequestHeaders();
     const hds = {
@@ -6348,14 +6348,14 @@ const useMainStore = defineStore("main", {
     return {
       posts: null,
       userLogged: null,
-      backendUrl: "https://api.donotify.com",
+      backendUrl: process.env.BACKEND_URL,
       toasts: []
     };
   },
   actions: {
     async login() {
       console.log("login...");
-      await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`, "get");
+      await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`);
       console.log("ya esta login");
     },
     async setUser() {
@@ -13496,10 +13496,7 @@ const _sfc_main$a = {
   }
 };
 function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_HomeComponent = vue_cjs_prod.resolveComponent("HomeComponent");
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido `);
-  _push(serverRenderer.exports.ssrRenderComponent(_component_HomeComponent, null, null, _parent));
-  _push(`</div>`);
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> bienvenido </div>`);
 }
 const _sfc_setup$a = _sfc_main$a.setup;
 _sfc_main$a.setup = (props, ctx) => {
