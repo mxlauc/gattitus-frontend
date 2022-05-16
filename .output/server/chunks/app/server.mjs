@@ -6248,6 +6248,7 @@ function fetchWithCookie(url, replaceCookies = false) {
     const hds = {
       referer: "https://donotify.com/"
     };
+    hds.referer = headers.host;
     if (headers.cookie) {
       hds.cookie = headers.cookie;
     }
@@ -6349,7 +6350,7 @@ const useMainStore = defineStore("main", {
     return {
       posts: null,
       userLogged: null,
-      backendUrl: "https://api.donotify.com",
+      backendUrl: "http://localhost:8000",
       toasts: []
     };
   },
