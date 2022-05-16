@@ -13886,15 +13886,16 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     let __temp, __restore;
     let mensaje = "consultando";
     const headers = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useRequestHeaders()), __temp = await __temp, __restore(), __temp);
+    headers.referer = "https://www.donotify.com/";
     {
-      headers.referer = "https://www.donotify.com/"([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("https://api.donotify.com/sanctum/csrf-cookie", {
+      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("https://api.donotify.com/sanctum/csrf-cookie", {
         withCredentials: true,
         headers
       }).then((r) => {
         mensaje = JSON.stringify(r.data);
       }).catch((r) => {
         mensaje = "error es: " + r.message;
-      })), await __temp, __restore());
+      })), await __temp, __restore();
     }
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}> hola layout mensaje: ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mensaje))} <br> headers: ${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(headers))} `);
