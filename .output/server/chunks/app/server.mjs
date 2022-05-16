@@ -14265,7 +14265,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         }),
         _: 1
       }, _parent));
-      _push(`</ul></div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">`);
+      _push(`</ul></div></div></div></div><div class="col"><div class="px-0 px-sm-4" style="${serverRenderer.exports.ssrRenderStyle({ "padding-top": "80px" })}">${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(mainStore).userLogged)} `);
       _push(serverRenderer.exports.ssrRenderComponent(_component_router_view, null, null, _parent));
       _push(`</div></div></div></div>`);
     };
