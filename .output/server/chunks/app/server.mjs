@@ -1,7 +1,6 @@
 import { v as vue_cjs_prod, s as serverRenderer, r as require$$0 } from '../handlers/renderer.mjs';
 import { hasProtocol, isEqual, joinURL, withBase, withQuery } from 'ufo';
 import { defineStore, createPinia, setActivePinia } from 'pinia/dist/pinia.mjs';
-import cookie from 'cookie';
 import axios from 'axios';
 import { u as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'h3';
@@ -2679,7 +2678,7 @@ const _globalThis$3 = function() {
 }();
 const fetch = _globalThis$3.fetch || (() => Promise.reject(new Error("[ohmyfetch] global.fetch is not supported!")));
 const Headers = _globalThis$3.Headers;
-const $fetch$1 = createFetch({ fetch, Headers });
+const $fetch = createFetch({ fetch, Headers });
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
 const publicAssetsURL = (...path) => {
@@ -5003,18 +5002,18 @@ function useCookie(name, _opts) {
   var _a, _b;
   const opts = __spreadValues(__spreadValues({}, CookieDefaults), _opts);
   const cookies = readRawCookies(opts);
-  const cookie2 = wrapInRef((_b = cookies[name]) != null ? _b : (_a = opts.default) == null ? void 0 : _a.call(opts));
+  const cookie = wrapInRef((_b = cookies[name]) != null ? _b : (_a = opts.default) == null ? void 0 : _a.call(opts));
   {
     const nuxtApp = useNuxtApp();
     const writeFinalCookieValue = () => {
-      if (cookie2.value !== cookies[name]) {
-        writeServerCookie(useRequestEvent(nuxtApp), name, cookie2.value, opts);
+      if (cookie.value !== cookies[name]) {
+        writeServerCookie(useRequestEvent(nuxtApp), name, cookie.value, opts);
       }
     };
     nuxtApp.hooks.hookOnce("app:rendered", writeFinalCookieValue);
     nuxtApp.hooks.hookOnce("app:redirected", writeFinalCookieValue);
   }
-  return cookie2;
+  return cookie;
 }
 function readRawCookies(opts = {}) {
   var _a;
@@ -6241,51 +6240,27 @@ const NuxtPage = vue_cjs_prod.defineComponent({
   }
 });
 const defaultPageTransition = { name: "page", mode: "out-in" };
-const fetchWithCookie = async (url, method = "get", replaceCookies = true) => {
-  const cookie_to_modify = useCookie("XSRF-TOKEN");
-  const cookie_to_modify2 = useCookie("gattitus_session");
-  let response = null;
-  const headers = useRequestHeaders();
+function fetchWithCookie(url, replaceCookies = false) {
   {
-    response = await $fetch.raw(url, {
-      credentials: "include",
-      headers: {
-        cookie: headers.cookie,
-        referer: headers.host,
-        "X-XSRF-TOKEN": cookie_to_modify.value
-      },
-      method: method === "post" ? "POST" : "GET"
+    const cookie_to_modify = useCookie("XSRF-TOKEN");
+    useCookie("gattitus_session");
+    const headers = useRequestHeaders();
+    return new Promise((resolve, reject) => {
+      var _a, _b;
+      axios.get(url, {
+        headers: {
+          cookie: (_a = headers.cookie) != null ? _a : "",
+          referer: headers.host,
+          "X-XSRF-TOKEN": (_b = cookie_to_modify.value) != null ? _b : ""
+        }
+      }).then((response) => {
+        resolve(response);
+      }).catch((error) => {
+        reject(error);
+      });
     });
   }
-  if (replaceCookies && true && response.headers && response.headers.get("set-cookie")) {
-    const cookies = cookie.parse(response.headers.get("set-cookie"));
-    for (const key in cookies) {
-      let k = "XSRF-TOKEN";
-      if (key.includes(k)) {
-        cookie_to_modify.value = cookies[key];
-        cookie_to_modify.domain = ".donotify.com";
-        cookie_to_modify.maxAge = cookies["Max-Age"];
-        cookie_to_modify.expires = cookies.expires;
-        cookie_to_modify.path = cookies.path;
-        cookie_to_modify.sameSite = cookies.samesite;
-        cookie_to_modify.secure = true;
-      }
-      k = "gattitus_session";
-      if (key.includes(k)) {
-        cookie_to_modify2.value = cookies[key];
-        cookie_to_modify2.domain = ".donotify.com";
-        cookie_to_modify2.maxAge = cookies["Max-Age"];
-        cookie_to_modify2.expires = cookies.expires;
-        cookie_to_modify2.path = cookies.path;
-        cookie_to_modify2.sameSite = cookies.samesite;
-        cookie_to_modify2.secure = true;
-      }
-    }
-  }
-  {
-    return response._data;
-  }
-};
+}
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -6369,23 +6344,34 @@ const useMainStore = defineStore("main", {
     return {
       posts: null,
       userLogged: null,
-      backendUrl: "http://localhost:8000",
+      backendUrl: "https://api.donotify.com/",
       toasts: []
     };
   },
   actions: {
     async login() {
-      await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`);
+      console.log("login...");
+      await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`, "get");
+      console.log("ya esta login");
     },
-    setUser() {
-      return fetchWithCookie(`${this.backendUrl}/api/user`).then((result) => {
-        this.userLogged = result.data;
+    async setUser() {
+      console.log("set user...");
+      await fetchWithCookie(`${this.backendUrl}/api/user`).then((result) => {
+        this.userLogged = result.data.data;
+        console.log(result.data.data);
+        console.log("set user then");
+      }).catch((r) => {
+        console.log("set user catch");
+        console.log(r.message);
       });
     },
     async loadPosts() {
       console.log("cargando posts...");
-      const result = await fetchWithCookie(`${this.backendUrl}/api/posts`);
-      this.posts = result.data;
+      await fetchWithCookie(`${this.backendUrl}/api/posts`).then((result) => {
+        this.posts = result.data.data;
+      }).catch((error) => {
+        console.log("no se pudo");
+      });
     },
     async deletePost(id) {
       await fetchWithCookie(`${this.backendUrl}/api/posts/${id}`);
@@ -6495,10 +6481,14 @@ const _sfc_main$_ = /* @__PURE__ */ Object.assign(__default__$a, {
     const route = useRoute();
     let user = null;
     let pets = null;
-    let result = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/@${route.params.username}`)), __temp = await __temp, __restore(), __temp);
-    user = result.data;
-    result = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/pets`)), __temp = await __temp, __restore(), __temp);
-    pets = result.data;
+    [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/@${route.params.username}`).then((response) => {
+      user = response.data;
+    })), await __temp, __restore();
+    if (user) {
+      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/pets`).then((response) => {
+        pets = response.data;
+      })), await __temp, __restore();
+    }
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<!--[-->`);
       if (vue_cjs_prod.unref(user)) {
@@ -8750,10 +8740,13 @@ const _sfc_main$y = /* @__PURE__ */ Object.assign(__default__$6, {
   async setup(__props) {
     let __temp, __restore;
     const mainStore = useMainStore();
-    const result = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/users`, "XSRF-TOKEN")), __temp = await __temp, __restore(), __temp);
-    const users = result.data;
+    let users = null;
+    [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/users`).then((response) => {
+      users = response.data;
+    }).catch((error) => {
+    })), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<!--[--><h4 data-v-2708c0e8><strong data-v-2708c0e8>Usuarios que podr\xEDan interesarte</strong></h4><div class="card shadow-sm mb-3" data-v-2708c0e8><div class="card-body" data-v-2708c0e8><!--[-->`);
+      _push(`<!--[--><h4 data-v-a457dade><strong data-v-a457dade>Usuarios que podr\xEDan interesarte</strong></h4><div class="card shadow-sm mb-3" data-v-a457dade><div class="card-body" data-v-a457dade><!--[-->`);
       serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(users), (u) => {
         _push(serverRenderer.exports.ssrRenderComponent(__nuxt_component_0$1, {
           class: "user-item",
@@ -8771,7 +8764,7 @@ _sfc_main$y.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/user/UserToFollowList.vue");
   return _sfc_setup$y ? _sfc_setup$y(props, ctx) : void 0;
 };
-const UserToFollowList = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-2708c0e8"]]);
+const UserToFollowList = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["__scopeId", "data-v-a457dade"]]);
 const _sfc_main$x = {
   components: { ImagePreloader },
   props: {
@@ -8839,10 +8832,13 @@ const _sfc_main$w = /* @__PURE__ */ Object.assign(__default__$5, {
   async setup(__props) {
     let __temp, __restore;
     const mainStore = useMainStore();
-    const result = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/pets`)), __temp = await __temp, __restore(), __temp);
-    const pets = result.data;
+    let pets = null;
+    [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/pets`).then((response) => {
+      pets = response.data;
+    }).catch((error) => {
+    })), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<!--[--><h4 data-v-d0cc83e2><strong data-v-d0cc83e2>Gatos que podr\xEDan gustarte</strong></h4><div class="card shadow-sm mb-3" data-v-d0cc83e2><div class="card-body" data-v-d0cc83e2><!--[-->`);
+      _push(`<!--[--><h4 data-v-3faa9019><strong data-v-3faa9019>Gatos que podr\xEDan gustarte</strong></h4><div class="card shadow-sm mb-3" data-v-3faa9019><div class="card-body" data-v-3faa9019><!--[-->`);
       serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(pets), (c) => {
         _push(serverRenderer.exports.ssrRenderComponent(PetToSeeItem, {
           class: "pet-item",
@@ -8860,7 +8856,7 @@ _sfc_main$w.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/pet/PetToSeeList.vue");
   return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const PetToSeeList = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-d0cc83e2"]]);
+const PetToSeeList = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["__scopeId", "data-v-3faa9019"]]);
 const _sfc_main$v = {
   data() {
     var _a;
@@ -9401,15 +9397,16 @@ const _sfc_main$q = /* @__PURE__ */ Object.assign(__default__$2, {
     let my_reaction = null;
     let reactions_count = null;
     let comments_count = null;
-    const result = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)), __temp = await __temp, __restore(), __temp);
-    post = result.data;
-    my_reaction = post.my_reaction;
-    reactions_count = post.reactions_count;
-    comments_count = post.comments_count;
+    [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`).then((response) => {
+      post = response.data;
+      my_reaction = post.my_reaction;
+      reactions_count = post.reactions_count;
+      comments_count = post.comments_count;
+    })), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h;
       const _component_NuxtLink = __nuxt_component_0$4;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row" }, _attrs))} data-v-5c070739><div class="col-7" data-v-5c070739>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row" }, _attrs))} data-v-7d672ac2><div class="col-7" data-v-7d672ac2>`);
       _push(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
         aspect: (_a = vue_cjs_prod.unref(post)) == null ? void 0 : _a.simple_post.aspect_ratio,
         image: (_b = vue_cjs_prod.unref(post)) == null ? void 0 : _b.simple_post.image,
@@ -9418,7 +9415,7 @@ const _sfc_main$q = /* @__PURE__ */ Object.assign(__default__$2, {
         style: { "width": "100%", "height": "600px", "display": "block" },
         class: "rounded-5 w-100 shadow-sm"
       }, null, _parent));
-      _push(`</div><div class="col-5" data-v-5c070739><div class="card shadow-sm" style="${serverRenderer.exports.ssrRenderStyle({ "height": "calc(100vh - 120px)" })}" data-v-5c070739><div class="card-body p-0 container-x" data-v-5c070739><div class="row g-0 p-3 pb-0" data-v-5c070739><div class="col-auto" data-v-5c070739>`);
+      _push(`</div><div class="col-5" data-v-7d672ac2><div class="card shadow-sm" style="${serverRenderer.exports.ssrRenderStyle({ "height": "calc(100vh - 120px)" })}" data-v-7d672ac2><div class="card-body p-0 container-x" data-v-7d672ac2><div class="row g-0 p-3 pb-0" data-v-7d672ac2><div class="col-auto" data-v-7d672ac2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/@" + ((_c = vue_cjs_prod.unref(post)) == null ? void 0 : _c.user.username)
       }, {
@@ -9440,7 +9437,7 @@ const _sfc_main$q = /* @__PURE__ */ Object.assign(__default__$2, {
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="col px-2" data-v-5c070739>`);
+      _push(`</div><div class="col px-2" data-v-7d672ac2>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/@" + ((_d = vue_cjs_prod.unref(post)) == null ? void 0 : _d.user.username),
         class: "name-user-post fw-bold text-decoration-none text-dark"
@@ -9457,14 +9454,14 @@ const _sfc_main$q = /* @__PURE__ */ Object.assign(__default__$2, {
         }),
         _: 1
       }, _parent));
-      _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-5c070739><small data-v-5c070739>${serverRenderer.exports.ssrInterpolate(_ctx.$t("timeAgo", { date: (_e = vue_cjs_prod.unref(post)) == null ? void 0 : _e.created_at }))}</small></span></div><div class="col-auto" data-v-5c070739><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-5c070739><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
+      _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-7d672ac2><small data-v-7d672ac2>${serverRenderer.exports.ssrInterpolate(_ctx.$t("timeAgo", { date: (_e = vue_cjs_prod.unref(post)) == null ? void 0 : _e.created_at }))}</small></span></div><div class="col-auto" data-v-7d672ac2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-7d672ac2><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
               C7.934,13.835,6.157,12.061,3.968,12.061z M16.233,12.061c-2.188,0-3.968,1.773-3.968,3.965c0,2.192,1.778,3.967,3.968,3.967
               s3.97-1.772,3.97-3.967C20.201,13.835,18.423,12.061,16.233,12.061z M28.09,12.061c-2.192,0-3.969,1.774-3.969,3.967
-              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-5c070739></path></svg>`);
+              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-7d672ac2></path></svg>`);
       _push(serverRenderer.exports.ssrRenderComponent(PostMenu, {
         "post-id": (_f = vue_cjs_prod.unref(post)) == null ? void 0 : _f.id
       }, null, _parent));
-      _push(`</div></div><p class="fs-6 mt-1 mb-1 mx-3 text-muted" data-v-5c070739>${serverRenderer.exports.ssrInterpolate((_g = vue_cjs_prod.unref(post)) == null ? void 0 : _g.simple_post.description)}</p>`);
+      _push(`</div></div><p class="fs-6 mt-1 mb-1 mx-3 text-muted" data-v-7d672ac2>${serverRenderer.exports.ssrInterpolate((_g = vue_cjs_prod.unref(post)) == null ? void 0 : _g.simple_post.description)}</p>`);
       if ((_h = vue_cjs_prod.unref(post)) == null ? void 0 : _h.pets_count) {
         _push(serverRenderer.exports.ssrRenderComponent(PetIconList, {
           pets: vue_cjs_prod.unref(post).pets,
@@ -9502,7 +9499,7 @@ _sfc_main$q.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/ViewPost.vue");
   return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
 };
-const ViewPost = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["__scopeId", "data-v-5c070739"]]);
+const ViewPost = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["__scopeId", "data-v-7d672ac2"]]);
 const meta$2 = {
   layout: "main"
 };
@@ -13337,7 +13334,7 @@ _sfc_main$j.setup = (props, ctx) => {
 };
 const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["ssrRender", _sfc_ssrRender$h]]);
 if (!globalThis.$fetch) {
-  globalThis.$fetch = $fetch$1.create({
+  globalThis.$fetch = $fetch.create({
     baseURL: baseURL()
   });
 }
@@ -13907,10 +13904,9 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   async setup(__props) {
     let __temp, __restore;
     const mainStore = useMainStore();
-    {
-      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => mainStore.login()), await __temp, __restore();
-    }
+    console.log("main");
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => mainStore.setUser()), await __temp, __restore();
+    console.log("servido");
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$4;
       const _component_router_view = vue_cjs_prod.resolveComponent("router-view");
