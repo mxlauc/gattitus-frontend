@@ -6250,7 +6250,8 @@ const fetchWithCookie = async (url, method = "get", replaceCookies = true) => {
     response = await $fetch.raw(url, {
       credentials: "include",
       headers: {
-        cookie: headers.cookie
+        cookie: headers.cookie,
+        referer: "https://www.donotify.com"
       },
       method: method === "post" ? "POST" : "GET"
     });
