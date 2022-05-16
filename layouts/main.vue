@@ -258,7 +258,7 @@
                 <div
                     class="px-0 px-sm-4"
                     style="padding-top: 80px">
-                    <router-view />
+                    <slot />
                 </div>
             </div>
         </div>
@@ -269,7 +269,7 @@ import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
 
-if (process.server) {
+if (process.client) {
     await mainStore.login()
 }
 await mainStore.setUser()
