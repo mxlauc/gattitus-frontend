@@ -6245,17 +6245,22 @@ function fetchWithCookie(url, replaceCookies = false) {
     const cookie_to_modify = useCookie("XSRF-TOKEN");
     useCookie("gattitus_session");
     const headers = useRequestHeaders();
+    const hds = {
+      referer: "https://donotify.com/"
+    };
+    if (headers.cookie) {
+      hds.cookie = headers.cookie;
+    }
+    if (cookie_to_modify.value) {
+      hds["X-XSRF-TOKEN"] = cookie_to_modify.value;
+    }
     return new Promise((resolve, reject) => {
-      var _a, _b;
       axios.get(url, {
-        headers: {
-          cookie: (_a = headers.cookie) != null ? _a : "",
-          referer: headers.host,
-          "X-XSRF-TOKEN": (_b = cookie_to_modify.value) != null ? _b : ""
-        }
+        headers: hds
       }).then((response) => {
         resolve(response);
       }).catch((error) => {
+        console.log(error.response.data);
         reject(error);
       });
     });
@@ -6344,7 +6349,7 @@ const useMainStore = defineStore("main", {
     return {
       posts: null,
       userLogged: null,
-      backendUrl: "https://api.donotify.com/",
+      backendUrl: "https://api.donotify.com",
       toasts: []
     };
   },
@@ -6362,7 +6367,6 @@ const useMainStore = defineStore("main", {
         console.log("set user then");
       }).catch((r) => {
         console.log("set user catch");
-        console.log(r.message);
       });
     },
     async loadPosts() {
@@ -13904,9 +13908,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   async setup(__props) {
     let __temp, __restore;
     const mainStore = useMainStore();
-    console.log("main");
     [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => mainStore.setUser()), await __temp, __restore();
-    console.log("servido");
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$4;
       const _component_router_view = vue_cjs_prod.resolveComponent("router-view");
