@@ -13888,9 +13888,10 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     const headers = ([__temp, __restore] = vue_cjs_prod.withAsyncContext(() => useRequestHeaders()), __temp = await __temp, __restore(), __temp);
     headers.referer = "https://www.donotify.com/";
     {
-      [__temp, __restore] = vue_cjs_prod.withAsyncContext(async () => axios.get("https://api.nuxtjs.dev/mountains/mount-everest", {
+      [__temp, __restore] = vue_cjs_prod.withAsyncContext(() => axios.get("/sanctum/csrf-cookie", {
         withCredentials: true,
-        headers
+        headers,
+        baseURL: "https://api.donotify.com"
       }).then((r) => {
         mensaje = JSON.stringify(r.data);
       }).catch((r) => {
