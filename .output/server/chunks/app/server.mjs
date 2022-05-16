@@ -5169,7 +5169,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_0$4 = defineNuxtLink({ componentName: "NuxtLink" });
+const __nuxt_component_0$3 = defineNuxtLink({ componentName: "NuxtLink" });
 var shared_cjs_prod = {};
 Object.defineProperty(shared_cjs_prod, "__esModule", { value: true });
 function makeMap(str, expectsLowerCase) {
@@ -6328,7 +6328,7 @@ const _sfc_main$11 = {
     }
   }
 };
-function _sfc_ssrRender$N(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$K(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a, _b, _c, _d, _e, _f, _g;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
     class: "overflow-hidden",
@@ -6342,7 +6342,7 @@ _sfc_main$11.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/images/ImagePreloader.vue");
   return _sfc_setup$11 ? _sfc_setup$11(props, ctx) : void 0;
 };
-const ImagePreloader = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["ssrRender", _sfc_ssrRender$N], ["__scopeId", "data-v-3e6916df"]]);
+const ImagePreloader = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["ssrRender", _sfc_ssrRender$K], ["__scopeId", "data-v-3e6916df"]]);
 const useMainStore = defineStore("main", {
   state: () => {
     return {
@@ -6422,7 +6422,7 @@ const _sfc_main$10 = {
     }
   }
 };
-function _sfc_ssrRender$M(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$J(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a, _b, _c;
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card shadow-sm" }, _attrs))}><div class="card-body p-4"><div class="row gy-3"><div class="col-12 col-sm-3 col-md-2 text-center">`);
@@ -6441,14 +6441,14 @@ _sfc_main$10.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/UserHeaderComponent.vue");
   return _sfc_setup$10 ? _sfc_setup$10(props, ctx) : void 0;
 };
-const UserHeaderComponent = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["ssrRender", _sfc_ssrRender$M]]);
+const UserHeaderComponent = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["ssrRender", _sfc_ssrRender$J]]);
 const _sfc_main$$ = {
   components: {
     ImagePreloader
   },
   props: ["pet"]
 };
-function _sfc_ssrRender$L(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$I(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "text-center" }, _attrs))} data-v-0b3d99ec>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_image_preloader, {
@@ -6464,8 +6464,8 @@ _sfc_main$$.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/pet/PetItemComponent.vue");
   return _sfc_setup$$ ? _sfc_setup$$(props, ctx) : void 0;
 };
-const PetItemComponent = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["ssrRender", _sfc_ssrRender$L], ["__scopeId", "data-v-0b3d99ec"]]);
-const __default__$a = {
+const PetItemComponent = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["ssrRender", _sfc_ssrRender$I], ["__scopeId", "data-v-0b3d99ec"]]);
+const __default__$d = {
   components: {
     UserHeaderComponent,
     PetItemComponent
@@ -6476,7 +6476,7 @@ const __default__$a = {
   mounted() {
   }
 };
-const _sfc_main$_ = /* @__PURE__ */ Object.assign(__default__$a, {
+const _sfc_main$_ = /* @__PURE__ */ Object.assign(__default__$d, {
   __ssrInlineRender: true,
   async setup(__props) {
     let __temp, __restore;
@@ -6518,7 +6518,7 @@ _sfc_main$_.setup = (props, ctx) => {
 const meta$f = {
   layout: "main"
 };
-const __default__$9 = {
+const __default__$c = {
   data() {
     return {
       editor: null,
@@ -6634,7 +6634,7 @@ const __default__$9 = {
     }
   }
 };
-const _sfc_main$Z = /* @__PURE__ */ Object.assign(__default__$9, {
+const _sfc_main$Z = /* @__PURE__ */ Object.assign(__default__$c, {
   __ssrInlineRender: true,
   async setup(__props) {
     useMainStore();
@@ -6653,7 +6653,7 @@ _sfc_main$Z.setup = (props, ctx) => {
 const meta$e = {
   layout: "main"
 };
-const __default__$8 = {
+const __default__$b = {
   data() {
     return {
       editor: null
@@ -6764,7 +6764,7 @@ const __default__$8 = {
     }
   }
 };
-const _sfc_main$Y = /* @__PURE__ */ Object.assign(__default__$8, {
+const _sfc_main$Y = /* @__PURE__ */ Object.assign(__default__$b, {
   __ssrInlineRender: true,
   async setup(__props) {
     useMainStore();
@@ -6800,8 +6800,8 @@ const _sfc_main$X = {
     });
   }
 };
-function _sfc_ssrRender$K(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
+function _sfc_ssrRender$H(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_NuxtLink = __nuxt_component_0$3;
   _push(`<!--[--><ol><!--[-->`);
   serverRenderer.exports.ssrRenderList($data.pages, (p) => {
     _push(`<li>`);
@@ -6859,17 +6859,11 @@ _sfc_main$X.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/pages/PagesList.vue");
   return _sfc_setup$X ? _sfc_setup$X(props, ctx) : void 0;
 };
-const PagesList = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["ssrRender", _sfc_ssrRender$K]]);
+const PagesList = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["ssrRender", _sfc_ssrRender$H]]);
 const meta$c = {
   layout: "main"
 };
-const _sfc_main$W = {
-  setup() {
-    const mainStore = useMainStore();
-    return {
-      mainStore
-    };
-  },
+const __default__$a = {
   data() {
     return {
       punishments: [
@@ -6916,22 +6910,28 @@ const _sfc_main$W = {
     }
   }
 };
-function _sfc_ssrRender$J(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  serverRenderer.exports.ssrRenderTeleport(_push, (_push2) => {
-    _push2(`<div class="post-modal" data-v-56a4be08><div class="card shadow p-4" data-v-56a4be08><h3 data-v-56a4be08>Aplicar castigo</h3><form data-v-56a4be08><!--[-->`);
-    serverRenderer.exports.ssrRenderList($data.punishments, (p) => {
-      _push2(`<div class="form-check" data-v-56a4be08><input class="form-check-input" type="radio" name="time"${serverRenderer.exports.ssrRenderAttr("value", p.time)}${serverRenderer.exports.ssrRenderAttr("id", "radio" + p.time)} data-v-56a4be08><label class="form-check-label"${serverRenderer.exports.ssrRenderAttr("for", "radio" + p.time)} data-v-56a4be08>${serverRenderer.exports.ssrInterpolate(p.title)}</label></div>`);
-    });
-    _push2(`<!--]--><div class="row" data-v-56a4be08><div class="col" data-v-56a4be08><button type="button" class="btn btn-secondary" data-v-56a4be08> Cancelar </button></div><div class="col" data-v-56a4be08><button type="submit" class="btn btn-primary" data-v-56a4be08> Aplicar castigo </button></div></div></form></div></div>`);
-  }, "body", false, _parent);
-}
+const _sfc_main$W = /* @__PURE__ */ Object.assign(__default__$a, {
+  __ssrInlineRender: true,
+  setup(__props) {
+    useMainStore();
+    return (_ctx, _push, _parent, _attrs) => {
+      serverRenderer.exports.ssrRenderTeleport(_push, (_push2) => {
+        _push2(`<div class="post-modal" data-v-77d4b9d0><div class="card shadow p-4" data-v-77d4b9d0><h3 data-v-77d4b9d0>Aplicar castigo</h3><form data-v-77d4b9d0><!--[-->`);
+        serverRenderer.exports.ssrRenderList(_ctx.punishments, (p) => {
+          _push2(`<div class="form-check" data-v-77d4b9d0><input class="form-check-input" type="radio" name="time"${serverRenderer.exports.ssrRenderAttr("value", p.time)}${serverRenderer.exports.ssrRenderAttr("id", "radio" + p.time)} data-v-77d4b9d0><label class="form-check-label"${serverRenderer.exports.ssrRenderAttr("for", "radio" + p.time)} data-v-77d4b9d0>${serverRenderer.exports.ssrInterpolate(p.title)}</label></div>`);
+        });
+        _push2(`<!--]--><div class="row" data-v-77d4b9d0><div class="col" data-v-77d4b9d0><button type="button" class="btn btn-secondary" data-v-77d4b9d0> Cancelar </button></div><div class="col" data-v-77d4b9d0><button type="submit" class="btn btn-primary" data-v-77d4b9d0> Aplicar castigo </button></div></div></form></div></div>`);
+      }, "body", false, _parent);
+    };
+  }
+});
 const _sfc_setup$W = _sfc_main$W.setup;
 _sfc_main$W.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/ApplyPunishment.vue");
   return _sfc_setup$W ? _sfc_setup$W(props, ctx) : void 0;
 };
-const ApplyPunishment = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["ssrRender", _sfc_ssrRender$J], ["__scopeId", "data-v-56a4be08"]]);
+const ApplyPunishment = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["__scopeId", "data-v-77d4b9d0"]]);
 const _sfc_main$V = {
   components: {
     ImagePreloader,
@@ -6944,7 +6944,7 @@ const _sfc_main$V = {
   },
   props: ["post"]
 };
-function _sfc_ssrRender$I(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$G(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   const _component_ApplyPunishment = vue_cjs_prod.resolveComponent("ApplyPunishment");
   _push(`<!--[--><div class="card"><div class="card-body"><strong>${serverRenderer.exports.ssrInterpolate($props.post.reports[0].user.name)}</strong> report\xF3 la publicaci\xF3n de <strong>${serverRenderer.exports.ssrInterpolate($props.post.user.name)}</strong> por <strong>${serverRenderer.exports.ssrInterpolate($props.post.reports[0].report_type.title)}</strong><hr><div class="row"><div class="col-auto">`);
@@ -6968,7 +6968,7 @@ _sfc_main$V.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/ReportedPostItem.vue");
   return _sfc_setup$V ? _sfc_setup$V(props, ctx) : void 0;
 };
-const ReportedPostItem = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["ssrRender", _sfc_ssrRender$I]]);
+const ReportedPostItem = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["ssrRender", _sfc_ssrRender$G]]);
 const _sfc_main$U = {
   components: {
     ReportedPostItem
@@ -6991,7 +6991,7 @@ const _sfc_main$U = {
     });
   }
 };
-function _sfc_ssrRender$H(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$F(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a;
   const _component_ReportedPostItem = vue_cjs_prod.resolveComponent("ReportedPostItem");
   _push(`<!--[-->`);
@@ -7009,7 +7009,7 @@ _sfc_main$U.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/ReportedPostsList.vue");
   return _sfc_setup$U ? _sfc_setup$U(props, ctx) : void 0;
 };
-const ReportedPostsList = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["ssrRender", _sfc_ssrRender$H]]);
+const ReportedPostsList = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["ssrRender", _sfc_ssrRender$F]]);
 const meta$b = {
   layout: "main"
 };
@@ -7038,7 +7038,7 @@ const _sfc_main$T = {
     }
   }
 };
-function _sfc_ssrRender$G(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$E(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   _push(`<!--[--><input type="text"><textarea cols="30" rows="10"></textarea><button class="btn btn-primary"> Guardar </button><!--]-->`);
 }
 const _sfc_setup$T = _sfc_main$T.setup;
@@ -7047,7 +7047,7 @@ _sfc_main$T.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/CreateReportType.vue");
   return _sfc_setup$T ? _sfc_setup$T(props, ctx) : void 0;
 };
-const CreateReportType = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["ssrRender", _sfc_ssrRender$G]]);
+const CreateReportType = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["ssrRender", _sfc_ssrRender$E]]);
 const meta$a = {
   layout: "main"
 };
@@ -7069,9 +7069,9 @@ const _sfc_main$S = {
     });
   }
 };
-function _sfc_ssrRender$F(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$D(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a;
-  const _component_NuxtLink = __nuxt_component_0$4;
+  const _component_NuxtLink = __nuxt_component_0$3;
   _push(`<!--[-->`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
     to: "/admin/reports/types/create",
@@ -7100,15 +7100,15 @@ _sfc_main$S.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/ReportTypesList.vue");
   return _sfc_setup$S ? _sfc_setup$S(props, ctx) : void 0;
 };
-const ReportTypesList = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["ssrRender", _sfc_ssrRender$F]]);
+const ReportTypesList = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["ssrRender", _sfc_ssrRender$D]]);
 const meta$9 = {
   layout: "main"
 };
 const _sfc_main$R = {
   props: ["user"]
 };
-function _sfc_ssrRender$E(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
+function _sfc_ssrRender$C(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_NuxtLink = __nuxt_component_0$3;
   _push(`<tr${serverRenderer.exports.ssrRenderAttrs(_attrs)}><td>${serverRenderer.exports.ssrInterpolate($props.user.id)}</td><td><img${serverRenderer.exports.ssrRenderAttr("src", $props.user.image.url_xs)} width="40" height="40" alt=""></td><td>${serverRenderer.exports.ssrInterpolate($props.user.name)}</td><td>${serverRenderer.exports.ssrInterpolate($props.user.username)}</td><td>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
     to: $props.user.url
@@ -7132,7 +7132,7 @@ _sfc_main$R.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/UserItem.vue");
   return _sfc_setup$R ? _sfc_setup$R(props, ctx) : void 0;
 };
-const UserItem = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["ssrRender", _sfc_ssrRender$E]]);
+const UserItem = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["ssrRender", _sfc_ssrRender$C]]);
 const _sfc_main$Q = {
   components: {
     UserItem
@@ -7154,7 +7154,7 @@ const _sfc_main$Q = {
     });
   }
 };
-function _sfc_ssrRender$D(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$B(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a;
   const _component_UserItem = vue_cjs_prod.resolveComponent("UserItem");
   _push(`<!--[--> users vistos por el admin <table border="1"><tr><td><strong>id</strong></td><td><strong>perfil</strong></td><td><strong>nombre</strong></td><td><strong>nombre de usuario</strong></td><td><strong>url</strong></td><td><strong>fecha de creacion</strong></td></tr><!--[-->`);
@@ -7172,7 +7172,7 @@ _sfc_main$Q.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/UsersList.vue");
   return _sfc_setup$Q ? _sfc_setup$Q(props, ctx) : void 0;
 };
-const UsersList = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["ssrRender", _sfc_ssrRender$D]]);
+const UsersList = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["ssrRender", _sfc_ssrRender$B]]);
 const meta$8 = {
   layout: "main"
 };
@@ -7186,7 +7186,7 @@ const _sfc_main$P = {
   props: ["hideButtons"],
   emits: ["cancel", "ok"]
 };
-function _sfc_ssrRender$C(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$A(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   serverRenderer.exports.ssrRenderTeleport(_push, (_push2) => {
     _push2(`<div class="modal-container" data-v-41ef62b3><div class="modal-background" data-v-41ef62b3></div><div class="card shadow p-3" data-v-41ef62b3><h3 data-v-41ef62b3>`);
     serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "title", {}, null, _push2, _parent);
@@ -7210,10 +7210,10 @@ _sfc_main$P.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/CustomModal.vue");
   return _sfc_setup$P ? _sfc_setup$P(props, ctx) : void 0;
 };
-const __nuxt_component_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["ssrRender", _sfc_ssrRender$C], ["__scopeId", "data-v-41ef62b3"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["ssrRender", _sfc_ssrRender$A], ["__scopeId", "data-v-41ef62b3"]]);
 const _sfc_main$O = {
   components: {
-    CustomModal: __nuxt_component_0$3
+    CustomModal: __nuxt_component_0$2
   },
   setup() {
     const mainStore = useMainStore();
@@ -7237,8 +7237,8 @@ const _sfc_main$O = {
     }
   }
 };
-function _sfc_ssrRender$B(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_CustomModal = __nuxt_component_0$3;
+function _sfc_ssrRender$z(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_CustomModal = __nuxt_component_0$2;
   _push(serverRenderer.exports.ssrRenderComponent(_component_CustomModal, _attrs, {
     title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
@@ -7285,7 +7285,7 @@ _sfc_main$O.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/DeletePostDialog.vue");
   return _sfc_setup$O ? _sfc_setup$O(props, ctx) : void 0;
 };
-const DeletePostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["ssrRender", _sfc_ssrRender$B]]);
+const DeletePostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["ssrRender", _sfc_ssrRender$z]]);
 const _sfc_main$N = {
   setup() {
     const mainStore = useMainStore();
@@ -7320,7 +7320,7 @@ const _sfc_main$N = {
     }
   }
 };
-function _sfc_ssrRender$A(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$y(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   serverRenderer.exports.ssrRenderTeleport(_push, (_push2) => {
     var _a;
     _push2(`<div class="post-modal" data-v-6f0b010c><div class="card shadow p-4" data-v-6f0b010c><h3 data-v-6f0b010c>\xBFReportar publicaci\xF3n?</h3><form data-v-6f0b010c><!--[-->`);
@@ -7336,7 +7336,7 @@ _sfc_main$N.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/ReportPostDialog.vue");
   return _sfc_setup$N ? _sfc_setup$N(props, ctx) : void 0;
 };
-const ReportPostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["ssrRender", _sfc_ssrRender$A], ["__scopeId", "data-v-6f0b010c"]]);
+const ReportPostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["ssrRender", _sfc_ssrRender$y], ["__scopeId", "data-v-6f0b010c"]]);
 const _sfc_main$M = {
   components: {
     DeletePostDialog,
@@ -7351,8 +7351,8 @@ const _sfc_main$M = {
   props: ["postId"],
   provide: ["postId"]
 };
-function _sfc_ssrRender$z(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
+function _sfc_ssrRender$x(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_NuxtLink = __nuxt_component_0$3;
   const _component_delete_post_dialog = vue_cjs_prod.resolveComponent("delete-post-dialog");
   const _component_ReportPostDialog = vue_cjs_prod.resolveComponent("ReportPostDialog");
   _push(`<!--[--><ul class="dropdown-menu dropdown-menu-end shadow p-2" data-v-7c46fee2><li data-v-7c46fee2>`);
@@ -7433,7 +7433,7 @@ _sfc_main$M.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PostMenu.vue");
   return _sfc_setup$M ? _sfc_setup$M(props, ctx) : void 0;
 };
-const PostMenu = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["ssrRender", _sfc_ssrRender$z], ["__scopeId", "data-v-7c46fee2"]]);
+const PostMenu = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["ssrRender", _sfc_ssrRender$x], ["__scopeId", "data-v-7c46fee2"]]);
 const _sfc_main$L = {
   components: {
     ImagePreloader,
@@ -7443,10 +7443,10 @@ const _sfc_main$L = {
     pet: Object
   }
 };
-function _sfc_ssrRender$y(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$w(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Popper = vue_cjs_prod.resolveComponent("Popper");
   const _component_ImagePreloader = vue_cjs_prod.resolveComponent("ImagePreloader");
-  const _component_NuxtLink = __nuxt_component_0$4;
+  const _component_NuxtLink = __nuxt_component_0$3;
   _push(serverRenderer.exports.ssrRenderComponent(_component_Popper, vue_cjs_prod.mergeProps({
     arrow: "",
     placement: "top",
@@ -7589,7 +7589,7 @@ _sfc_main$L.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PetIconItem.vue");
   return _sfc_setup$L ? _sfc_setup$L(props, ctx) : void 0;
 };
-const PetIconItem = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["ssrRender", _sfc_ssrRender$y]]);
+const PetIconItem = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["ssrRender", _sfc_ssrRender$w]]);
 const _sfc_main$K = {
   components: { PetIconItem },
   setup() {
@@ -7600,7 +7600,7 @@ const _sfc_main$K = {
   },
   props: ["pets", "pets_count"]
 };
-function _sfc_ssrRender$x(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$v(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_PetIconItem = vue_cjs_prod.resolveComponent("PetIconItem");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row" }, _attrs))}><div class="col"></div><div class="col-auto position-relative"><small class="text-muted me-2">Gatos que aparecen en esta publicaci\xF3n</small><!--[-->`);
   serverRenderer.exports.ssrRenderList($props.pets, (c) => {
@@ -7617,10 +7617,10 @@ _sfc_main$K.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PetIconList.vue");
   return _sfc_setup$K ? _sfc_setup$K(props, ctx) : void 0;
 };
-const PetIconList = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["ssrRender", _sfc_ssrRender$x]]);
+const PetIconList = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["ssrRender", _sfc_ssrRender$v]]);
 const _sfc_main$J = {
   components: {
-    CustomModal: __nuxt_component_0$3,
+    CustomModal: __nuxt_component_0$2,
     ImagePreloader
   },
   setup() {
@@ -7681,9 +7681,9 @@ const _sfc_main$J = {
     }
   }
 };
-function _sfc_ssrRender$w(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_CustomModal = __nuxt_component_0$3;
-  const _component_NuxtLink = __nuxt_component_0$4;
+function _sfc_ssrRender$u(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_CustomModal = __nuxt_component_0$2;
+  const _component_NuxtLink = __nuxt_component_0$3;
   const _component_ImagePreloader = vue_cjs_prod.resolveComponent("ImagePreloader");
   _push(serverRenderer.exports.ssrRenderComponent(_component_CustomModal, vue_cjs_prod.mergeProps({ "hide-buttons": true }, _attrs), {
     title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -7795,10 +7795,10 @@ _sfc_main$J.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/ShowReactionsDialog.vue");
   return _sfc_setup$J ? _sfc_setup$J(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["ssrRender", _sfc_ssrRender$w]]);
+const ShowReactionsDialog = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["ssrRender", _sfc_ssrRender$u]]);
 const _sfc_main$I = {
   components: {
-    ShowReactionsDialog: __nuxt_component_0$2
+    ShowReactionsDialog
   },
   setup() {
     const mainStore = useMainStore();
@@ -7830,9 +7830,9 @@ const _sfc_main$I = {
     }
   }
 };
-function _sfc_ssrRender$v(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
-  const _component_ShowReactionsDialog = __nuxt_component_0$2;
+function _sfc_ssrRender$t(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_NuxtLink = __nuxt_component_0$3;
+  const _component_ShowReactionsDialog = ShowReactionsDialog;
   _push(`<!--[--><div class="row g-0 py-2"><div class="col text-center" role="button"><span class="text-muted">${serverRenderer.exports.ssrInterpolate($props.reactionsCount)} Reacciones</span></div><div class="col text-center">`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
     to: "/posts/" + $props.id,
@@ -7872,10 +7872,10 @@ _sfc_main$I.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/ReactAndCommentButtons.vue");
   return _sfc_setup$I ? _sfc_setup$I(props, ctx) : void 0;
 };
-const ReactAndCommentButtons = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["ssrRender", _sfc_ssrRender$v]]);
+const ReactAndCommentButtons = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["ssrRender", _sfc_ssrRender$t]]);
 const _sfc_main$H = {
   components: {
-    CustomModal: __nuxt_component_0$3
+    CustomModal: __nuxt_component_0$2
   },
   setup() {
     const mainStore = useMainStore();
@@ -7897,8 +7897,8 @@ const _sfc_main$H = {
     }
   }
 };
-function _sfc_ssrRender$u(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_CustomModal = __nuxt_component_0$3;
+function _sfc_ssrRender$s(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_CustomModal = __nuxt_component_0$2;
   _push(serverRenderer.exports.ssrRenderComponent(_component_CustomModal, _attrs, {
     title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
@@ -7945,10 +7945,10 @@ _sfc_main$H.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/DeleteCommentDialog.vue");
   return _sfc_setup$H ? _sfc_setup$H(props, ctx) : void 0;
 };
-const DeleteCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["ssrRender", _sfc_ssrRender$u]]);
+const DeleteCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["ssrRender", _sfc_ssrRender$s]]);
 const _sfc_main$G = {
   components: {
-    CustomModal: __nuxt_component_0$3
+    CustomModal: __nuxt_component_0$2
   },
   setup() {
     const mainStore = useMainStore();
@@ -7974,8 +7974,8 @@ const _sfc_main$G = {
     }
   }
 };
-function _sfc_ssrRender$t(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_CustomModal = __nuxt_component_0$3;
+function _sfc_ssrRender$r(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_CustomModal = __nuxt_component_0$2;
   _push(serverRenderer.exports.ssrRenderComponent(_component_CustomModal, _attrs, {
     title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
@@ -8029,19 +8029,13 @@ _sfc_main$G.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/EditCommentDialog.vue");
   return _sfc_setup$G ? _sfc_setup$G(props, ctx) : void 0;
 };
-const EditCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["ssrRender", _sfc_ssrRender$t], ["__scopeId", "data-v-31c2e609"]]);
-const _sfc_main$F = {
+const EditCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["ssrRender", _sfc_ssrRender$r], ["__scopeId", "data-v-31c2e609"]]);
+const __default__$9 = {
   components: {
     ImagePreloader,
     DeleteCommentDialog,
     EditCommentDialog,
-    ShowReactionsDialog: __nuxt_component_0$2
-  },
-  setup() {
-    const mainStore = useMainStore();
-    return {
-      mainStore
-    };
+    ShowReactionsDialog
   },
   data() {
     return {
@@ -8077,89 +8071,85 @@ const _sfc_main$F = {
     commentEdited(c) {
       this.$emit("commentEdited", c);
     }
-  },
-  computed: {
-    userLogged() {
-      var _a;
-      return (_a = this.mainStore) == null ? void 0 : _a.userLogged;
-    }
   }
 };
-function _sfc_ssrRender$s(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
-  const _component_DeleteCommentDialog = vue_cjs_prod.resolveComponent("DeleteCommentDialog");
-  const _component_EditCommentDialog = vue_cjs_prod.resolveComponent("EditCommentDialog");
-  const _component_ShowReactionsDialog = __nuxt_component_0$2;
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "py-1" }, _attrs))} data-v-80099c18><div class="row g-0" data-v-80099c18><div class="col col-auto py-1" data-v-80099c18><a${serverRenderer.exports.ssrRenderAttr("href", $props.comentario.user.url)} data-v-80099c18>`);
-  _push(serverRenderer.exports.ssrRenderComponent(_component_image_preloader, {
-    image: $props.comentario.user.image,
-    aspect: "1",
-    class: "imagen-usuario shadow"
-  }, null, _parent));
-  _push(`</a></div><div class="col ps-2 pt-1" data-v-80099c18><span class="text-break" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "15px" })}" data-v-80099c18><a${serverRenderer.exports.ssrRenderAttr("href", $props.comentario.user.url)} class="text-dark text-decoration-none d-block mb-1" data-v-80099c18><span class="fw-bold" data-v-80099c18>${serverRenderer.exports.ssrInterpolate($props.comentario.user.name)}</span><span style="${serverRenderer.exports.ssrRenderStyle({ "color": "#bbb" })}" data-v-80099c18> @${serverRenderer.exports.ssrInterpolate($props.comentario.user.username)}</span></a><p class="m-0" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#777" })}" data-v-80099c18>${serverRenderer.exports.ssrInterpolate($props.comentario.description)}</p>`);
-  if ($props.comentario.gif_url) {
-    _push(`<div class="position-relative" data-v-80099c18><img${serverRenderer.exports.ssrRenderAttr("src", $props.comentario.gif_url)} class="img-fluid shadow-sm" style="${serverRenderer.exports.ssrRenderStyle({ "border-radius": "10px", "height": "120px" })}" data-v-80099c18><span class="px-1 rounded position-absolute bottom-0 start-0 m-1" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "rgba(255,255,255,0.4)" })}" data-v-80099c18><img src="https://www.gstatic.com/tenor/web/attribution/via_tenor_logo_grey.png" style="${serverRenderer.exports.ssrRenderStyle({ "filter": "drop-shadow(1px 1px 2px rgba(255, 255, 255, 1))" })}" width="50" data-v-80099c18></span></div>`);
-  } else {
-    _push(`<!---->`);
+const _sfc_main$F = /* @__PURE__ */ Object.assign(__default__$9, {
+  __ssrInlineRender: true,
+  setup(__props) {
+    const mainStore = useMainStore();
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "py-1" }, _attrs))} data-v-a67b5b2a><div class="row g-0" data-v-a67b5b2a><div class="col col-auto py-1" data-v-a67b5b2a><a${serverRenderer.exports.ssrRenderAttr("href", __props.comentario.user.url)} data-v-a67b5b2a>`);
+      _push(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
+        image: __props.comentario.user.image,
+        aspect: "1",
+        class: "imagen-usuario shadow"
+      }, null, _parent));
+      _push(`</a></div><div class="col ps-2 pt-1" data-v-a67b5b2a><span class="text-break" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "15px" })}" data-v-a67b5b2a><a${serverRenderer.exports.ssrRenderAttr("href", __props.comentario.user.url)} class="text-dark text-decoration-none d-block mb-1" data-v-a67b5b2a><span class="fw-bold" data-v-a67b5b2a>${serverRenderer.exports.ssrInterpolate(__props.comentario.user.name)}</span><span style="${serverRenderer.exports.ssrRenderStyle({ "color": "#bbb" })}" data-v-a67b5b2a> @${serverRenderer.exports.ssrInterpolate(__props.comentario.user.username)}</span></a><p class="m-0" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#777" })}" data-v-a67b5b2a>${serverRenderer.exports.ssrInterpolate(__props.comentario.description)}</p>`);
+      if (__props.comentario.gif_url) {
+        _push(`<div class="position-relative" data-v-a67b5b2a><img${serverRenderer.exports.ssrRenderAttr("src", __props.comentario.gif_url)} class="img-fluid shadow-sm" style="${serverRenderer.exports.ssrRenderStyle({ "border-radius": "10px", "height": "120px" })}" data-v-a67b5b2a><span class="px-1 rounded position-absolute bottom-0 start-0 m-1" style="${serverRenderer.exports.ssrRenderStyle({ "background-color": "rgba(255,255,255,0.4)" })}" data-v-a67b5b2a><img src="https://www.gstatic.com/tenor/web/attribution/via_tenor_logo_grey.png" style="${serverRenderer.exports.ssrRenderStyle({ "filter": "drop-shadow(1px 1px 2px rgba(255, 255, 255, 1))" })}" width="50" data-v-a67b5b2a></span></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</span><div class="mb-1 pt-2 text-muted" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "13px" })}" data-v-a67b5b2a>`);
+      if (vue_cjs_prod.unref(mainStore).userLogged) {
+        _push(`<span role="button" class="${serverRenderer.exports.ssrRenderClass([{ "text-primary": _ctx.miLike }, "fw-bold"])}" data-v-a67b5b2a>${serverRenderer.exports.ssrInterpolate(_ctx.$t("like"))}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (vue_cjs_prod.unref(mainStore).userLogged && _ctx.contador) {
+        _push(`<span data-v-a67b5b2a> \xB7</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (_ctx.contador) {
+        _push(`<span class="fw-bold px-1" role="button" data-v-a67b5b2a>${serverRenderer.exports.ssrInterpolate(_ctx.contador)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (vue_cjs_prod.unref(mainStore).userLogged || _ctx.contador) {
+        _push(`<span class="ms-3" data-v-a67b5b2a></span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<span data-v-a67b5b2a>${serverRenderer.exports.ssrInterpolate(_ctx.$t("timeAgo", { date: __props.comentario.created_at }))}</span></div></div>`);
+      if (!__props.hideOptions && vue_cjs_prod.unref(mainStore).userLogged && vue_cjs_prod.unref(mainStore).userLogged.id == __props.comentario.user.id) {
+        _push(`<div class="col col-auto" data-v-a67b5b2a><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="py-3 px-2" style="${serverRenderer.exports.ssrRenderStyle({ "width": "32px", "color": "#888" })}" viewBox="0 0 16 16" data-bs-toggle="dropdown" aria-expanded="false" data-v-a67b5b2a><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" data-v-a67b5b2a></path></svg><ul class="dropdown-menu dropdown-menu-end shadow" data-v-a67b5b2a><li data-v-a67b5b2a><button class="dropdown-item" type="button" data-v-a67b5b2a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" data-v-a67b5b2a><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" data-v-a67b5b2a></path><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" data-v-a67b5b2a></path></svg> ${serverRenderer.exports.ssrInterpolate(_ctx.$t("editComment"))}</button></li><li data-v-a67b5b2a><button class="dropdown-item" type="button" data-v-a67b5b2a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" data-v-a67b5b2a><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" data-v-a67b5b2a></path></svg> ${serverRenderer.exports.ssrInterpolate(_ctx.$t("deleteComment"))}</button></li></ul></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+      if (_ctx.showDeleteCommentDialog) {
+        _push(serverRenderer.exports.ssrRenderComponent(DeleteCommentDialog, { comment: __props.comentario }, null, _parent));
+      } else {
+        _push(`<!---->`);
+      }
+      if (_ctx.showEditCommentDialog) {
+        _push(serverRenderer.exports.ssrRenderComponent(EditCommentDialog, { comment: __props.comentario }, null, _parent));
+      } else {
+        _push(`<!---->`);
+      }
+      if (_ctx.showReactions) {
+        _push(serverRenderer.exports.ssrRenderComponent(ShowReactionsDialog, {
+          url: vue_cjs_prod.unref(mainStore).backendUrl + "/api/comments/" + __props.comentario.id + "/reactions"
+        }, null, _parent));
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+    };
   }
-  _push(`</span><div class="mb-1 pt-2 text-muted" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "13px" })}" data-v-80099c18>`);
-  if ($options.userLogged) {
-    _push(`<span role="button" class="${serverRenderer.exports.ssrRenderClass([{ "text-primary": $data.miLike }, "fw-bold"])}" data-v-80099c18>${serverRenderer.exports.ssrInterpolate(_ctx.$t("like"))}</span>`);
-  } else {
-    _push(`<!---->`);
-  }
-  if ($options.userLogged && $data.contador) {
-    _push(`<span data-v-80099c18> \xB7</span>`);
-  } else {
-    _push(`<!---->`);
-  }
-  if ($data.contador) {
-    _push(`<span class="fw-bold px-1" role="button" data-v-80099c18>${serverRenderer.exports.ssrInterpolate($data.contador)}</span>`);
-  } else {
-    _push(`<!---->`);
-  }
-  if ($options.userLogged || $data.contador) {
-    _push(`<span class="ms-3" data-v-80099c18></span>`);
-  } else {
-    _push(`<!---->`);
-  }
-  _push(`<span data-v-80099c18>${serverRenderer.exports.ssrInterpolate(_ctx.$t("timeAgo", { date: $props.comentario.created_at }))}</span></div></div>`);
-  if (!$props.hideOptions && $options.userLogged && $options.userLogged.id == $props.comentario.user.id) {
-    _push(`<div class="col col-auto" data-v-80099c18><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="py-3 px-2" style="${serverRenderer.exports.ssrRenderStyle({ "width": "32px", "color": "#888" })}" viewBox="0 0 16 16" data-bs-toggle="dropdown" aria-expanded="false" data-v-80099c18><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" data-v-80099c18></path></svg><ul class="dropdown-menu dropdown-menu-end shadow" data-v-80099c18><li data-v-80099c18><button class="dropdown-item" type="button" data-v-80099c18><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" data-v-80099c18><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" data-v-80099c18></path><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" data-v-80099c18></path></svg> ${serverRenderer.exports.ssrInterpolate(_ctx.$t("editComment"))}</button></li><li data-v-80099c18><button class="dropdown-item" type="button" data-v-80099c18><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" data-v-80099c18><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" data-v-80099c18></path></svg> ${serverRenderer.exports.ssrInterpolate(_ctx.$t("deleteComment"))}</button></li></ul></div>`);
-  } else {
-    _push(`<!---->`);
-  }
-  _push(`</div>`);
-  if ($data.showDeleteCommentDialog) {
-    _push(serverRenderer.exports.ssrRenderComponent(_component_DeleteCommentDialog, { comment: $props.comentario }, null, _parent));
-  } else {
-    _push(`<!---->`);
-  }
-  if ($data.showEditCommentDialog) {
-    _push(serverRenderer.exports.ssrRenderComponent(_component_EditCommentDialog, { comment: $props.comentario }, null, _parent));
-  } else {
-    _push(`<!---->`);
-  }
-  if ($data.showReactions) {
-    _push(serverRenderer.exports.ssrRenderComponent(_component_ShowReactionsDialog, {
-      url: $setup.mainStore.backendUrl + "/api/comments/" + $props.comentario.id + "/reactions"
-    }, null, _parent));
-  } else {
-    _push(`<!---->`);
-  }
-  _push(`</div>`);
-}
+});
 const _sfc_setup$F = _sfc_main$F.setup;
 _sfc_main$F.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/ComentarioComponent.vue");
   return _sfc_setup$F ? _sfc_setup$F(props, ctx) : void 0;
 };
-const ComentarioComponent = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["ssrRender", _sfc_ssrRender$s], ["__scopeId", "data-v-80099c18"]]);
+const ComentarioComponent = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["__scopeId", "data-v-a67b5b2a"]]);
 const _sfc_main$E = {
   props: ["img", "postId"]
 };
-function _sfc_ssrRender$r(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$q(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "p-1" }, _attrs))}><img${serverRenderer.exports.ssrRenderAttr("src", $props.img.url)} class="w-100" style="${serverRenderer.exports.ssrRenderStyle([{ aspectRatio: $props.img.dims[0] / $props.img.dims[1] }, { "border-radius": "5px" }])}"></div>`);
 }
 const _sfc_setup$E = _sfc_main$E.setup;
@@ -8168,12 +8158,12 @@ _sfc_main$E.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/GifSearchedComponent.vue");
   return _sfc_setup$E ? _sfc_setup$E(props, ctx) : void 0;
 };
-const GifSearchedComponent = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["ssrRender", _sfc_ssrRender$r]]);
+const GifSearchedComponent = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["ssrRender", _sfc_ssrRender$q]]);
 const sharedData = {
   gifs: [],
   yaCargoElPrimerComponente: false
 };
-const __default__$7 = {
+const __default__$8 = {
   components: {
     GifSearchedComponent,
     Popper
@@ -8234,7 +8224,7 @@ const __default__$7 = {
     }
   }
 };
-const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$7, {
+const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$8, {
   __ssrInlineRender: true,
   async setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
@@ -8321,16 +8311,10 @@ _sfc_main$D.setup = (props, ctx) => {
   return _sfc_setup$D ? _sfc_setup$D(props, ctx) : void 0;
 };
 const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-b69e47f6"]]);
-const _sfc_main$C = {
+const __default__$7 = {
   components: {
     GifPickerComponent,
     ImagePreloader
-  },
-  setup() {
-    const mainStore = useMainStore();
-    return {
-      mainStore
-    };
   },
   data() {
     return {
@@ -8339,12 +8323,6 @@ const _sfc_main$C = {
   },
   props: ["postId"],
   emits: ["commented", "contadorActualizado"],
-  computed: {
-    userLogged() {
-      var _a;
-      return (_a = this.mainStore) == null ? void 0 : _a.userLogged;
-    }
-  },
   methods: {
     onKeyDown(e) {
       if (e.keyCode === 13 && !e.shiftKey) {
@@ -8371,7 +8349,7 @@ const _sfc_main$C = {
           description: texto,
           created_at: Math.trunc(Date.now() / 1e3),
           gif_url: this.gifSeleccionado,
-          user: this.userLogged
+          user: this.mainStore.userLogged
         });
         this.$emit("contadorActualizado", response.data.comments_count);
         this.$refs.textarea.innerHTML = "";
@@ -8389,38 +8367,43 @@ const _sfc_main$C = {
     }
   }
 };
-function _sfc_ssrRender$q(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
-  const _component_gif_picker_component = vue_cjs_prod.resolveComponent("gif-picker-component");
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-7793ef12><div class="row g-0 border-top pt-1" data-v-7793ef12>`);
-  if ($data.gifSeleccionado) {
-    _push(`<div class="col-auto position-relative mx-auto" data-v-7793ef12><img${serverRenderer.exports.ssrRenderAttr("src", $data.gifSeleccionado)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "100px", "border-radius": "5px" })}" data-v-7793ef12><button type="button" class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle" aria-label="Close" data-v-7793ef12></button></div>`);
-  } else {
-    _push(`<!---->`);
+const _sfc_main$C = /* @__PURE__ */ Object.assign(__default__$7, {
+  __ssrInlineRender: true,
+  setup(__props) {
+    const mainStore = useMainStore();
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-02700426><div class="row g-0 border-top pt-1" data-v-02700426>`);
+      if (_ctx.gifSeleccionado) {
+        _push(`<div class="col-auto position-relative mx-auto" data-v-02700426><img${serverRenderer.exports.ssrRenderAttr("src", _ctx.gifSeleccionado)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "100px", "border-radius": "5px" })}" data-v-02700426><button type="button" class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle" aria-label="Close" data-v-02700426></button></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+      if (vue_cjs_prod.unref(mainStore).userLogged) {
+        _push(`<div class="row g-0 pb-2 pt-1" data-v-02700426><div class="col col-auto" data-v-02700426>`);
+        _push(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
+          image: (_a = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _a.image,
+          aspect: "1",
+          class: "imagenUsuario shadow"
+        }, null, _parent));
+        _push(`</div><div class="col ms-2" data-v-02700426><div class="row g-0 contenedorTextarea" data-v-02700426><div class="col" data-v-02700426><span class="textarea text-break" contenteditable data-v-02700426></span></div><div class="col col-auto guide-4" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#f50" })}" data-v-02700426>`);
+        _push(serverRenderer.exports.ssrRenderComponent(GifPickerComponent, { "post-id": __props.postId }, null, _parent));
+        _push(`<svg class="pe-2" fill="currentColor" role="button" width="35" height="35" viewBox="0 0 24 24" data-v-02700426><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill-rule="evenodd" stroke="none" data-v-02700426></path></svg></div></div></div></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+    };
   }
-  _push(`</div>`);
-  if ($options.userLogged) {
-    _push(`<div class="row g-0 pb-2 pt-1" data-v-7793ef12><div class="col col-auto" data-v-7793ef12>`);
-    _push(serverRenderer.exports.ssrRenderComponent(_component_image_preloader, {
-      image: $options.userLogged.image,
-      aspect: "1",
-      class: "imagenUsuario shadow"
-    }, null, _parent));
-    _push(`</div><div class="col ms-2" data-v-7793ef12><div class="row g-0 contenedorTextarea" data-v-7793ef12><div class="col" data-v-7793ef12><span class="textarea text-break" contenteditable data-v-7793ef12></span></div><div class="col col-auto guide-4" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#f50" })}" data-v-7793ef12>`);
-    _push(serverRenderer.exports.ssrRenderComponent(_component_gif_picker_component, { "post-id": $props.postId }, null, _parent));
-    _push(`<svg class="pe-2" fill="currentColor" role="button" width="35" height="35" viewBox="0 0 24 24" data-v-7793ef12><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill-rule="evenodd" stroke="none" data-v-7793ef12></path></svg></div></div></div></div>`);
-  } else {
-    _push(`<!---->`);
-  }
-  _push(`</div>`);
-}
+});
 const _sfc_setup$C = _sfc_main$C.setup;
 _sfc_main$C.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/NewComment.vue");
   return _sfc_setup$C ? _sfc_setup$C(props, ctx) : void 0;
 };
-const NewComment = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["ssrRender", _sfc_ssrRender$q], ["__scopeId", "data-v-7793ef12"]]);
+const NewComment = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["__scopeId", "data-v-02700426"]]);
 const _sfc_main$B = {
   components: {
     ComentarioComponent,
@@ -8524,22 +8507,16 @@ const _sfc_main$A = {
     doubleclick() {
       this.reactLove();
     }
-  },
-  computed: {
-    userLogged() {
-      var _a;
-      return (_a = this.mainStore) == null ? void 0 : _a.userLogged;
-    }
   }
 };
 function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
+  const _component_NuxtLink = __nuxt_component_0$3;
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   const _component_post_menu = vue_cjs_prod.resolveComponent("post-menu");
   const _component_PetIconList = vue_cjs_prod.resolveComponent("PetIconList");
   const _component_ReactAndCommentButtons = vue_cjs_prod.resolveComponent("ReactAndCommentButtons");
   const _component_BestComments = vue_cjs_prod.resolveComponent("BestComments");
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card card-post shadow-sm f-rubick mb-4" }, _attrs))} data-v-6b20f476><div class="card-body pb-0" data-v-6b20f476><div class="row g-0" data-v-6b20f476><div class="col-auto" data-v-6b20f476>`);
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card card-post shadow-sm f-rubick mb-4" }, _attrs))} data-v-1a1b9242><div class="card-body pb-0" data-v-1a1b9242><div class="row g-0" data-v-1a1b9242><div class="col-auto" data-v-1a1b9242>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
     to: "/@" + $props.post.user.username
   }, {
@@ -8560,7 +8537,7 @@ function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`</div><div class="col px-2" data-v-6b20f476>`);
+  _push(`</div><div class="col px-2" data-v-1a1b9242>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
     to: "/@" + $props.post.user.username,
     class: "name-user-post fw-bold text-decoration-none text-dark"
@@ -8576,14 +8553,14 @@ function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-6b20f476><small data-v-6b20f476>${serverRenderer.exports.ssrInterpolate(_ctx.$t("timeAgo", { date: $props.post.created_at }))}</small></span></div><div class="col-auto" data-v-6b20f476><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-6b20f476><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
+  _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-1a1b9242><small data-v-1a1b9242>${serverRenderer.exports.ssrInterpolate(_ctx.$t("timeAgo", { date: $props.post.created_at }))}</small></span></div><div class="col-auto" data-v-1a1b9242><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-1a1b9242><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
               C7.934,13.835,6.157,12.061,3.968,12.061z M16.233,12.061c-2.188,0-3.968,1.773-3.968,3.965c0,2.192,1.778,3.967,3.968,3.967
               s3.97-1.772,3.97-3.967C20.201,13.835,18.423,12.061,16.233,12.061z M28.09,12.061c-2.192,0-3.969,1.774-3.969,3.967
-              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-6b20f476></path></svg>`);
+              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-1a1b9242></path></svg>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_post_menu, {
     "post-id": $props.post.id
   }, null, _parent));
-  _push(`</div></div><p class="fs-6 mt-1 mb-1 text-muted" data-v-6b20f476>${serverRenderer.exports.ssrInterpolate($props.post.simple_post.description)}</p>`);
+  _push(`</div></div><p class="fs-6 mt-1 mb-1 text-muted" data-v-1a1b9242>${serverRenderer.exports.ssrInterpolate($props.post.simple_post.description)}</p>`);
   if ($props.post.pets_count) {
     _push(serverRenderer.exports.ssrRenderComponent(_component_PetIconList, {
       pets: $props.post.pets,
@@ -8592,14 +8569,14 @@ function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   } else {
     _push(`<!---->`);
   }
-  _push(`<div class="my-2 position-relative" data-v-6b20f476>`);
+  _push(`<div class="my-2 position-relative" data-v-1a1b9242>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_image_preloader, {
     aspect: $props.post.simple_post.image.aspect_ratio,
     option: "url_lg",
     image: $props.post.simple_post.image,
     class: "rounded-5 w-100 shadow-sm"
   }, null, _parent));
-  _push(`<div class="position-absolute top-0 start-0 end-0 bottom-0" data-v-6b20f476></div></div>`);
+  _push(`<div class="position-absolute top-0 start-0 end-0 bottom-0" data-v-1a1b9242></div></div>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_ReactAndCommentButtons, {
     id: $props.post.id,
     "my-reaction": $data.my_reaction,
@@ -8618,7 +8595,7 @@ _sfc_main$A.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PostComponent.vue");
   return _sfc_setup$A ? _sfc_setup$A(props, ctx) : void 0;
 };
-const SimplePostComponent = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["ssrRender", _sfc_ssrRender$o], ["__scopeId", "data-v-6b20f476"]]);
+const SimplePostComponent = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["ssrRender", _sfc_ssrRender$o], ["__scopeId", "data-v-1a1b9242"]]);
 const _sfc_main$z = {
   components: {
     ImagePreloader
@@ -8662,7 +8639,7 @@ const _sfc_main$z = {
   }
 };
 function _sfc_ssrRender$n(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
+  const _component_NuxtLink = __nuxt_component_0$3;
   const _component_ImagePreloader = vue_cjs_prod.resolveComponent("ImagePreloader");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row" }, _attrs))} data-v-bd06ca3c><div class="col-auto" data-v-bd06ca3c>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
@@ -8775,7 +8752,7 @@ const _sfc_main$x = {
   }
 };
 function _sfc_ssrRender$m(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
+  const _component_NuxtLink = __nuxt_component_0$3;
   const _component_ImagePreloader = vue_cjs_prod.resolveComponent("ImagePreloader");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row" }, _attrs))} data-v-be617f26><div class="col-auto" data-v-be617f26>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
@@ -8934,12 +8911,6 @@ const __default__$4 = {
     return {};
   },
   mounted() {
-  },
-  computed: {
-    posts() {
-      var _a;
-      return (_a = this.mainStore) == null ? void 0 : _a.posts;
-    }
   }
 };
 const _sfc_main$u = /* @__PURE__ */ Object.assign(__default__$4, {
@@ -8953,7 +8924,7 @@ const _sfc_main$u = /* @__PURE__ */ Object.assign(__default__$4, {
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row g-0" }, _attrs))}><div class="col-12 col-md-8"><div style="${serverRenderer.exports.ssrRenderStyle({ "max-width": "500px", "margin": "auto" })}">`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_router_view, null, null, _parent));
       _push(`<!--[-->`);
-      serverRenderer.exports.ssrRenderList(_ctx.posts, (p) => {
+      serverRenderer.exports.ssrRenderList(vue_cjs_prod.unref(mainStore).posts, (p) => {
         _push(serverRenderer.exports.ssrRenderComponent(SimplePostComponent, {
           post: p,
           key: p.id
@@ -9201,7 +9172,7 @@ const _sfc_main$s = {
   }
 };
 function _sfc_ssrRender$k(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __nuxt_component_0$4;
+  const _component_NuxtLink = __nuxt_component_0$3;
   const _component_ImagePreloader = vue_cjs_prod.resolveComponent("ImagePreloader");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><input type="text" class="w-100 form-control my-4" placeholder="Buscar mascota"><div class="row g-3 mx-0"><!--[-->`);
   serverRenderer.exports.ssrRenderList($data.pets, (p) => {
@@ -9316,35 +9287,29 @@ const _sfc_main$r = {
       const comment_f = this.comentarios.find((comentario) => comentario.id === c.id);
       comment_f.description = c.description;
     }
-  },
-  computed: {
-    userLogged() {
-      var _a;
-      return (_a = this.mainStore) == null ? void 0 : _a.userLogged;
-    }
   }
 };
 function _sfc_ssrRender$j(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a, _b;
   const _component_comentario_component = vue_cjs_prod.resolveComponent("comentario-component");
   const _component_NewComment = vue_cjs_prod.resolveComponent("NewComment");
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-62359c64><div style="${serverRenderer.exports.ssrRenderStyle({ "height": "100%", "display": "flex", "flex-direction": "column" })}" data-v-62359c64>`);
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-9c89abea><div style="${serverRenderer.exports.ssrRenderStyle({ "height": "100%", "display": "flex", "flex-direction": "column" })}" data-v-9c89abea>`);
   if ((_a = $data.comentarios) == null ? void 0 : _a.length) {
-    _push(`<hr class="my-0" data-v-62359c64>`);
+    _push(`<hr class="my-0" data-v-9c89abea>`);
   } else {
     _push(`<!---->`);
   }
   if ($data.comentariosPaginador && $data.comentariosPaginador.next) {
-    _push(`<a class="d-block text-muted text-center py-2 fw-bold" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "12px", "text-decoration": "none" })}" role="button" data-v-62359c64>${serverRenderer.exports.ssrInterpolate(_ctx.$t("previousComments"))}</a>`);
+    _push(`<a class="d-block text-muted text-center py-2 fw-bold" style="${serverRenderer.exports.ssrRenderStyle({ "font-size": "12px", "text-decoration": "none" })}" role="button" data-v-9c89abea>${serverRenderer.exports.ssrInterpolate(_ctx.$t("previousComments"))}</a>`);
   } else {
     _push(`<!---->`);
   }
   if ($data.comentariosPaginador && $data.comentariosPaginador.next) {
-    _push(`<hr class="my-0" data-v-62359c64>`);
+    _push(`<hr class="my-0" data-v-9c89abea>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`<div style="${serverRenderer.exports.ssrRenderStyle({ "overflow": "hidden auto", "scroll-behavior": "smooth", "flex-grow": "1" })}" class="ps-3 pe-0 custom-scroll" data-v-62359c64><!--[-->`);
+  _push(`<div style="${serverRenderer.exports.ssrRenderStyle({ "overflow": "hidden auto", "scroll-behavior": "smooth", "flex-grow": "1" })}" class="ps-3 pe-0 custom-scroll" data-v-9c89abea><!--[-->`);
   serverRenderer.exports.ssrRenderList((_b = $data.comentarios) == null ? void 0 : _b.slice().reverse(), (comentario) => {
     _push(serverRenderer.exports.ssrRenderComponent(_component_comentario_component, {
       "post-id": $props.postId,
@@ -9365,7 +9330,7 @@ _sfc_main$r.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/SeccionComentariosComponent.vue");
   return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
 };
-const SeccionComentariosComponent = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["ssrRender", _sfc_ssrRender$j], ["__scopeId", "data-v-62359c64"]]);
+const SeccionComentariosComponent = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["ssrRender", _sfc_ssrRender$j], ["__scopeId", "data-v-9c89abea"]]);
 const __default__$2 = {
   components: {
     SeccionComentariosComponent,
@@ -9408,7 +9373,7 @@ const _sfc_main$q = /* @__PURE__ */ Object.assign(__default__$2, {
     })), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h;
-      const _component_NuxtLink = __nuxt_component_0$4;
+      const _component_NuxtLink = __nuxt_component_0$3;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row" }, _attrs))} data-v-7d672ac2><div class="col-7" data-v-7d672ac2>`);
       _push(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
         aspect: (_a = vue_cjs_prod.unref(post)) == null ? void 0 : _a.simple_post.aspect_ratio,
@@ -13148,7 +13113,7 @@ const _sfc_main$o = {
       ]
     });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLink = __nuxt_component_0$4;
+      const _component_NuxtLink = __nuxt_component_0$3;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-011aae6d><div class="fixed left-0 right-0 spotlight z-10" data-v-011aae6d></div><div class="max-w-520px text-center z-20" data-v-011aae6d><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-011aae6d>${serverRenderer.exports.ssrInterpolate(__props.statusCode)}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-011aae6d>${serverRenderer.exports.ssrInterpolate(__props.description)}</p><div class="w-full flex items-center justify-center" data-v-011aae6d>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/",
@@ -13684,11 +13649,7 @@ const __default__$1 = {
       var _a;
       const hour = new Date().getHours();
       const saludoStr = hour < 12 ? "Buenos d\xEDas" : hour < 18 ? "Buenas tardes" : "Buenas noches";
-      return `Hola ${(_a = this.userLogged) == null ? void 0 : _a.name}, ${saludoStr} \u{1F431}`;
-    },
-    userLogged() {
-      var _a;
-      return (_a = this.mainStore) == null ? void 0 : _a.userLogged;
+      return `Hola ${(_a = this.mainStore.userLogged) == null ? void 0 : _a.name}, ${saludoStr} \u{1F431}`;
     }
   },
   methods: {
@@ -13710,8 +13671,8 @@ const _sfc_main$2 = /* @__PURE__ */ Object.assign(__default__$1, {
     const mainStore = useMainStore();
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
-      const _component_NuxtLink = __nuxt_component_0$4;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "py-2 px-0 pe-1 pe-sm-4 container-xxl" }, _attrs))} data-v-688a475f><div class="row g-0" data-v-688a475f><div class="col-auto d-xl-none" data-v-688a475f><span class="d-inline-block py-2 px-3" data-v-688a475f><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" data-v-688a475f><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" data-v-688a475f></path></svg></span></div><div class="col-auto d-none d-xl-block text-center" style="${serverRenderer.exports.ssrRenderStyle({ "width": "260px" })}" data-v-688a475f>`);
+      const _component_NuxtLink = __nuxt_component_0$3;
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "py-2 px-0 pe-1 pe-sm-4 container-xxl" }, _attrs))} data-v-3e157dfb><div class="row g-0" data-v-3e157dfb><div class="col-auto d-xl-none" data-v-3e157dfb><span class="d-inline-block py-2 px-3" data-v-3e157dfb><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" data-v-3e157dfb><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" data-v-3e157dfb></path></svg></span></div><div class="col-auto d-none d-xl-block text-center" style="${serverRenderer.exports.ssrRenderStyle({ "width": "260px" })}" data-v-3e157dfb>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/",
         class: "text-decoration-none fw-bold text-black d-inline-block",
@@ -13719,7 +13680,7 @@ const _sfc_main$2 = /* @__PURE__ */ Object.assign(__default__$1, {
       }, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<img${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "40px", "margin-top": "-10px" })}" data-v-688a475f${_scopeId}><span class="title" data-v-688a475f${_scopeId}>Gattitus</span>`);
+            _push2(`<img${serverRenderer.exports.ssrRenderAttr("src", _imports_0)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "40px", "margin-top": "-10px" })}" data-v-3e157dfb${_scopeId}><span class="title" data-v-3e157dfb${_scopeId}>Gattitus</span>`);
           } else {
             return [
               vue_cjs_prod.createVNode("img", {
@@ -13732,22 +13693,22 @@ const _sfc_main$2 = /* @__PURE__ */ Object.assign(__default__$1, {
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="col d-none d-lg-block ms-3" data-v-688a475f>`);
-      if (_ctx.userLogged) {
-        _push(`<!--[--><h5 class="fq-bold mb-0 f-fredoka" data-v-688a475f>${serverRenderer.exports.ssrInterpolate(_ctx.saludo)}</h5><span data-v-688a475f>${serverRenderer.exports.ssrInterpolate(_ctx.$t("todayThereIsNewPosts"))}</span><!--]-->`);
+      _push(`</div><div class="col d-none d-lg-block ms-3" data-v-3e157dfb>`);
+      if (vue_cjs_prod.unref(mainStore).userLogged) {
+        _push(`<!--[--><h5 class="fq-bold mb-0 f-fredoka" data-v-3e157dfb>${serverRenderer.exports.ssrInterpolate(_ctx.saludo)}</h5><span data-v-3e157dfb>${serverRenderer.exports.ssrInterpolate(_ctx.$t("todayThereIsNewPosts"))}</span><!--]-->`);
       } else {
         _push(`<!---->`);
       }
-      _push(`</div><div class="col-auto ms-auto" data-v-688a475f>`);
-      if (_ctx.userLogged) {
-        _push(`<div data-v-688a475f><button class="btn btn-primary" data-bs-toggle="dropdown" data-v-688a475f> Crear </button><ul class="dropdown-menu shadow" data-v-688a475f><li data-v-688a475f>`);
+      _push(`</div><div class="col-auto ms-auto" data-v-3e157dfb>`);
+      if (vue_cjs_prod.unref(mainStore).userLogged) {
+        _push(`<div data-v-3e157dfb><button class="btn btn-primary" data-bs-toggle="dropdown" data-v-3e157dfb> Crear </button><ul class="dropdown-menu shadow" data-v-3e157dfb><li data-v-3e157dfb>`);
         _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
           to: "/posts/create",
           class: "dropdown-item"
         }, {
           default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-post" viewBox="0 0 16 16" data-v-688a475f${_scopeId}><path d="M4 3.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-8z" data-v-688a475f${_scopeId}></path><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" data-v-688a475f${_scopeId}></path></svg> Publicaci\xF3n `);
+              _push2(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-post" viewBox="0 0 16 16" data-v-3e157dfb${_scopeId}><path d="M4 3.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-8z" data-v-3e157dfb${_scopeId}></path><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" data-v-3e157dfb${_scopeId}></path></svg> Publicaci\xF3n `);
             } else {
               return [
                 (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
@@ -13767,24 +13728,24 @@ const _sfc_main$2 = /* @__PURE__ */ Object.assign(__default__$1, {
           }),
           _: 1
         }, _parent));
-        _push(`</li><li data-v-688a475f><hr class="dropdown-divider" data-v-688a475f></li><li data-v-688a475f><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createPet" data-v-688a475f><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="-26 0 512 512" data-v-688a475f><path d="m179.300781 409.507812c-4.710937 0-8.53125 3.820313-8.53125 8.535157v8.53125c-.0625 14.234375 8.753907 26.996093 22.082031 31.980469 13.332032 4.984374 28.359376 1.136718 37.652344-9.640626 9.292969 10.777344 24.316406 14.625 37.648438 9.640626 13.332031-4.984376 22.144531-17.746094 22.082031-31.980469v-8.53125c0-4.714844-3.820313-8.535157-8.53125-8.535157-4.714844 0-8.535156 3.820313-8.535156 8.535157v8.53125c0 9.425781-7.640625 17.066406-17.066407 17.066406-9.425781 0-17.066406-7.640625-17.066406-17.066406v-27.203125c3.003906-1.105469 5.71875-2.882813 7.9375-5.191406l12.773438-13.65625c4.835937-4.953126 6.210937-12.332032 3.476562-18.695313-3.65625-7.621094-11.480468-12.355469-19.929687-12.054687h-25.582031c-8.449219-.300782-16.269532 4.433593-19.925782 12.054687-2.730468 6.359375-1.363281 13.738281 3.46875 18.695313l12.789063 13.65625c2.214843 2.308593 4.925781 4.085937 7.925781 5.191406v27.203125c0 9.425781-7.640625 17.066406-17.066406 17.066406-9.425782 0-17.066406-7.640625-17.066406-17.066406v-8.53125c0-4.714844-3.820313-8.535157-8.535157-8.535157zm34.125-40.851562c.101563-.398438 1.378907-1.816406 4.285157-1.816406h25.582031c2.910156 0 4.183593 1.417968 3.992187 2.019531l-12.773437 13.652344c-2.390625 1.726562-5.617188 1.726562-8.007813 0zm0 0" data-v-688a475f></path><path d="m122.679688 320.65625c15.1875-5.9375 27.273437-6.640625 35.949218-2.054688 6.050782 3.484376 10.488282 9.214844 12.339844 15.949219 1.074219 4.523438 5.570312 7.355469 10.113281 6.367188 4.542969-.984375 7.460938-5.429688 6.5625-9.988281-2.914062-11.539063-10.410156-21.390626-20.757812-27.265626-13.277344-7.144531-30.234375-6.777343-50.425781 1.09375-4.390626 1.71875-6.558594 6.667969-4.84375 11.058594 1.71875 4.390625 6.667968 6.558594 11.0625 4.839844zm0 0" data-v-688a475f></path><path d="m271.386719 341.054688c2.210937.46875 4.523437.042968 6.421875-1.1875 1.898437-1.234376 3.230468-3.171876 3.703125-5.382813 1.824219-6.660156 6.195312-12.332031 12.164062-15.796875 8.675781-4.675781 20.828125-4.003906 36.117188 1.960938 4.390625 1.71875 9.34375-.449219 11.058593-4.839844 1.71875-4.390625-.449218-9.34375-4.839843-11.058594-20.183594-7.875-37.144531-8.242188-50.425781-1.097656-10.347657 5.878906-17.847657 15.730468-20.757813 27.269531-.476563 2.210937-.050781 4.523437 1.175781 6.425781 1.230469 1.898438 3.167969 3.234375 5.382813 3.707032zm0 0" data-v-688a475f></path><path d="m8.636719 332.707031c7.765625.007813 15.527343.496094 23.234375 1.457031-4.011719 13.371094-6.089844 27.25-6.167969 41.210938v.074219c-7.691406 2.269531-15.027344 5.601562-21.800781 9.890625-2.566406 1.679687-4.035156 4.605468-3.8476565 7.667968.1875005 3.0625 2.0039065 5.785157 4.7578125 7.136719 2.753906 1.351563 6.019531 1.121094 8.558594-.601562 4.289062-2.742188 8.894531-4.960938 13.714844-6.609375 1.496093 10.363281 4.464843 20.460937 8.820312 29.984375-15.800781 10.359375-25.878906 27.480469-27.269531 46.324219 0 26.316406 26.15625 42.664062 68.265625 42.664062 18.992187 1.167969 37.859375-3.804688 53.808594-14.179688 32.359374 9.742188 66.003906 14.523438 99.792968 14.179688 33.789063.34375 67.433594-4.4375 99.789063-14.179688 15.949219 10.375 34.816406 15.347657 53.808593 14.179688 42.109376 0 68.265626-16.347656 68.265626-42.664062-1.386719-18.84375-11.46875-35.964844-27.269532-46.324219 4.355469-9.523438 7.324219-19.621094 8.820313-29.984375 4.820312 1.648437 9.425781 3.867187 13.71875 6.609375 2.535156 1.722656 5.800781 1.953125 8.554687.601562 2.753906-1.351562 4.570313-4.074219 4.761719-7.136719.1875-3.0625-1.28125-5.988281-3.851563-7.667968-6.773437-4.289063-14.109374-7.621094-21.800781-9.890625v-.074219c-.074219-13.960938-2.152343-27.839844-6.167969-41.210938 7.707032-.960937 15.46875-1.445312 23.234376-1.457031 4.714843 0 8.535156-3.820312 8.535156-8.53125 0-4.714843-3.820313-8.535156-8.535156-8.535156-9.738282.003906-19.464844.691406-29.109376 2.054687-3.585937-8.792968-7.832031-17.304687-12.695312-25.460937 5.613281-18.222656 27.605469-94.890625 8.648438-121.035156-4.027344-5.832031-10.699219-9.265625-17.785157-9.15625-12.707031.96875-25.0625 4.632812-36.242187 10.75-21.832032-30.859375-60.328125-52.539063-104.207032-59.503907-.144531-11.625-1.605468-23.195312-4.351562-34.496093-1.914062-9.46875 1.597656-19.21875 9.109375-25.296875 10.644531-7.171875 28.027344 3.925781 35 9.023437 7.382813 5.480469 17.132813 6.582031 25.550781 2.886719 8.417969-3.691406 14.210938-11.617188 15.171875-20.761719.964844-9.140625-3.050781-18.097656-10.511719-23.464843-46.835937-34.277344-81.144531-18.617188-93.777343-10.257813-25.328125 18.0625-37.265625 49.621094-30.230469 79.925781 1.695312 6.921875 2.679688 13.996094 2.929688 21.117188-47.957032 5.085937-90.621094 27.640625-114.027344 60.769531-11.109375-6.070313-23.382813-9.714844-36.003906-10.691406-7.097657-.109375-13.785157 3.332031-17.824219 9.167969-18.882813 26.035156 3 102.480468 8.597656 120.675781-4.9375 8.261719-9.242187 16.886719-12.875 25.800781-9.640625-1.359375-19.363281-2.042969-29.097656-2.046875-4.714844 0-8.535157 3.820313-8.535157 8.535156 0 4.710938 3.820313 8.53125 8.535157 8.53125zm17.066406 136.535157c0-19.207032 23.625-42.667969 51.199219-42.667969 27.574218 0 51.199218 23.460937 51.199218 42.667969 0 12.421874-11.476562 19.554687-26.363281 23 .488281-1.941407.746094-3.933594.765625-5.933594v-17.066406c0-4.714844-3.820312-8.535157-8.535156-8.535157-4.710938 0-8.53125 3.820313-8.53125 8.535157v17.066406c0 4.710937-3.820312 8.53125-8.535156 8.53125-4.710938 0-8.535156-3.820313-8.535156-8.53125v-17.066406c0-4.714844-3.820313-8.535157-8.53125-8.535157-4.714844 0-8.535157 3.820313-8.535157 8.535157v17.066406c.019531 2 .277344 3.992187.765625 5.933594-14.886718-3.445313-26.363281-10.578126-26.363281-23zm409.597656 0c0 12.421874-11.476562 19.554687-26.359375 23 .484375-1.941407.742188-3.933594.761719-5.933594v-17.066406c0-4.714844-3.820313-8.535157-8.535156-8.535157-4.710938 0-8.53125 3.820313-8.53125 8.535157v17.066406c0 4.710937-3.820313 8.53125-8.535157 8.53125-4.710937 0-8.53125-3.820313-8.53125-8.53125v-17.066406c0-4.714844-3.820312-8.535157-8.535156-8.535157-4.710937 0-8.53125 3.820313-8.53125 8.535157v17.066406c.019532 2 .273438 3.992187.761719 5.933594-14.886719-3.445313-26.363281-10.578126-26.363281-23 0-19.207032 23.625-42.667969 51.199218-42.667969 27.574219 0 51.199219 23.46875 51.199219 42.667969zm-211.789062-382.457032c-5.480469-23.34375 3.652343-47.691406 23.132812-61.667968 11.925781-7.886719 37.40625-17.109376 74.226563 9.839843 2.460937 1.800781 3.777344 4.773438 3.449218 7.808594-.324218 3.03125-2.246093 5.65625-5.035156 6.890625-2.785156 1.234375-6.023437.882812-8.484375-.914062-21.191406-15.496094-40.574219-18.835938-54.566406-9.425782-13.460937 10.074219-19.792969 27.089844-16.191406 43.511719 2.292969 9.347656 3.59375 18.910156 3.890625 28.527344-4.449219-.304688-8.917969-.515625-13.429688-.515625-1.210937 0-2.40625.082031-3.613281.105468-.308594-8.148437-1.441406-16.242187-3.378906-24.160156zm6.992187 41.121094c49.746094 0 95.496094 20.542969 119.476563 52.949219-11.4375 6.472656-24.058594 14.488281-38.035157 24.285156-51.75-23.210937-110.941406-23.238281-162.710937-.074219-14.046875-9.800781-26.714844-17.816406-38.171875-24.28125 23.917969-32.363281 69.648438-52.878906 119.441406-52.878906zm-162.476562 162.476562c-15.640625-47.894531-21.117188-96.851562-12.203125-109.148437.839843-1.402344 2.382812-2.21875 4.011719-2.125 12.175781 1.351563 23.898437 5.394531 34.316406 11.832031.074218.046875.109375.121094.183594.167969.277343.136719.5625.257813.851562.363281 16.710938 9.0625 32.8125 19.203125 48.203125 30.355469 2.511719 1.78125 5.785156 2.070313 8.566406.753906 49.726563-23.75 107.53125-23.722656 157.234375.074219 2.792969 1.332031 6.089844 1.046875 8.609375-.753906 38.21875-27.195313 68.703125-42.792969 83.625-42.792969 1.609375-.089844 3.136719.722656 3.964844 2.105469 8.960937 12.359375 3.460937 61.480468-12.25 109.5-.789063 2.40625-.46875 5.035156.875 7.179687 4.585937 7.355469 8.617187 15.039063 12.070313 22.984375-18.8125 3.929688-36.703126 11.421875-52.703126 22.070313-3.675781 2.851562-4.386718 8.121093-1.601562 11.847656s8.042969 4.535156 11.816406 1.816406c14.824219-9.511719 31.304688-16.148437 48.582032-19.566406 3.449218 11.046875 5.425781 22.503906 5.878906 34.070313-14.015625-2.644532-28.230469-4.074219-42.488282-4.277344-4.714843 0-8.535156 3.820312-8.535156 8.535156 0 4.710938 3.820313 8.53125 8.535156 8.53125 14.054688.25 28.0625 1.746094 41.851563 4.46875-1.128906 9.066406-3.578125 17.917969-7.269531 26.277344-8.269532-3.382813-17.117188-5.128906-26.050782-5.144532-38.449218 0-68.265624 32.109376-68.265624 59.734376-.03125 4.886718.972656 9.726562 2.941406 14.203124-28.761719 7.832032-58.464844 11.667969-88.273438 11.394532-29.808594.273437-59.511718-3.5625-88.277344-11.394532 1.96875-4.476562 2.972657-9.316406 2.941407-14.203124 0-27.625-29.816407-59.734376-68.265625-59.734376-8.933594.015626-17.78125 1.761719-26.050782 5.144532-3.691406-8.359375-6.140624-17.210938-7.269531-26.277344 13.792969-2.722656 27.796875-4.21875 41.855469-4.46875 4.710938 0 8.53125-3.820312 8.53125-8.53125 0-4.714844-3.820312-8.535156-8.53125-8.535156-14.261719.203125-28.480469 1.632812-42.492188 4.277344.449219-11.5625 2.425782-23.019532 5.875-34.066407 17.277344 3.414063 33.757813 10.050781 48.582032 19.5625 3.773437 2.714844 9.03125 1.910157 11.816406-1.816406 2.789062-3.722656 2.078125-8.996094-1.597656-11.847656-16.003906-10.652344-33.894532-18.144531-52.714844-22.074219 3.496094-8.066406 7.589844-15.863281 12.25-23.316406 1.339844-2.144532 1.660156-4.773438.871094-7.175782zm0 0" data-v-688a475f></path></svg> Gato </a></li><li data-v-688a475f><a class="dropdown-item" href="/editor" data-v-688a475f><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" data-v-688a475f><path d="M7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM5 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" data-v-688a475f></path><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" data-v-688a475f></path></svg> Art\xEDculo </a></li></ul>`);
+        _push(`</li><li data-v-3e157dfb><hr class="dropdown-divider" data-v-3e157dfb></li><li data-v-3e157dfb><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createPet" data-v-3e157dfb><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="-26 0 512 512" data-v-3e157dfb><path d="m179.300781 409.507812c-4.710937 0-8.53125 3.820313-8.53125 8.535157v8.53125c-.0625 14.234375 8.753907 26.996093 22.082031 31.980469 13.332032 4.984374 28.359376 1.136718 37.652344-9.640626 9.292969 10.777344 24.316406 14.625 37.648438 9.640626 13.332031-4.984376 22.144531-17.746094 22.082031-31.980469v-8.53125c0-4.714844-3.820313-8.535157-8.53125-8.535157-4.714844 0-8.535156 3.820313-8.535156 8.535157v8.53125c0 9.425781-7.640625 17.066406-17.066407 17.066406-9.425781 0-17.066406-7.640625-17.066406-17.066406v-27.203125c3.003906-1.105469 5.71875-2.882813 7.9375-5.191406l12.773438-13.65625c4.835937-4.953126 6.210937-12.332032 3.476562-18.695313-3.65625-7.621094-11.480468-12.355469-19.929687-12.054687h-25.582031c-8.449219-.300782-16.269532 4.433593-19.925782 12.054687-2.730468 6.359375-1.363281 13.738281 3.46875 18.695313l12.789063 13.65625c2.214843 2.308593 4.925781 4.085937 7.925781 5.191406v27.203125c0 9.425781-7.640625 17.066406-17.066406 17.066406-9.425782 0-17.066406-7.640625-17.066406-17.066406v-8.53125c0-4.714844-3.820313-8.535157-8.535157-8.535157zm34.125-40.851562c.101563-.398438 1.378907-1.816406 4.285157-1.816406h25.582031c2.910156 0 4.183593 1.417968 3.992187 2.019531l-12.773437 13.652344c-2.390625 1.726562-5.617188 1.726562-8.007813 0zm0 0" data-v-3e157dfb></path><path d="m122.679688 320.65625c15.1875-5.9375 27.273437-6.640625 35.949218-2.054688 6.050782 3.484376 10.488282 9.214844 12.339844 15.949219 1.074219 4.523438 5.570312 7.355469 10.113281 6.367188 4.542969-.984375 7.460938-5.429688 6.5625-9.988281-2.914062-11.539063-10.410156-21.390626-20.757812-27.265626-13.277344-7.144531-30.234375-6.777343-50.425781 1.09375-4.390626 1.71875-6.558594 6.667969-4.84375 11.058594 1.71875 4.390625 6.667968 6.558594 11.0625 4.839844zm0 0" data-v-3e157dfb></path><path d="m271.386719 341.054688c2.210937.46875 4.523437.042968 6.421875-1.1875 1.898437-1.234376 3.230468-3.171876 3.703125-5.382813 1.824219-6.660156 6.195312-12.332031 12.164062-15.796875 8.675781-4.675781 20.828125-4.003906 36.117188 1.960938 4.390625 1.71875 9.34375-.449219 11.058593-4.839844 1.71875-4.390625-.449218-9.34375-4.839843-11.058594-20.183594-7.875-37.144531-8.242188-50.425781-1.097656-10.347657 5.878906-17.847657 15.730468-20.757813 27.269531-.476563 2.210937-.050781 4.523437 1.175781 6.425781 1.230469 1.898438 3.167969 3.234375 5.382813 3.707032zm0 0" data-v-3e157dfb></path><path d="m8.636719 332.707031c7.765625.007813 15.527343.496094 23.234375 1.457031-4.011719 13.371094-6.089844 27.25-6.167969 41.210938v.074219c-7.691406 2.269531-15.027344 5.601562-21.800781 9.890625-2.566406 1.679687-4.035156 4.605468-3.8476565 7.667968.1875005 3.0625 2.0039065 5.785157 4.7578125 7.136719 2.753906 1.351563 6.019531 1.121094 8.558594-.601562 4.289062-2.742188 8.894531-4.960938 13.714844-6.609375 1.496093 10.363281 4.464843 20.460937 8.820312 29.984375-15.800781 10.359375-25.878906 27.480469-27.269531 46.324219 0 26.316406 26.15625 42.664062 68.265625 42.664062 18.992187 1.167969 37.859375-3.804688 53.808594-14.179688 32.359374 9.742188 66.003906 14.523438 99.792968 14.179688 33.789063.34375 67.433594-4.4375 99.789063-14.179688 15.949219 10.375 34.816406 15.347657 53.808593 14.179688 42.109376 0 68.265626-16.347656 68.265626-42.664062-1.386719-18.84375-11.46875-35.964844-27.269532-46.324219 4.355469-9.523438 7.324219-19.621094 8.820313-29.984375 4.820312 1.648437 9.425781 3.867187 13.71875 6.609375 2.535156 1.722656 5.800781 1.953125 8.554687.601562 2.753906-1.351562 4.570313-4.074219 4.761719-7.136719.1875-3.0625-1.28125-5.988281-3.851563-7.667968-6.773437-4.289063-14.109374-7.621094-21.800781-9.890625v-.074219c-.074219-13.960938-2.152343-27.839844-6.167969-41.210938 7.707032-.960937 15.46875-1.445312 23.234376-1.457031 4.714843 0 8.535156-3.820312 8.535156-8.53125 0-4.714843-3.820313-8.535156-8.535156-8.535156-9.738282.003906-19.464844.691406-29.109376 2.054687-3.585937-8.792968-7.832031-17.304687-12.695312-25.460937 5.613281-18.222656 27.605469-94.890625 8.648438-121.035156-4.027344-5.832031-10.699219-9.265625-17.785157-9.15625-12.707031.96875-25.0625 4.632812-36.242187 10.75-21.832032-30.859375-60.328125-52.539063-104.207032-59.503907-.144531-11.625-1.605468-23.195312-4.351562-34.496093-1.914062-9.46875 1.597656-19.21875 9.109375-25.296875 10.644531-7.171875 28.027344 3.925781 35 9.023437 7.382813 5.480469 17.132813 6.582031 25.550781 2.886719 8.417969-3.691406 14.210938-11.617188 15.171875-20.761719.964844-9.140625-3.050781-18.097656-10.511719-23.464843-46.835937-34.277344-81.144531-18.617188-93.777343-10.257813-25.328125 18.0625-37.265625 49.621094-30.230469 79.925781 1.695312 6.921875 2.679688 13.996094 2.929688 21.117188-47.957032 5.085937-90.621094 27.640625-114.027344 60.769531-11.109375-6.070313-23.382813-9.714844-36.003906-10.691406-7.097657-.109375-13.785157 3.332031-17.824219 9.167969-18.882813 26.035156 3 102.480468 8.597656 120.675781-4.9375 8.261719-9.242187 16.886719-12.875 25.800781-9.640625-1.359375-19.363281-2.042969-29.097656-2.046875-4.714844 0-8.535157 3.820313-8.535157 8.535156 0 4.710938 3.820313 8.53125 8.535157 8.53125zm17.066406 136.535157c0-19.207032 23.625-42.667969 51.199219-42.667969 27.574218 0 51.199218 23.460937 51.199218 42.667969 0 12.421874-11.476562 19.554687-26.363281 23 .488281-1.941407.746094-3.933594.765625-5.933594v-17.066406c0-4.714844-3.820312-8.535157-8.535156-8.535157-4.710938 0-8.53125 3.820313-8.53125 8.535157v17.066406c0 4.710937-3.820312 8.53125-8.535156 8.53125-4.710938 0-8.535156-3.820313-8.535156-8.53125v-17.066406c0-4.714844-3.820313-8.535157-8.53125-8.535157-4.714844 0-8.535157 3.820313-8.535157 8.535157v17.066406c.019531 2 .277344 3.992187.765625 5.933594-14.886718-3.445313-26.363281-10.578126-26.363281-23zm409.597656 0c0 12.421874-11.476562 19.554687-26.359375 23 .484375-1.941407.742188-3.933594.761719-5.933594v-17.066406c0-4.714844-3.820313-8.535157-8.535156-8.535157-4.710938 0-8.53125 3.820313-8.53125 8.535157v17.066406c0 4.710937-3.820313 8.53125-8.535157 8.53125-4.710937 0-8.53125-3.820313-8.53125-8.53125v-17.066406c0-4.714844-3.820312-8.535157-8.535156-8.535157-4.710937 0-8.53125 3.820313-8.53125 8.535157v17.066406c.019532 2 .273438 3.992187.761719 5.933594-14.886719-3.445313-26.363281-10.578126-26.363281-23 0-19.207032 23.625-42.667969 51.199218-42.667969 27.574219 0 51.199219 23.46875 51.199219 42.667969zm-211.789062-382.457032c-5.480469-23.34375 3.652343-47.691406 23.132812-61.667968 11.925781-7.886719 37.40625-17.109376 74.226563 9.839843 2.460937 1.800781 3.777344 4.773438 3.449218 7.808594-.324218 3.03125-2.246093 5.65625-5.035156 6.890625-2.785156 1.234375-6.023437.882812-8.484375-.914062-21.191406-15.496094-40.574219-18.835938-54.566406-9.425782-13.460937 10.074219-19.792969 27.089844-16.191406 43.511719 2.292969 9.347656 3.59375 18.910156 3.890625 28.527344-4.449219-.304688-8.917969-.515625-13.429688-.515625-1.210937 0-2.40625.082031-3.613281.105468-.308594-8.148437-1.441406-16.242187-3.378906-24.160156zm6.992187 41.121094c49.746094 0 95.496094 20.542969 119.476563 52.949219-11.4375 6.472656-24.058594 14.488281-38.035157 24.285156-51.75-23.210937-110.941406-23.238281-162.710937-.074219-14.046875-9.800781-26.714844-17.816406-38.171875-24.28125 23.917969-32.363281 69.648438-52.878906 119.441406-52.878906zm-162.476562 162.476562c-15.640625-47.894531-21.117188-96.851562-12.203125-109.148437.839843-1.402344 2.382812-2.21875 4.011719-2.125 12.175781 1.351563 23.898437 5.394531 34.316406 11.832031.074218.046875.109375.121094.183594.167969.277343.136719.5625.257813.851562.363281 16.710938 9.0625 32.8125 19.203125 48.203125 30.355469 2.511719 1.78125 5.785156 2.070313 8.566406.753906 49.726563-23.75 107.53125-23.722656 157.234375.074219 2.792969 1.332031 6.089844 1.046875 8.609375-.753906 38.21875-27.195313 68.703125-42.792969 83.625-42.792969 1.609375-.089844 3.136719.722656 3.964844 2.105469 8.960937 12.359375 3.460937 61.480468-12.25 109.5-.789063 2.40625-.46875 5.035156.875 7.179687 4.585937 7.355469 8.617187 15.039063 12.070313 22.984375-18.8125 3.929688-36.703126 11.421875-52.703126 22.070313-3.675781 2.851562-4.386718 8.121093-1.601562 11.847656s8.042969 4.535156 11.816406 1.816406c14.824219-9.511719 31.304688-16.148437 48.582032-19.566406 3.449218 11.046875 5.425781 22.503906 5.878906 34.070313-14.015625-2.644532-28.230469-4.074219-42.488282-4.277344-4.714843 0-8.535156 3.820312-8.535156 8.535156 0 4.710938 3.820313 8.53125 8.535156 8.53125 14.054688.25 28.0625 1.746094 41.851563 4.46875-1.128906 9.066406-3.578125 17.917969-7.269531 26.277344-8.269532-3.382813-17.117188-5.128906-26.050782-5.144532-38.449218 0-68.265624 32.109376-68.265624 59.734376-.03125 4.886718.972656 9.726562 2.941406 14.203124-28.761719 7.832032-58.464844 11.667969-88.273438 11.394532-29.808594.273437-59.511718-3.5625-88.277344-11.394532 1.96875-4.476562 2.972657-9.316406 2.941407-14.203124 0-27.625-29.816407-59.734376-68.265625-59.734376-8.933594.015626-17.78125 1.761719-26.050782 5.144532-3.691406-8.359375-6.140624-17.210938-7.269531-26.277344 13.792969-2.722656 27.796875-4.21875 41.855469-4.46875 4.710938 0 8.53125-3.820312 8.53125-8.53125 0-4.714844-3.820312-8.535156-8.53125-8.535156-14.261719.203125-28.480469 1.632812-42.492188 4.277344.449219-11.5625 2.425782-23.019532 5.875-34.066407 17.277344 3.414063 33.757813 10.050781 48.582032 19.5625 3.773437 2.714844 9.03125 1.910157 11.816406-1.816406 2.789062-3.722656 2.078125-8.996094-1.597656-11.847656-16.003906-10.652344-33.894532-18.144531-52.714844-22.074219 3.496094-8.066406 7.589844-15.863281 12.25-23.316406 1.339844-2.144532 1.660156-4.773438.871094-7.175782zm0 0" data-v-3e157dfb></path></svg> Gato </a></li><li data-v-3e157dfb><a class="dropdown-item" href="/editor" data-v-3e157dfb><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" data-v-3e157dfb><path d="M7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM5 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" data-v-3e157dfb></path><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" data-v-3e157dfb></path></svg> Art\xEDculo </a></li></ul>`);
         _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
-          to: "/@" + ((_a = _ctx.userLogged) == null ? void 0 : _a.username),
+          to: "/@" + ((_a = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _a.username),
           class: "d-inline-block text-decoration-none text-dark btn-user-url"
         }, {
           default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
             var _a2, _b, _c, _d;
             if (_push2) {
-              _push2(`<span class="fw-bold ms-3 me-2 d-none d-sm-inline-block" data-v-688a475f${_scopeId}>${serverRenderer.exports.ssrInterpolate((_a2 = _ctx.userLogged) == null ? void 0 : _a2.name)}</span>`);
+              _push2(`<span class="fw-bold ms-3 me-2 d-none d-sm-inline-block" data-v-3e157dfb${_scopeId}>${serverRenderer.exports.ssrInterpolate((_a2 = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _a2.name)}</span>`);
               _push2(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
-                image: (_b = _ctx.userLogged) == null ? void 0 : _b.image,
+                image: (_b = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _b.image,
                 class: "user-img-small"
               }, null, _parent2, _scopeId));
             } else {
               return [
-                vue_cjs_prod.createVNode("span", { class: "fw-bold ms-3 me-2 d-none d-sm-inline-block" }, vue_cjs_prod.toDisplayString((_c = _ctx.userLogged) == null ? void 0 : _c.name), 1),
+                vue_cjs_prod.createVNode("span", { class: "fw-bold ms-3 me-2 d-none d-sm-inline-block" }, vue_cjs_prod.toDisplayString((_c = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _c.name), 1),
                 vue_cjs_prod.createVNode(ImagePreloader, {
-                  image: (_d = _ctx.userLogged) == null ? void 0 : _d.image,
+                  image: (_d = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _d.image,
                   class: "user-img-small"
                 }, null, 8, ["image"])
               ];
@@ -13792,9 +13753,9 @@ const _sfc_main$2 = /* @__PURE__ */ Object.assign(__default__$1, {
           }),
           _: 1
         }, _parent));
-        _push(`<span data-bs-toggle="dropdown" aria-expanded="false" class="rounded-3 p-3 more-options" data-v-688a475f><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16" data-v-688a475f><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" data-v-688a475f></path></svg></span><ul class="dropdown-menu shadow" data-v-688a475f><li data-v-688a475f><a class="dropdown-item" href="#" data-v-688a475f>Action</a></li><li data-v-688a475f><a class="dropdown-item" href="#" data-v-688a475f>Another action</a></li><li data-v-688a475f><a class="dropdown-item" href="#" data-v-688a475f>Something else here</a></li><li data-v-688a475f><hr class="dropdown-divider" data-v-688a475f></li><li data-v-688a475f><a class="dropdown-item" href="#" data-v-688a475f>Cerrar sesi\xF3n</a></li></ul></div>`);
+        _push(`<span data-bs-toggle="dropdown" aria-expanded="false" class="rounded-3 p-3 more-options" data-v-3e157dfb><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16" data-v-3e157dfb><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" data-v-3e157dfb></path></svg></span><ul class="dropdown-menu shadow" data-v-3e157dfb><li data-v-3e157dfb><a class="dropdown-item" href="#" data-v-3e157dfb>Action</a></li><li data-v-3e157dfb><a class="dropdown-item" href="#" data-v-3e157dfb>Another action</a></li><li data-v-3e157dfb><a class="dropdown-item" href="#" data-v-3e157dfb>Something else here</a></li><li data-v-3e157dfb><hr class="dropdown-divider" data-v-3e157dfb></li><li data-v-3e157dfb><a class="dropdown-item" href="#" data-v-3e157dfb>Cerrar sesi\xF3n</a></li></ul></div>`);
       } else {
-        _push(`<a${serverRenderer.exports.ssrRenderAttr("href", vue_cjs_prod.unref(mainStore).backendUrl + "/auth/login/facebook")} class="btn btn-primary" data-v-688a475f> Iniciar sesi\xF3n</a>`);
+        _push(`<a${serverRenderer.exports.ssrRenderAttr("href", vue_cjs_prod.unref(mainStore).backendUrl + "/auth/login/facebook")} class="btn btn-primary" data-v-3e157dfb> Iniciar sesi\xF3n</a>`);
       }
       _push(`</div></div></div>`);
     };
@@ -13806,7 +13767,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/HeaderComponent.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const HeaderComponent = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-688a475f"]]);
+const HeaderComponent = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-3e157dfb"]]);
 const _sfc_main$1 = {
   setup() {
     const mainStore = useMainStore();
@@ -13912,7 +13873,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     proceso += JSON.stringify(mainStore.userLogged);
     proceso += "fin \n ";
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLink = __nuxt_component_0$4;
+      const _component_NuxtLink = __nuxt_component_0$3;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
         id: "app",
         class: "container-xxl px-0"
