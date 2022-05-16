@@ -8515,7 +8515,7 @@ function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   const _component_NuxtLink = __nuxt_component_0$3;
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   const _component_post_menu = vue_cjs_prod.resolveComponent("post-menu");
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card card-post shadow-sm f-rubick mb-4" }, _attrs))} data-v-64d7ef71><div class="card-body pb-0" data-v-64d7ef71><div class="row g-0" data-v-64d7ef71><div class="col-auto" data-v-64d7ef71>`);
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card card-post shadow-sm f-rubick mb-4" }, _attrs))} data-v-230541b2><div class="card-body pb-0" data-v-230541b2><div class="row g-0" data-v-230541b2><div class="col-auto" data-v-230541b2>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
     to: "/@" + $props.post.user.username
   }, {
@@ -8536,7 +8536,7 @@ function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`</div><div class="col px-2" data-v-64d7ef71>`);
+  _push(`</div><div class="col px-2" data-v-230541b2>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
     to: "/@" + $props.post.user.username,
     class: "name-user-post fw-bold text-decoration-none text-dark"
@@ -8552,21 +8552,21 @@ function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-64d7ef71><small data-v-64d7ef71>${serverRenderer.exports.ssrInterpolate(_ctx.$t("timeAgo", { date: $props.post.created_at }))}</small></span></div><div class="col-auto" data-v-64d7ef71><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-64d7ef71><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
+  _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-230541b2><small data-v-230541b2>${serverRenderer.exports.ssrInterpolate(_ctx.$tc("timeAgo", { date: $props.post.created_at }))}</small></span></div><div class="col-auto" data-v-230541b2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-230541b2><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
               C7.934,13.835,6.157,12.061,3.968,12.061z M16.233,12.061c-2.188,0-3.968,1.773-3.968,3.965c0,2.192,1.778,3.967,3.968,3.967
               s3.97-1.772,3.97-3.967C20.201,13.835,18.423,12.061,16.233,12.061z M28.09,12.061c-2.192,0-3.969,1.774-3.969,3.967
-              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-64d7ef71></path></svg>`);
+              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-230541b2></path></svg>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_post_menu, {
     "post-id": $props.post.id
   }, null, _parent));
-  _push(`</div></div><p class="fs-6 mt-1 mb-1 text-muted" data-v-64d7ef71>${serverRenderer.exports.ssrInterpolate($props.post.simple_post.description)}</p><div class="my-2 position-relative" data-v-64d7ef71>`);
+  _push(`</div></div><p class="fs-6 mt-1 mb-1 text-muted" data-v-230541b2>${serverRenderer.exports.ssrInterpolate($props.post.simple_post.description)}</p><div class="my-2 position-relative" data-v-230541b2>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_image_preloader, {
     aspect: $props.post.simple_post.image.aspect_ratio,
     option: "url_lg",
     image: $props.post.simple_post.image,
     class: "rounded-5 w-100 shadow-sm"
   }, null, _parent));
-  _push(`<div class="position-absolute top-0 start-0 end-0 bottom-0" data-v-64d7ef71></div></div></div></div>`);
+  _push(`<div class="position-absolute top-0 start-0 end-0 bottom-0" data-v-230541b2></div></div></div></div>`);
 }
 const _sfc_setup$A = _sfc_main$A.setup;
 _sfc_main$A.setup = (props, ctx) => {
@@ -8574,7 +8574,7 @@ _sfc_main$A.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PostComponent.vue");
   return _sfc_setup$A ? _sfc_setup$A(props, ctx) : void 0;
 };
-const SimplePostComponent = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["ssrRender", _sfc_ssrRender$o], ["__scopeId", "data-v-64d7ef71"]]);
+const SimplePostComponent = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["ssrRender", _sfc_ssrRender$o], ["__scopeId", "data-v-230541b2"]]);
 const _sfc_main$z = {
   components: {
     ImagePreloader
@@ -12906,28 +12906,11 @@ const loadMessages = async () => {
 };
 const resolveNuxtI18nOptions = async (context) => {
   const nuxtI18nOptions = Object({});
-  const vueI18nOptionsLoader = async (context2) => Object({ "fallbackLocale": "en", "messages": Object({ "es": Object({ "home": "Inicio", "profile": "Mi perfil", "myPets": "Mis gatos", "todayThereIsNewPosts": "Hoy hay nuevas publicaciones para ver", "minutesAgo": "Hace un momento | Hace un minuto | Hace {n} minutos", "hoursAgo": "Hace una hora | Hace {n} horas", "daysAgo": "Hace un d\xEDa | Hace {n} d\xEDas", "monthsName": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"], "date": ({ named, linked }) => `${named("day")} de ${linked(`monthsName.${named("month")}`)} del ${named("year")} a las ${named("hours")}:${named("minutes")} ${named("ampm")}`, "seePost": "Ver publicaci\xF3n", "deleteComment": "Eliminar publicaci\xF3n", "rusDeleteComment": "\xBFEsta seguro de eliminar este comentario?", "cancel": "Cancelar", "delete": "Eliminar", "editComment": "Editar comentario", "save": "Guardar", "search": "Buscar", "like": "Me encanta", "peopleLikedComment": "These people liked this comment", "previousComments": "Comentarios anteriores", "timeAgo": ({ named, linked }) => {
+  const vueI18nOptionsLoader = async (context2) => Object({ "fallbackLocale": "es", "messages": Object({ "es": Object({ "home": "Inicio", "profile": "Mi perfil", "myPets": "Mis gatos", "todayThereIsNewPosts": "Hoy hay nuevas publicaciones para ver", "minutesAgo": "Hace un momento | Hace un minuto | Hace {n} minutos", "hoursAgo": "Hace una hora | Hace {n} horas", "daysAgo": "Hace un d\xEDa | Hace {n} d\xEDas", "monthsName": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"], "date": ({ named, linked }) => ` hey ${named("day")} de ${linked(`monthsName.${named("month")}`)} del ${named("year")} a las ${named("hours")}:${named("minutes")} ${named("ampm")}`, "seePost": "Ver publicaci\xF3n", "deleteComment": "Eliminar publicaci\xF3n", "rusDeleteComment": "\xBFEsta seguro de eliminar este comentario?", "cancel": "Cancelar", "delete": "Eliminar", "editComment": "Editar comentario", "save": "Guardar", "search": "Buscar", "like": "Me encanta", "peopleLikedComment": "These people liked this comment", "previousComments": "Comentarios anteriores", "timeAgo": ({ named, linked }) => {
     const ahora = Date.now();
     const date = named("date");
-    let diferencia = Math.trunc((ahora / 1e3 - date) / 60);
-    if (diferencia < 60) {
-      return linked("message.minutesAgo", diferencia);
-    }
-    diferencia = Math.trunc(diferencia / 60);
-    if (diferencia < 24) {
-      return linked("hoursAgo", diferencia);
-    }
-    diferencia = Math.trunc(diferencia / 24);
-    if (diferencia < 14) {
-      return linked("daysAgo", diferencia);
-    }
-    const fecha = new Date(date * 1e3);
-    const mm = fecha.getMinutes();
-    const h2 = fecha.getHours();
-    const d = fecha.getDate();
-    const m = fecha.getMonth();
-    const y = fecha.getFullYear();
-    return linked("date", { year: y, month: m, day: d, hours: h2 % 12, minutes: mm < 10 ? "0" + mm : mm, ampm: h2 > 11 ? "PM" : "AM" });
+    const diferencia = Math.trunc((ahora / 1e3 - date) / 60);
+    return `${diferencia}`;
   } }), "en": Object({ "home": "Home", "profile": "My profile", "myPets": "My cats", "todayThereIsNewPosts": "Today there is new posts to see", "minutesAgo": "A momment ago | A minute ago | {n} minutes ago", "hoursAgo": "An hour ago | {n} hours ago", "daysAgo": "A day ago | {n} days ago", "monthsName": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "date": ({ named, linked }) => `${named("day")} ${linked(`monthsName.${named("month")}`)} ${named("year")} at ${named("hours")}:${named("minutes")} ${named("ampm")}`, "seePost": "See post" }) }) });
   nuxtI18nOptions.vueI18n = await vueI18nOptionsLoader();
   nuxtI18nOptions.locales = ["en", "es"];
