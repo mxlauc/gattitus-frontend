@@ -10552,14 +10552,9 @@ const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$a, {
       }, _attrs), {
         content: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="contenedorGifs" data-v-f4e2d094${_scopeId}><div class="contenedorInput" data-v-f4e2d094${_scopeId}><input type="text"${serverRenderer.exports.ssrRenderAttr("placeholder", vue_cjs_prod.unref(t)("search"))} data-v-f4e2d094${_scopeId}></div><div style="${serverRenderer.exports.ssrRenderStyle({ "height": "344px", "overflow": "auto" })}" data-v-f4e2d094${_scopeId}><div class="row g-0"${serverRenderer.exports.ssrRenderAttr("id", ["masonry-gifs-row" + __props.postId])} data-v-f4e2d094${_scopeId}><!--[-->`);
+            _push2(`<div class="contenedorGifs" data-v-1105c813${_scopeId}><div class="contenedorInput" data-v-1105c813${_scopeId}><input type="text"${serverRenderer.exports.ssrRenderAttr("placeholder", vue_cjs_prod.unref(t)("search"))} data-v-1105c813${_scopeId}></div><div style="${serverRenderer.exports.ssrRenderStyle({ "height": "344px", "overflow": "auto" })}" data-v-1105c813${_scopeId}><div class="row g-0"${serverRenderer.exports.ssrRenderAttr("id", ["masonry-gifs-row" + __props.postId])} data-v-1105c813${_scopeId}><!--[-->`);
             serverRenderer.exports.ssrRenderList(_ctx.gifs, (gif) => {
-              _push2(`<div class="col-6" style="${serverRenderer.exports.ssrRenderStyle({ aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1] })}" data-v-f4e2d094${_scopeId}>`);
-              _push2(serverRenderer.exports.ssrRenderComponent(GifSearchedComponent, {
-                "post-id": __props.postId,
-                img: gif.media[0].nanogif
-              }, null, _parent2, _scopeId));
-              _push2(`</div>`);
+              _push2(`<div class="col-6" style="${serverRenderer.exports.ssrRenderStyle({ aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1] })}" data-v-1105c813${_scopeId}></div>`);
             });
             _push2(`<!--]--></div></div></div>`);
           } else {
@@ -10584,12 +10579,7 @@ const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$a, {
                         key: gif,
                         style: { aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1] },
                         onClick: ($event) => _ctx.imprimir(gif.media[0].tinygif.url)
-                      }, [
-                        vue_cjs_prod.createVNode(GifSearchedComponent, {
-                          "post-id": __props.postId,
-                          img: gif.media[0].nanogif
-                        }, null, 8, ["post-id", "img"])
-                      ], 12, ["onClick"]);
+                      }, null, 12, ["onClick"]);
                     }), 128))
                   ], 8, ["id"])
                 ])
@@ -10599,7 +10589,7 @@ const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$a, {
         }),
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="p-1" viewBox="0 0 16 16" data-v-f4e2d094${_scopeId}><path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z" data-v-f4e2d094${_scopeId}></path></svg>`);
+            _push2(`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="p-1" viewBox="0 0 16 16" data-v-1105c813${_scopeId}><path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z" data-v-1105c813${_scopeId}></path></svg>`);
           } else {
             return [
               (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
@@ -10627,7 +10617,7 @@ _sfc_main$D.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/GifPickerComponent.vue");
   return _sfc_setup$D ? _sfc_setup$D(props, ctx) : void 0;
 };
-const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-f4e2d094"]]);
+const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-1105c813"]]);
 const __default__$9 = {
   components: {
     GifPickerComponent,
