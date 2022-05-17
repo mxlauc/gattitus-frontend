@@ -10614,8 +10614,12 @@ const __default__$9 = {
   data() {
     return {
       gifSeleccionado: null,
-      mainStore: useMainStore()
+      mainStore: useMainStore(),
+      displayGifPicker: false
     };
+  },
+  mounted() {
+    this.displayGifPicker = true;
   },
   props: ["postId"],
   emits: ["commented", "contadorActualizado"],
@@ -10669,23 +10673,27 @@ const _sfc_main$C = /* @__PURE__ */ Object.assign(__default__$9, {
     const mainStore = useMainStore();
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-a265282e><div class="row g-0 border-top pt-1" data-v-a265282e>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-66f4fa25><div class="row g-0 border-top pt-1" data-v-66f4fa25>`);
       if (_ctx.gifSeleccionado) {
-        _push(`<div class="col-auto position-relative mx-auto" data-v-a265282e><img${serverRenderer.exports.ssrRenderAttr("src", _ctx.gifSeleccionado)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "100px", "border-radius": "5px" })}" data-v-a265282e><button type="button" class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle" aria-label="Close" data-v-a265282e></button></div>`);
+        _push(`<div class="col-auto position-relative mx-auto" data-v-66f4fa25><img${serverRenderer.exports.ssrRenderAttr("src", _ctx.gifSeleccionado)} style="${serverRenderer.exports.ssrRenderStyle({ "height": "100px", "border-radius": "5px" })}" data-v-66f4fa25><button type="button" class="btn-close bg-white shadow position-absolute top-0 end-0 m-1 p-2 rounded-circle" aria-label="Close" data-v-66f4fa25></button></div>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div>`);
       if (vue_cjs_prod.unref(mainStore).userLogged) {
-        _push(`<div class="row g-0 pb-2 pt-1" data-v-a265282e><div class="col col-auto" data-v-a265282e>`);
+        _push(`<div class="row g-0 pb-2 pt-1" data-v-66f4fa25><div class="col col-auto" data-v-66f4fa25>`);
         _push(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
           image: (_a = vue_cjs_prod.unref(mainStore).userLogged) == null ? void 0 : _a.image,
           aspect: "1",
           class: "imagenUsuario shadow"
         }, null, _parent));
-        _push(`</div><div class="col ms-2" data-v-a265282e><div class="row g-0 contenedorTextarea" data-v-a265282e><div class="col" data-v-a265282e><span class="textarea text-break" contenteditable data-v-a265282e></span></div><div class="col col-auto guide-4" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#f50" })}" data-v-a265282e>`);
-        _push(serverRenderer.exports.ssrRenderComponent(GifPickerComponent, { "post-id": __props.postId }, null, _parent));
-        _push(`<svg class="pe-2" fill="currentColor" role="button" width="35" height="35" viewBox="0 0 24 24" data-v-a265282e><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill-rule="evenodd" stroke="none" data-v-a265282e></path></svg></div></div></div></div>`);
+        _push(`</div><div class="col ms-2" data-v-66f4fa25><div class="row g-0 contenedorTextarea" data-v-66f4fa25><div class="col" data-v-66f4fa25><span class="textarea text-break" contenteditable data-v-66f4fa25></span></div><div class="col col-auto guide-4" style="${serverRenderer.exports.ssrRenderStyle({ "color": "#f50" })}" data-v-66f4fa25>`);
+        if (_ctx.displayGifPicker) {
+          _push(serverRenderer.exports.ssrRenderComponent(GifPickerComponent, { "post-id": __props.postId }, null, _parent));
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<svg class="pe-2" fill="currentColor" role="button" width="35" height="35" viewBox="0 0 24 24" data-v-66f4fa25><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill-rule="evenodd" stroke="none" data-v-66f4fa25></path></svg></div></div></div></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -10699,7 +10707,7 @@ _sfc_main$C.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/NewComment.vue");
   return _sfc_setup$C ? _sfc_setup$C(props, ctx) : void 0;
 };
-const NewComment = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["__scopeId", "data-v-a265282e"]]);
+const NewComment = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["__scopeId", "data-v-66f4fa25"]]);
 const _sfc_main$B = {
   components: {
     ComentarioComponent,
