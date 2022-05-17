@@ -16,8 +16,12 @@
 import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
-const result = await fetchWithCookie(`${mainStore.backendUrl}/api/pets`)
-const pets = result.data
+
+let pets = null
+await fetchWithCookie(`${mainStore.backendUrl}/api/pets`)
+    .then(response => {
+        pets = response.data.data
+    }).catch(error => {})
 
 </script>
 <script>

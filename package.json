@@ -14,7 +14,6 @@
     "@editorjs/list": "^1.7.0",
     "@html-eslint/eslint-plugin": "^0.13.1",
     "@html-eslint/parser": "^0.13.1",
-    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
     "@pinia/nuxt": "^0.1.9",
     "@vue/cli-plugin-babel": "^5.0.4",
     "@vue/cli-plugin-eslint": "^5.0.4",
@@ -33,9 +32,8 @@
     "sass": "^1.38.0",
     "sass-loader": "^12.1.0",
     "vue": "^3.2.33",
-    "vue3-popper": "^1.4.2"
-  },
-  "dependencies": {
-    "cookie": "^0.5.0"
+    "vue3-popper": "^1.4.2",
+    "cookie": "^0.5.0",
+    "vue-i18n": "^9.2.0-beta.35"
   }
 }

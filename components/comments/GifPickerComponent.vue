@@ -19,7 +19,7 @@
                 <div class="contenedorInput">
                     <input
                         type="text"
-                        :placeholder="$t('search')"
+                        :placeholder="t('search')"
                         @keyup="escribir"
                         ref="input">
                 </div>
@@ -44,13 +44,15 @@
     </Popper>
 </template>
 <script setup>
+import { t } from "~/i18n/i18n2"
+
 let Masonry = Object
 if (process.client) {
     Masonry = (await import("masonry-layout")).default
 }
 </script>
 <script>
-import GifSearchedComponent from "./GifSearchedComponent.vue"
+import GifSearchedComponent from "~/components/comments/GifSearchedComponent.vue"
 import Popper from "vue3-popper"
 import axios from "axios"
 

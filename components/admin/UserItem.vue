@@ -16,10 +16,13 @@
             </NuxtLink>
         </td>
         <td>
-            {{ $t("timeAgo", {date: user.created_at}) }}
+            {{ timeAgo(user.created_at) }}
         </td>
     </tr>
 </template>
+<script setup>
+import { t, timeAgo } from "~/i18n/i18n2"
+</script>
 <script>
 export default {
     props: ["user"]

@@ -53,8 +53,8 @@
                         role="button"
                         @click="like"
                         :class="{'text-primary': miLike}"
-                        v-if="userLogged">{{ $t('like') }}</span>
-                    <span v-if="userLogged && contador"> ·</span>
+                        v-if="mainStore.userLogged">{{ t('like') }}</span>
+                    <span v-if="mainStore.userLogged && contador"> ·</span>
                     <span
                         class="fw-bold px-1"
                         v-if="contador"
@@ -62,13 +62,13 @@
                         role="button"> {{ contador }} </span>
                     <span
                         class="ms-3"
-                        v-if="userLogged || contador" />
-                    <span>{{ $t("timeAgo", {date: comentario.created_at}) }}</span>
+                        v-if="mainStore.userLogged || contador" />
+                    <span>{{ timeAgo(comentario.created_at) }}</span>
                 </div>
             </div>
             <div
                 class="col col-auto"
-                v-if="!hideOptions && userLogged && userLogged.id == comentario.user.id">
+                v-if="!hideOptions && mainStore.userLogged && mainStore.userLogged.id == comentario.user.id">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -96,7 +96,7 @@
                                     fill-rule="evenodd"
                                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                             </svg>
-                            {{ $t('editComment') }}
+                            {{ t('editComment') }}
                         </button>
                     </li>
                     <li>
@@ -112,7 +112,7 @@
                                 viewBox="0 0 16 16">
                                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
                             </svg>
-                            {{ $t('deleteComment') }}
+                            {{ t('deleteComment') }}
                         </button>
                     </li>
                 </ul>
@@ -135,7 +135,12 @@
             :url="mainStore.backendUrl + '/api/comments/' + comentario.id + '/reactions'" />
     </div>
 </template>
+<script setup>
+import { useMainStore } from "~/store/mainStore"
+import { t, timeAgo } from "~/i18n/i18n2"
 
+const mainStore = useMainStore()
+</script>
 <script>
 
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
@@ -143,7 +148,6 @@ import DeleteCommentDialog from "~/components/comments/DeleteCommentDialog.vue"
 import EditCommentDialog from "~/components/comments/EditCommentDialog.vue"
 import ShowReactionsDialog from "~/components/ShowReactionsDialog.vue"
 import axios from "axios"
-import { useMainStore } from "~/store/mainStore"
 
 export default {
     components: {
@@ -151,12 +155,6 @@ export default {
         DeleteCommentDialog,
         EditCommentDialog,
         ShowReactionsDialog,
-    },
-    setup () {
-        const mainStore = useMainStore()
-        return {
-            mainStore
-        }
     },
     data () {
         return {
@@ -194,11 +192,6 @@ export default {
         commentEdited (c) {
             this.$emit("commentEdited", c)
         }
-    },
-    computed: {
-        userLogged () {
-            return this.mainStore?.userLogged
-        },
     },
 }
 </script>

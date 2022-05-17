@@ -45,7 +45,7 @@ const messages = {
         const m = fecha.getMonth()
         const y = fecha.getFullYear()
 
-        return linked("date", { year: y, month: m, day: d, hours: h % 12, minutes: mm < 10 ? "0" + mm : mm, ampm: h > 11 ? "PM" : "AM" })
+        return linked("date", { year: y, month: m, day: d, hours: h % 12, minutes: ((mm < 10) ? ("0" + mm) : (mm)), ampm: (h > 11 ? "PM" : "AM") })
     },
 }
 

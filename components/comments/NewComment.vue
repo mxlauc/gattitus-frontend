@@ -17,10 +17,10 @@
 
         <div
             class="row g-0 pb-2 pt-1"
-            v-if="userLogged">
+            v-if="mainStore.userLogged">
             <div class="col col-auto">
                 <image-preloader
-                    :image="userLogged.image"
+                    :image="mainStore.userLogged?.image"
                     aspect="1"
                     class="imagenUsuario shadow" />
             </div>
@@ -37,6 +37,7 @@
                         class="col col-auto guide-4"
                         style="color: #f50">
                         <gif-picker-component
+                        v-if="displayGifPicker"
                             :post-id="postId"
                             @gif-seleccionado="recibirGif" />
                         <svg
@@ -58,35 +59,36 @@
         </div>
     </div>
 </template>
-<script>
-import GifPickerComponent from "@/components/comments/GifPickerComponent.vue"
-import ImagePreloader from "@/components/images/ImagePreloader.vue"
-import axios from "axios"
+<script setup>
 import { useMainStore } from "~/store/mainStore"
+const mainStore = useMainStore()
+</script>
+<script>
+import { useMainStore } from "~/store/mainStore"
+
+import GifPickerComponent from "~/components/comments/GifPickerComponent.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
+import axios from "axios"
+
+
 
 export default {
     components: {
         GifPickerComponent,
         ImagePreloader,
     },
-    setup () {
-        const mainStore = useMainStore()
-        return {
-            mainStore
-        }
-    },
     data () {
         return {
             gifSeleccionado: null,
+            mainStore : useMainStore(),
+            displayGifPicker:false,
         }
+    },
+    mounted(){
+        this.displayGifPicker = true
     },
     props: ["postId"],
     emits: ["commented", "contadorActualizado"],
-    computed: {
-        userLogged () {
-            return this.mainStore?.userLogged
-        }
-    },
     methods: {
         onKeyDown (e) {
             if (e.keyCode === 13 && !e.shiftKey) {
@@ -122,7 +124,7 @@ export default {
                         description: texto,
                         created_at: Math.trunc(Date.now() / 1000),
                         gif_url: this.gifSeleccionado,
-                        user: this.userLogged,
+                        user: this.mainStore.userLogged,
                     })
                     this.$emit("contadorActualizado", response.data.comments_count)
 

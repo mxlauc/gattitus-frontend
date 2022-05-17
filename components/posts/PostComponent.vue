@@ -18,7 +18,7 @@
                     <span
                         class="d-block text-black-50 fs-6"
                         role="button">
-                        <small>{{ $t("timeAgo", {date: post.created_at}) }}</small>
+                        <small>{{ timeAgo( post.created_at) }}</small>
                     </span>
                 </div>
                 <div class="col-auto">
@@ -44,10 +44,10 @@
             <p class="fs-6 mt-1 mb-1 text-muted">
                 {{ post.simple_post.description }}
             </p>
-            <PetIconList
+            <!--PetIconList
                 v-if="post.pets_count"
                 :pets="post.pets"
-                :pets-count="post.pets_count" />
+                :pets-count="post.pets_count" /-->
             <div class="my-2 position-relative">
                 <image-preloader
                     :aspect="post.simple_post.image.aspect_ratio"
@@ -73,6 +73,10 @@
         </div>
     </div>
 </template>
+<script setup>
+import { t, timeAgo } from "~/i18n/i18n2"
+
+</script>
 <script>
 
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
@@ -140,11 +144,6 @@ export default {
         },
         doubleclick () {
             this.reactLove()
-        },
-    },
-    computed: {
-        userLogged () {
-            return this.mainStore?.userLogged
         },
     },
 }

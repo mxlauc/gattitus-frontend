@@ -34,15 +34,15 @@
                 </NuxtLink>
             </div>
             <div class="col d-none d-lg-block ms-3">
-                <template v-if="userLogged">
+                <template v-if="mainStore.userLogged">
                     <h5 class="fq-bold mb-0 f-fredoka">
                         {{ saludo }}
                     </h5>
-                    <span>{{ $t('todayThereIsNewPosts') }}</span>
+                    <span>{{ t('todayThereIsNewPosts') }}</span>
                 </template>
             </div>
             <div class="col-auto ms-auto">
-                <div v-if="userLogged">
+                <div v-if="mainStore.userLogged">
                     <button
                         class="btn btn-primary"
                         data-bs-toggle="dropdown">
@@ -103,11 +103,11 @@
                     </ul>
 
                     <NuxtLink
-                        :to="'/@' + userLogged?.username"
+                        :to="'/@' + mainStore.userLogged?.username"
                         class="d-inline-block text-decoration-none text-dark btn-user-url">
-                        <span class="fw-bold ms-3 me-2 d-none d-sm-inline-block">{{ userLogged?.name }}</span>
+                        <span class="fw-bold ms-3 me-2 d-none d-sm-inline-block">{{ mainStore.userLogged?.name }}</span>
                         <image-preloader
-                            :image="userLogged?.image"
+                            :image="mainStore.userLogged?.image"
                             class="user-img-small" />
                     </NuxtLink>
 
@@ -161,16 +161,23 @@
 </template>
 <script setup>
 import { useMainStore } from "~/store/mainStore"
+import {t} from "~/i18n/i18n2"
 
 const mainStore = useMainStore()
 
 </script>
 <script>
+import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
 export default {
     components: {
         ImagePreloader,
+    },
+    data(){
+        return {
+            mainStore : useMainStore()
+        }
     },
     mounted () {},
     computed: {
@@ -182,10 +189,7 @@ export default {
                     : hour < 18
                         ? "Buenas tardes"
                         : "Buenas noches"
-            return `Hola ${this.userLogged?.name}, ${saludoStr} 🐱`
-        },
-        userLogged () {
-            return this.mainStore?.userLogged
+            return `Hola ${this.mainStore.userLogged?.name}, ${saludoStr} 🐱`
         },
     },
 

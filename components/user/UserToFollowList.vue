@@ -16,8 +16,12 @@
 import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
-const result = await fetchWithCookie(`${mainStore.backendUrl}/api/users`, "XSRF-TOKEN")
-const users = result.data
+let users = null
+await fetchWithCookie(`${mainStore.backendUrl}/api/users`)
+    .then(response => {
+        users = response.data.data
+    })
+    .catch(error => {})
 
 </script>
 <script>

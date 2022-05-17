@@ -31,7 +31,7 @@
                 style="max-height: 400px; overflow-y: auto">
                 <div class="card-body p-4">
                     <h1 class="pb-3 fw-bold">
-                        {{ $t('myPets') }}
+                        {{ t('myPets') }}
                     </h1>
                     <div class="row gy-3">
                         <div
@@ -48,6 +48,7 @@
 </template>
 <script setup>
 import { useMainStore } from "~/store/mainStore"
+import { t } from "~/i18n/i18n2"
 
 const mainStore = useMainStore()
 const route = useRoute()
@@ -55,13 +56,17 @@ const route = useRoute()
 let user = null
 let pets = null
 
-let result = await fetchWithCookie(`${mainStore.backendUrl}/api/@${route.params.username}`)
+await fetchWithCookie(`${mainStore.backendUrl}/api/@${route.params.username}`)
+    .then(response => {
+        user = response.data
+    })
 
-user = result.data
-
-result = await fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/pets`)
-
-pets = result.data
+if (user) {
+    await fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/pets`)
+        .then(response => {
+            pets = response.data
+        })
+}
 
 </script>
 <script>

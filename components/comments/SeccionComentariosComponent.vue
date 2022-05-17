@@ -10,7 +10,7 @@
                 style="font-size: 12px; text-decoration:none;"
                 role="button"
                 @click="cargarMasComentarios">
-                {{ $t('previousComments') }}
+                {{ t('previousComments') }}
             </a>
             <hr
                 class="my-0"
@@ -38,7 +38,9 @@
         </div>
     </div>
 </template>
-
+<script setup>
+import { t } from "~/i18n/i18n2"
+</script>
 <script>
 import ComentarioComponent from "./ComentarioComponent.vue"
 import NewComment from "./NewComment.vue"
@@ -107,11 +109,6 @@ export default {
         commentEdited (c) {
             const comment_f = this.comentarios.find((comentario) => comentario.id === c.id)
             comment_f.description = c.description
-        },
-    },
-    computed: {
-        userLogged () {
-            return this.mainStore?.userLogged
         },
     },
 }

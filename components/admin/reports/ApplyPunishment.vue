@@ -45,17 +45,14 @@
         </div>
     </teleport>
 </template>
+<script setup>
+import { useMainStore } from "~/store/mainStore"
+const mainStore = useMainStore()
+</script>
 <script>
 import axios from "axios"
-import { useMainStore } from "~/store/mainStore"
 
 export default {
-    setup () {
-        const mainStore = useMainStore()
-        return {
-            mainStore
-        }
-    },
     data () {
         return {
             punishments: [

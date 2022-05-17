@@ -14,8 +14,8 @@
         @contador-actualizado="contadorActualizado" />
 </template>
 <script>
-import ComentarioComponent from "./ComentarioComponent.vue"
-import NewComment from "./NewComment.vue"
+import ComentarioComponent from "~/components/comments/ComentarioComponent.vue"
+import NewComment from "~/components/comments/NewComment.vue"
 export default {
     components: {
         ComentarioComponent,

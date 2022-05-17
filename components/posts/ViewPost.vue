@@ -32,7 +32,7 @@
                             <span
                                 class="d-block text-black-50 fs-6"
                                 role="button">
-                                <small>{{ $t("timeAgo", {date: post?.created_at}) }}</small>
+                                <small>{{ timeAgo( post?.created_at) }}</small>
                             </span>
                         </div>
                         <div class="col-auto">
@@ -83,6 +83,7 @@
 </template>
 <script setup>
 import { useMainStore } from "~/store/mainStore"
+import { t, timeAgo } from "~/i18n/i18n2"
 
 const mainStore = useMainStore()
 const route = useRoute()
@@ -92,12 +93,13 @@ let my_reaction = null
 let reactions_count = null
 let comments_count = null
 
-const result = await fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)
-
-post = result.data
-my_reaction = post.my_reaction
-reactions_count = post.reactions_count
-comments_count = post.comments_count
+await fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)
+    .then(response => {
+        post = response.data
+        my_reaction = post.my_reaction
+        reactions_count = post.reactions_count
+        comments_count = post.comments_count
+    })
 
 </script>
 <script>

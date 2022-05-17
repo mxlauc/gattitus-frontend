@@ -4,7 +4,7 @@
             <div style="max-width: 500px; margin: auto;">
                 <router-view />
                 <simple-post-component
-                    v-for="p in posts"
+                    v-for="p in mainStore.posts"
                     :post="p"
                     :key="p.id" />
             </div>
@@ -140,11 +140,6 @@ export default {
     },
     mounted () {
         // this.mainStore.loadPosts()
-    },
-    computed: {
-        posts () {
-            return this.mainStore?.posts
-        }
     },
 
 }
