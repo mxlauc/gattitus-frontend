@@ -44,10 +44,10 @@
             <p class="fs-6 mt-1 mb-1 text-muted">
                 {{ post.simple_post.description }}
             </p>
-            <!--PetIconList
-                v-if="post.pets_count"
+            <PetIconList
+                v-if="is_mounted && post.pets_count"
                 :pets="post.pets"
-                :pets-count="post.pets_count" /-->
+                :pets-count="post.pets_count" />
             <div class="my-2 position-relative">
                 <image-preloader
                     :aspect="post.simple_post.image.aspect_ratio"
@@ -105,7 +105,11 @@ export default {
             reactions_count: this.post.reactions_count,
             comments_count: this.post.comments_count,
             my_reaction: this.post.my_reaction,
+            is_mounted: false,
         }
+    },
+    mounted () {
+        this.is_mounted = true
     },
     props: ["post"],
     provide () {
