@@ -10832,7 +10832,7 @@ const _sfc_main$A = /* @__PURE__ */ Object.assign(__default__$8, {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$3;
-      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card card-post shadow-sm f-rubick mb-4" }, _attrs))} data-v-a2a9db64><div class="card-body pb-0" data-v-a2a9db64><div class="row g-0" data-v-a2a9db64><div class="col-auto" data-v-a2a9db64>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card card-post shadow-sm f-rubick mb-4" }, _attrs))} data-v-2de623c6><div class="card-body pb-0" data-v-2de623c6><div class="row g-0" data-v-2de623c6><div class="col-auto" data-v-2de623c6>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/@" + __props.post.user.username
       }, {
@@ -10853,7 +10853,7 @@ const _sfc_main$A = /* @__PURE__ */ Object.assign(__default__$8, {
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="col px-2" data-v-a2a9db64>`);
+      _push(`</div><div class="col px-2" data-v-2de623c6>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/@" + __props.post.user.username,
         class: "name-user-post fw-bold text-decoration-none text-dark"
@@ -10869,26 +10869,30 @@ const _sfc_main$A = /* @__PURE__ */ Object.assign(__default__$8, {
         }),
         _: 1
       }, _parent));
-      _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-a2a9db64><small data-v-a2a9db64>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(timeAgo)(__props.post.created_at))}</small><small data-v-a2a9db64>${serverRenderer.exports.ssrInterpolate()}</small></span></div><div class="col-auto" data-v-a2a9db64><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-a2a9db64><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
+      _push(`<span class="d-block text-black-50 fs-6" role="button" data-v-2de623c6><small data-v-2de623c6>${serverRenderer.exports.ssrInterpolate(vue_cjs_prod.unref(timeAgo)(__props.post.created_at))}</small><small data-v-2de623c6>${serverRenderer.exports.ssrInterpolate()}</small></span></div><div class="col-auto" data-v-2de623c6><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.055 32.055" width="20" height="20" class="text-black-50" fill="currentColor" data-bs-toggle="dropdown" aria-expanded="false" data-v-2de623c6><path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967
               C7.934,13.835,6.157,12.061,3.968,12.061z M16.233,12.061c-2.188,0-3.968,1.773-3.968,3.965c0,2.192,1.778,3.967,3.968,3.967
               s3.97-1.772,3.97-3.967C20.201,13.835,18.423,12.061,16.233,12.061z M28.09,12.061c-2.192,0-3.969,1.774-3.969,3.967
-              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-a2a9db64></path></svg>`);
+              c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" data-v-2de623c6></path></svg>`);
       _push(serverRenderer.exports.ssrRenderComponent(PostMenu, {
         "post-id": __props.post.id
       }, null, _parent));
-      _push(`</div></div><p class="fs-6 mt-1 mb-1 text-muted" data-v-a2a9db64>${serverRenderer.exports.ssrInterpolate(__props.post.simple_post.description)}</p><div class="my-2 position-relative" data-v-a2a9db64>`);
+      _push(`</div></div><p class="fs-6 mt-1 mb-1 text-muted" data-v-2de623c6>${serverRenderer.exports.ssrInterpolate(__props.post.simple_post.description)}</p><div class="my-2 position-relative" data-v-2de623c6>`);
       _push(serverRenderer.exports.ssrRenderComponent(ImagePreloader, {
         aspect: __props.post.simple_post.image.aspect_ratio,
         option: "url_lg",
         image: __props.post.simple_post.image,
         class: "rounded-5 w-100 shadow-sm"
       }, null, _parent));
-      _push(`<div class="position-absolute top-0 start-0 end-0 bottom-0" data-v-a2a9db64></div></div>`);
+      _push(`<div class="position-absolute top-0 start-0 end-0 bottom-0" data-v-2de623c6></div></div>`);
       _push(serverRenderer.exports.ssrRenderComponent(ReactAndCommentButtons, {
         id: __props.post.id,
         "my-reaction": _ctx.my_reaction,
         "reactions-count": _ctx.reactions_count,
         "comments-count": _ctx.comments_count
+      }, null, _parent));
+      _push(serverRenderer.exports.ssrRenderComponent(BestComments, {
+        "post-id": __props.post.id,
+        "best-comments": __props.post.best_comments
       }, null, _parent));
       _push(`</div></div>`);
     };
@@ -10900,7 +10904,7 @@ _sfc_main$A.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PostComponent.vue");
   return _sfc_setup$A ? _sfc_setup$A(props, ctx) : void 0;
 };
-const SimplePostComponent = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["__scopeId", "data-v-a2a9db64"]]);
+const SimplePostComponent = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["__scopeId", "data-v-2de623c6"]]);
 const _sfc_main$z = {
   components: {
     ImagePreloader
