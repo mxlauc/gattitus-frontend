@@ -8548,7 +8548,7 @@ const _sfc_main$11 = {
     }
   }
 };
-function _sfc_ssrRender$G(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$F(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a, _b, _c, _d, _e, _f, _g;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
     class: "overflow-hidden",
@@ -8562,7 +8562,7 @@ _sfc_main$11.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/images/ImagePreloader.vue");
   return _sfc_setup$11 ? _sfc_setup$11(props, ctx) : void 0;
 };
-const ImagePreloader = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["ssrRender", _sfc_ssrRender$G], ["__scopeId", "data-v-3e6916df"]]);
+const ImagePreloader = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["ssrRender", _sfc_ssrRender$F], ["__scopeId", "data-v-3e6916df"]]);
 const useMainStore = defineStore("main", {
   state: () => {
     return {
@@ -8642,7 +8642,7 @@ const _sfc_main$10 = {
     }
   }
 };
-function _sfc_ssrRender$F(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$E(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a, _b, _c;
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "card shadow-sm" }, _attrs))}><div class="card-body p-4"><div class="row gy-3"><div class="col-12 col-sm-3 col-md-2 text-center">`);
@@ -8661,14 +8661,14 @@ _sfc_main$10.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/UserHeaderComponent.vue");
   return _sfc_setup$10 ? _sfc_setup$10(props, ctx) : void 0;
 };
-const UserHeaderComponent = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["ssrRender", _sfc_ssrRender$F]]);
+const UserHeaderComponent = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["ssrRender", _sfc_ssrRender$E]]);
 const _sfc_main$$ = {
   components: {
     ImagePreloader
   },
   props: ["pet"]
 };
-function _sfc_ssrRender$E(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$D(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "text-center" }, _attrs))} data-v-0b3d99ec>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_image_preloader, {
@@ -8684,7 +8684,7 @@ _sfc_main$$.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/pet/PetItemComponent.vue");
   return _sfc_setup$$ ? _sfc_setup$$(props, ctx) : void 0;
 };
-const PetItemComponent = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["ssrRender", _sfc_ssrRender$E], ["__scopeId", "data-v-0b3d99ec"]]);
+const PetItemComponent = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["ssrRender", _sfc_ssrRender$D], ["__scopeId", "data-v-0b3d99ec"]]);
 const messages$2 = {
   home: "Inicio",
   profile: "Mi perfil",
@@ -8774,7 +8774,7 @@ const timeAgo = (date) => {
   const y = fecha.getFullYear();
   return t("date", { year: y, month: m, day: d, hours: h2 % 12, minutes: mm < 10 ? "0" + mm : mm, ampm: h2 > 11 ? "PM" : "AM" });
 };
-const __default__$h = {
+const __default__$g = {
   components: {
     UserHeaderComponent,
     PetItemComponent
@@ -8785,7 +8785,7 @@ const __default__$h = {
   mounted() {
   }
 };
-const _sfc_main$_ = /* @__PURE__ */ Object.assign(__default__$h, {
+const _sfc_main$_ = /* @__PURE__ */ Object.assign(__default__$g, {
   __ssrInlineRender: true,
   async setup(__props) {
     let __temp, __restore;
@@ -8827,7 +8827,7 @@ _sfc_main$_.setup = (props, ctx) => {
 const meta$f = {
   layout: "main"
 };
-const __default__$g = {
+const __default__$f = {
   data() {
     return {
       editor: null,
@@ -8943,7 +8943,7 @@ const __default__$g = {
     }
   }
 };
-const _sfc_main$Z = /* @__PURE__ */ Object.assign(__default__$g, {
+const _sfc_main$Z = /* @__PURE__ */ Object.assign(__default__$f, {
   __ssrInlineRender: true,
   async setup(__props) {
     useMainStore();
@@ -8962,7 +8962,7 @@ _sfc_main$Z.setup = (props, ctx) => {
 const meta$e = {
   layout: "main"
 };
-const __default__$f = {
+const __default__$e = {
   data() {
     return {
       editor: null
@@ -9073,7 +9073,7 @@ const __default__$f = {
     }
   }
 };
-const _sfc_main$Y = /* @__PURE__ */ Object.assign(__default__$f, {
+const _sfc_main$Y = /* @__PURE__ */ Object.assign(__default__$e, {
   __ssrInlineRender: true,
   async setup(__props) {
     useMainStore();
@@ -9109,7 +9109,7 @@ const _sfc_main$X = {
     });
   }
 };
-function _sfc_ssrRender$D(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$C(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_NuxtLink = __nuxt_component_0$3;
   _push(`<!--[--><ol><!--[-->`);
   serverRenderer.exports.ssrRenderList($data.pages, (p) => {
@@ -9168,11 +9168,11 @@ _sfc_main$X.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/pages/PagesList.vue");
   return _sfc_setup$X ? _sfc_setup$X(props, ctx) : void 0;
 };
-const PagesList = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["ssrRender", _sfc_ssrRender$D]]);
+const PagesList = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["ssrRender", _sfc_ssrRender$C]]);
 const meta$c = {
   layout: "main"
 };
-const __default__$e = {
+const __default__$d = {
   data() {
     return {
       punishments: [
@@ -9219,7 +9219,7 @@ const __default__$e = {
     }
   }
 };
-const _sfc_main$W = /* @__PURE__ */ Object.assign(__default__$e, {
+const _sfc_main$W = /* @__PURE__ */ Object.assign(__default__$d, {
   __ssrInlineRender: true,
   setup(__props) {
     useMainStore();
@@ -9253,7 +9253,7 @@ const _sfc_main$V = {
   },
   props: ["post"]
 };
-function _sfc_ssrRender$C(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$B(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_image_preloader = vue_cjs_prod.resolveComponent("image-preloader");
   const _component_ApplyPunishment = vue_cjs_prod.resolveComponent("ApplyPunishment");
   _push(`<!--[--><div class="card"><div class="card-body"><strong>${serverRenderer.exports.ssrInterpolate($props.post.reports[0].user.name)}</strong> report\xF3 la publicaci\xF3n de <strong>${serverRenderer.exports.ssrInterpolate($props.post.user.name)}</strong> por <strong>${serverRenderer.exports.ssrInterpolate($props.post.reports[0].report_type.title)}</strong><hr><div class="row"><div class="col-auto">`);
@@ -9277,7 +9277,7 @@ _sfc_main$V.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/ReportedPostItem.vue");
   return _sfc_setup$V ? _sfc_setup$V(props, ctx) : void 0;
 };
-const ReportedPostItem = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["ssrRender", _sfc_ssrRender$C]]);
+const ReportedPostItem = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["ssrRender", _sfc_ssrRender$B]]);
 const _sfc_main$U = {
   components: {
     ReportedPostItem
@@ -9300,7 +9300,7 @@ const _sfc_main$U = {
     });
   }
 };
-function _sfc_ssrRender$B(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$A(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a;
   const _component_ReportedPostItem = vue_cjs_prod.resolveComponent("ReportedPostItem");
   _push(`<!--[-->`);
@@ -9318,7 +9318,7 @@ _sfc_main$U.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/ReportedPostsList.vue");
   return _sfc_setup$U ? _sfc_setup$U(props, ctx) : void 0;
 };
-const ReportedPostsList = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["ssrRender", _sfc_ssrRender$B]]);
+const ReportedPostsList = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["ssrRender", _sfc_ssrRender$A]]);
 const meta$b = {
   layout: "main"
 };
@@ -9347,7 +9347,7 @@ const _sfc_main$T = {
     }
   }
 };
-function _sfc_ssrRender$A(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$z(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   _push(`<!--[--><input type="text"><textarea cols="30" rows="10"></textarea><button class="btn btn-primary"> Guardar </button><!--]-->`);
 }
 const _sfc_setup$T = _sfc_main$T.setup;
@@ -9356,7 +9356,7 @@ _sfc_main$T.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/CreateReportType.vue");
   return _sfc_setup$T ? _sfc_setup$T(props, ctx) : void 0;
 };
-const CreateReportType = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["ssrRender", _sfc_ssrRender$A]]);
+const CreateReportType = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["ssrRender", _sfc_ssrRender$z]]);
 const meta$a = {
   layout: "main"
 };
@@ -9378,7 +9378,7 @@ const _sfc_main$S = {
     });
   }
 };
-function _sfc_ssrRender$z(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$y(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a;
   const _component_NuxtLink = __nuxt_component_0$3;
   _push(`<!--[-->`);
@@ -9409,14 +9409,14 @@ _sfc_main$S.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/reports/ReportTypesList.vue");
   return _sfc_setup$S ? _sfc_setup$S(props, ctx) : void 0;
 };
-const ReportTypesList = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["ssrRender", _sfc_ssrRender$z]]);
+const ReportTypesList = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["ssrRender", _sfc_ssrRender$y]]);
 const meta$9 = {
   layout: "main"
 };
-const __default__$d = {
+const __default__$c = {
   props: ["user"]
 };
-const _sfc_main$R = /* @__PURE__ */ Object.assign(__default__$d, {
+const _sfc_main$R = /* @__PURE__ */ Object.assign(__default__$c, {
   __ssrInlineRender: true,
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
@@ -9467,7 +9467,7 @@ const _sfc_main$Q = {
     });
   }
 };
-function _sfc_ssrRender$y(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$x(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   var _a;
   const _component_UserItem = vue_cjs_prod.resolveComponent("UserItem");
   _push(`<!--[--> users vistos por el admin <table border="1"><tr><td><strong>id</strong></td><td><strong>perfil</strong></td><td><strong>nombre</strong></td><td><strong>nombre de usuario</strong></td><td><strong>url</strong></td><td><strong>fecha de creacion</strong></td></tr><!--[-->`);
@@ -9485,7 +9485,7 @@ _sfc_main$Q.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/admin/UsersList.vue");
   return _sfc_setup$Q ? _sfc_setup$Q(props, ctx) : void 0;
 };
-const UsersList = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["ssrRender", _sfc_ssrRender$y]]);
+const UsersList = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["ssrRender", _sfc_ssrRender$x]]);
 const meta$8 = {
   layout: "main"
 };
@@ -9499,7 +9499,7 @@ const _sfc_main$P = {
   props: ["hideButtons"],
   emits: ["cancel", "ok"]
 };
-function _sfc_ssrRender$x(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$w(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   serverRenderer.exports.ssrRenderTeleport(_push, (_push2) => {
     _push2(`<div class="modal-container" data-v-41ef62b3><div class="modal-background" data-v-41ef62b3></div><div class="card shadow p-3" data-v-41ef62b3><h3 data-v-41ef62b3>`);
     serverRenderer.exports.ssrRenderSlot(_ctx.$slots, "title", {}, null, _push2, _parent);
@@ -9523,7 +9523,7 @@ _sfc_main$P.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/CustomModal.vue");
   return _sfc_setup$P ? _sfc_setup$P(props, ctx) : void 0;
 };
-const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["ssrRender", _sfc_ssrRender$x], ["__scopeId", "data-v-41ef62b3"]]);
+const __nuxt_component_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["ssrRender", _sfc_ssrRender$w], ["__scopeId", "data-v-41ef62b3"]]);
 const _sfc_main$O = {
   components: {
     CustomModal: __nuxt_component_0$2
@@ -9550,7 +9550,7 @@ const _sfc_main$O = {
     }
   }
 };
-function _sfc_ssrRender$w(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$v(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_CustomModal = __nuxt_component_0$2;
   _push(serverRenderer.exports.ssrRenderComponent(_component_CustomModal, _attrs, {
     title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -9598,7 +9598,7 @@ _sfc_main$O.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/DeletePostDialog.vue");
   return _sfc_setup$O ? _sfc_setup$O(props, ctx) : void 0;
 };
-const DeletePostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["ssrRender", _sfc_ssrRender$w]]);
+const DeletePostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["ssrRender", _sfc_ssrRender$v]]);
 const _sfc_main$N = {
   setup() {
     const mainStore = useMainStore();
@@ -9634,7 +9634,7 @@ const _sfc_main$N = {
     }
   }
 };
-function _sfc_ssrRender$v(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$u(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   serverRenderer.exports.ssrRenderTeleport(_push, (_push2) => {
     var _a;
     _push2(`<div class="post-modal" data-v-5ea56779><div class="card shadow p-4" data-v-5ea56779><h3 data-v-5ea56779>\xBFReportar publicaci\xF3n?</h3><form data-v-5ea56779><!--[-->`);
@@ -9650,8 +9650,8 @@ _sfc_main$N.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/ReportPostDialog.vue");
   return _sfc_setup$N ? _sfc_setup$N(props, ctx) : void 0;
 };
-const ReportPostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["ssrRender", _sfc_ssrRender$v], ["__scopeId", "data-v-5ea56779"]]);
-const __default__$c = {
+const ReportPostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["ssrRender", _sfc_ssrRender$u], ["__scopeId", "data-v-5ea56779"]]);
+const __default__$b = {
   components: {
     DeletePostDialog,
     ReportPostDialog
@@ -9665,7 +9665,7 @@ const __default__$c = {
   props: ["postId"],
   provide: ["postId"]
 };
-const _sfc_main$M = /* @__PURE__ */ Object.assign(__default__$c, {
+const _sfc_main$M = /* @__PURE__ */ Object.assign(__default__$b, {
   __ssrInlineRender: true,
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
@@ -9760,7 +9760,7 @@ const _sfc_main$L = {
     pet: Object
   }
 };
-function _sfc_ssrRender$u(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$t(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Popper = vue_cjs_prod.resolveComponent("Popper");
   const _component_ImagePreloader = vue_cjs_prod.resolveComponent("ImagePreloader");
   const _component_NuxtLink = __nuxt_component_0$3;
@@ -9906,7 +9906,7 @@ _sfc_main$L.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PetIconItem.vue");
   return _sfc_setup$L ? _sfc_setup$L(props, ctx) : void 0;
 };
-const PetIconItem = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["ssrRender", _sfc_ssrRender$u]]);
+const PetIconItem = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["ssrRender", _sfc_ssrRender$t]]);
 const _sfc_main$K = {
   components: { PetIconItem },
   setup() {
@@ -9917,7 +9917,7 @@ const _sfc_main$K = {
   },
   props: ["pets", "pets_count"]
 };
-function _sfc_ssrRender$t(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$s(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_PetIconItem = vue_cjs_prod.resolveComponent("PetIconItem");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "row" }, _attrs))}><div class="col"></div><div class="col-auto position-relative"><small class="text-muted me-2">Gatos que aparecen en esta publicaci\xF3n</small><!--[-->`);
   serverRenderer.exports.ssrRenderList($props.pets, (c) => {
@@ -9934,7 +9934,7 @@ _sfc_main$K.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/PetIconList.vue");
   return _sfc_setup$K ? _sfc_setup$K(props, ctx) : void 0;
 };
-const PetIconList = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["ssrRender", _sfc_ssrRender$t]]);
+const PetIconList = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["ssrRender", _sfc_ssrRender$s]]);
 const _sfc_main$J = {
   components: {
     CustomModal: __nuxt_component_0$2,
@@ -9998,7 +9998,7 @@ const _sfc_main$J = {
     }
   }
 };
-function _sfc_ssrRender$s(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$r(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_CustomModal = __nuxt_component_0$2;
   const _component_NuxtLink = __nuxt_component_0$3;
   const _component_ImagePreloader = vue_cjs_prod.resolveComponent("ImagePreloader");
@@ -10112,7 +10112,7 @@ _sfc_main$J.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/ShowReactionsDialog.vue");
   return _sfc_setup$J ? _sfc_setup$J(props, ctx) : void 0;
 };
-const ShowReactionsDialog = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["ssrRender", _sfc_ssrRender$s]]);
+const ShowReactionsDialog = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["ssrRender", _sfc_ssrRender$r]]);
 const _sfc_main$I = {
   components: {
     ShowReactionsDialog
@@ -10147,7 +10147,7 @@ const _sfc_main$I = {
     }
   }
 };
-function _sfc_ssrRender$r(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$q(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_NuxtLink = __nuxt_component_0$3;
   const _component_ShowReactionsDialog = ShowReactionsDialog;
   _push(`<!--[--><div class="row g-0 py-2"><div class="col text-center" role="button"><span class="text-muted">${serverRenderer.exports.ssrInterpolate($props.reactionsCount)} Reacciones</span></div><div class="col text-center">`);
@@ -10189,7 +10189,7 @@ _sfc_main$I.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/posts/ReactAndCommentButtons.vue");
   return _sfc_setup$I ? _sfc_setup$I(props, ctx) : void 0;
 };
-const ReactAndCommentButtons = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["ssrRender", _sfc_ssrRender$r]]);
+const ReactAndCommentButtons = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["ssrRender", _sfc_ssrRender$q]]);
 const _sfc_main$H = {
   components: {
     CustomModal: __nuxt_component_0$2
@@ -10214,7 +10214,7 @@ const _sfc_main$H = {
     }
   }
 };
-function _sfc_ssrRender$q(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$p(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_CustomModal = __nuxt_component_0$2;
   _push(serverRenderer.exports.ssrRenderComponent(_component_CustomModal, _attrs, {
     title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -10262,7 +10262,7 @@ _sfc_main$H.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/DeleteCommentDialog.vue");
   return _sfc_setup$H ? _sfc_setup$H(props, ctx) : void 0;
 };
-const DeleteCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["ssrRender", _sfc_ssrRender$q]]);
+const DeleteCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["ssrRender", _sfc_ssrRender$p]]);
 const _sfc_main$G = {
   components: {
     CustomModal: __nuxt_component_0$2
@@ -10291,7 +10291,7 @@ const _sfc_main$G = {
     }
   }
 };
-function _sfc_ssrRender$p(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_CustomModal = __nuxt_component_0$2;
   _push(serverRenderer.exports.ssrRenderComponent(_component_CustomModal, _attrs, {
     title: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -10346,8 +10346,8 @@ _sfc_main$G.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/EditCommentDialog.vue");
   return _sfc_setup$G ? _sfc_setup$G(props, ctx) : void 0;
 };
-const EditCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["ssrRender", _sfc_ssrRender$p], ["__scopeId", "data-v-31c2e609"]]);
-const __default__$b = {
+const EditCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["ssrRender", _sfc_ssrRender$o], ["__scopeId", "data-v-31c2e609"]]);
+const __default__$a = {
   components: {
     ImagePreloader,
     DeleteCommentDialog,
@@ -10390,7 +10390,7 @@ const __default__$b = {
     }
   }
 };
-const _sfc_main$F = /* @__PURE__ */ Object.assign(__default__$b, {
+const _sfc_main$F = /* @__PURE__ */ Object.assign(__default__$a, {
   __ssrInlineRender: true,
   setup(__props) {
     const mainStore = useMainStore();
@@ -10463,99 +10463,21 @@ _sfc_main$F.setup = (props, ctx) => {
   return _sfc_setup$F ? _sfc_setup$F(props, ctx) : void 0;
 };
 const ComentarioComponent = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["__scopeId", "data-v-fbf3a8ec"]]);
-const _sfc_main$E = {
-  props: ["img", "postId"]
-};
-function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "p-1" }, _attrs))}><img${serverRenderer.exports.ssrRenderAttr("src", $props.img.url)} class="w-100" style="${serverRenderer.exports.ssrRenderStyle([{ aspectRatio: $props.img.dims[0] / $props.img.dims[1] }, { "border-radius": "5px" }])}"></div>`);
-}
-const _sfc_setup$E = _sfc_main$E.setup;
-_sfc_main$E.setup = (props, ctx) => {
-  const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/GifSearchedComponent.vue");
-  return _sfc_setup$E ? _sfc_setup$E(props, ctx) : void 0;
-};
-const GifSearchedComponent = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["ssrRender", _sfc_ssrRender$o]]);
-const sharedData = {
-  gifs: [],
-  yaCargoElPrimerComponente: false
-};
-const __default__$a = {
-  components: {
-    GifSearchedComponent,
-    Popper
-  },
-  data() {
-    return {
-      gifs: [],
-      timeOut: null,
-      textoEscrito: "",
-      showDialog: null
-    };
-  },
-  props: ["postId"],
-  mounted() {
-  },
-  emits: ["gifSeleccionado"],
-  methods: {
-    onDialogShown() {
-      this.$refs.input.focus();
-      if (!sharedData.yaCargoElPrimerComponente) {
-        sharedData.yaCargoElPrimerComponente = true;
-        this.cargarDefaultGifs();
-      } else if (this.gifs.length === 0) {
-        this.gifs = sharedData.gifs;
-      }
-    },
-    cargarDefaultGifs() {
-      this.obtenerGifsTenor("gato alegre");
-    },
-    escribir() {
-      clearTimeout(this.timeOut);
-      this.timeOut = setTimeout(() => {
-        const texto = this.$refs.input.value.trim();
-        if (texto !== this.textoEscrito) {
-          this.textoEscrito = texto;
-          this.buscarGifs();
-        }
-      }, 1e3);
-    },
-    buscarGifs() {
-      this.obtenerGifsTenor(this.textoEscrito);
-    },
-    obtenerGifsTenor(texto) {
-      axios.get(`https://g.tenor.com/v1/search?q=${texto}&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard`, { withCredentials: false }).then((response) => {
-        this.gifs = response.data.results;
-        sharedData.gifs = response.data.results;
-      }).then(() => {
-        const msnry = new this.Masonry("#masonry-gifs-row" + this.postId, {
-          percentPosition: true
-        });
-        msnry.reloadItems();
-        msnry.layout();
-      });
-    },
-    imprimir(url) {
-      this.$emit("gifSeleccionado", url);
-      this.showDialog = false;
-    }
-  }
-};
-const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$a, {
+const _sfc_main$D = {
   __ssrInlineRender: true,
   async setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<p${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-15ca43f4>gifpiker comp</p>`);
+      _push(`<p${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-4ce7755c>gifpiker comp</p>`);
     };
   }
-});
+};
 const _sfc_setup$D = _sfc_main$D.setup;
 _sfc_main$D.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/GifPickerComponent.vue");
   return _sfc_setup$D ? _sfc_setup$D(props, ctx) : void 0;
 };
-const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-15ca43f4"]]);
+const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-4ce7755c"]]);
 const __default__$9 = {
   components: {
     GifPickerComponent,
