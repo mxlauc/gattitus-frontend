@@ -8774,7 +8774,7 @@ const timeAgo = (date) => {
   const y = fecha.getFullYear();
   return t("date", { year: y, month: m, day: d, hours: h2 % 12, minutes: mm < 10 ? "0" + mm : mm, ampm: h2 > 11 ? "PM" : "AM" });
 };
-const __default__$g = {
+const __default__$h = {
   components: {
     UserHeaderComponent,
     PetItemComponent
@@ -8785,7 +8785,7 @@ const __default__$g = {
   mounted() {
   }
 };
-const _sfc_main$_ = /* @__PURE__ */ Object.assign(__default__$g, {
+const _sfc_main$_ = /* @__PURE__ */ Object.assign(__default__$h, {
   __ssrInlineRender: true,
   async setup(__props) {
     let __temp, __restore;
@@ -8827,7 +8827,7 @@ _sfc_main$_.setup = (props, ctx) => {
 const meta$f = {
   layout: "main"
 };
-const __default__$f = {
+const __default__$g = {
   data() {
     return {
       editor: null,
@@ -8943,7 +8943,7 @@ const __default__$f = {
     }
   }
 };
-const _sfc_main$Z = /* @__PURE__ */ Object.assign(__default__$f, {
+const _sfc_main$Z = /* @__PURE__ */ Object.assign(__default__$g, {
   __ssrInlineRender: true,
   async setup(__props) {
     useMainStore();
@@ -8962,7 +8962,7 @@ _sfc_main$Z.setup = (props, ctx) => {
 const meta$e = {
   layout: "main"
 };
-const __default__$e = {
+const __default__$f = {
   data() {
     return {
       editor: null
@@ -9073,7 +9073,7 @@ const __default__$e = {
     }
   }
 };
-const _sfc_main$Y = /* @__PURE__ */ Object.assign(__default__$e, {
+const _sfc_main$Y = /* @__PURE__ */ Object.assign(__default__$f, {
   __ssrInlineRender: true,
   async setup(__props) {
     useMainStore();
@@ -9172,7 +9172,7 @@ const PagesList = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["ssrRender", _sfc_s
 const meta$c = {
   layout: "main"
 };
-const __default__$d = {
+const __default__$e = {
   data() {
     return {
       punishments: [
@@ -9219,7 +9219,7 @@ const __default__$d = {
     }
   }
 };
-const _sfc_main$W = /* @__PURE__ */ Object.assign(__default__$d, {
+const _sfc_main$W = /* @__PURE__ */ Object.assign(__default__$e, {
   __ssrInlineRender: true,
   setup(__props) {
     useMainStore();
@@ -9413,10 +9413,10 @@ const ReportTypesList = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["ssrRender", 
 const meta$9 = {
   layout: "main"
 };
-const __default__$c = {
+const __default__$d = {
   props: ["user"]
 };
-const _sfc_main$R = /* @__PURE__ */ Object.assign(__default__$c, {
+const _sfc_main$R = /* @__PURE__ */ Object.assign(__default__$d, {
   __ssrInlineRender: true,
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
@@ -9651,7 +9651,7 @@ _sfc_main$N.setup = (props, ctx) => {
   return _sfc_setup$N ? _sfc_setup$N(props, ctx) : void 0;
 };
 const ReportPostDialog = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["ssrRender", _sfc_ssrRender$u], ["__scopeId", "data-v-5ea56779"]]);
-const __default__$b = {
+const __default__$c = {
   components: {
     DeletePostDialog,
     ReportPostDialog
@@ -9665,7 +9665,7 @@ const __default__$b = {
   props: ["postId"],
   provide: ["postId"]
 };
-const _sfc_main$M = /* @__PURE__ */ Object.assign(__default__$b, {
+const _sfc_main$M = /* @__PURE__ */ Object.assign(__default__$c, {
   __ssrInlineRender: true,
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
@@ -10347,7 +10347,7 @@ _sfc_main$G.setup = (props, ctx) => {
   return _sfc_setup$G ? _sfc_setup$G(props, ctx) : void 0;
 };
 const EditCommentDialog = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["ssrRender", _sfc_ssrRender$o], ["__scopeId", "data-v-31c2e609"]]);
-const __default__$a = {
+const __default__$b = {
   components: {
     ImagePreloader,
     DeleteCommentDialog,
@@ -10390,7 +10390,7 @@ const __default__$a = {
     }
   }
 };
-const _sfc_main$F = /* @__PURE__ */ Object.assign(__default__$a, {
+const _sfc_main$F = /* @__PURE__ */ Object.assign(__default__$b, {
   __ssrInlineRender: true,
   setup(__props) {
     const mainStore = useMainStore();
@@ -10463,21 +10463,82 @@ _sfc_main$F.setup = (props, ctx) => {
   return _sfc_setup$F ? _sfc_setup$F(props, ctx) : void 0;
 };
 const ComentarioComponent = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["__scopeId", "data-v-fbf3a8ec"]]);
-const _sfc_main$D = {
+const sharedData = {
+  gifs: [],
+  yaCargoElPrimerComponente: false
+};
+const __default__$a = {
+  data() {
+    return {
+      gifs: [],
+      timeOut: null,
+      textoEscrito: "",
+      showDialog: null
+    };
+  },
+  props: ["postId"],
+  mounted() {
+  },
+  emits: ["gifSeleccionado"],
+  methods: {
+    onDialogShown() {
+      this.$refs.input.focus();
+      if (!sharedData.yaCargoElPrimerComponente) {
+        sharedData.yaCargoElPrimerComponente = true;
+        this.cargarDefaultGifs();
+      } else if (this.gifs.length === 0) {
+        this.gifs = sharedData.gifs;
+      }
+    },
+    cargarDefaultGifs() {
+      this.obtenerGifsTenor("gato alegre");
+    },
+    escribir() {
+      clearTimeout(this.timeOut);
+      this.timeOut = setTimeout(() => {
+        const texto = this.$refs.input.value.trim();
+        if (texto !== this.textoEscrito) {
+          this.textoEscrito = texto;
+          this.buscarGifs();
+        }
+      }, 1e3);
+    },
+    buscarGifs() {
+      this.obtenerGifsTenor(this.textoEscrito);
+    },
+    obtenerGifsTenor(texto) {
+      axios.get(`https://g.tenor.com/v1/search?q=${texto}&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard`, { withCredentials: false }).then((response) => {
+        this.gifs = response.data.results;
+        sharedData.gifs = response.data.results;
+      }).then(() => {
+        const msnry = new this.Masonry("#masonry-gifs-row" + this.postId, {
+          percentPosition: true
+        });
+        msnry.reloadItems();
+        msnry.layout();
+      });
+    },
+    imprimir(url) {
+      this.$emit("gifSeleccionado", url);
+      this.showDialog = false;
+    }
+  }
+};
+const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$a, {
   __ssrInlineRender: true,
   async setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<p${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-4ce7755c>gifpiker comp</p>`);
+      _push(`<p${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-cd28a388>gifpiker comp</p>`);
     };
   }
-};
+});
 const _sfc_setup$D = _sfc_main$D.setup;
 _sfc_main$D.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/GifPickerComponent.vue");
   return _sfc_setup$D ? _sfc_setup$D(props, ctx) : void 0;
 };
-const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-4ce7755c"]]);
+const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-cd28a388"]]);
 const __default__$9 = {
   components: {
     GifPickerComponent,
