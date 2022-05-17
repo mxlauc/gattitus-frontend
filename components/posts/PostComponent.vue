@@ -44,10 +44,13 @@
             <p class="fs-6 mt-1 mb-1 text-muted">
                 {{ post.simple_post.description }}
             </p>
-            <PetIconList
-                v-if="is_mounted && post.pets_count"
-                :pets="post.pets"
-                :pets-count="post.pets_count" />
+            <DisplayOnMounted>
+                <PetIconList
+                    v-if="post.pets_count"
+                    :pets="post.pets"
+                    :pets-count="post.pets_count" />
+            </DisplayOnMounted>
+
             <div class="my-2 position-relative">
                 <image-preloader
                     :aspect="post.simple_post.image.aspect_ratio"
@@ -84,6 +87,7 @@ import PostMenu from "~/components/posts/PostMenu.vue"
 import PetIconList from "~/components/posts/PetIconList.vue"
 import ReactAndCommentButtons from "~/components/posts/ReactAndCommentButtons.vue"
 import BestComments from "~/components/comments/BestComments.vue"
+import DisplayOnMounted from "../DisplayOnMounted.vue"
 import { useMainStore } from "~/store/mainStore"
 
 export default {
@@ -93,6 +97,7 @@ export default {
         PetIconList,
         ReactAndCommentButtons,
         BestComments,
+        DisplayOnMounted,
     },
     setup () {
         const mainStore = useMainStore()
@@ -105,11 +110,7 @@ export default {
             reactions_count: this.post.reactions_count,
             comments_count: this.post.comments_count,
             my_reaction: this.post.my_reaction,
-            is_mounted: false,
         }
-    },
-    mounted () {
-        this.is_mounted = true
     },
     props: ["post"],
     provide () {
