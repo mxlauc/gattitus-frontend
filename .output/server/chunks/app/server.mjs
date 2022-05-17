@@ -10468,6 +10468,9 @@ const sharedData = {
   yaCargoElPrimerComponente: false
 };
 const __default__$a = {
+  components: {
+    Popper
+  },
   data() {
     return {
       gifs: [],
@@ -10528,7 +10531,7 @@ const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$a, {
   __ssrInlineRender: true,
   async setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<p${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-cd28a388>gifpiker comp</p>`);
+      _push(`<p${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-3f54906c>gifpiker comp</p>`);
     };
   }
 });
@@ -10538,7 +10541,7 @@ _sfc_main$D.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/GifPickerComponent.vue");
   return _sfc_setup$D ? _sfc_setup$D(props, ctx) : void 0;
 };
-const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-cd28a388"]]);
+const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-3f54906c"]]);
 const __default__$9 = {
   components: {
     GifPickerComponent,
