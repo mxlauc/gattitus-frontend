@@ -10545,69 +10545,7 @@ const _sfc_main$D = /* @__PURE__ */ Object.assign(__default__$a, {
   __ssrInlineRender: true,
   async setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(Popper), vue_cjs_prod.mergeProps({
-        arrow: "",
-        show: _ctx.showDialog,
-        placement: "top"
-      }, _attrs), {
-        content: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`<div class="contenedorGifs" data-v-1105c813${_scopeId}><div class="contenedorInput" data-v-1105c813${_scopeId}><input type="text"${serverRenderer.exports.ssrRenderAttr("placeholder", vue_cjs_prod.unref(t)("search"))} data-v-1105c813${_scopeId}></div><div style="${serverRenderer.exports.ssrRenderStyle({ "height": "344px", "overflow": "auto" })}" data-v-1105c813${_scopeId}><div class="row g-0"${serverRenderer.exports.ssrRenderAttr("id", ["masonry-gifs-row" + __props.postId])} data-v-1105c813${_scopeId}><!--[-->`);
-            serverRenderer.exports.ssrRenderList(_ctx.gifs, (gif) => {
-              _push2(`<div class="col-6" style="${serverRenderer.exports.ssrRenderStyle({ aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1] })}" data-v-1105c813${_scopeId}></div>`);
-            });
-            _push2(`<!--]--></div></div></div>`);
-          } else {
-            return [
-              vue_cjs_prod.createVNode("div", { class: "contenedorGifs" }, [
-                vue_cjs_prod.createVNode("div", { class: "contenedorInput" }, [
-                  vue_cjs_prod.createVNode("input", {
-                    type: "text",
-                    placeholder: vue_cjs_prod.unref(t)("search"),
-                    onKeyup: _ctx.escribir,
-                    ref: "input"
-                  }, null, 40, ["placeholder", "onKeyup"])
-                ]),
-                vue_cjs_prod.createVNode("div", { style: { "height": "344px", "overflow": "auto" } }, [
-                  vue_cjs_prod.createVNode("div", {
-                    class: "row g-0",
-                    id: ["masonry-gifs-row" + __props.postId]
-                  }, [
-                    (vue_cjs_prod.openBlock(true), vue_cjs_prod.createBlock(vue_cjs_prod.Fragment, null, vue_cjs_prod.renderList(_ctx.gifs, (gif) => {
-                      return vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("div", {
-                        class: "col-6",
-                        key: gif,
-                        style: { aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1] },
-                        onClick: ($event) => _ctx.imprimir(gif.media[0].tinygif.url)
-                      }, null, 12, ["onClick"]);
-                    }), 128))
-                  ], 8, ["id"])
-                ])
-              ])
-            ];
-          }
-        }),
-        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="p-1" viewBox="0 0 16 16" data-v-1105c813${_scopeId}><path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z" data-v-1105c813${_scopeId}></path></svg>`);
-          } else {
-            return [
-              (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                width: "35",
-                onClick: ($event) => _ctx.showDialog = _ctx.showDialog ? true : null,
-                height: "35",
-                fill: "currentColor",
-                class: "p-1",
-                viewBox: "0 0 16 16"
-              }, [
-                vue_cjs_prod.createVNode("path", { d: "M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z" })
-              ], 8, ["onClick"]))
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
+      _push(`<p${serverRenderer.exports.ssrRenderAttrs(_attrs)} data-v-15ca43f4>gifpiker comp</p>`);
     };
   }
 });
@@ -10617,7 +10555,7 @@ _sfc_main$D.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/GifPickerComponent.vue");
   return _sfc_setup$D ? _sfc_setup$D(props, ctx) : void 0;
 };
-const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-1105c813"]]);
+const GifPickerComponent = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["__scopeId", "data-v-15ca43f4"]]);
 const __default__$9 = {
   components: {
     GifPickerComponent,
