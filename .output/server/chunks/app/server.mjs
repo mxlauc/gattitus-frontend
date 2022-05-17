@@ -10744,10 +10744,7 @@ const _sfc_main$B = {
   }
 };
 function _sfc_ssrRender$n(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NewComment = vue_cjs_prod.resolveComponent("NewComment");
-  _push(`<!--[--><hr class="my-0" data-v-54ba1254>`);
-  _push(serverRenderer.exports.ssrRenderComponent(_component_NewComment, { "post-id": $props.postId }, null, _parent));
-  _push(`<!--]-->`);
+  _push(`<!--[--><hr class="my-0" data-v-a17bd3f6><p data-v-a17bd3f6>bestocomments</p><!--]-->`);
 }
 const _sfc_setup$B = _sfc_main$B.setup;
 _sfc_main$B.setup = (props, ctx) => {
@@ -10755,7 +10752,7 @@ _sfc_main$B.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/comments/BestComments.vue");
   return _sfc_setup$B ? _sfc_setup$B(props, ctx) : void 0;
 };
-const BestComments = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["ssrRender", _sfc_ssrRender$n], ["__scopeId", "data-v-54ba1254"]]);
+const BestComments = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["ssrRender", _sfc_ssrRender$n], ["__scopeId", "data-v-a17bd3f6"]]);
 const __default__$8 = {
   components: {
     ImagePreloader,
