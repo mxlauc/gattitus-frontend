@@ -1,1 +1,0 @@
-import{_ as o,C as t,r,o as a,j as p}from"./entry-d0374ff8.mjs";const n={components:{CreateReportType:t}};function s(c,_,f,m,C,d){const e=r("CreateReportType");return a(),p(e)}var l=o(n,[["render",s]]);export{l as default};
