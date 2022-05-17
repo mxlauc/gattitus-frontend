@@ -11172,5 +11172,5 @@ const renderer$1 = /*#__PURE__*/Object.freeze({
   'default': renderer
 });
 
-export { renderer$1 as a, require$$0 as r, serverRenderer as s, vue_cjs_prod as v };
+export { renderer$1 as a, getDefaultExportFromNamespaceIfNotNamed as g, require$$0 as r, serverRenderer as s, vue_cjs_prod as v };
 //# sourceMappingURL=renderer.mjs.map
