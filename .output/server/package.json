@@ -3,9 +3,8 @@
   "bundledDependencies": [
     "source-map-support",
     "h3",
-    "node-fetch-native",
-    "radix3",
     "ohmyfetch",
+    "radix3",
     "hookable",
     "unenv",
     "unstorage",
@@ -18,6 +17,7 @@
     "@intlify/shared",
     "@intlify/core-base",
     "destr",
+    "node-fetch-native",
     "vue-demi",
     "cookie-es",
     "source-map",
