@@ -10,7 +10,6 @@
             '; height: ' + getHeight">
         <img
             class="image-preloader img-fluid w-100 opacity-0"
-            loading="lazy"
             :src="image?.[option ?? 'url_sm'] ?? image"
             :style="'aspect-ratio: ' + aspectRatio + '; objectFit: ' + (objectFit ? objectFit : null)"
             ref="image">

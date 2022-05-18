@@ -1,5 +1,4 @@
 <template>
-    lista reprots posts
     <ReportedPostsList />
 </template>
 <script>

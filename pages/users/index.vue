@@ -1,5 +1,4 @@
 <template>
-    lista de usuarios xd
     <UsersComponent />
 </template>
 <script>

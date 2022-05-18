@@ -1,5 +1,4 @@
 <template>
-    lista de pages
     <PagesList />
 </template>
 <script>

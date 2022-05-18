@@ -1,25 +1,26 @@
 <template>
-    <button
-        class="btn btn-primary"
-        @click="save">
-        Guardar
-    </button>
-    <div class="row">
-        <div class="col-6">
-            <input
-                type="text"
-                placeholder="title"
-                ref="title">
+    <div ref="xdxd">
+        <button
+            class="btn btn-primary">
+            Guardar
+        </button>
+        <div class="row">
+            <div class="col-6">
+                <input
+                    type="text"
+                    placeholder="title"
+                    ref="title">
+            </div>
+            <div class="col-6">
+                <input
+                    type="text"
+                    placeholder="slug"
+                    ref="slug">
+            </div>
         </div>
-        <div class="col-6">
-            <input
-                type="text"
-                placeholder="slug"
-                ref="slug">
+        <div class="card">
+            <div id="editorjs" />
         </div>
-    </div>
-    <div class="card">
-        <div id="editorjs" />
     </div>
 </template>
 <script setup>

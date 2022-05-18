@@ -1,5 +1,4 @@
 <template>
-    lista de rerpots types
     <ReportTypesList />
 </template>
 <script>

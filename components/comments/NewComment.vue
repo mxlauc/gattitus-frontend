@@ -36,10 +36,11 @@
                     <div
                         class="col col-auto guide-4"
                         style="color: #f50">
-                        <gif-picker-component
-                        v-if="displayGifPicker"
-                            :post-id="postId"
-                            @gif-seleccionado="recibirGif" />
+                        <DisplayOnMounted>
+                            <gif-picker-component
+                                :post-id="postId"
+                                @gif-seleccionado="recibirGif" />
+                        </DisplayOnMounted>
                         <svg
                             @click="enviarComentario"
                             class="pe-2"
@@ -62,30 +63,26 @@
 <script setup>
 import { useMainStore } from "~/store/mainStore"
 const mainStore = useMainStore()
+
 </script>
 <script>
-import { useMainStore } from "~/store/mainStore"
-
 import GifPickerComponent from "~/components/comments/GifPickerComponent.vue"
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
+import DisplayOnMounted from "~/components/DisplayOnMounted.vue"
 import axios from "axios"
-
-
 
 export default {
     components: {
         GifPickerComponent,
         ImagePreloader,
+        DisplayOnMounted,
     },
     data () {
         return {
             gifSeleccionado: null,
-            mainStore : useMainStore(),
-            displayGifPicker:false,
         }
     },
-    mounted(){
-        this.displayGifPicker = true
+    mounted () {
     },
     props: ["postId"],
     emits: ["commented", "contadorActualizado"],

@@ -1,17 +1,19 @@
 <template>
-    <NuxtLink
-        to="/admin/reports/types/create"
-        class="btn btn-primary">
-        Crear reporte
-    </NuxtLink>
-    lista de reportes
-    <ol>
-        <li
-            v-for="report in reportsPaginate?.data"
-            :key="report.id">
-            {{ report.title }}
-        </li>
-    </ol>
+    <div>
+        <NuxtLink
+            to="/admin/reports/types/create"
+            class="btn btn-primary">
+            Crear reporte
+        </NuxtLink>
+        lista de reportes
+        <ol>
+            <li
+                v-for="report in reportsPaginate?.data"
+                :key="report.id">
+                {{ report.title }}
+            </li>
+        </ol>
+    </div>
 </template>
 <script>
 import axios from "axios"

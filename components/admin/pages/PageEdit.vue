@@ -1,28 +1,30 @@
 <template>
-    <button
-        class="btn btn-primary"
-        @click="save">
-        Guardar
-    </button>
-    <div class="row">
-        <div class="col-6">
-            <input
-                type="text"
-                placeholder="title"
-                ref="title"
-                :value="page?.title">
+    <div>
+        <button
+            class="btn btn-primary"
+            @click="save">
+            Guardar
+        </button>
+        <div class="row">
+            <div class="col-6">
+                <input
+                    type="text"
+                    placeholder="title"
+                    ref="title"
+                    :value="page?.title">
+            </div>
+            <div class="col-6">
+                <input
+                    type="text"
+                    placeholder="slug"
+                    ref="slug"
+                    :value="page?.slug">
+            </div>
         </div>
-        <div class="col-6">
-            <input
-                type="text"
-                placeholder="slug"
-                ref="slug"
-                :value="page?.slug">
-        </div>
-    </div>
 
-    <div class="card">
-        <div id="editorjs" />
+        <div class="card">
+            <div id="editorjs" />
+        </div>
     </div>
 </template>
 <script setup>
