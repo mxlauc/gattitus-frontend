@@ -1,0 +1,55 @@
+name: Gattitus actions
+on:
+  push:
+    branches:
+      - prod
+jobs:
+  Deploying Gattitus 🐱:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Cloning
+        uses: actions/checkout@v3
+      
+      - name: Installing packages
+        run: npm i
+      
+      - name: Building
+        run: npm run build
+
+      - name: 📂 Uploading .output
+        uses: sand4rt/ftp-deployer@v1.4
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_folder: '.output'
+          remote_folder: '.output'
+          cleanup: false
+
+      - name: Coping index.js to index_temp_directory/
+        run: mkdir index_temp_directory && cp index.js index_temp_directory/index.js
+
+      - name: 📂 Uploading index.js
+        uses: sand4rt/ftp-deployer@v1.4
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_folder: 'index_temp_directory'
+          remote_folder: '.'
+          cleanup: false
+      
+      - name: Creating restart.txt...
+        run: mkdir restart_temp_directory && echo '' > restart_temp_directory/restart.txt
+
+      - name: 📂 Uploading restart.txt
+        uses: sand4rt/ftp-deployer@v1.4
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_folder: 'restart_temp_directory'
+          remote_folder: 'tmp'
+          cleanup: false
+      
+      - run: 🎉 Deployed!
