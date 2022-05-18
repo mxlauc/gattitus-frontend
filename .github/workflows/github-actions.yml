@@ -52,4 +52,4 @@ jobs:
           remote_folder: 'tmp'
           cleanup: false
       
-      - run: 🎉 Deployed 🐱!
+      - run: echo "🎉 Deployed 🐱!"
