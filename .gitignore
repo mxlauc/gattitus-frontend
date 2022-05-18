@@ -3,6 +3,6 @@
 .nuxt
 .nitro
 .cache
-#.output
+.output
 .env
 package-lock.json
