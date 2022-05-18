@@ -4,32 +4,54 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }} -a
-      - name: Clonar repositorio
+      - name: 🚚 Cloning
         uses: actions/checkout@v3
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }} -a
-      - name: Instalar packages
+      
+      - name: Installing packages
         run: npm i
-      - name: Building...
+      
+      - name: Building
         run: npm run build
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }} -a
-      - run: echo "Valor de SALUDO ${{ secrets.SALUDO }}"
 
-      - name: FTP Deployer
+      - name: 📂 Uploading .output
         uses: sand4rt/ftp-deployer@v1.4
         with:
           host: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }} # FTP username
-          password: ${{ secrets.FTP_PASSWORD }} # FTP password
-          local_folder: '.output' # optional, local path, default is: dist
-          remote_folder: '.output' # optional, remote path of your FTP server
-          cleanup: false # optional, remove existing files inside FTP remote folder
-          #include: '[".output", "index.js"]' # optional, e.g. '['dist']'
-          #exclude: '["*"]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
-          #pasive: true # optional
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_folder: '.output'
+          remote_folder: '.output'
+          cleanup: false
+
+      - name: Coping index.js to index_temp_directory/
+        run: mkdir index_temp_directory  
+        run: cp index.js index_temp_directory/index.js
+
+      - name: 📂 Uploading index.js
+        uses: sand4rt/ftp-deployer@v1.4
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_folder: 'index_temp_directory'
+          remote_folder: '.'
+          cleanup: false
+      
+      - name: Creating restart.txt...
+        run: mkdir restart_temp_directory
+        run: echo '' > restart_temp_directory/restart.txt
+
+      - name: 📂 Uploading restart.txt
+        uses: sand4rt/ftp-deployer@v1.4
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_folder: 'restart_temp_directory'
+          remote_folder: 'tmp'
+          cleanup: false
+      
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }} -a
+      
