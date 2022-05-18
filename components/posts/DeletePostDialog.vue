@@ -16,7 +16,7 @@
 </template>
 <script>
 import { useMainStore } from "~/store/mainStore"
-import CustomModal from "../CustomModal.vue"
+import CustomModal from "~/components/CustomModal.vue"
 export default {
     components: {
         CustomModal,

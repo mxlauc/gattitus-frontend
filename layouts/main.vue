@@ -274,7 +274,6 @@ if (process.client) {
     await mainStore.login()
 }
 await mainStore.setUser()
-console.log("setuuup")
 
 if (process.client) {
     await import("bootstrap")

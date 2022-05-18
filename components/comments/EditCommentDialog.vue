@@ -26,7 +26,7 @@
 </template>
 <script>
 import axios from "axios"
-import CustomModal from "../CustomModal.vue"
+import CustomModal from "~/components/CustomModal.vue"
 import { useMainStore } from "~/store/mainStore"
 // import axios from "axios"
 

@@ -87,7 +87,7 @@ import PostMenu from "~/components/posts/PostMenu.vue"
 import PetIconList from "~/components/posts/PetIconList.vue"
 import ReactAndCommentButtons from "~/components/posts/ReactAndCommentButtons.vue"
 import BestComments from "~/components/comments/BestComments.vue"
-import DisplayOnMounted from "../DisplayOnMounted.vue"
+import DisplayOnMounted from "~/components/DisplayOnMounted.vue"
 import { useMainStore } from "~/store/mainStore"
 
 export default {

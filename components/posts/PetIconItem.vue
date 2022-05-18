@@ -45,7 +45,7 @@
     </Popper>
 </template>
 <script>
-import ImagePreloader from "../images/ImagePreloader.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import Popper from "vue3-popper"
 
 export default {

@@ -11,30 +11,24 @@ export const useMainStore = defineStore("main", {
     },
     actions: {
         async login () {
-            console.log("login...")
             await fetchWithCookie(`${this.backendUrl}/sanctum/csrf-cookie`)
-            console.log("ya esta login")
         },
         async setUser () {
-            console.log("set user...")
             await fetchWithCookie(`${this.backendUrl}/api/user`)
                 .then(result => {
                     this.userLogged = result.data.data
-                    console.log(result.data.data)
-                    console.log("set user then")
                 })
-                .catch(r => {
-                    console.log("set user catch")
+                .catch(error => {
+                    console.log(error)
                 })
         },
         async loadPosts () {
-            console.log("cargando posts...")
             await fetchWithCookie(`${this.backendUrl}/api/posts`)
                 .then(result => {
                     this.posts = result.data.data
                 })
                 .catch(error => {
-                    console.log("no se pudo")
+                    console.log(error)
                 })
         },
         async deletePost (id) {

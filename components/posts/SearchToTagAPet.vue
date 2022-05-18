@@ -72,7 +72,7 @@
     </teleport>
 </template>
 <script>
-import ImagePreloader from "@/components/images/ImagePreloader.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
 

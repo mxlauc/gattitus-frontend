@@ -71,8 +71,8 @@ if (user) {
 </script>
 <script>
 
-import UserHeaderComponent from "../UserHeaderComponent.vue"
-import PetItemComponent from "../pet/PetItemComponent.vue"
+import UserHeaderComponent from "~/components/UserHeaderComponent.vue"
+import PetItemComponent from "~/components/pet/PetItemComponent.vue"
 
 export default {
     components: {

@@ -7,7 +7,7 @@
 <script>
 import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
-import ReportedPostItem from "@/components/admin/reports/ReportedPostItem.vue"
+import ReportedPostItem from "~/components/admin/reports/ReportedPostItem.vue"
 
 export default {
     components: {

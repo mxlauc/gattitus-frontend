@@ -37,7 +37,7 @@
     </div>
 </template>
 <script>
-import ImagePreloader from "@/components/images/ImagePreloader.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
 
