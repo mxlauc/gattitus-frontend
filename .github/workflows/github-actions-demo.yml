@@ -24,8 +24,7 @@ jobs:
           cleanup: false
 
       - name: Coping index.js to index_temp_directory/
-        run: mkdir index_temp_directory  
-        run: cp index.js index_temp_directory/index.js
+        run: mkdir index_temp_directory && cp index.js index_temp_directory/index.js
 
       - name: 📂 Uploading index.js
         uses: sand4rt/ftp-deployer@v1.4
@@ -38,8 +37,7 @@ jobs:
           cleanup: false
       
       - name: Creating restart.txt...
-        run: mkdir restart_temp_directory
-        run: echo '' > restart_temp_directory/restart.txt
+        run: mkdir restart_temp_directory && echo '' > restart_temp_directory/restart.txt
 
       - name: 📂 Uploading restart.txt
         uses: sand4rt/ftp-deployer@v1.4
