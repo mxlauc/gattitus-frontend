@@ -19,5 +19,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }} -a
-      - run: echo "Valor de SALUDO: ${{ secrets.SALUDO }}"
+      - run: echo "Valor de SALUDO ${{ secrets.SALUDO }}"
 #g].x{aBs*r}k)@xkHx
