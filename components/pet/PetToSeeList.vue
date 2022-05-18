@@ -25,7 +25,7 @@ await fetchWithCookie(`${mainStore.backendUrl}/api/pets`)
 
 </script>
 <script>
-import PetToSeeItem from "./PetToSeeItem.vue"
+import PetToSeeItem from "~/components/pet/PetToSeeItem.vue"
 export default {
     components: {
         PetToSeeItem,

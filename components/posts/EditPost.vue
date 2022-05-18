@@ -74,8 +74,8 @@
 </template>
 <script>
 import { useMainStore } from "~/store/mainStore"
-import ImagePreloader from "../images/ImagePreloader.vue"
-import SearchToTagAPet from "./SearchToTagAPet.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
+import SearchToTagAPet from "~/components/posts/SearchToTagAPet.vue"
 import axios from "axios"
 
 export default {

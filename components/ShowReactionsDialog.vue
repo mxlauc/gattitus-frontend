@@ -34,8 +34,8 @@
     </CustomModal>
 </template>
 <script>
-import CustomModal from "./CustomModal.vue"
-import ImagePreloader from "./images/ImagePreloader.vue"
+import CustomModal from "~/components/CustomModal.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
 

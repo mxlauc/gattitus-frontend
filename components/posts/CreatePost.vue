@@ -105,7 +105,7 @@
 <script>
 import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
-import SearchToTagAPet from "./SearchToTagAPet.vue"
+import SearchToTagAPet from "~/components/posts/SearchToTagAPet.vue"
 
 export default {
     components: {

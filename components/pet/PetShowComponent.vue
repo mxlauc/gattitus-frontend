@@ -111,9 +111,9 @@ if (process.client) {
 <script>
 
 import axios from "axios"
-import StickyMiddleColumn from "../StickyMiddleColumn.vue"
-import PostThumbnail from "../posts/PostThumbnail.vue"
-import UserToFollowItem from "../user/UserToFollowItem.vue"
+import StickyMiddleColumn from "~/components/StickyMiddleColumn.vue"
+import PostThumbnail from "~/components/posts/posts/PostThumbnail.vue"
+import UserToFollowItem from "~/components/user/UserToFollowItem.vue"
 
 export default {
     components: {

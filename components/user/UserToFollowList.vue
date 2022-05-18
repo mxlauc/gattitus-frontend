@@ -25,7 +25,7 @@ await fetchWithCookie(`${mainStore.backendUrl}/api/users`)
 
 </script>
 <script>
-import UserToFollowItem from "./UserToFollowItem.vue"
+import UserToFollowItem from "~/components/user/UserToFollowItem.vue"
 
 export default {
     components: {

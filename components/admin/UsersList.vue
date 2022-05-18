@@ -22,7 +22,7 @@
     </div>
 </template>
 <script>
-import UserItem from "@/components/admin/UserItem.vue"
+import UserItem from "~/components/admin/UserItem.vue"
 import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
 

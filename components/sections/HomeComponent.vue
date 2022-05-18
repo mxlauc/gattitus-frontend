@@ -118,12 +118,12 @@ const mainStore = useMainStore()
 await mainStore.loadPosts()
 </script>
 <script>
-import SimplePostComponent from "~~/components/posts/PostComponent.vue"
-import ImagePreloader from "~~/components/images/ImagePreloader.vue"
-import UserToFollowList from "~~/components/user/UserToFollowList.vue"
-import PetToSeeList from "~~/components/pet/PetToSeeList.vue"
+import SimplePostComponent from "~/components/posts/PostComponent.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
+import UserToFollowList from "~/components/user/UserToFollowList.vue"
+import PetToSeeList from "~/components/pet/PetToSeeList.vue"
 
-import StickyMiddleColumn from "~~/components/StickyMiddleColumn.vue"
+import StickyMiddleColumn from "~/components/StickyMiddleColumn.vue"
 
 export default {
     components: {

@@ -55,7 +55,7 @@
     </div>
 </template>
 <script>
-import ImagePreloader from "../images/ImagePreloader.vue"
+import ImagePreloader from "~/components/images/ImagePreloader.vue"
 
 export default {
     components: {

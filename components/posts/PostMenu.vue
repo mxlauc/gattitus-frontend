@@ -82,8 +82,8 @@
 import { t } from "~/i18n/i18n2"
 </script>
 <script>
-import DeletePostDialog from "./DeletePostDialog.vue"
-import ReportPostDialog from "./ReportPostDialog.vue"
+import DeletePostDialog from "~/components/posts/DeletePostDialog.vue"
+import ReportPostDialog from "~/components/posts/ReportPostDialog.vue"
 
 export default {
     components: {

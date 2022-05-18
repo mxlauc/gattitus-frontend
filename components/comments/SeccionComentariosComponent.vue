@@ -42,8 +42,8 @@
 import { t } from "~/i18n/i18n2"
 </script>
 <script>
-import ComentarioComponent from "./ComentarioComponent.vue"
-import NewComment from "./NewComment.vue"
+import ComentarioComponent from "~/components/comments/ComentarioComponent.vue"
+import NewComment from "~/components/comments/NewComment.vue"
 import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
 

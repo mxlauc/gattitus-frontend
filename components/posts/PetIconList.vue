@@ -13,7 +13,7 @@
 </template>
 <script>
 import { useMainStore } from "~/store/mainStore"
-import PetIconItem from "./PetIconItem.vue"
+import PetIconItem from "~/components/posts/PetIconItem.vue"
 
 export default {
     components: { PetIconItem },

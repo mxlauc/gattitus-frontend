@@ -24,7 +24,7 @@
 </template>
 <script>
 import { useMainStore } from "~/store/mainStore"
-import UserToFollowItem from "./UserToFollowItem.vue"
+import UserToFollowItem from "~/components/user/UserToFollowItem.vue"
 import axios from "axios"
 
 export default {
