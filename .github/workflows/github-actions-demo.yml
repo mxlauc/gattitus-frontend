@@ -24,14 +24,11 @@ jobs:
       - name: FTP Deployer
         uses: sand4rt/ftp-deployer@v1.4
         with:
-          #sftp: false # optional
-          host: ${{ secrets.FTP_HOST }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
-          #port: 21 # optional, default is: 21
+          host: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }} # FTP username
           password: ${{ secrets.FTP_PASSWORD }} # FTP password
-          #remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }} # optional, remote path of your FTP server
           local_folder: .output # optional, local path, default is: dist
           cleanup: false # optional, remove existing files inside FTP remote folder
-          include: '['.output', 'index.js']' # optional, e.g. '['dist']'
+          include: '['.output']' # optional, e.g. '['dist']'
           exclude: '[]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
           #pasive: true # optional
