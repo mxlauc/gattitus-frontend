@@ -11,7 +11,7 @@
         <img
             class="image-preloader img-fluid w-100 opacity-0"
             :src="image?.[option ?? 'url_sm'] ?? image"
-            :style="'aspect-ratio: ' + aspectRatio + '; objectFit: ' + (objectFit ? objectFit : null)"
+            :style="'aspect-ratio: ' + aspectRatio + '; object-fit: ' + (objectFit ? objectFit : null)"
             ref="image">
     </div>
 </template>
