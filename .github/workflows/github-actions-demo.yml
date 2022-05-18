@@ -12,6 +12,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Instalar packages
+        run: npm i
       - name: Building...
         run: npm run build
       - name: List files in the repository
