@@ -1,7 +1,10 @@
-name: GitHub Actions Demo
-on: [push]
+name: Gattitus actions
+on:
+  push:
+    branches:
+      - prod
 jobs:
-  Explore-GitHub-Actions:
+  Deploying Gattitus 🐱:
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Cloning
@@ -49,7 +52,4 @@ jobs:
           remote_folder: 'tmp'
           cleanup: false
       
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }} -a
-      
+      - run: 🎉 Deployed!
