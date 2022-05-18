@@ -31,5 +31,5 @@ jobs:
           remote_folder: '.' # optional, remote path of your FTP server
           cleanup: false # optional, remove existing files inside FTP remote folder
           include: '[".output", "index.js"]' # optional, e.g. '['dist']'
-          exclude: '[]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
+          exclude: '["*"]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
           #pasive: true # optional
