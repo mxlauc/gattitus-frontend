@@ -4,7 +4,7 @@ on:
     branches:
       - prod
 jobs:
-  Deploying Gattitus 🐱:
+  Deploying-Gattitus:
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Cloning
@@ -52,4 +52,4 @@ jobs:
           remote_folder: 'tmp'
           cleanup: false
       
-      - run: 🎉 Deployed!
+      - run: 🎉 Deployed 🐱!
