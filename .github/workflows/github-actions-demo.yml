@@ -30,8 +30,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }} # FTP username
           password: ${{ secrets.FTP_PASSWORD }} # FTP password
           #remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }} # optional, remote path of your FTP server
-          local_folder: .output # optional, local path, default is: dist
+          #local_folder: .output # optional, local path, default is: dist
           cleanup: false # optional, remove existing files inside FTP remote folder
-          include: '[]' # optional, e.g. '['dist']'
+          include: '['.output', 'index.js']' # optional, e.g. '['dist']'
           exclude: '[]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
           #pasive: true # optional
