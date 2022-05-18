@@ -20,4 +20,13 @@ jobs:
         run: |
           ls ${{ github.workspace }} -a
       - run: echo "Valor de SALUDO ${{ secrets.SALUDO }}"
-#g].x{aBs*r}k)@xkHx
+
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "index.js"
+          remoteDir: "."
+          options: ""
