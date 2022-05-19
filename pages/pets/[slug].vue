@@ -1,8 +1,5 @@
 <template>
-    <PetShowComponent />
+    <NuxtLayout name="main">
+        <PetShowComponent />
+    </NuxtLayout>
 </template>
-<script>
-definePageMeta({
-    layout: "main",
-})
-</script>

@@ -1,13 +1,10 @@
 <template>
-    <PagesList />
+    <NuxtLayout name="main">
+        <PagesList />
+    </NuxtLayout>
 </template>
 <script>
-// This will also work in `<script setup>`
 import PagesList from "~~/components/admin/pages/PagesList.vue"
-
-definePageMeta({
-    layout: "main",
-})
 export default {
     components: {
         PagesList,

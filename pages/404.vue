@@ -1,5 +1,8 @@
 <template>
     <div>
+        <NuxtLayout name="main">
+            Hello world!
+        </NuxtLayout>
         404
         <br>
         {{ error }}
@@ -12,9 +15,7 @@
     </div>
 </template>
 <script>
-definePageMeta({
-    layout: "main",
-})
+
 export default {
     props: ["error"]
 }

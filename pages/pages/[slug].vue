@@ -1,10 +1,5 @@
 <template>
-    <PageShow />
+    <NuxtLayout name="main">
+        <PageShow />
+    </NuxtLayout>
 </template>
-<script>
-// This will also work in `<script setup>`
-definePageMeta({
-    layout: "main",
-})
-
-</script>

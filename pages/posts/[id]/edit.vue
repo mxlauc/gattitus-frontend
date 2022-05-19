@@ -1,12 +1,9 @@
 <template>
-    <EditPost />
+    <NuxtLayout name="main">
+        <EditPost />
+    </NuxtLayout>
 </template>
 <script>
-// This will also work in `<script setup>`
-definePageMeta({
-    layout: "main",
-})
-
 import EditPost from "~/components/posts/EditPost.vue"
 
 export default {

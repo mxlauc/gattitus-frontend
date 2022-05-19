@@ -41,17 +41,10 @@
         </picture>
     </div>
 </template>
-<script>
+<script setup>
 import { useMainStore } from "~/store/mainStore"
 
-export default {
-    setup () {
-        const mainStore = useMainStore()
-        return {
-            mainStore
-        }
-    },
-}
+const mainStore = useMainStore()
 </script>
 <style scoped>
 .header{

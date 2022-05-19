@@ -40,7 +40,6 @@ module.exports = {
     },
     globals: {
         fetchWithCookie: "readable",
-        definePageMeta: "readable",
         useRoute: "readable",
     },
 }
