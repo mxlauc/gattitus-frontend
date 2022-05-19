@@ -7,6 +7,12 @@
             src="https://www.gattitus.com/assets/audio/cat_meow.mp3"
             preload="auto"
             style="display: none" />
+        <Head>
+            <Link
+                rel="manifest"
+                href="gattitus.webmanifest" />
+            <Script src="/app.js" />
+        </Head>
 
         <nav
             class="bg-white shadow-sm fixed-top"
