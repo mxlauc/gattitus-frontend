@@ -1,5 +1,4 @@
 self.addEventListener("fetch", function (event) {
-    console.log(event.request.url)
     if (event.request.mode === "navigate") {
         event.respondWith((async () => {
             try {
