@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <NuxtLayout name="main">
         <Head>
             <Title>{{ user?.name }} | Gattitus</Title>
         </Head>
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </NuxtLayout>
 </template>
 <script setup>
 import { useMainStore } from "~/store/mainStore"
@@ -72,10 +72,6 @@ if (user) {
             pets = response.data.data
         })
 }
-
-definePageMeta({
-    layout: "main",
-})
 
 </script>
 <script>

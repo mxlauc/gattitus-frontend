@@ -1,12 +1,10 @@
 <template>
-    <UsersComponent />
+    <NuxtLayout name="main">
+        <UsersComponent />
+    </NuxtLayout>
 </template>
 <script>
-// This will also work in `<script setup>`
 import UsersComponent from "~~/components/user/UsersComponent.vue"
-definePageMeta({
-    layout: "main",
-})
 export default {
     components: {
         UsersComponent,

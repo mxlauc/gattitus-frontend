@@ -7,17 +7,6 @@
             src="https://www.gattitus.com/assets/audio/cat_meow.mp3"
             preload="auto"
             style="display: none" />
-        <Head>
-            <Link
-                rel="manifest"
-                href="gattitus.webmanifest" />
-            <Script src="/app.js"></Script>
-            <Link
-                rel="icon"
-                href="/img/icons/icon-72x72.png"
-                type="image/png" />
-        </Head>
-
         <nav
             class="bg-white shadow-sm fixed-top"
             style="min-height: 64px">
@@ -279,16 +268,6 @@ import { useMainStore } from "~/store/mainStore"
 import { t } from "~/i18n/i18n2"
 
 const mainStore = useMainStore()
-
-if (process.client) {
-    await mainStore.login()
-}
-await mainStore.setUser()
-
-if (process.client) {
-    await import("bootstrap")
-}
-
 </script>
 <script>
 import HeaderComponent from "~/components/HeaderComponent.vue"

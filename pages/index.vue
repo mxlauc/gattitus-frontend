@@ -3,19 +3,28 @@
         <Head>
             <Title>Gattitus</Title>
         </Head>
-        <HomeComponent />
+        <NuxtLayout
+            name="main"
+            v-if="mainStore.userLogged">
+            <HomeComponent />
+        </NuxtLayout>
+        <NuxtLayout v-else>
+            <LandingPageComponent />
+        </NuxtLayout>
     </div>
 </template>
+<script setup>
+import { useMainStore } from "~~/store/mainStore"
+const mainStore = useMainStore()
+</script>
 <script>
-// This will also work in `<script setup>`
 import HomeComponent from "~~/components/sections/HomeComponent.vue"
+import LandingPageComponent from "~/components/sections/LandingPageComponent.vue"
 
-definePageMeta({
-    layout: "main",
-})
 export default {
     components: {
         HomeComponent,
+        LandingPageComponent,
     }
 }
 </script>

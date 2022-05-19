@@ -1,15 +1,12 @@
 <template>
-    <CreateReportType/>
+    <NuxtLayout name="main">
+        <CreateReportType />
+    </NuxtLayout>
 </template>
 <script>
-// This will also work in `<script setup>`
-definePageMeta({
-  layout: "main",
-});
-
-import CreateReportType from "~~/components/admin/reports/CreateReportType.vue";
-export default{
-    components:{
+import CreateReportType from "~~/components/admin/reports/CreateReportType.vue"
+export default {
+    components: {
         CreateReportType,
     }
 }
