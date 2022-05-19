@@ -58,11 +58,13 @@
                     <p class="fs-6 mt-1 mb-1 mx-3 text-muted">
                         {{ post?.simple_post.description }}
                     </p>
-                    <PetIconList
-                        v-if="post?.pets_count"
-                        :pets="post.pets"
-                        :pets-count="post.pets_count"
-                        class="px-3" />
+                    <DisplayOnMounted>
+                        <PetIconList
+                            v-if="post?.pets_count"
+                            :pets="post.pets"
+                            :pets-count="post.pets_count"
+                            class="px-3" />
+                    </DisplayOnMounted>
 
                     <ReactAndCommentButtons
                         v-if="post"
@@ -108,6 +110,7 @@ import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import PetIconList from "~/components/posts/PetIconList.vue"
 import PostMenu from "~/components/posts/PostMenu.vue"
 import ReactAndCommentButtons from "~/components/posts/ReactAndCommentButtons.vue"
+import DisplayOnMounted from "../DisplayOnMounted.vue"
 
 export default {
     components: {
@@ -116,6 +119,7 @@ export default {
         PetIconList,
         PostMenu,
         ReactAndCommentButtons,
+        DisplayOnMounted,
     },
     data () {
         return {
