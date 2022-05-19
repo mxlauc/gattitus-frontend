@@ -1,8 +1,10 @@
 <template>
-    <ReportedPostItem
-        v-for="post in postsPaginate?.data"
-        :key="post.id"
-        :post="post" />
+    <div>
+        <ReportedPostItem
+            v-for="post in postsPaginate?.data"
+            :key="post.id"
+            :post="post" />
+    </div>
 </template>
 <script>
 import axios from "axios"
@@ -28,7 +30,6 @@ export default {
         axios.get(`${this.mainStore.backendUrl}/api/admin/reports/posts`)
             .then(response => {
                 this.postsPaginate = response.data
-                console.log(response.data)
             })
     },
 }

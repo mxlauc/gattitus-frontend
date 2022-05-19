@@ -16,21 +16,44 @@ export default {
             sizeObserver: null,
         }
     },
-    props: ["top"],
+    props: {
+        top: {
+            type: Number,
+        }
+    },
     mounted () {
-        window.addEventListener("scroll", this.onScroll)
-        this.sizeObserver = new ResizeObserver(this.calcMinTop)
-        this.sizeObserver.observe(this.$refs.col)
+        this.startEvents()
     },
     unmounted () {
-        window.removeEventListener("scroll", this.onScroll)
-        this.sizeObserver.disconnect()
+        this.finishEvents()
     },
     methods: {
+        startEvents () {
+            window.addEventListener("scroll", this.onScroll)
+            window.addEventListener("resize", this.onWindowResize)
+            this.sizeObserver = new ResizeObserver(this.calcMinTop)
+            this.sizeObserver.observe(this.$refs.col)
+
+            // timeOut necesario porque Nuxt usa Suspense
+            window.setTimeout(() => {
+                this.onWindowResize()
+            }, 500)
+        },
+        finishEvents () {
+            window.removeEventListener("scroll", this.onScroll)
+            window.removeEventListener("resize", this.onWindowResize)
+            this.sizeObserver.disconnect()
+        },
+        onWindowResize () {
+            if (window.innerWidth > 767) {
+                this.$refs.col.style.position = "sticky"
+            } else {
+                this.$refs.col.style.position = null
+            }
+        },
         onScroll () {
             if (this.$refs.col.clientHeight + this.maxTop > window.innerHeight) {
                 const diffScroll = document.documentElement.scrollTop - this.scrollPos
-
                 if (diffScroll > 0) { // scroll bajando
                     this.topScroll -= diffScroll
                     if (this.topScroll < this.minTop) {

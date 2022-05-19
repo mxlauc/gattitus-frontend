@@ -95,7 +95,7 @@ let comments_count = null
 
 await fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)
     .then(response => {
-        post = response.data
+        post = response.data.data
         my_reaction = post.my_reaction
         reactions_count = post.reactions_count
         comments_count = post.comments_count

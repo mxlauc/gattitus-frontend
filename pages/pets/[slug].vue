@@ -1,5 +1,5 @@
 <template>
-    pagina del gato {{ $route.params.nickname }}
+    <PetShowComponent />
 </template>
 <script>
 definePageMeta({

@@ -1,5 +1,4 @@
 <template>
-    lista de pets
     <PetsComponent />
 </template>
 <script>

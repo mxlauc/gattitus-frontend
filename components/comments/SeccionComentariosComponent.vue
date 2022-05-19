@@ -40,23 +40,19 @@
 </template>
 <script setup>
 import { t } from "~/i18n/i18n2"
+import { useMainStore } from "~/store/mainStore"
+const mainStore = useMainStore()
+
 </script>
 <script>
 import ComentarioComponent from "~/components/comments/ComentarioComponent.vue"
 import NewComment from "~/components/comments/NewComment.vue"
 import axios from "axios"
-import { useMainStore } from "~/store/mainStore"
 
 export default {
     components: {
         ComentarioComponent,
         NewComment,
-    },
-    setup () {
-        const mainStore = useMainStore()
-        return {
-            mainStore
-        }
     },
     data () {
         return {

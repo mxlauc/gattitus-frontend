@@ -36,7 +36,7 @@ export default {
                 this.page = response.data
 
                 this.editor = new this.EditorJS({
-                    readOnly: true,
+                    readOnly: false,
                     data: JSON.parse(response.data.content),
                     tools: {
                         header: this.Header,

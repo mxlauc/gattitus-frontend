@@ -1,16 +1,18 @@
 <template>
-    <input
-        type="text"
-        ref="title">
-    <textarea
-        ref="description"
-        cols="30"
-        rows="10" />
-    <button
-        class="btn btn-primary"
-        @click="guardarReporte">
-        Guardar
-    </button>
+    <div>
+        <input
+            type="text"
+            ref="title">
+        <textarea
+            ref="description"
+            cols="30"
+            rows="10" />
+        <button
+            class="btn btn-primary"
+            @click="guardarReporte">
+            Guardar
+        </button>
+    </div>
 </template>
 <script>
 import axios from "axios"

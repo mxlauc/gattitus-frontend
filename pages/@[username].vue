@@ -1,6 +1,4 @@
 <template>
-    hola {{ $route.params.username }}
-
     <UserShowComponent />
 </template>
 <script>

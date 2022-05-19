@@ -1,9 +1,9 @@
 <template>
-    <div class="row g-3">
+    <div class="row mx-0 g-3">
         <div class="col-12 col-md-8 order-2 order-md-1 pb-5">
             <div
                 ref="petRow"
-                class="row g-2"
+                class="row mx-0 g-2"
                 id="pet-posts">
                 <div
                     class="col-6 col-sm-4"
@@ -14,7 +14,7 @@
             </div>
         </div>
         <StickyMiddleColumn
-            top="80"
+            :top="80"
             class="col-12 col-md-4 order-1 order-md-2">
             <div class="card">
                 <div class="card-body text-center">
@@ -112,7 +112,7 @@ if (process.client) {
 
 import axios from "axios"
 import StickyMiddleColumn from "~/components/StickyMiddleColumn.vue"
-import PostThumbnail from "~/components/posts/posts/PostThumbnail.vue"
+import PostThumbnail from "~/components/posts/PostThumbnail.vue"
 import UserToFollowItem from "~/components/user/UserToFollowItem.vue"
 
 export default {
