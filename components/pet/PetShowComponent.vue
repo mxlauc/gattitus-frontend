@@ -14,7 +14,7 @@
             </div>
         </div>
         <StickyMiddleColumn
-            top="80"
+            :top="80"
             class="col-12 col-md-4 order-1 order-md-2">
             <div class="card">
                 <div class="card-body text-center">

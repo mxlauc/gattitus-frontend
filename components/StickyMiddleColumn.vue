@@ -16,7 +16,11 @@ export default {
             sizeObserver: null,
         }
     },
-    props: ["top"],
+    props: {
+        top: {
+            type: Number,
+        }
+    },
     mounted () {
         window.addEventListener("scroll", this.onScroll)
         this.sizeObserver = new ResizeObserver(this.calcMinTop)

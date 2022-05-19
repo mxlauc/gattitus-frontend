@@ -10,7 +10,7 @@
             </div>
         </div>
         <StickyMiddleColumn
-            top="80"
+            :top="80"
             class="col-12 col-md-4"
             style="max-width: 400px; max-width: 100%;">
             <UserToFollowList />
