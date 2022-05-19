@@ -30,7 +30,7 @@
                     <img
                         src="/img/icons/icon-72x72.png"
                         style="height: 40px     ; margin-top: -10px;">
-                    <span class="title">Gattitus</span>
+                    <span class="title ms-2">Gattitus</span>
                 </NuxtLink>
             </div>
             <div class="col d-none d-lg-block ms-3">

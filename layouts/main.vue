@@ -11,7 +11,11 @@
             <Link
                 rel="manifest"
                 href="gattitus.webmanifest" />
-            <Script src="/app.js" />
+            <Script src="/app.js"></Script>
+            <Link
+                rel="icon"
+                href="/img/icons/icon-72x72.png"
+                type="image/png" />
         </Head>
 
         <nav

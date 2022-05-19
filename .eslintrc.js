@@ -36,6 +36,7 @@ module.exports = {
         "vue/require-default-prop": "off",
         "vue/multi-word-component-names": "off",
         "import/first": "off",
+        "vue/html-self-closing": "off",
     },
     globals: {
         fetchWithCookie: "readable",

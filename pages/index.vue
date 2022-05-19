@@ -1,5 +1,8 @@
 <template>
     <div>
+        <Head>
+            <Title>Gattitus</Title>
+        </Head>
         <HomeComponent />
     </div>
 </template>
