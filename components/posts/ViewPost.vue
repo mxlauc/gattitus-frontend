@@ -1,13 +1,18 @@
 <template>
     <div class="row">
         <div class="col-7">
+            <ImageFullscreen
+                :image="post?.simple_post.image"
+                v-if="show_image_fullscreen"
+                @close="show_image_fullscreen=false" />
             <ImagePreloader
                 :aspect="post?.simple_post.aspect_ratio"
                 :image="post?.simple_post.image"
                 option="url_xl"
                 object-fit="contain"
                 style="width: 100%; height: 600px; display: block;"
-                class="rounded-5 w-100 shadow-sm" />
+                class="rounded-5 w-100 shadow-sm"
+                @click="show_image_fullscreen=true" />
         </div>
         <div class="col-5">
             <div
@@ -94,6 +99,7 @@ import PetIconList from "~/components/posts/PetIconList.vue"
 import PostMenu from "~/components/posts/PostMenu.vue"
 import ReactAndCommentButtons from "~/components/posts/ReactAndCommentButtons.vue"
 import DisplayOnMounted from "../DisplayOnMounted.vue"
+import ImageFullscreen from "../images/ImageFullscreen.vue"
 
 export default {
     components: {
@@ -103,12 +109,14 @@ export default {
         PostMenu,
         ReactAndCommentButtons,
         DisplayOnMounted,
+        ImageFullscreen,
     },
     data () {
         return {
             my_reaction: this.post.my_reaction,
             reactions_count: this.post.reactions_count,
             comments_count: this.post.comments_count,
+            show_image_fullscreen: false,
         }
     },
     props: [

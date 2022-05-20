@@ -52,6 +52,10 @@
             </DisplayOnMounted>
 
             <div class="my-2 position-relative">
+                <ImageFullscreen
+                    :image="post.simple_post.image"
+                    v-if="show_image_fullscreen"
+                    @close="show_image_fullscreen=false" />
                 <image-preloader
                     :aspect="post.simple_post.image.aspect_ratio"
                     option="url_lg"
@@ -59,7 +63,7 @@
                     class="rounded-5 w-100 shadow-sm" />
                 <div
                     class="position-absolute top-0 start-0 end-0 bottom-0"
-                    @click="clickHandler" />
+                    @click="show_image_fullscreen=true" />
             </div>
 
             <ReactAndCommentButtons
@@ -88,6 +92,7 @@ import PetIconList from "~/components/posts/PetIconList.vue"
 import ReactAndCommentButtons from "~/components/posts/ReactAndCommentButtons.vue"
 import SeccionComentariosComponent from "~/components/comments/SeccionComentariosComponent.vue"
 import DisplayOnMounted from "~/components/DisplayOnMounted.vue"
+import ImageFullscreen from "../images/ImageFullscreen.vue"
 import { useMainStore } from "~/store/mainStore"
 
 export default {
@@ -98,6 +103,7 @@ export default {
         ReactAndCommentButtons,
         SeccionComentariosComponent,
         DisplayOnMounted,
+        ImageFullscreen,
     },
     setup () {
         const mainStore = useMainStore()
@@ -110,6 +116,7 @@ export default {
             reactions_count: this.post.reactions_count,
             comments_count: this.post.comments_count,
             my_reaction: this.post.my_reaction,
+            show_image_fullscreen: false,
         }
     },
     props: ["post"],

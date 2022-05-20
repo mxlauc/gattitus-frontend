@@ -6,12 +6,11 @@
                 type="button"
                 class="btn-close bg-white shadow position-absolute top-0 end-0 m-4 p-2 rounded-circle"
                 aria-label="Close"
-                @click="back()" />
+                @click="close" />
         </div>
     </teleport>
 </template>
 <script>
-import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
 
 export default {
@@ -21,23 +20,20 @@ export default {
             mainStore
         }
     },
-    data () {
-        return {
-            image: null
-        }
-    },
+    props: ["image"],
+    emits: ["close"],
     components: {
 
     },
     mounted () {
-        axios.get(`${this.mainStore.backendUrl}/api/posts/${this.$route.params.id}`)
-            .then(response => {
-                this.image = response.data.data.simple_post.image
-            })
+        document.body.style.overflow = "hidden"
+    },
+    unmounted () {
+        document.body.style.overflow = null
     },
     methods: {
-        back () {
-            this.$router.replace("/")
+        close () {
+            this.$emit("close")
         }
     }
 }
