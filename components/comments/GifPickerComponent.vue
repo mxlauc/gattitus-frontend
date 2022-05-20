@@ -2,19 +2,17 @@
     <Popper
         arrow
         @open:popper="onDialogShown"
-        :show="showDialog"
         placement="top">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="35"
-            @click="showDialog = showDialog ? true : null"
             height="35"
             fill="currentColor"
             class="p-1"
             viewBox="0 0 16 16">
             <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z" />
         </svg>
-        <template #content>
+        <template #content="{close}">
             <div class="contenedorGifs">
                 <div class="contenedorInput">
                     <input
@@ -32,7 +30,7 @@
                             v-for="gif in gifs"
                             :key="gif"
                             :style="{aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1]}"
-                            @click="imprimir(gif.media[0].tinygif.url)">
+                            @click="close(); imprimir(gif.media[0].tinygif.url)">
                             <gif-searched-component
                                 :post-id="postId"
                                 :img="gif.media[0].nanogif" />
@@ -70,7 +68,6 @@ export default {
             gifs: [],
             timeOut: null,
             textoEscrito: "",
-            showDialog: null,
         }
     },
     props: ["postId"],
@@ -86,10 +83,13 @@ export default {
                 this.cargarDefaultGifs()
             } else if (this.gifs.length === 0) {
                 this.gifs = sharedData.gifs
+                window.setTimeout(() => {
+                    this.aplicarMasonry()
+                }, 10)
             }
         },
         cargarDefaultGifs () {
-            this.obtenerGifsTenor("gato alegre")
+            this.obtenerGifsTenor("gato alegre", true)
         },
         escribir () {
             clearTimeout(this.timeOut)
@@ -104,24 +104,28 @@ export default {
         buscarGifs () {
             this.obtenerGifsTenor(this.textoEscrito)
         },
-        obtenerGifsTenor (texto) {
+        obtenerGifsTenor (texto, save) {
             axios.get(`https://g.tenor.com/v1/search?q=${texto}&key=L8942WRVS35R&limit=20&media_filter=basic&locale=es_PE&ar_range=standard`, { withCredentials: false })
                 .then(response => {
                     this.gifs = response.data.results
-                    sharedData.gifs = response.data.results
+                    if (save) {
+                        sharedData.gifs = response.data.results
+                    }
                 })
                 .then(() => {
-                    const msnry = new this.Masonry("#masonry-gifs-row" + this.postId, {
-                        percentPosition: true,
-                    })
-                    msnry.reloadItems()
-                    msnry.layout()
+                    this.aplicarMasonry()
                 })
         },
         imprimir (url) {
             this.$emit("gifSeleccionado", url)
-            this.showDialog = false
-        }
+        },
+        aplicarMasonry () {
+            const msnry = new this.Masonry("#masonry-gifs-row" + this.postId, {
+                percentPosition: true,
+            })
+            msnry.reloadItems()
+            msnry.layout()
+        },
     }
 
 }
