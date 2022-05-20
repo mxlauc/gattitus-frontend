@@ -33,6 +33,7 @@
                         v-if="comentario.gif_url">
                         <video
                             :src="comentario.gif_url"
+                            oncontextmenu="return false;"
                             loop
                             autoplay
                             muted
