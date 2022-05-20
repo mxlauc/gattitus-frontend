@@ -31,10 +31,13 @@
                     <div
                         class="position-relative"
                         v-if="comentario.gif_url">
-                        <img
+                        <video
                             :src="comentario.gif_url"
+                            loop
+                            autoplay
+                            muted
                             class="img-fluid shadow-sm"
-                            style="border-radius: 10px;height: 120px;">
+                            style="border-radius: 10px;height: 120px; vertical-align: middle;"></video>
                         <span
                             class="px-1 rounded position-absolute bottom-0 start-0 m-1"
                             style="background-color:rgba(255,255,255,0.4);">

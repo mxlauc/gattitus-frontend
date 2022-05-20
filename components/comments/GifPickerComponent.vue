@@ -30,7 +30,7 @@
                             v-for="gif in gifs"
                             :key="gif"
                             :style="{aspectRatio: gif.media[0].nanogif.dims[0] / gif.media[0].nanogif.dims[1]}"
-                            @click="close(); imprimir(gif.media[0].tinygif.url)">
+                            @click="close(); imprimir(gif.media[0])">
                             <gif-searched-component
                                 :post-id="postId"
                                 :img="gif.media[0].nanogif" />
@@ -116,8 +116,8 @@ export default {
                     this.aplicarMasonry()
                 })
         },
-        imprimir (url) {
-            this.$emit("gifSeleccionado", url)
+        imprimir (obj) {
+            this.$emit("gifSeleccionado", obj)
         },
         aplicarMasonry () {
             const msnry = new this.Masonry("#masonry-gifs-row" + this.postId, {

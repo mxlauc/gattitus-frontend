@@ -5,7 +5,7 @@
                 class="col-auto position-relative mx-auto "
                 v-if="gifSeleccionado">
                 <img
-                    :src="gifSeleccionado"
+                    :src="gifSeleccionado.tinygif.url"
                     style="height: 100px; border-radius: 5px;">
                 <button
                     type="button"
@@ -111,7 +111,7 @@ export default {
                 url: `${this.mainStore.backendUrl}/api/posts/${this.postId}/comments`,
                 data: {
                     description: texto,
-                    gif_url: this.gifSeleccionado,
+                    gif_url: this.gifSeleccionado.tinymp4.url,
                 },
                 withCredentials: true,
             })
@@ -120,7 +120,7 @@ export default {
                         id: response.data.id,
                         description: texto,
                         created_at: Math.trunc(Date.now() / 1000),
-                        gif_url: this.gifSeleccionado,
+                        gif_url: this.gifSeleccionado.tinymp4.url,
                         user: this.mainStore.userLogged,
                     })
                     this.$emit("contadorActualizado", response.data.comments_count)
@@ -136,8 +136,8 @@ export default {
                     }
                 })
         },
-        recibirGif (url) {
-            this.gifSeleccionado = url
+        recibirGif (obj) {
+            this.gifSeleccionado = obj
         }
     }
 }
