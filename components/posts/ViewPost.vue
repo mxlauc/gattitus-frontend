@@ -84,24 +84,7 @@
     </div>
 </template>
 <script setup>
-import { useMainStore } from "~/store/mainStore"
 import { t, timeAgo } from "~/i18n/i18n2"
-
-const mainStore = useMainStore()
-const route = useRoute()
-
-let post = null
-let my_reaction = null
-let reactions_count = null
-let comments_count = null
-
-await fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)
-    .then(response => {
-        post = response.data.data
-        my_reaction = post.my_reaction
-        reactions_count = post.reactions_count
-        comments_count = post.comments_count
-    })
 
 </script>
 <script>
@@ -123,9 +106,14 @@ export default {
     },
     data () {
         return {
-
+            my_reaction: this.post.my_reaction,
+            reactions_count: this.post.reactions_count,
+            comments_count: this.post.comments_count,
         }
     },
+    props: [
+        "post",
+    ],
     methods: {
         contadorActualizado (count) {
             this.comments_count = count
