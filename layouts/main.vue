@@ -405,6 +405,7 @@ body{
         z-index: 1200;
         box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
         padding-left: 0px !important;
+        overflow-y: auto;
     }
     #sidebar .shadow{
         box-shadow: unset !important;
