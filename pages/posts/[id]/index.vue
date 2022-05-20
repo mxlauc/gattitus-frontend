@@ -35,7 +35,16 @@ export default {
         }
     },
     mounted () {
-        this.is_mobile = !(window.innerWidth > 767)
+        window.addEventListener("resize", this.onResizeWindow)
+        this.onResizeWindow()
+    },
+    unmounted () {
+        window.removeEventListener("resize", this.onResizeWindow)
+    },
+    methods: {
+        onResizeWindow () {
+            this.is_mobile = !(window.innerWidth > 767)
+        }
     }
 }
 </script>
