@@ -23,8 +23,4 @@ if (process.server) {
 if (process.server) {
     await mainStore.setUser()
 }
-
-if (process.client) {
-    await import("bootstrap")
-}
 </script>

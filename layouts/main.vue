@@ -271,12 +271,10 @@ const mainStore = useMainStore()
 </script>
 <script>
 import HeaderComponent from "~/components/HeaderComponent.vue"
-import CreatePetComponent from "~/components/pet/CreatePetComponent.vue"
 
 export default {
     components: {
         HeaderComponent,
-        CreatePetComponent,
     },
     mounted () {
 

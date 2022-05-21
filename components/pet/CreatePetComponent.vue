@@ -1,116 +1,93 @@
 <template>
-    <div>
-        <!-- Modal -->
-        <div
-            class="modal fade"
-            id="createPet"
-            tabindex="-1"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            aria-hidden="true">
-            <div
-                class="
-                    modal-dialog modal-dialog-centered modal-dialog-scrollable
-                ">
-                <div
-                    class="modal-content"
-                    style="box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1)">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            Create cat
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close" />
+    <CustomModal
+        :hide-buttons="true"
+        @cancel="$emit('close')">
+        <template #title>
+            Crear gato
+        </template>
+        <div>
+            <form
+                action="/"
+                @submit.prevent="enviarFormulario"
+                ref="formCrear"
+                method="POST">
+                <div class="row gy-3">
+                    <div class="col-sm-5">
+                        <span class="d-block form-label">Foto</span>
+                        <div
+                            class="position-relative"
+                            v-if="imagenPreview">
+                            <img
+                                :src="imagenPreview"
+                                class="w-100 rounded-3"
+                                style="aspect-ratio: 1;">
+                            <button
+                                type="button"
+                                class="btn-close bg-white shadow position-absolute top-0 end-0 m-3 p-2 rounded-circle"
+                                aria-label="Close"
+                                @click="borrarImagen" />
+                        </div>
+                        <label
+                            for="imagePet"
+                            class="form-control"
+                            tabindex="0"
+                            role="button"
+                            style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"
+                            v-else>
+                            <img
+                                src="https://img.icons8.com/cotton/2x/image-file-add--v2.png"
+                                style="height: 20px">
+                            Add image
+                        </label>
                     </div>
-                    <div class="modal-body">
+                    <div class="col-sm-7">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Ejemplo: El señor Bigotes"
+                                name="name">
+                        </div>
                         <div>
-                            <form
-                                action="/"
-                                @submit.prevent="enviarFormulario"
-                                ref="formCrear"
-                                method="POST">
-                                <div class="row gy-3">
-                                    <div class="col-sm-5">
-                                        <span class="d-block form-label">Foto</span>
-                                        <div
-                                            class="position-relative"
-                                            v-if="imagenPreview">
-                                            <img
-                                                :src="imagenPreview"
-                                                class="w-100 rounded-3"
-                                                style="aspect-ratio: 1;">
-                                            <button
-                                                type="button"
-                                                class="btn-close bg-white shadow position-absolute top-0 end-0 m-3 p-2 rounded-circle"
-                                                aria-label="Close"
-                                                @click="borrarImagen" />
-                                        </div>
-                                        <label
-                                            for="imagePet"
-                                            class="form-control"
-                                            tabindex="0"
-                                            role="button"
-                                            style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"
-                                            v-else>
-                                            <img
-                                                src="https://img.icons8.com/cotton/2x/image-file-add--v2.png"
-                                                style="height: 20px">
-                                            Add image
-                                        </label>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="mb-3">
-                                            <label class="form-label">Nombre</label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                placeholder="Ejemplo: El señor Bigotes"
-                                                name="name">
-                                        </div>
-                                        <div>
-                                            <label class="form-label">Apodo (Opcional)</label>
-                                            <textarea
-                                                class="form-control"
-                                                name="nickname"
-                                                style="height: 100px;"
-                                                ref="textarea"
-                                                @keyup="keyup"
-                                                placeholder="Ejemplo: El que me pide comida a las 5 de la mañana" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <input
-                                    type="file"
-                                    id="imagePet"
-                                    class="d-none"
-                                    accept="image/png, image/jpeg"
-                                    @change="mostrarPreview">
-                            </form>
+                            <label class="form-label">Apodo (Opcional)</label>
+                            <textarea
+                                class="form-control"
+                                name="nickname"
+                                style="height: 100px;"
+                                ref="textarea"
+                                @keyup="keyup"
+                                placeholder="Ejemplo: El que me pide comida a las 5 de la mañana" />
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-primary w-100 mt-2"
-                            :disabled="disableButton"
-                            @click="enviarFormulario">
-                            Publish
-                        </button>
-                    </div>
                 </div>
-            </div>
+
+                <input
+                    type="file"
+                    id="imagePet"
+                    class="d-none"
+                    accept="image/png, image/jpeg"
+                    @change="mostrarPreview">
+            </form>
+            <button
+                type="button"
+                class="btn btn-primary w-100 mt-2"
+                :disabled="disableButton"
+                @click="enviarFormulario">
+                Publish
+            </button>
         </div>
-    </div>
+    </CustomModal>
 </template>
 <script>
 import axios from "axios"
+import CustomModal from "../CustomModal.vue"
 import { useMainStore } from "~/store/mainStore"
 
 export default {
+    components: {
+        CustomModal,
+    },
     setup () {
         const mainStore = useMainStore()
         return {
@@ -131,7 +108,7 @@ export default {
             return !this.imagenPreview && !this.textareaLength
         }
     },
-    emits: ["postCreated"],
+    emits: ["close"],
     methods: {
         keyup (e) {
             this.textareaLength = this.$refs.textarea.value.trim().length
@@ -148,20 +125,16 @@ export default {
                     this.imageId = null
                     this.textareaLength = 0
                     this.imagenPreview = null
-/*                     const modal = Modal.getInstance(document.getElementById("createPet"))
-                    modal.hide() */
-                // this.$emit("postCreated", response.data.data);
-                // this.ocultarModal();
+                    this.ocultarModal()
                 })
                 .catch((error) => {
                     console.log(error)
                 })
         },
         ocultarModal () {
-            /* const myModal = window.bootstrap.Modal.getInstance(document.getElementById("createPet"))
-            myModal.hide() */
             this.imagenPreview = null
             this.$refs.formCrear.reset()
+            this.$emit("close")
         },
         mostrarPreview (e) {
             // this.imagenPreview = URL.createObjectURL(e.target.files[0]);
