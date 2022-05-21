@@ -153,8 +153,6 @@ import { useMainStore } from "~/store/mainStore"
 import {t} from "~/i18n/i18n2"
 
 const mainStore = useMainStore()
-let saludo = "hola";
-
 </script>
 <script>
 import { useMainStore } from "~/store/mainStore"
