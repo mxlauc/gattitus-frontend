@@ -7,8 +7,12 @@
             v-if="user"
             :user="user" />
         <div class="row gy-4 gx-0 mt-0">
-            <div class="col-12 col-md-7 order-2 order-md-1 text-center">
+            <div class="col-12 col-md-7 order-2 order-md-1">
                 <div style="max-width: 460px; margin: auto">
+                    <PostComponent
+                        v-for="p in posts"
+                        :key="p.id"
+                        :post="p" />
                     <div
                         class="card shadow mb-4"
                         style="height: 500px" />
@@ -60,6 +64,7 @@ const route = useRoute()
 
 let user = null
 let pets = null
+let posts = null
 
 await fetchWithCookie(`${mainStore.backendUrl}/api/@${route.params.username}`)
     .then(response => {
@@ -73,16 +78,23 @@ if (user) {
         })
 }
 
+await fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/posts`)
+    .then(response => {
+        posts = response.data.data
+    })
+
 </script>
 <script>
 
 import UserHeaderComponent from "~/components/UserHeaderComponent.vue"
 import PetItemComponent from "~/components/pet/PetItemComponent.vue"
+import PostComponent from "~~/components/posts/PostComponent.vue"
 
 export default {
     components: {
         UserHeaderComponent,
         PetItemComponent,
+        PostComponent,
     },
     data () {
         return {
