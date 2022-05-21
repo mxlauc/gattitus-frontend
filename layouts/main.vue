@@ -25,7 +25,9 @@
                 class="col-auto sticky-top ps-4"
                 style="width: 260px; height: 100vh"
                 @click="hideDrawer">
-                <div class="d-flex flex-column h-100">
+                <div
+                    class="d-flex flex-column h-100"
+                    style="overflow-y: auto;">
                     <div class>
                         <NuxtLink
                             to="/"
@@ -244,6 +246,120 @@
                                         </svg>
                                         <span>
                                             Pages list
+                                        </span>
+                                    </li>
+                                </NuxtLink>
+                                <NuxtLink
+                                    to="/help"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Sobre
+                                        </span>
+                                    </li>
+                                </NuxtLink>
+                                <NuxtLink
+                                    to="/help/faq"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Preguntas frecuentes
+                                        </span>
+                                    </li>
+                                </NuxtLink>
+                                <NuxtLink
+                                    to="/help/rules"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Reglas de publicación
+                                        </span>
+                                    </li>
+                                </NuxtLink>
+                                <NuxtLink
+                                    to="/help/privacy"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Politicas de privacidad
+                                        </span>
+                                    </li>
+                                </NuxtLink>
+                                <NuxtLink
+                                    to="/help/terms"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Terminos y condiciones
+                                        </span>
+                                    </li>
+                                </NuxtLink>
+                                <NuxtLink
+                                    to="/help/delete-account"
+                                    active-class="options-sidebar-active">
+                                    <li>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25"
+                                            height="25"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span>
+                                            Eliminar cuenta
                                         </span>
                                     </li>
                                 </NuxtLink>
