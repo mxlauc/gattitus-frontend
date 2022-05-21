@@ -24,7 +24,7 @@
                                         <small>Estas apunto de eliminar esta cuenta</small>
                                     </p>
                                     <img
-                                        src="{{mainStore.userLogged?.image.url_sm}}"
+                                        :src="mainStore.userLogged?.image.url_sm"
                                         style="height: 30px;"
                                         class="mr-2">
                                     <label>{{ mainStore.userLogged?.name }}</label>
@@ -47,7 +47,7 @@
                             <figure class="figure">
                                 <img
                                     class="figure-img img-fluid rounded"
-                                    src="/assets/images/cat_sad.png">
+                                    src="/img/cat_sad.png">
                             </figure>
                         </div>
                     </div>
