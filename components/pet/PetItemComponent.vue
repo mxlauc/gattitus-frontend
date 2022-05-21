@@ -1,10 +1,17 @@
 <template>
     <div class="text-center">
-        <image-preloader
-            :image="pet.image"
-            class="pet-item-img shadow"
-            aspect="1" />
-        <span class="d-block mt-2 text-muted"><small>{{ pet.name }}</small></span>
+        <NuxtLink :to="'/pets/' + pet.slug">
+            <image-preloader
+                :image="pet.image"
+                class="pet-item-img shadow"
+                aspect="1" />
+        </NuxtLink>
+        <NuxtLink
+            :to="'/pets/' + pet.slug"
+            class="text-decoration-none">
+            <span class="d-block mt-1 fw-bold text-dark">{{ pet.name }}</span>
+        </NuxtLink>
+        <span class="d-block mt-0 text-muted"><small>{{ pet.name }}</small></span>
     </div>
 </template>
 <script>

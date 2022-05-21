@@ -13,37 +13,20 @@
                         v-for="p in posts"
                         :key="p.id"
                         :post="p" />
-                    <div
-                        class="card shadow mb-4"
-                        style="height: 500px" />
-                    <div
-                        class="card shadow mb-4"
-                        style="height: 500px" />
-                    <div
-                        class="card shadow mb-4"
-                        style="height: 500px" />
-                    <div
-                        class="card shadow mb-4"
-                        style="height: 500px" />
-                    <div
-                        class="card shadow mb-4"
-                        style="height: 500px" />
-                    <div
-                        class="card shadow mb-4"
-                        style="height: 500px" />
                 </div>
             </div>
-            <div class="col-12 col-md-5 order-1 order-md-2">
+            <StickyMiddleColumn
+                class="col-12 col-md-5 order-1 order-md-2"
+                :top="80">
                 <div
-                    class="card shadow-sm"
-                    style="max-height: 400px; overflow-y: auto">
+                    class="card shadow-sm mb-0 mb-md-5">
                     <div class="card-body p-4">
                         <h1 class="pb-3 fw-bold">
                             {{ t('myPets') }}
                         </h1>
-                        <div class="row gy-3">
+                        <div class="row g-2">
                             <div
-                                class="col-4 col-lg-3"
+                                class="col-4 col-sm-3 col-md-4 col-lg-3"
                                 v-for="pet in pets"
                                 :key="pet.id">
                                 <pet-item-component :pet="pet" />
@@ -51,11 +34,30 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </StickyMiddleColumn>
+            <!--div class="col-12 col-md-5 order-1 order-md-2">
+                <div
+                    class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h1 class="pb-3 fw-bold">
+                            {{ t('myPets') }}
+                        </h1>
+                        <div class="row g-2">
+                            <div
+                                class="col-4 col-sm-3 col-md-4 col-lg-3"
+                                v-for="pet in pets"
+                                :key="pet.id">
+                                <pet-item-component :pet="pet" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </!--div-->
         </div>
     </NuxtLayout>
 </template>
 <script setup>
+import StickyMiddleColumn from "~/components/StickyMiddleColumn.vue"
 import { useMainStore } from "~/store/mainStore"
 import { t } from "~/i18n/i18n2"
 

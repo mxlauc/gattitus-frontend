@@ -20,7 +20,7 @@
                             <img
                                 :src="imagenPreview"
                                 class="w-100 rounded-3"
-                                style="aspect-ratio: 1;">
+                                style="aspect-ratio: 1; object-fit: cover;">
                             <button
                                 type="button"
                                 class="btn-close bg-white shadow position-absolute top-0 end-0 m-3 p-2 rounded-circle"
