@@ -1,5 +1,5 @@
 <template>
-    <NuxtLayout name="main">
+    <NuxtLayout name="help">
         <div class="card">
             <div class="card-body">
                 <div class="my-3 text-secondary">
