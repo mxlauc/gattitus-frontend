@@ -14,7 +14,9 @@
                     Un lugar donde los usuarios pueden compartir y descubrir fotos de gatos
                 </p>
 
-                <a :href="mainStore.backendUrl + '/auth/login/facebook'">
+                <a
+                    href="#"
+                    @click="openPopup">
 
                     <button
                         style="margin-top: 30px;"
@@ -45,6 +47,32 @@
 import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
+</script>
+<script>
+export default {
+    data () {
+        return {
+            myPopup: null,
+        }
+    },
+    methods: {
+        openPopup () {
+            if (this.myPopup) {
+                return
+            }
+            this.myPopup = window.open(this.mainStore.backendUrl + "/auth/login/facebook",
+                "popup",
+                "height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no"
+            )
+            const timer = window.setInterval(() => {
+                if (this.myPopup.closed) {
+                    clearInterval(timer)
+                    location.reload()
+                }
+            }, 1000)
+        }
+    }
+}
 </script>
 <style scoped>
 .header{
