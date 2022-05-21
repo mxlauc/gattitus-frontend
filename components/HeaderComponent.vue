@@ -43,7 +43,8 @@
             </div>
             <div class="col-auto ms-auto">
                 <div v-if="mainStore.userLogged">
-                    <Popper
+                    <DisplayOnMounted>
+                        <Popper
                         arrow
                         placement="bottom">
                         <button
@@ -98,6 +99,7 @@
                             </div>
                         </template>
                     </Popper>
+                    </DisplayOnMounted>
 
                     <NuxtLink
                         :to="'/@' + mainStore.userLogged?.username"
@@ -108,7 +110,8 @@
                             class="user-img-small" />
                     </NuxtLink>
 
-                    <Popper
+                    <DisplayOnMounted>
+                        <Popper
                         arrow
                         placement="bottom">
                         <span class="rounded-3 p-3 more-options">
@@ -133,6 +136,7 @@
                             </div>
                         </template>
                     </Popper>
+                    </DisplayOnMounted>
                 </div>
                 <a
                     :href="mainStore.backendUrl + '/auth/login/facebook'"
@@ -157,11 +161,13 @@ import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import Popper from "vue3-popper"
+import DisplayOnMounted from "./DisplayOnMounted.vue"
 import CreatePetComponent from "./pet/CreatePetComponent.vue"
 export default {
     components: {
         ImagePreloader,
         CreatePetComponent,
+        DisplayOnMounted,
         Popper,
     },
     data(){
