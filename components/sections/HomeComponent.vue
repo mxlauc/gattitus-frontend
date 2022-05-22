@@ -13,9 +13,7 @@
             :top="80"
             class="col-12 col-md-4"
             style="max-width: 400px; max-width: 100%;">
-            <DisplayOnMounted>
-                <UserToFollowList />
-            </DisplayOnMounted>
+            <UserToFollowList />
             <PetToSeeList />
         </StickyMiddleColumn>
     </div>
