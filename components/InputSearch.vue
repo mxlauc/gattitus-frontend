@@ -17,7 +17,7 @@ export default {
             if (this.timeOut) {
                 window.clearTimeout(this.timeOut)
             }
-            this.timeOut = window.setTimeout(this.emitEvent, 1500)
+            this.timeOut = window.setTimeout(this.emitEvent, 1000)
         },
         emitEvent () {
             this.$emit("onSearch", this.$refs.input.value)
