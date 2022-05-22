@@ -17,7 +17,7 @@ import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
 let users = null
-await fetchWithCookie(`${mainStore.backendUrl}/api/users`)
+await fetchWithCookie(`${mainStore.backendUrl}/api/users/discover`)
     .then(response => {
         users = response.data.data
     })

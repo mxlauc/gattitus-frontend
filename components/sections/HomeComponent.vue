@@ -13,7 +13,9 @@
             :top="80"
             class="col-12 col-md-4"
             style="max-width: 400px; max-width: 100%;">
-            <UserToFollowList />
+            <DisplayOnMounted>
+                <UserToFollowList />
+            </DisplayOnMounted>
             <PetToSeeList />
         </StickyMiddleColumn>
     </div>
@@ -28,7 +30,7 @@ import SimplePostComponent from "~/components/posts/PostComponent.vue"
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import UserToFollowList from "~/components/user/UserToFollowList.vue"
 import PetToSeeList from "~/components/pet/PetToSeeList.vue"
-
+import DisplayOnMounted from "../DisplayOnMounted.vue"
 import StickyMiddleColumn from "~/components/StickyMiddleColumn.vue"
 
 export default {
@@ -38,6 +40,7 @@ export default {
         UserToFollowList,
         PetToSeeList,
         StickyMiddleColumn,
+        DisplayOnMounted,
     },
     data () {
         return {
