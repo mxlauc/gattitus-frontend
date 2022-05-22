@@ -17,18 +17,25 @@ import { useMainStore } from "~/store/mainStore"
 
 const mainStore = useMainStore()
 
-let pets = null
-await fetchWithCookie(`${mainStore.backendUrl}/api/pets`)
-    .then(response => {
-        pets = response.data.data
-    }).catch(error => {})
-
 </script>
 <script>
 import PetToSeeItem from "~/components/pet/PetToSeeItem.vue"
+import axios from "axios"
+
 export default {
     components: {
         PetToSeeItem,
+    },
+    data () {
+        return {
+            pets: null,
+        }
+    },
+    mounted () {
+        axios.get(`${this.mainStore.backendUrl}/api/pets/discover`)
+            .then(response => {
+                this.pets = response.data.data
+            })
     },
 }
 </script>
