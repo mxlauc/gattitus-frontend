@@ -1,10 +1,9 @@
 <template>
     <div>
-        <input
-            type="text"
+        <InputSearch
             class="w-100 form-control my-4"
-            placeholder="Buscar usuario">
-
+            placeholder="Buscar usuario"
+            @on-search="onSearch" />
         <div class="row g-3 mx-0">
             <div
                 class="col-12 col-sm-6 col-lg-4"
@@ -25,11 +24,13 @@
 <script>
 import { useMainStore } from "~/store/mainStore"
 import UserToFollowItem from "~/components/user/UserToFollowItem.vue"
+import InputSearch from "~/components/InputSearch.vue"
 import axios from "axios"
 
 export default {
     components: {
         UserToFollowItem,
+        InputSearch,
     },
     setup () {
         const mainStore = useMainStore()
@@ -47,6 +48,11 @@ export default {
             .then(response => {
                 this.users = response.data.data
             })
+    },
+    methods: {
+        onSearch (value) {
+            console.log(value)
+        }
     }
 }
 </script>
