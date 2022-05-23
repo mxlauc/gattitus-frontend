@@ -35,8 +35,5 @@
     "vue": "^3.2.33",
     "vue-i18n": "^9.2.0-beta.35",
     "vue3-popper": "^1.4.2"
-  },
-  "dependencies": {
-    "v-simple-infinite-scroll": "^1.1.4"
   }
 }

@@ -30,7 +30,7 @@ import SimplePostComponent from "~/components/posts/PostComponent.vue"
 import UserToFollowList from "~/components/user/UserToFollowList.vue"
 import PetToSeeList from "~/components/pet/PetToSeeList.vue"
 import StickyMiddleColumn from "~/components/StickyMiddleColumn.vue"
-import VSimpleInfiniteScroll from "v-simple-infinite-scroll"
+import VSimpleInfiniteScroll from "~/components/VSimpleInfiniteScroll.vue"
 
 export default {
     components: {
