@@ -39,6 +39,7 @@ $body-color: #444
 $min-contrast-ratio: 2.5
 
 $btn-border-radius: 20px
+$btn-border-radius-sm: 20px
 $light: #ffffff
 //$btn-border-radius-sm: 100px
 //$btn-border-radius-lg: 100px
