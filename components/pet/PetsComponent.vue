@@ -1,11 +1,11 @@
 <template>
     <div>
-        <input
-            type="text"
+        <InputSearch
             class="w-100 form-control my-4"
-            placeholder="Buscar mascota">
+            placeholder="Buscar mascota"
+            @on-search="onSearch" />
 
-        <div class="row g-3 mx-0">
+        <div class="row g-3 mx-0 mb-4">
             <div
                 class="col-6 col-sm-4 col-md-3 col-lg-2"
                 v-for="p in pets"
@@ -31,16 +31,24 @@
                 </div>
             </div>
         </div>
+        <button
+            class="btn btn-primary d-block m-auto mb-5"
+            v-if="!petsPaginate || petsPaginate.links.next"
+            @click="loadMore">
+            Cargar más resultados
+        </button>
     </div>
 </template>
 <script>
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
+import InputSearch from "~/components/InputSearch.vue"
 import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
 
 export default {
     components: {
         ImagePreloader,
+        InputSearch,
     },
     setup () {
         const mainStore = useMainStore()
@@ -50,16 +58,30 @@ export default {
     },
     data () {
         return {
-            pets: null
+            params: "",
+            pets: [],
+            petsPaginate: null,
         }
     },
     mounted () {
-        axios.get(`${this.mainStore.backendUrl}/api/pets`,{
-            withCredentials:true
-        })
-            .then(response => {
-                this.pets = response.data.data
-            })
+        this.search()
+    },
+    methods: {
+        onSearch (value) {
+            this.params = value
+            this.pets = []
+            this.search()
+        },
+        search (url = `${this.mainStore.backendUrl}/api/pets/search?`) {
+            axios.get(`${url}&q=${this.params}`)
+                .then(response => {
+                    this.petsPaginate = response.data
+                    this.pets = this.pets.concat(this.petsPaginate.data)
+                })
+        },
+        loadMore () {
+            this.search(this.petsPaginate.links.next)
+        }
     }
 }
 </script>
