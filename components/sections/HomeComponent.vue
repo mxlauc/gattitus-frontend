@@ -1,13 +1,15 @@
 <template>
     <div class="row g-0">
         <div class="col-12 col-md-8">
-            <div style="max-width: 500px; margin: auto;">
-                <router-view />
+            <VSimpleInfiniteScroll
+                @load="load"
+                :load-to-fill="false"
+                style="max-width: 500px; margin: auto;">
                 <simple-post-component
                     v-for="p in mainStore.posts"
                     :post="p"
                     :key="p.id" />
-            </div>
+            </VSimpleInfiniteScroll>
         </div>
         <StickyMiddleColumn
             :top="80"
@@ -25,20 +27,18 @@ await mainStore.loadPosts()
 </script>
 <script>
 import SimplePostComponent from "~/components/posts/PostComponent.vue"
-import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import UserToFollowList from "~/components/user/UserToFollowList.vue"
 import PetToSeeList from "~/components/pet/PetToSeeList.vue"
-import DisplayOnMounted from "../DisplayOnMounted.vue"
 import StickyMiddleColumn from "~/components/StickyMiddleColumn.vue"
+import VSimpleInfiniteScroll from "v-simple-infinite-scroll"
 
 export default {
     components: {
         SimplePostComponent,
-        ImagePreloader,
         UserToFollowList,
         PetToSeeList,
         StickyMiddleColumn,
-        DisplayOnMounted,
+        VSimpleInfiniteScroll,
     },
     data () {
         return {
@@ -48,6 +48,18 @@ export default {
     mounted () {
         // this.mainStore.loadPosts()
     },
+    methods: {
+        load (scroll) {
+            this.mainStore.loadMorePosts()
+                .then(() => {
+                    if (this.mainStore.postsPaginate.links.next) {
+                        scroll.loaded()
+                    } else {
+                        scroll.complete()
+                    }
+                })
+        }
+    }
 
 }
 </script>

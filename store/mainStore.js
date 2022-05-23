@@ -3,7 +3,8 @@ import { defineStore } from "pinia"
 export const useMainStore = defineStore("main", {
     state: () => {
         return {
-            posts: null,
+            posts: [],
+            postsPaginate: null,
             userLogged: null,
             backendUrl: process.env.BACKEND_URL,
             toasts: []
@@ -25,7 +26,18 @@ export const useMainStore = defineStore("main", {
         async loadPosts () {
             await fetchWithCookie(`${this.backendUrl}/api/posts`)
                 .then(result => {
+                    this.postsPaginate = result.data
                     this.posts = result.data.data
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        },
+        async loadMorePosts () {
+            await fetchWithCookie(this.postsPaginate.links.next)
+                .then(result => {
+                    this.postsPaginate = result.data
+                    this.posts = this.posts.concat(result.data.data)
                 })
                 .catch(error => {
                     console.log(error)
