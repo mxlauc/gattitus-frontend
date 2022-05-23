@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row g-0">
         <div class="col-auto">
             <NuxtLink :to="'/@' + user.username">
                 <ImagePreloader
@@ -8,30 +8,32 @@
                     aspect="1" />
             </NuxtLink>
         </div>
-        <div class="col text-start">
+        <div class="col text-start ps-2">
             <NuxtLink
                 :to="'/@' + user.username"
-                class="text-decoration-none">
+                class="text-decoration-none d-block">
                 {{ user.name }}
             </NuxtLink>
-            <br>
-            <small class="text-muted">
-                <NuxtLink
-                    :to="'/@' + user.username"
-                    class="text-decoration-none text-muted">
 
+            <NuxtLink
+                :to="'/@' + user.username"
+                class="text-decoration-none text-muted d-block">
+                <small class="text-muted">
                     @{{ user.username }}
-
-                </NuxtLink>
+                </small>
+            </NuxtLink>
+            <span class="d-block">
                 {{ pets_amount }}
-            </small>
+            </span>
         </div>
         <div class="col-auto">
             <button
+                v-if="mainStore.userLogged.id !== user.id"
                 class="btn btn-sm"
                 :class="{'btn-outline-primary': my_follow, 'btn-primary': !my_follow}"
-                @click="follow">
-                {{ my_follow ? 'Dejar de seguir' : 'Seguir' }}
+                @click="follow"
+                style="min-width: 80px;">
+                {{ my_follow ? 'Siguiendo' : 'Seguir' }}
             </button>
         </div>
     </div>
@@ -63,7 +65,7 @@ export default {
         pets_amount () {
             const pets_n = Math.min(3, this.user?.pets_count)
             if (pets_n) {
-                return "| " + "🐱".repeat(pets_n) + (this.user?.pets_count > 3 ? " + " : "")
+                return "🐱".repeat(pets_n) + (this.user?.pets_count > 3 ? " + " : "")
             } else {
                 return ""
             }
