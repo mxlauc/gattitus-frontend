@@ -16,7 +16,7 @@
         <StickyMiddleColumn
             :top="80"
             class="col-12 col-md-4 order-1 order-md-2">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-body text-center">
                     <img
                         :src="pet?.image.url_lg"
@@ -24,9 +24,7 @@
                         style="height: 100px;
                         border-radius: 50%;
                         object-fit: cover;
-                        width: 100px;
-                        outline: 4px solid #f90;
-                          outline-offset: 3px;"
+                        width: 100px;"
                         alt="">
                     <h2 class="mb-0 fw-bold">
                         {{ pet?.name }}
@@ -34,64 +32,19 @@
                     <p>
                         {{ pet?.nickname }}
                     </p>
-                    <div class="row g-3">
-                        <div class="col-6 text-start">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <h2>👨‍⚕️</h2>
-                                </div>
-                                <div class="col">
-                                    <h6 class="mb-0">
-                                        Esterilización
-                                    </h6>
-                                    <h5 class="mb-0 fw-bold">
-                                        Hace dos días
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 text-start">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <h2>🐈</h2>
-                                </div>
-                                <div class="col">
-                                    <h6 class="mb-0">
-                                        Esterilización
-                                    </h6>
-                                    <h5 class="mb-0 fw-bold">
-                                        Hace dos días
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <NuxtLink
+                        :to="'/pets/' + pet?.slug + '/edit'"
+                        class="btn btn-primary">
+                        Editar
+                    </NuxtLink>
                 </div>
             </div>
 
-            <div class="card mt-3">
+            <div class="card shadow-sm mt-3">
                 <div class="card-body">
                     <UserToFollowItem
                         v-if="pet"
                         :user="pet.user" />
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-body">
-                    hola como estan
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-body">
-                    hola como estan
-                </div>
-            </div>
-
-            <div class="card mt-3">
-                <div class="card-body">
-                    hola como estan
                 </div>
             </div>
         </StickyMiddleColumn>
