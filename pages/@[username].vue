@@ -72,6 +72,7 @@ await fetchWithCookie(`${mainStore.backendUrl}/api/@${route.params.username}`)
     .then(response => {
         user = response.data.data
     })
+    .catch(error => {})
 
 if (user) {
     await fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/pets`)
@@ -79,11 +80,12 @@ if (user) {
             pets = response.data.data
         })
 }
-
-await fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/posts`)
-    .then(response => {
-        posts = response.data.data
-    })
+if (user) {
+    await fetchWithCookie(`${mainStore.backendUrl}/api/users/${user.id}/posts`)
+        .then(response => {
+            posts = response.data.data
+        })
+}
 
 </script>
 <script>
