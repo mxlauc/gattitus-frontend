@@ -22,31 +22,6 @@ const messages = {
     like: "Me encanta",
     peopleLikedComment: "These people liked this comment",
     previousComments: "Comentarios anteriores",
-    timeAgo: ({ named, linked }) => {
-        const ahora = Date.now()
-        const date = named("date")
-
-        let diferencia = Math.trunc(((ahora / 1000) - date) / 60) // en minutos
-        if (diferencia < 60) {
-            return linked("message.minutesAgo", diferencia)
-        }
-        diferencia = Math.trunc(diferencia / 60) // en horas
-        if (diferencia < 24) {
-            return linked("hoursAgo", diferencia)
-        }
-        diferencia = Math.trunc(diferencia / 24) // en dias
-        if (diferencia < 14) {
-            return linked("daysAgo", diferencia)
-        }
-        const fecha = new Date(date * 1000)
-        const mm = fecha.getMinutes()
-        const h = fecha.getHours()
-        const d = fecha.getDate()
-        const m = fecha.getMonth()
-        const y = fecha.getFullYear()
-
-        return linked("date", { year: y, month: m, day: d, hours: h % 12, minutes: ((mm < 10) ? ("0" + mm) : (mm)), ampm: (h > 11 ? "PM" : "AM") })
-    },
 }
 
 export default messages
