@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         onLoadImage () {
-            this.$refs.image.classList.remove("opacity-0")
+            this.$refs.image?.classList.remove("opacity-0")
             this.$refs.background.style.background = "#000"
         },
     },
