@@ -38,9 +38,10 @@
                                 </svg>
                                 <template #content>
                                     <div class="list-group list-group-flush text-start">
-                                        <NuxtLink
+                                        <a
                                             class="list-group-item list-group-item-action"
-                                            :to="'/pets/' + pet?.slug + '/edit'">
+                                            href="#"
+                                            @click="show_edit_dialog=true">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="16"
@@ -55,7 +56,7 @@
                                                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                             </svg>
                                             Editar pet
-                                        </NuxtLink>
+                                        </a>
                                         <a
                                             href="#"
                                             class="list-group-item list-group-item-action"
@@ -106,9 +107,15 @@
             v-if="show_delete_dialog"
             :pet-id="pet?.id"
             @close="show_delete_dialog=false"></DeletePetDialog>
+        <EditPet
+            :pet="pet"
+            v-if="show_edit_dialog"
+            @close="show_edit_dialog=false"></EditPet>
     </div>
 </template>
 <script setup>
+import EditPet from "./EditPet.vue"
+
 import { useMainStore } from "~/store/mainStore"
 import { t } from "~/i18n/i18n2"
 const route = useRoute()
@@ -154,6 +161,7 @@ export default {
         return {
             posts: null,
             show_delete_dialog: false,
+            show_edit_dialog: false,
         }
     },
     mounted () {
