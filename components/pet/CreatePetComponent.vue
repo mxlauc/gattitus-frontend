@@ -83,6 +83,7 @@
 import axios from "axios"
 import CustomModal from "../CustomModal.vue"
 import { useMainStore } from "~/store/mainStore"
+import toaster from "/toaster"
 
 export default {
     components: {
@@ -120,7 +121,7 @@ export default {
             formData.append("image_id", this.imageId)
             axios.post(`${this.mainStore.backendUrl}/api/pets`, formData)
                 .then((response) => {
-                    console.log(response.data)
+                    toaster.success("Pet creado")
                     this.$refs.formCrear.reset()
                     this.imageId = null
                     this.textareaLength = 0
