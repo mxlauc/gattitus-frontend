@@ -43,8 +43,7 @@ export const useMainStore = defineStore("main", {
                     console.log(error)
                 })
         },
-        async deletePost (id) {
-            await fetchWithCookie(`${this.backendUrl}/api/posts/${id}`)
+        removePost (id) {
             const indice = this.posts.findIndex(
                 (post) => post.id === id
             )

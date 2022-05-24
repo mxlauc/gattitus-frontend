@@ -106,6 +106,7 @@
 import axios from "axios"
 import { useMainStore } from "~/store/mainStore"
 import SearchToTagAPet from "~/components/posts/SearchToTagAPet.vue"
+import toaster from "~/toaster"
 
 export default {
     components: {
@@ -149,7 +150,7 @@ export default {
 
             axios.post(`${this.mainStore.backendUrl}/api/posts`, formData)
                 .then((response) => {
-                    console.log(response.data)
+                    toaster.success("Post created")
                     this.$refs.formCrear.reset()
                     this.imageId = null
                     this.textareaLength = 0

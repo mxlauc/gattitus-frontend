@@ -17,6 +17,9 @@
 <script>
 import { useMainStore } from "~/store/mainStore"
 import CustomModal from "~/components/CustomModal.vue"
+import axios from "axios"
+import toaster from "~~/toaster"
+
 export default {
     components: {
         CustomModal,
@@ -36,9 +39,11 @@ export default {
     inject: ["postId"],
     methods: {
         eliminarPost () {
-            this.mainStore.deletePost(this.postId)
+            axios.delete(`${this.mainStore.backendUrl}/api/posts/${this.postId}`)
                 .then(() => {
+                    this.mainStore.removePost(this.postId)
                     this.close()
+                    toaster.success("Post deleted")
                 })
         },
         close () {
