@@ -18,13 +18,7 @@
 import CustomModal from "../CustomModal.vue"
 import { useMainStore } from "~~/store/mainStore"
 import axios from "axios"
-import { createToaster } from "@meforma/vue-toaster"
-
-const toaster = createToaster({
-    position: "bottom",
-    duration: 3000,
-
-})
+import toaster from "/toaster"
 
 const mainStore = useMainStore()
 </script>
