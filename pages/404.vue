@@ -1,8 +1,6 @@
 <template>
-    <div>
-        <NuxtLayout name="main">
-            Hello world!
-        </NuxtLayout>
+    <NuxtLayout name="main">
+        Hello world!
         404
         <br>
         {{ error }}
@@ -12,7 +10,7 @@
             class="text-decoration-none fw-bold text-black d-inline-block">
             volver home
         </NuxtLink>
-    </div>
+    </NuxtLayout>
 </template>
 <script>
 
