@@ -95,13 +95,16 @@ export default {
     emits: ["react"],
     methods: {
         react () {
+            if (!this.mainStore.userLogged) {
+                return
+            }
             if (this.reactioning) {
                 return
             }
             this.reactioning = true
             // document.getElementById("soundMeow").play();
-            axios.post(`${this.mainStore.backendUrl}/api/posts/${this.id}/reactions`,null,{
-                withCredentials:true,
+            axios.post(`${this.mainStore.backendUrl}/api/posts/${this.id}/reactions`, null, {
+                withCredentials: true,
             })
                 .then(response => {
                     this.$emit("react", response.data)

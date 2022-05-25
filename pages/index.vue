@@ -5,7 +5,7 @@
         </Head>
         <NuxtLayout
             name="main"
-            v-if="mainStore.userLogged">
+            v-if="mainStore.userLogged || true">
             <HomeComponent />
         </NuxtLayout>
         <NuxtLayout v-else>

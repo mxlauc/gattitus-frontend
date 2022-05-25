@@ -29,7 +29,8 @@
                     </li>
                 </NuxtLink>
                 <NuxtLink
-                    :to="mainStore.userLogged ? ('/@' + mainStore.userLogged.username) : '/'"
+                    v-if="mainStore.userLogged"
+                    :to="'/@' + mainStore.userLogged.username"
                     active-class="options-sidebar-active">
                     <li>
                         <svg

@@ -28,7 +28,7 @@
         </div>
         <div class="col-auto">
             <button
-                v-if="mainStore.userLogged.id !== user.id"
+                v-if="mainStore.userLogged && mainStore.userLogged.id !== user.id"
                 class="btn btn-sm"
                 :class="{'btn-outline-primary': my_follow, 'btn-primary': !my_follow}"
                 @click="follow"

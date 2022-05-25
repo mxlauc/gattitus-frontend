@@ -41,7 +41,7 @@
                                 c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z" />
                             </svg>
                             <template #content>
-                                <post-menu :post-id="post.id" />
+                                <post-menu :post="post" />
                             </template>
                         </Popper>
                     </DisplayOnMounted>

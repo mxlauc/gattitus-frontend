@@ -19,7 +19,7 @@
             <div class="card shadow-sm">
                 <div class="card-body text-center">
                     <div class="text-end">
-                        <DisplayOnMounted>
+                        <DisplayOnMounted v-if="mainStore.userLogged && mainStore.userLogged.id === pet.user.id">
                             <Popper
                                 arrow
                                 placement="bottom">

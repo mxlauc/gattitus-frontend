@@ -2,7 +2,7 @@
     <div class="list-group list-group-flush">
         <NuxtLink
             class="list-group-item list-group-item-action"
-            :to="'/posts/' + postId">
+            :to="'/posts/' + post.id">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -17,8 +17,9 @@
             {{ t('seePost') }}
         </NuxtLink>
         <NuxtLink
+            v-if="mainStore.userLogged && mainStore.userLogged.id === post.user.id"
             class="list-group-item list-group-item-action"
-            :to="'/posts/' + postId + '/edit'">
+            :to="'/posts/' + post.id + '/edit'">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -35,6 +36,7 @@
             Editar publicacion
         </NuxtLink>
         <a
+            v-if="mainStore.userLogged && mainStore.userLogged.id === post.user.id"
             href="#"
             class="list-group-item list-group-item-action"
             @click="deletePostDialog=true">
@@ -50,7 +52,7 @@
             </svg>
             Eliminar publicación
         </a>
-        <a
+        <!--a
             href="#"
             class="list-group-item list-group-item-action"
             @click="reportPostDialog=true">
@@ -65,18 +67,20 @@
                     d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
             </svg>
             Reportar publicación
-        </a>
+        </a-->
     </div>
     <delete-post-dialog
         v-if="deletePostDialog"
-        :post-id="postId"
+        :post-id="post.id"
         @close="deletePostDialog=false" />
     <ReportPostDialog
         v-if="reportPostDialog"
-        :post-id="postId"
+        :post-id="post.id"
         @close="reportPostDialog=false" />
 </template>
 <script setup>
+import { useMainStore } from "~~/store/mainStore"
+const mainStore = useMainStore()
 import { t } from "~/i18n/i18n2"
 </script>
 <script>
@@ -94,7 +98,7 @@ export default {
             reportPostDialog: false,
         }
     },
-    props: ["postId"],
+    props: ["post"],
 }
 </script>
 <style scoped>

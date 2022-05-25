@@ -20,6 +20,7 @@
                     <span class="d-block">Se unio el 3 de Septiembre del 2021</span>
                     <span class="d-block">activo hace 3 horas</span>
                     <button
+                        v-if="mainStore.userLogged && mainStore.userLogged.id !== user.id"
                         class="btn btn-sm btn-primary mt-2"
                         @click="follow">
                         {{ my_follow ? 'Dejar de seguir' : 'Seguir' }}
