@@ -46,6 +46,8 @@
                             <input
                                 type="text"
                                 class="form-control"
+                                ref="refName"
+                                @keyup="keyup"
                                 placeholder="Ejemplo: El señor Bigotes"
                                 name="name">
                         </div>
@@ -55,8 +57,6 @@
                                 class="form-control"
                                 name="nickname"
                                 style="height: 100px;"
-                                ref="textarea"
-                                @keyup="keyup"
                                 placeholder="Ejemplo: El que me pide comida a las 5 de la mañana" />
                         </div>
                     </div>
@@ -106,13 +106,13 @@ export default {
     },
     computed: {
         disableButton () {
-            return !this.imagenPreview && !this.textareaLength
+            return !this.imagenPreview || !this.textareaLength
         }
     },
     emits: ["close"],
     methods: {
         keyup (e) {
-            this.textareaLength = this.$refs.textarea.value.trim().length
+            this.textareaLength = this.$refs.refName.value.trim().length
         },
         enviarFormulario (e) {
             e.preventDefault()
