@@ -15,11 +15,12 @@
                         class="name-user-post fw-bold text-decoration-none text-dark">
                         {{ post.user.name }}
                     </NuxtLink>
-                    <span
-                        class="d-block text-black-50 fs-6"
+                    <NuxtLink
+                        :to="'/posts/' + post.id"
+                        class="d-block text-black-50 fs-6 text-decoration-none"
                         role="button">
                         <small>{{ timeAgo( post.created_at) }}</small>
-                    </span>
+                    </NuxtLink>
                 </div>
                 <div class="col-auto">
                     <DisplayOnMounted>
