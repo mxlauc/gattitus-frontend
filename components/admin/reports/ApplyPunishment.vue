@@ -85,7 +85,7 @@ export default {
         sendReport () {
             const formData = new FormData(this.$refs.form)
             formData.append("user_id", this.mainStore.userLogged.id)
-            console.log(formData)
+
             axios.post(`${this.mainStore.backendUrl}/api/admin/punishments`, formData)
                 .then(response => {
                     this.close()

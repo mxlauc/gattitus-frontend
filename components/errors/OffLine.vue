@@ -74,8 +74,6 @@ export default {
             if (e.keyCode === 32) {
                 this.player.aceleracion = 0
                 this.player.velocidad = -10
-                console.log(e.keyCode)
-                console.log("-")
             }
         },
         gravedad () {

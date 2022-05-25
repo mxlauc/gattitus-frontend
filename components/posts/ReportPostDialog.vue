@@ -83,7 +83,7 @@ export default {
             const formData = new FormData(this.$refs.form)
             formData.append("post_id", this.postId)
             formData.append("user_id", this.mainStore.userLogged?.id)
-            console.log(formData)
+
             axios.post(`${this.mainStore.backendUrl}/api/admin/reports`, formData)
                 .then(response => {
                     this.close()

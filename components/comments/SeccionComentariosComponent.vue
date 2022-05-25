@@ -69,9 +69,6 @@ export default {
                 this.comentariosPaginador = response.data.links
                 this.comentarios = response.data.data
             })
-            .catch((response) => {
-                console.log(response)
-            })
     },
     methods: {
         cargarMasComentarios () {
@@ -82,9 +79,6 @@ export default {
                 })
                 .then(() => {
                     this.$refs.commentsDiv.scrollTop = 0
-                })
-                .catch((response) => {
-                    console.log(response)
                 })
         },
         onCommented (comment) {

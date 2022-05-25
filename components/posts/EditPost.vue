@@ -128,9 +128,6 @@ export default {
                     this.textareaLength = 0
                     this.$router.replace({ path: `/posts/${this.$route.params.id}` })
                 })
-                .catch((error) => {
-                    console.log(error)
-                })
         },
         onPetsSelectedChanged (pets) {
             this.petsTagged = pets

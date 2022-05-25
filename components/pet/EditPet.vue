@@ -133,9 +133,6 @@ export default {
                     this.imagenPreview = null
                     this.ocultarModal()
                 })
-                .catch((error) => {
-                    console.log(error)
-                })
         },
         ocultarModal () {
             this.imagenPreview = null
@@ -153,12 +150,8 @@ export default {
                 }
             })
                 .then(response => {
-                    console.log(response.data.url)
                     this.imagenPreview = response.data.url
                     this.imageId = response.data.imageId
-                })
-                .catch(response => {
-                    console.log(response)
                 })
         },
         borrarImagen () {

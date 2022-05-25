@@ -189,9 +189,6 @@ export default {
                     this.miLike = response.data.own_reaction
                     this.contador = response.data.reactions_count
                 })
-                .catch(response => {
-                    console.log(response.data)
-                })
         },
         contadorActualizado (c) {
             this.$emit("contadorActualizado", c)

@@ -101,7 +101,6 @@ export default {
     },
     methods: {
         uploadByFile (file) {
-            this.editor.save().then(r => console.log(JSON.stringify(r)))
             return new Promise((resolve, reject) => {
                 const formData = new FormData()
                 formData.append("file", file)
@@ -119,7 +118,6 @@ export default {
                         })
                     })
                     .catch(error => {
-                        console.log(error)
                         reject(error)
                     })
             })

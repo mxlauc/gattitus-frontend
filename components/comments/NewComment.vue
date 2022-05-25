@@ -128,13 +128,6 @@ export default {
                     this.$refs.textarea.innerHTML = ""
                     this.gifSeleccionado = null
                 })
-                .catch((error) => {
-                    console.log(error)
-                    const indices = Object.keys(error.response.data.errors)
-                    if (indices.length > 0) {
-                        alert(error.response.data.errors[indices[0]])
-                    }
-                })
         },
         recibirGif (obj) {
             this.gifSeleccionado = obj

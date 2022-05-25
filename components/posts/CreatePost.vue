@@ -157,9 +157,6 @@ export default {
                     this.imagenPreview = null
                     this.$router.replace({ path: "/" })
                 })
-                .catch((error) => {
-                    console.log(error)
-                })
         },
         mostrarPreview (e) {
             // this.imagenPreview = URL.createObjectURL(e.target.files[0]);
@@ -173,12 +170,8 @@ export default {
                     },
                 })
                 .then((response) => {
-                    console.log(response.data.url)
                     this.imagenPreview = URL.createObjectURL(e.target.files[0])
                     this.imageId = response.data.imageId
-                })
-                .catch((response) => {
-                    console.log(response)
                 })
         },
         borrarImagen () {

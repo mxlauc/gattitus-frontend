@@ -42,9 +42,6 @@ export default {
                 .then(response => {
                     this.$router.replace({ path: "/admin/reports/types" })
                 })
-                .catch(e => {
-                    console.log(e)
-                })
         }
     }
 }
