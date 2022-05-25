@@ -30,7 +30,9 @@ export default {
     methods: {
         onLoadImage () {
             this.$refs.image?.classList.remove("opacity-0")
-            this.$refs.background.style.background = "#000"
+            if (this.$refs.background) {
+                this.$refs.background.style.background = "#000"
+            }
         },
     },
     computed: {
