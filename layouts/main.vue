@@ -84,6 +84,7 @@
                     </li>
                 </NuxtLink>
                 <hr>
+                <!--
                 <NuxtLink
                     to="/admin/users"
                     active-class="options-sidebar-active">
@@ -141,6 +142,7 @@
                         </span>
                     </li>
                 </NuxtLink>
+                -->
                 <NuxtLink
                     to="/help"
                     active-class="options-sidebar-active">
