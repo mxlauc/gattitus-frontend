@@ -46,8 +46,10 @@
                             <input
                                 type="text"
                                 class="form-control"
+                                ref="refName"
+                                @keyup="keyup"
                                 placeholder="Ejemplo: El señor Bigotes"
-                                :value="pet?.name"
+                                v-model="nameTemp"
                                 name="name">
                         </div>
                         <div>
@@ -56,8 +58,6 @@
                                 class="form-control"
                                 name="nickname"
                                 style="height: 100px;"
-                                ref="textarea"
-                                @keyup="keyup"
                                 placeholder="Ejemplo: El que me pide comida a las 5 de la mañana">{{ pet?.nickname }}</textarea>
                         </div>
                     </div>
@@ -98,8 +98,9 @@ export default {
     },
     data () {
         return {
+            nameTemp: this.pet?.name,
             imagenPreview: this.pet?.image.url_md,
-            textareaLength: 0,
+            textareaLength: this.pet?.name.length,
             imageId: null,
         }
     },
@@ -107,14 +108,14 @@ export default {
     },
     computed: {
         disableButton () {
-            return !this.imagenPreview && !this.textareaLength
+            return !this.textareaLength
         }
     },
     props: ["pet"],
     emits: ["close"],
     methods: {
         keyup (e) {
-            this.textareaLength = this.$refs.textarea.value.trim().length
+            this.textareaLength = this.$refs.refName.value.trim().length
         },
         enviarFormulario (e) {
             e.preventDefault()
