@@ -79,7 +79,7 @@ export default {
         }
     },
     emits: ["close"],
-    inject: ["postId"],
+    props: ["postId"],
 
     methods: {
         sendReport () {

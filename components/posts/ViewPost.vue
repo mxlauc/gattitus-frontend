@@ -134,9 +134,6 @@ export default {
         contadorActualizado (count) {
             this.comments_count = count
         },
-        back () {
-            this.$router.replace("/")
-        },
         react (response) {
             this.my_reaction = response.own_reaction
             this.reactions_count = response.reactions_count

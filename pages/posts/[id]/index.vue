@@ -1,11 +1,13 @@
 <template>
     <NuxtLayout name="main">
-        <ViewPostMobile
-            :post="post"
-            v-if="is_mobile" />
-        <ViewPost
-            :post="post"
-            v-else />
+        <template v-if="post">
+            <ViewPostMobile
+                :post="post"
+                v-if="is_mobile" />
+            <ViewPost
+                :post="post"
+                v-else />
+        </template>
     </NuxtLayout>
 </template>
 <script setup>
@@ -20,6 +22,7 @@ await fetchWithCookie(`${mainStore.backendUrl}/api/posts/${route.params.id}`)
     .then(response => {
         post = response.data.data
     })
+    .catch(error => {})
 </script>
 <script>
 import ViewPost from "~/components/posts/ViewPost.vue"

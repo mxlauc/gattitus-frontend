@@ -69,9 +69,11 @@
     </div>
     <delete-post-dialog
         v-if="deletePostDialog"
+        :post-id="postId"
         @close="deletePostDialog=false" />
     <ReportPostDialog
         v-if="reportPostDialog"
+        :post-id="postId"
         @close="reportPostDialog=false" />
 </template>
 <script setup>
@@ -93,7 +95,6 @@ export default {
         }
     },
     props: ["postId"],
-    provide: ["postId"],
 }
 </script>
 <style scoped>

@@ -76,6 +76,7 @@
 import { useMainStore } from "~/store/mainStore"
 import ImagePreloader from "~/components/images/ImagePreloader.vue"
 import SearchToTagAPet from "~/components/posts/SearchToTagAPet.vue"
+import toaster from "~~/toaster"
 import axios from "axios"
 
 export default {
@@ -122,7 +123,7 @@ export default {
 
             axios.post(`${this.mainStore.backendUrl}/api/posts/${this.$route.params.id}`, formData)
                 .then((response) => {
-                    console.log(response.data)
+                    toaster.success("Editado")
                     this.$refs.formCrear.reset()
                     this.textareaLength = 0
                     this.$router.replace({ path: `/posts/${this.$route.params.id}` })

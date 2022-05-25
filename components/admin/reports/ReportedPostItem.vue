@@ -37,6 +37,7 @@
         <br>
         <ApplyPunishment
             @close="applyPunishment = false"
+            :post-id="post.id"
             v-if="applyPunishment===true" />
     </div>
 </template>

@@ -36,13 +36,14 @@ export default {
         }
     },
     emits: ["close"],
-    inject: ["postId"],
+    props: ["postId"],
     methods: {
         eliminarPost () {
             axios.delete(`${this.mainStore.backendUrl}/api/posts/${this.postId}`)
                 .then(() => {
                     this.mainStore.removePost(this.postId)
                     this.close()
+                    this.$router.replace({ path: "/" })
                     toaster.success("Post deleted")
                 })
         },
