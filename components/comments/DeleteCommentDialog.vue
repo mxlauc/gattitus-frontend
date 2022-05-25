@@ -18,6 +18,7 @@
 import CustomModal from "~/components/CustomModal.vue"
 import { useMainStore } from "~/store/mainStore"
 import axios from "axios"
+import toaster from "~~/toaster"
 
 export default {
     components: {
@@ -39,6 +40,7 @@ export default {
                 })
                 .then(() => {
                     this.$emit("commentDeleted", this.comment.id)
+                    toaster.success("comment deleted")
                 })
                 .then(() => {
                     this.$emit("close")
