@@ -17,8 +17,6 @@
                         {{ user?.name }}
                     </h1>
                     <h6>{{ '@' + user?.username }}</h6>
-                    <span class="d-block">Se unio el 3 de Septiembre del 2021</span>
-                    <span class="d-block">activo hace 3 horas</span>
                     <button
                         v-if="mainStore.userLogged && mainStore.userLogged.id !== user.id"
                         class="btn btn-sm btn-primary mt-2"
