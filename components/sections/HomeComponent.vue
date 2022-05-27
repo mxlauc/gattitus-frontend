@@ -50,6 +50,9 @@ export default {
     },
     methods: {
         load (scroll) {
+            if (!this.mainStore.postsPaginate.links.next) {
+                return
+            }
             this.mainStore.loadMorePosts()
                 .then(() => {
                     if (this.mainStore.postsPaginate.links.next) {
