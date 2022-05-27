@@ -1,5 +1,8 @@
 <template>
     <NuxtLayout name="help">
+        <Head>
+            <Title>Preguntas frecuentes | Gattitus</Title>
+        </Head>
         <div class="card mb-4">
             <h5 class="card-header">
                 ¿Qué es Gattitus?

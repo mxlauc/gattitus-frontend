@@ -1,5 +1,8 @@
 <template>
     <NuxtLayout name="main">
+        <Head>
+            <Title>Publicación de {{ post?.user.name }} | Gattitus</Title>
+        </Head>
         <template v-if="post">
             <ViewPostMobile
                 :post="post"

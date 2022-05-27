@@ -1,5 +1,8 @@
 <template>
     <NuxtLayout name="help">
+        <Head>
+            <Title>Eliminar cuenta | Gattitus</Title>
+        </Head>
         <div class="card">
             <div class="card-body">
                 <div class="row">

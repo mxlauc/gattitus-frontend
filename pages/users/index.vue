@@ -1,5 +1,8 @@
 <template>
     <NuxtLayout name="main">
+        <Head>
+            <Title>Descubrir usuarios | Gattitus</Title>
+        </Head>
         <UsersComponent />
     </NuxtLayout>
 </template>

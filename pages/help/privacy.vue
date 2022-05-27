@@ -1,5 +1,8 @@
 <template>
     <NuxtLayout name="help">
+        <Head>
+            <Title>Política de privacidad | Gattitus</Title>
+        </Head>
         <div class="card">
             <div class="card-body">
                 <div class="my-3 text-secondary">

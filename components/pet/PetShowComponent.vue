@@ -1,5 +1,8 @@
 <template>
     <div class="row mx-0 g-3">
+        <Head>
+            <Title>{{ pet?.name }} | Gattitus</Title>
+        </Head>
         <div class="col-12 col-md-8 order-2 order-md-1 pb-5">
             <div
                 ref="petRow"
