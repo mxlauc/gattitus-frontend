@@ -18,7 +18,8 @@
                             <div class="card-body">
                                 <h3>Para eliminar tu cuenta has click en el botón de abajo</h3>
                                 <button
-                                    class="btn btn-danger mt-3">
+                                    class="btn btn-danger mt-3"
+                                    @click="show_delete_dialog=true">
                                     Eliminar mi cuenta de Gattitus de forma permanente
                                 </button>
                             </div>
@@ -36,9 +37,23 @@
                 </div>
             </div>
         </div>
+        <DeleteAccountDialog
+            v-if="show_delete_dialog"
+            @close="show_delete_dialog=false"></DeleteAccountDialog>
     </NuxtLayout>
 </template>
 <script setup>
 import { useMainStore } from "~~/store/mainStore"
+import DeleteAccountDialog from "./DeleteAccountDialog.vue"
 const mainStore = useMainStore()
+</script>
+<script>
+
+export default {
+    data () {
+        return {
+            show_delete_dialog: false,
+        }
+    }
+}
 </script>
