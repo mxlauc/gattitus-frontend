@@ -102,11 +102,14 @@ export default {
                 return
             }
             this.reactioning = true
-            // document.getElementById("soundMeow").play();
+
             axios.post(`${this.mainStore.backendUrl}/api/posts/${this.id}/reactions`, null, {
                 withCredentials: true,
             })
                 .then(response => {
+                    if (response.data.own_reaction) {
+                        document.getElementById("soundMeow").play()
+                    }
                     this.$emit("react", response.data)
                 })
                 .finally(() => {

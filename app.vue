@@ -12,7 +12,7 @@
         </Head>
         <audio
             id="soundMeow"
-            src="https://www.gattitus.com/assets/audio/cat_meow.mp3"
+            src="/audio/cat_meow.mp3"
             preload="auto"
             style="display: none" />
         <NuxtPage />
