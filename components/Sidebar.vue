@@ -69,6 +69,7 @@ export default {
     margin: 2px 0px;
     padding: 10px 16px;
     border-radius: 10px;
+    display: flex;
 }
 
 .options-sidebar a {
