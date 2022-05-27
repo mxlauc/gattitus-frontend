@@ -157,7 +157,7 @@
                     Para mas detalles sobre el uso de tus datos en Gattitus, lee los
 
                     <NuxtLink
-                        to="/terms">
+                        to="/help/terms">
                         Terminos y condiciones
                     </NuxtLink>
                     .
@@ -177,7 +177,7 @@
                     Para más información de cómo eliminar tu cuenta de <strong>Gattitus</strong>, visita la página de
 
                     <NuxtLink
-                        to="/delete-account">
+                        to="/help/delete-account">
                         Eliminar mi cuenta
                     </NuxtLink>
                     .

@@ -144,7 +144,12 @@
                     </h4>
 
                     <p>
-                        Solo puede eliminar su cuenta desde nuestro sitio web (En <a href="/eliminar-cuenta">Eliminar cuenta</a>, necesitara iniciar sesion). Eliminar su cuenta no puede deshacerse y se eliminara de
+                        Solo puede eliminar su cuenta desde nuestro sitio web (En
+                        <NuxtLink
+                            to="/help/delete-account">
+                            Eliminar cuenta
+                        </NuxtLink>
+                        , necesitara iniciar sesion). Eliminar su cuenta no puede deshacerse y se eliminara de
                         forma inmediata. Tambien se eliminara las publicaciones que haya hecho y la informacion que haya
                         creado. Sin embargo, los comentarios y 'me encanta' que haya hecho se mantendran hasta que las publicaciones en las que se encuentren se eliminen.
                     </p>

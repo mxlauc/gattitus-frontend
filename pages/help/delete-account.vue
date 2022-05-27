@@ -17,24 +17,6 @@
                         <div class="card mt-4 mb-5">
                             <div class="card-body">
                                 <h3>Para eliminar tu cuenta has click en el botón de abajo</h3>
-                                <p>Puede que antes tengas que volver a iniciar sesion para poder eliminar</p>
-
-                                <template v-if="mainStore.userLogged">
-                                    <p class="text-danger mb-0">
-                                        <small>Estas apunto de eliminar esta cuenta</small>
-                                    </p>
-                                    <img
-                                        :src="mainStore.userLogged?.image.url_sm"
-                                        style="height: 30px;"
-                                        class="mr-2">
-                                    <label>{{ mainStore.userLogged?.name }}</label>
-                                </template>
-                                <p
-                                    class="text-danger mb-0"
-                                    v-else>
-                                    <small>El botón no esta activo porque no iniciaste sesión</small>
-                                </p>
-
                                 <button
                                     class="btn btn-danger mt-3">
                                     Eliminar mi cuenta de Gattitus de forma permanente
