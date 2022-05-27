@@ -1,13 +1,11 @@
 <template>
     <NuxtLayout name="main">
-        Hello world!
-        404
-        <br>
-        {{ error }}
-        <br>
+        <h1 class="mb-5">
+            Esta página no existe
+        </h1>
         <NuxtLink
             to="/"
-            class="text-decoration-none fw-bold text-black d-inline-block">
+            class="btn btn-primary">
             volver home
         </NuxtLink>
     </NuxtLayout>
