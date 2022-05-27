@@ -70,6 +70,7 @@ export default {
     padding: 10px 16px;
     border-radius: 10px;
     display: flex;
+    align-items: center;
 }
 
 .options-sidebar a {
