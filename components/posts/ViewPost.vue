@@ -10,6 +10,7 @@
                 :image="post?.simple_post.image"
                 option="url_xl"
                 :ignore-fit-parent="true"
+                :background="'#000'"
                 object-fit="contain"
                 style="width: 100%; height: 600px; display: block;"
                 class="rounded-5 w-100 shadow-sm"

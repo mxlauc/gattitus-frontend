@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-    props: ["image", "option", "aspect", "objectFit", "width", "height", "ignoreFitParent"],
+    props: ["image", "option", "aspect", "objectFit", "width", "height", "ignoreFitParent", "background"],
     mounted () {
         if (this.$refs.image.complete) {
             this.onLoadImage()
@@ -31,7 +31,11 @@ export default {
         onLoadImage () {
             this.$refs.image?.classList.remove("opacity-0")
             if (this.$refs.background) {
-                this.$refs.background.style.background = "#000"
+                if (this.background) {
+                    this.$refs.background.style.background = this.background
+                } else {
+                    this.$refs.background.style.background = "#0000"
+                }
             }
         },
     },
