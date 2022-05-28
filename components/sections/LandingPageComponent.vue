@@ -14,14 +14,58 @@
                     Un lugar donde los usuarios pueden compartir y descubrir fotos de gatos
                 </p>
 
-                <a
-                    href="#"
-                    @click="openPopup">
+                <button
+                    @click="openPopup"
+                    style="margin-top: 30px;"
+                    class="fb-connect mb-5">
+                    Iniciar sesión con Facebook
+                </button>
 
-                    <button
-                        style="margin-top: 30px;"
-                        class="fb-connect">Iniciar sesión con Facebook</button>
-                </a>
+                <p
+                    style="background-color: #f90d;"
+                    class="p-2">
+                    <small> Al iniciar sesión, aceptas los
+                        <NuxtLink
+                            to="/help/terms"
+                            class="text-white">
+                            Terminos y condiciones
+                        </NuxtLink>
+                        y las
+                        <NuxtLink
+                            to="/help/privacy"
+                            class="text-white">
+                            Políticas de privacidad
+                        </NuxtLink>
+                        de Gattitus.
+                    </small>
+                </p>
+                <div
+                    class="p-2"
+                    style="font-size: 12px;background-color: #f90d;">
+                    <NuxtLink
+                        to="/help"
+                        class="text-white">
+                        Sobre Gattitus
+                    </NuxtLink>
+                    |
+                    <NuxtLink
+                        to="/help/faq"
+                        class="text-white">
+                        Preguntas frecuentes
+                    </NuxtLink>
+                    |
+                    <NuxtLink
+                        to="/help/terms"
+                        class="text-white">
+                        Terminos y condiciones
+                    </NuxtLink>
+                    |
+                    <NuxtLink
+                        to="/help/privacy"
+                        class="text-white">
+                        Politicas de privacidad
+                    </NuxtLink>
+                </div>
             </div>
         </div>
         <picture>
@@ -53,6 +97,11 @@ export default {
     data () {
         return {
             myPopup: null,
+        }
+    },
+    mounted () {
+        if (this.mainStore.userLogged) {
+            this.$router.replace({ path: "/" })
         }
     },
     methods: {

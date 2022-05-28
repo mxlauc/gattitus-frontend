@@ -136,8 +136,7 @@
                     </DisplayOnMounted>
                 </div>
                 <a
-                    href="#"
-                    @click="openPopup"
+                    href="/login"
                     class="btn btn-primary"
                     v-else> Iniciar sesión</a>
             </div>
@@ -170,7 +169,6 @@ export default {
         return {
             mainStore : useMainStore(),
             show_create_pet:false,
-            myPopup: null,
         }
     },
     mounted () {},
@@ -200,21 +198,6 @@ export default {
             document.querySelector("#dark").classList.add("show-dark")
             document.body.style.overflow = "hidden"
         },
-        openPopup () {
-            if (this.myPopup) {
-                return
-            }
-            this.myPopup = window.open(this.mainStore.backendUrl + "/auth/login/facebook",
-                "popup",
-                "height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no"
-            )
-            const timer = window.setInterval(() => {
-                if (this.myPopup.closed) {
-                    clearInterval(timer)
-                    location.reload()
-                }
-            }, 1000)
-        }
     },
 }
 </script>
