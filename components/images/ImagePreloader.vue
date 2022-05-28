@@ -4,7 +4,7 @@
         style="display:inline-table; max-width:100%"
         ref="background"
 
-        :style="'aspect-ratio: ' + aspectRatio +
+        :style="'aspect-ratio: ' + (ignoreFitParent ? null : aspectRatio) +
             '; background: ' + `linear-gradient(45deg, ${image?.meta_data?.color_bl} 0%, ${image?.meta_data?.color_tr} 100%)` +
             '; width: ' + getWidth +
             '; height: ' + getHeight">
@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-    props: ["image", "option", "aspect", "objectFit", "width", "height"],
+    props: ["image", "option", "aspect", "objectFit", "width", "height", "ignoreFitParent"],
     mounted () {
         if (this.$refs.image.complete) {
             this.onLoadImage()

@@ -9,6 +9,7 @@
                 :aspect="post?.simple_post.aspect_ratio"
                 :image="post?.simple_post.image"
                 option="url_xl"
+                :ignore-fit-parent="true"
                 object-fit="contain"
                 style="width: 100%; height: 600px; display: block;"
                 class="rounded-5 w-100 shadow-sm"
