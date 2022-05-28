@@ -1,4 +1,7 @@
 <template>
+    <Head>
+        <Title>Gattitus, sube una foto de tu gato hoy</Title>
+    </Head>
     <LandingPageComponent />
 </template>
 <script setup>
