@@ -101,7 +101,7 @@ export default {
     },
     mounted () {
         if (this.mainStore.userLogged) {
-            this.$router.replace({ path: "/" })
+            window.location.href = "/"
         }
     },
     methods: {
